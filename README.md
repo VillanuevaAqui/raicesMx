@@ -1,7 +1,7 @@
 # raicesMx
 ### Proyecto integrador
 
-![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png){width='100px'}
+![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png)
 
 
 ## Acerca del proyecto 
