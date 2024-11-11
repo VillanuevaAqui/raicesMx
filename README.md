@@ -30,4 +30,6 @@ de marketing digital.
 - Felix Peñaloza
 - Zrizia Portas
 - David rojas
-- Christia Rodriguez
+- Christia Rodriguez 
+
+
