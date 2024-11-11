@@ -1,0 +1,42 @@
+:root{
+    --primary: #f6f4f1;
+    --secondary: #dcd6c0;
+    --tertiary: #4c4c2c;
+    --fourth: #2c2e21;
+    --fifth: #000000;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    background-image: url(/src/Fondo\ Grande.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    font-size: 7rem;
+    font-weight: 700;
+}
+h2{
+    font-weight: 600;
+    font-size: 6rem;
+}
+h3{
+    font-size: 5rem;
+}
+
+.footer{
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    font-size: 3rem;
+    text-align: center;
+}
+.icons{
+    padding: 3rem;
+}
+.icon{
+    margin: 1rem;
+}
