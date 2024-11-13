@@ -1,3 +1,6 @@
+
+/* *CSS base para todos los dispositivos */
+
 :root{
     --primary: #f6f4f1;
     --secondary: #dcd6c0;
@@ -6,16 +9,80 @@
     --fifth: #000000;
 }
 
-html{
-    font-size: 62.5%;
-}
-body{
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-image: url(/src/Fondo\ Grande.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
+/**-------"Header" y "footer" -------*/
+#header, .footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    font-family: "Montserrat";
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+/** ---Navbar ------*/
+.navbar {
+    background-color: var(--tertiary);
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/*------Navbar fondo textos menus---*/
+.nav-item {
+    background-color: var(--secondary);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 7rem;
+    text-align: center;
+}
+/*------Navbar fondo icono RaicesMx---*/
+.navbar-brand {
+    background-color: var(--secondary);
+    margin-left: 1rem;
+    border-radius: 8rem;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #444;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.content {
+    padding: 1em;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/*----Tamaños para los titulos h1 ,h2, h3----*/
 h1{
     font-size: 7rem;
     font-weight: 700;
@@ -28,15 +95,84 @@ h3{
     font-size: 5rem;
 }
 
-.footer{
-    background-color: var(--tertiary);
-    color: var(--secondary);
-    font-size: 3rem;
-    text-align: center;
+p{
+    font-size: 1.6rem;
 }
+
+/*--------ICONOS redes sociales (facebook, instagram, X)------- */
 .icons{
-    padding: 3rem;
+    padding: 2rem;
 }
 .icon{
-    margin: 1rem;
+    margin: 2rem;
+    font-size: 4rem;
+}
+/*----Linea que division texto footer*/
+hr {
+    border-color:var(--secondary);
+    width: 30%;           /* Ajusta el ancho de la línea */
+    margin: 0 auto;       /* Centra horizontalmente */
+    border: 3px solid; /* Estilo de la línea */
+}
+/*----Boton aviso privacidad footer-----*/
+.btn-privacidad {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    background-color: var(--secondary);
+    color: var(--fifth);
+    border-radius: 7rem;
+    font-weight: bold;
+}
+/* *Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .nav ul {
+        display: block;
+    }
+
+    .nav li {
+        display: block;
+        text-align: left;
+    }
+
+    .nav a {
+        display: block;
+    }
+}
+
+/* *Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .content {
+        padding: 2em;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav li {
+        display: inline;
+    }
+
+    .nav a {
+        padding: 10px 15px;
+    }
+}
+
+/* *Estilos para pantallas grandes (escritorio) */
+@media (min-width: 769px) {
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3em;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        padding: 15px 30px;
+    }
 }
