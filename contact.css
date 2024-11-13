@@ -6,55 +6,31 @@
     --fifth: #000000;
 }
 
-
-
-
 body {
     position: relative;
     font-family: "Montserrat", sans-serif;
     background-image: url(/src/Fondo\ Grande.png);
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
-.heading-container  {
-    
-    
-    /*position:absolute ;
-    top:10%;
-    left: 50%;
-    transform: translate(-50%);*/
-    margin: 2rem 0;
+.heading-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    
-
-
-
-    }
-
-
-.heading-container  {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2 rem auto;
+    margin: 2rem auto;
     width: 100%;
-    border-radius: 20px;
     text-align: center;
-    }
+}
 
 .heading-container h2 {
     color: var(--primary);
     background-color: var(--fourth);
     padding: 1rem 2rem;
     width: fit-content;
-    border-radius: 8px;
-    font-size: 3.5rem;
+    border-radius: 25px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .main {
@@ -64,7 +40,7 @@ body {
     flex-direction: column;
     background-image: url(./src/Fondo\ Grande.png);
     background-size: cover;
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
     padding: 2rem;
     min-height: calc(100vh - 2rem);
@@ -78,44 +54,42 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 3rem;
-    
+    flex-wrap: wrap;
+    align-items: stretch; /* Esto asegura que ambas columnas tengan la misma altura */
 }
-
-.form-heading {
-    font-weight: bold;
-    font-size: 2.5rem; /* Ajusta el tamaño si es necesario */
-    width: 100%; /* Ocupa todo el ancho del formulario */
-    text-align: center; /* Alineación del texto, cámbialo según tu preferencia */
-    margin-bottom: 1rem; /* Espacio debajo del texto */
-    color: var(--fifth); /* Color del texto, ajusta según tu diseño */
-    
-}
-
-.direct-heading{
-
-    font-weight: bold;
-    font-size: 2.5rem; /* Ajusta el tamaño si es necesario */
-    width: 100%; /* Ocupa todo el ancho del formulario */
-    text-align: center; /* Alineación del texto, cámbialo según tu preferencia */
-    margin-bottom: 1rem; /* Espacio debajo del texto */
-    color: var(--fifth);
-
-
-}
-
 
 .form-container,
 .direct-contact {
     padding: 2rem;
-    background-color: none;
-    flex: 1;
+    background-color: transparent;
     border-radius: 8px;
+    flex: 1; /* Esto hace que ambos contenedores tomen el mismo espacio disponible */
+}
+
+.form-heading {
+    font-weight: bold;
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--fifth);
+}
+
+.direct-heading {
+    font-weight: bold;
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--fifth);
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .contact-form h3 {
@@ -124,77 +98,81 @@ body {
 
 .contact-form input,
 .contact-form textarea {
+    width: 100%;
     color: var(--fifth);
     padding: 0.8rem;
-    background-color: white;
-    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    border: none;
     border-radius: 4px;
     outline: none;
     font-weight: bold;
+    box-shadow: 10px 5px 10px var(--fifth);
+}
+
+.contact-form textarea {
+    min-height: 200px;
+    resize: vertical;
 }
 
 .contact-form button {
-    padding: 0.8rem;
+    padding: 1rem;
     background-color: var(--tertiary);
     color: var(--primary);
     font-weight: bold;
+    font-size: 1.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     display: block;
-    margin: 0 auto;
+    margin: 1rem 0 auto;
+    width: fit-content; 
+    text-align: center;
 }
 
-
-
 .direct-contact {
-    min-height: fit-content;
     background-color: var(--secondary);
     color: var(--fourth);
     font-size: 1.4rem;
-    padding: 1.5rem;
     margin-top: 2rem;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 0;
     width: auto;
-    border-radius: 8px;
-    margin-bottom: 0;
-    overflow: hidden;
-    
+    border-radius: 80px;
+    height: 100%; /* Asegura que el contenido ocupe todo el alto disponible */
+    min-height: 350px;
 }
 
 .direct-contact h3 {
     margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.direct-text1 {
+    padding: 1.5rem;
 }
 
 .direct-contact-details ul {
-
-    
-    justify-content: center;
+    justify-content: left;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-left: 1.5rem;
 }
 
 .direct-contact-details li {
-    text-align: center;
     margin-bottom: 0.5rem;
-    
 }
 
 .direct-contact-details li:last-child {
-    margin-bottom: 0;  /* Elimina el margen después del último elemento */
+    margin-bottom: 0;
 }
 
-
 .footer {
-  
     background-color: var(--tertiary);
     color: var(--secondary);
     text-align: center;
     padding: 2rem;
-    /*margin-top: 3rem;*/
 }
 
 .icons .icon {
@@ -202,5 +180,4 @@ body {
     color: var(--secondary);
     font-size: 2.5rem;
 }
-
 
