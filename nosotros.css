@@ -1,0 +1,55 @@
+/* .Img04-SBN {
+    max-width: 50%;
+    border-radius: 30px;
+} */
+
+body {
+    background-image: url(./src/Fondo\ Grande.png);
+    background-color: #cccccc;
+   }
+
+.responsive-image {
+    width: 100%;
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen. Si se quita, el footer o el contenido debajo se sobrepone*/
+    max-height: 500px;
+}
+
+.responsive-image img {
+    width: 100%;
+}
+
+.containerimg04 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.contentsbn {
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 0px; /* Espacio entre el texto y la imagen */
+}
+
+.H1Img {
+    color: var(--primary);
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.logosbn img {
+    max-width: 50%; /* Asegura que la imagen no sobrepase el tamaño del contenedor */
+    border-radius: 20px; /* Bordes redondeados en la imagen */
+}
+
+.cardone {
+    max-width: 100%; /* Limita el ancho del texto */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+
+.backgroundtext1 {
+    padding: 30px;
+    background-color: var(--secondary);
+    border-radius: 30px;
+}
