@@ -8,6 +8,10 @@ body {
     background-color: #cccccc;
    }
 
+.linktext {
+    cursor: pointer;
+}
+
 .responsive-image {
     width: 100%;
     overflow: hidden; /* Oculta cualquier desbordamiento de la imagen. Si se quita, el footer o el contenido debajo se sobrepone*/
@@ -28,28 +32,80 @@ body {
     text-align: center;
     display: flex;
     align-items: center; /* Centra verticalmente la imagen y el texto */
-    gap: 0px; /* Espacio entre el texto y la imagen */
+    gap: 0rem; /* Espacio entre el texto y la imagen */
 }
 
-.H1Img {
+.menu {
+    text-align: center;
+}
+
+.listmenu {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 5rem;
+    margin-right: 2rem; /*Separación entre elementos del menú*/
+    font-size: 1.4rem;
+    color: var(--tertiary);
+    cursor: pointer;
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease /* Transición para el efecto hover */
+}
+
+.listmenu:hover {
+    color: var(--primary);
+    background-color: var(--tertiary);
+}
+
+.divide {
+    height: 5px; /* Grosor de la línea */
+    width: 50%;
+    background-color: var(--tertiary);
+    border: none; /* Quita el borde predeterminado del <hr> */
+    margin: 20px auto; /* Espacio alrededor del <hr> */
+    border-radius: 3rem;
+}
+
+.divide2 {
+    height: 5px; /* Grosor de la línea */
+    width: 50%;
+    background-color: var(--fifth);
+    border: none; /* Quita el borde predeterminado del <hr> */
+    margin: 20px auto; /* Espacio alrededor del <hr> */
+    border-radius: 3rem;
+}
+    
+
+.H1Img2 {
+    font-size: 300%;
     color: var(--primary);
     text-shadow: 5px 5px 10px #000000;
 }
 
 .logosbn img {
-    max-width: 50%; /* Asegura que la imagen no sobrepase el tamaño del contenedor */
+    max-width: 80%; /* Asegura que la imagen no sobrepase el tamaño del contenedor */
     border-radius: 20px; /* Bordes redondeados en la imagen */
 }
 
 .cardone {
-    max-width: 100%; /* Limita el ancho del texto */
+    max-width: 50%; /* Limita el ancho del texto */
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
+}
+
+.inlineblockmessage {
+    display: inline-block; /*!Este es importante*/
 }
 
 .backgroundtext1 {
     padding: 30px;
     background-color: var(--secondary);
     border-radius: 30px;
+}
+
+.text1 {
+    text-align: justify;
 }

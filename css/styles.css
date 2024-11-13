@@ -29,6 +29,7 @@ h3{
 }
 
 .footer{
+    margin-top: 5rem;
     background-color: var(--tertiary);
     color: var(--secondary);
     font-size: 3rem;
@@ -39,4 +40,22 @@ h3{
 }
 .icon{
     margin: 1rem;
+}
+
+.footertext {
+    font-size: 2rem;
+}
+
+.contactbutton {
+    font-size: 2rem;
+    padding: 1.5rem;
+    border-radius: 100px;
+    background-color: var(--secondary);
+    border: none;
+    transition: background-color 0.3s ease
+}
+
+.contactbutton:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
 }
