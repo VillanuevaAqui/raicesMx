@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(/src/Fondo\ Grande.png);
+    background-image: url(/src/fondo-pagina-raicesmx.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -45,12 +45,13 @@ body {
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 7rem;
-    text-align: center;
+    text-align: center;                                                     
 }
 /*------Navbar fondo icono RaicesMx---*/
 .navbar-brand {
     background-color: var(--secondary);
     margin-left: 1rem;
+    padding: 1px;
     border-radius: 8rem;
     text-align: center;
 }
@@ -78,17 +79,19 @@ body {
     padding: 1em;
 }
 
+/*-----visualizacion de todo el html menu en tamaño especifico----------*/
 html{
     font-size: 62.5%;
 }
 
 /*----Tamaños para los titulos h1 ,h2, h3----*/
 h1{
-    font-size: 7rem;
+    font-size: 7rem;  
     font-weight: 700;
+    text-align: center;
 }
 h2{
-    font-weight: 600;
+    font-weight: 200;
     font-size: 6rem;
 }
 h3{
@@ -99,7 +102,7 @@ p{
     font-size: 1.6rem;
 }
 
-/*--------ICONOS redes sociales (facebook, instagram, X)------- */
+/*--------ICONOS footer de redes sociales (facebook, instagram, X)------- */
 .icons{
     padding: 2rem;
 }
@@ -123,6 +126,9 @@ hr {
     border-radius: 7rem;
     font-weight: bold;
 }
+
+/*---COntendor del menu (container-menu)*/
+
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .nav ul {
@@ -176,3 +182,4 @@ hr {
         padding: 15px 30px;
     }
 }
+    
