@@ -1,4 +1,4 @@
-# raicesMx
+# RaícesMX
 ### Proyecto integrador
 
 ![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png)
@@ -6,7 +6,7 @@
 
 ## Acerca del proyecto 
 
-RaicesMX, buscar ser la principal opción de comida saludable a domicilio en México, reconocida por
+RaícesMX, buscar ser la principal opción de comida saludable a domicilio en México, reconocida por
 su compromiso con el bienestar, la sostenibilidad y la satisfacción de nuestros clientes,
 transformando los hábitos alimenticios de miles de personas con estilos de vida ocupados.
 
@@ -22,13 +22,13 @@ la selección de menús o alimentos y la gestión de suscripciones.
 - Aumentar la visibilidad de la marca y las suscripciones mediante estrategias
 de marketing digital.
 
-## Integrantres
+## Integrantes
 
-- Jesus Duerto
-- Alberto Villanueva
-- Mafer Ballesteros
-- Felix Peñaloza
-- David rojas
-- Christia Rodriguez 
+- Jesús Alberto Duerto Prado
+- Pedro Alberto Villanueva Aquino
+- María Fernanda Ballesteros García
+- Félix Jhosel Peñaloza Ruiz
+- David Arturo Rojas López
+- Christian Josué Juan Rodríguez
 
 
