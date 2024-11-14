@@ -34,14 +34,18 @@ h3{
     color: var(--secondary);
     font-size: 3rem;
     text-align: center;
-}
-.icons{
     padding: 3rem;
 }
-.icon{
-    margin: 1rem;
+.icons a{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary);
+    margin: 1rem 1.2rem;
+    transition: 0.3s ease;
 }
-
+.icons a:hover{
+    transform: scale(1.3);
+}
 .footertext {
     font-size: 2rem;
 }
