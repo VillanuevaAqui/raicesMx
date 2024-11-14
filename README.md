@@ -28,7 +28,6 @@ de marketing digital.
 - Alberto Villanueva
 - Mafer Ballesteros
 - Felix Peñaloza
-- Zrizia Portas
 - David rojas
 - Christia Rodriguez 
 

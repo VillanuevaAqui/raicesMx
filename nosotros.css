@@ -137,6 +137,17 @@ body {
     text-align: justify;
 }
 
+.icons a{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary);
+    margin: 1rem 1.2rem;
+    transition: 0.3s ease;
+}
+.icons a:hover{
+    transform: scale(1.3);
+}
+
 /*!Media Queries para Responsividad */
 
 /*!Pantallas grandes de*/
