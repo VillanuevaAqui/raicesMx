@@ -10,19 +10,24 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap"
+        rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
 </head>
 
 <body>
+    <!--*BARRA DE NAVEGACION (navbar)-->
     <header class="header">
         <nav class="navbar navbar-expand-lg text-uppercase" id="top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="/src/Logo RaícesMX Negro.svg" alt="David" width="70" height="70">
+                    <img src="/src/Isotipo RaícesMX.svg" alt="David" width="30" height="20">
+                    <img src="/src/Letras RaícesMX.svg" alt="David" width="80" height="90">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -39,7 +44,6 @@
                         <li class="nav-item">
                             <a class="nav-link active px-lg-5" href="#">Promociones</a>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link active px-lg-5" href="#">Iniciar sesion / Registrarse</a>
                         </li>
@@ -49,14 +53,51 @@
         </nav>
     </header>
     <main class="main">
+        <!--*SECCION MENUS DESAYUNO COMIDA Y CENA-->
         <section id="menu" class="menu">
-            <h1>Bienvenida</h1>
-            <p>Esta es mi pagina responsiva.</p>
-            <br>
-            <br>
-            <br>
+            <h1>Menú</h1>
+            <div class="container-menu">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h2>Desayuno</h2>
+                        <div class="card" style="width: 34rem;">
+                            <img src="src/huevos-tocino.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Huevos con tocino </h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h2>Comida</h2>
+                        <div class="card" style="width: 34rem;">
+                            <img src="/src/sandwitch.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Sandwitch</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h2>Cena</h2>
+                        <div class="card" style="width: 34rem;">
+                            <img src="src/enchiladas.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Enchiladas</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
         </section>
+        <br>
     </main>
+    <!--*PIE DE LA PAGINA(FOOTER)-->
     <footer class="footer">
         <div class="icons">
             <i class="fi fi-brands-instagram icon"></i>
