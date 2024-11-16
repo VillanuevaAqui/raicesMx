@@ -114,11 +114,14 @@ h3{
     font-weight: 700;
     border-bottom: 3px solid transparent;
 }
-
+.navbar-nav .nav-link.active{
+    color: var(--secondary);
+    border-bottom: 3px solid var(--secondary);
+}
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary);
-    border-bottom: 3px solid var(--secondary);
+    color: var(--fourth);
+    border-bottom: 3px solid var(--fourth);
 }
 
 .nav-link i {
