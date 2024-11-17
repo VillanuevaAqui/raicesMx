@@ -1,10 +1,12 @@
 # RaícesMX
+
 ### Proyecto integrador
 
 ![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png)
 
 
 ## Acerca del proyecto 
+
 
 RaícesMX, buscar ser la principal opción de comida saludable a domicilio en México, reconocida por
 su compromiso con el bienestar, la sostenibilidad y la satisfacción de nuestros clientes,
@@ -30,5 +32,6 @@ de marketing digital.
 - Félix Jhosel Peñaloza Ruiz
 - David Arturo Rojas López
 - Christian Josué Juan Rodríguez
+
 
 
