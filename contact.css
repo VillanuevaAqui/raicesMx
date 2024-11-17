@@ -37,7 +37,7 @@ body {
 .main {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;  /*CAMBIO*/
     flex-direction: column;
     background-image: url(./src/Fondo\ Grande.png);
     background-size: cover;
@@ -49,7 +49,7 @@ body {
 
 .contact-section {
     display: flex;
-    justify-content: space-between;
+    justify-content:center; /*Cambio*/
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -65,6 +65,7 @@ body {
     background-color: transparent;
     border-radius: 8px;
     flex: 1; /* Esto hace que ambos contenedores tomen el mismo espacio disponible */
+    max-width: 500px; /**CAMBIO*/
 }
 
 .form-heading {
@@ -130,6 +131,20 @@ body {
     text-align: center;
 }
 
+.input-error {
+
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.input-correcto {
+    
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
+
+
+
 .direct-contact {
     background-color: var(--secondary);
     color: var(--fourth);
@@ -143,6 +158,7 @@ body {
     border-radius: 80px;
     height: 100%; /* Asegura que el contenido ocupe todo el alto disponible */
     min-height: 350px;
+    text-align: left; /*CAMBIO*/
 }
 
 .direct-contact h3 {
@@ -197,3 +213,72 @@ hr {
     color: var(--fifth);
     border-radius: 7rem;
     font-weight: bold;}
+
+    /* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Apila las columnas en lugar de ponerlas una al lado de la otra */
+        gap: 1rem;
+    }
+
+    .form-container,
+    .direct-contact {
+        flex: none; /* Desactiva el comportamiento de dividir el espacio por igual */
+        width: 100%; /* Ocupan todo el ancho disponible */
+        padding: 1rem;
+        margin: 0 auto; /* Centra los contenedores */
+    }
+
+    .direct-contact {
+        border-radius: 20px; /* Bordes más pequeños en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+
+    .contact-form button {
+        font-size: 1.2rem; /* Reduce el tamaño del botón */
+    }
+
+    .direct-contact-details ul {
+        margin-left: 0;
+        text-align: center; /* Centra los elementos de la lista */
+    }
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-section {
+        gap: 1.5rem; /* Reduce el espacio entre columnas */
+    }
+
+    .form-container,
+    .direct-contact {
+        padding: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.1rem;
+    }
+
+    .contact-form button {
+        font-size: 1.4rem;
+    }
+}
+
+/* Estilos generales para mejorar la experiencia */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    transition: all 0.3s ease; /* Transición suave para hover y cambios de estado */
+}
+
+.contact-form button:hover {
+    background-color: var(--fourth); /* Cambia el color al pasar el mouse */
+    color: var(--primary);
+    transform: scale(1.05); /* Pequeño efecto de aumento */
+}
