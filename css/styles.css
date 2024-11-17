@@ -151,11 +151,6 @@ h5 {
     font-size: 4rem;
 }
 
-/*ESTILOS DEL CARRUSEL MENÚ 2*/
-/*ESTILOS DEL CARRUSEL MENÚ 3*/
-
-
-
 /*ESTILOS DE CONTENEDOR 3*/
 .container3 {
     display: flexbox;
@@ -164,12 +159,37 @@ h5 {
     padding: 20px;
 }
 
-.btnC13 {
+.terciaryContainerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnC3 {
     display: inline;
     background-color: var(--fourth);
-    padding: 10px 20px;
+    padding: 70px 1500px 70px 1500px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 100px;
+    align-items: center;
+}
+
+.h1C3 {
+    font-weight: 700;
+    font-size: 10rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.h2C3 {
+    font-weight: 400;
+    font-size: 5rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
 }
 
 .card {
