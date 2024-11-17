@@ -1,4 +1,3 @@
-
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input, #formulario textarea'); 
 const expresiones = {
@@ -19,9 +18,9 @@ const campos = {
 
 const mensajeAyuda = {
 
-    nombre: "Introduce solo letras y espacion (máximo 40 caracteres).",
-    telefono: "Introduce un número de 10 dígitos(Escribe solo número sin espacios)",
-    correo: "Introduce un correo válido (ejemplo@dominio.com)",
+    nombre: "Solo letras y espacion (máximo 40 caracteres)",
+    telefono: "Número de 10 dígitos(sin espacios)",
+    correo: "Correo válido (ejemplo@dominio.com)",
     asunto: "Máximo 50 carcteres",
     mensaje: "Escribe tu mensaje(máximo 300 caracteres)"
 }

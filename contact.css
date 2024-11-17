@@ -134,8 +134,8 @@ body {
 .mensaje-ayuda {
     display: none;
     color: var(--tertiary); /* Usar color de la paleta para mayor consistencia */
-    font-size: 1em; /* Tamaño de letra más grande */
-    margin-top: 10px; /* Más espacio debajo del input */
+    font-size: .7em; /* Tamaño de letra más grande */
+    margin-top: 8px; /* Más espacio debajo del input */
     padding: 4px;
     background-color: var(--secondary); /* Fondo para destacar el mensaje */
     border-radius: 4px;
