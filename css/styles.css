@@ -17,6 +17,7 @@ body {
     background-image: url(/src/Fondo\ Grande.png);
     background-size: cover;
     background-repeat: no-repeat;
+    user-select: none;
 }
 
 h1 {

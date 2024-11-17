@@ -68,6 +68,15 @@ body {
     background-color: var(--tertiary);
 }
 
+.listmenu.active {
+    background-color: var(--fourth);
+    color: var(--secondary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+
 /*!MAIN: SECCIÓN DE TEXTO Y LOGO=====================================================*/
 .about-section-2 {
     display: flex;
