@@ -172,6 +172,7 @@ h5 {
     text-decoration: none;
     border-radius: 100px;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .h1C3 {
@@ -192,20 +193,30 @@ h5 {
     text-decoration: none;
 }
 
+.benefits {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary);
+    }
+
 .card {
-    display: inline-block;
-    width: 45%;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    width: 1100px;
+    padding: 50px 100px 50px 100px;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 50px;
-    ;
+.cardText {
+    font-size: 4rem;
+}
+
+.cardImg {
+    max-width: 1100px;
+    height: 600px;
+    border: 3px solid;
+    border-radius: 70px;
     border-color: var(--tertiary);
 }
 
