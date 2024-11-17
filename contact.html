@@ -76,15 +76,20 @@
                        <h3 class="form-heading">¡Envíanos tu mensaje!</h3>
 
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                        <span id="ayuda-nombre" class="mensaje-ayuda">Introduce solo letras y espacion (máximo 40 caracteres).</span>
 
                         <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                        <span id="ayuda-telefono" class="mensaje-ayuda" >Introduce un número de 10 dígitos(Escribe solo número sin espacios)</span>
 
                         <input type="email"  id="correo" name="correo" placeholder="Correo electrónico" required>
+                        <span id="ayuda-correo" class="mensaje-ayuda">Introduce un correo válido (ejemplo@dominio.com)</span>
+
 
                         <input type="text" id="asunto" name="asunto" placeholder="Asunto" required>
-
+                        <span id="ayuda-asunto" class="mensaje-ayuda">Máximo 50 carcteres</span>
 
                         <textarea id="mensaje" name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                        <span id="ayuda-mensaje" class="mensaje-ayuda">Escribe tu mensaje(máximo 300 caracteres)</span>
 
                         <button type="submit">Enviar</button>
                     </form>
@@ -149,18 +154,21 @@
 
     <footer class="footer">
         <div class="icons">
-            <i class="fi fi-brands-instagram icon"></i>
-            <i class="fi fi-brands-facebook icon"></i>
-            <i class="fi fi-brands-twitter-alt icon"></i>
-            <p>Copyright &copy;2024, Raicesmx Inc.
-                All rights reserved</p>
-            <hr>
-            <button type="button" class="btn-privacidad">Aviso de Privacidad</button>
+            <a href="#" target="_blank"><i class="fi fi-brands-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fi fi-brands-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fi fi-brands-twitter-alt"></i></a>
         </div>
-
+        <div class="footertext">
+            <p>Copyright &copy 2024, RaícesMX, Inc. All rights reserved</p>
+            <hr class="divide2">
+            <div class="linktext">
+                <p>Aviso de privacidad</p>
+            </div>
+            <div>
+                <button class="contactbutton">Contacto</button>
+            </div>
         </div>
     </footer>
-
 
 
 

@@ -131,17 +131,31 @@ body {
     text-align: center;
 }
 
-.input-error {
-
-    border: 2px solid red;
-    background-color: #ffe6e6;
+.mensaje-ayuda {
+    display: none;
+    color: var(--tertiary); /* Usar color de la paleta para mayor consistencia */
+    font-size: 1em; /* Tamaño de letra más grande */
+    margin-top: 10px; /* Más espacio debajo del input */
+    padding: 4px;
+    background-color: var(--secondary); /* Fondo para destacar el mensaje */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.input-correcto {
-    
-    border: 2px solid green;
-    background-color: #e6ffe6;
+.mensaje-ayuda.mostrar {
+    display: block;
 }
+
+/* Efecto de transición suave al mostrar el mensaje */
+.mensaje-ayuda {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.mensaje-ayuda.mostrar {
+    opacity: 1;
+}
+
 
 
 

@@ -17,6 +17,15 @@ const campos = {
     mensaje: false
 };
 
+const mensajeAyuda = {
+
+    nombre: "Introduce solo letras y espacion (máximo 40 caracteres).",
+    telefono: "Introduce un número de 10 dígitos(Escribe solo número sin espacios)",
+    correo: "Introduce un correo válido (ejemplo@dominio.com)",
+    asunto: "Máximo 50 carcteres",
+    mensaje: "Escribe tu mensaje(máximo 300 caracteres)"
+}
+
 // Validación de los campos
 const validarFormulario = (e) => {
 
@@ -52,7 +61,7 @@ const validarCampo = (expresion, input, campo) => {
         campos[campo] = true; // Campo correctamente validado
 
     } else {
-        
+
         input.classList.remove('input-correcto');
         input.classList.add('input-error');
         campos[campo] = false; // Campo incorrecto
@@ -71,6 +80,26 @@ inputs.forEach((input) => {
         input.addEventListener('keyup', validarFormulario);
         input.addEventListener('blur', validarFormulario);
     }
+});
+
+
+// Mostrar mensaje de ayuda al enfocar el campo
+inputs.forEach((input) => {
+    const ayuda = document.getElementById(`ayuda-${input.name}`);
+
+    input.addEventListener('focus', () => {
+        if (ayuda) {
+            ayuda.textContent = mensajeAyuda[input.name];
+            ayuda.classList.add('mostrar');
+        }
+    });
+
+    // Ocultar mensaje de ayuda al desenfocar el campo
+    input.addEventListener('blur', () => {
+        if (ayuda) {
+            ayuda.classList.remove('mostrar');
+        }
+    });
 });
 
 // Validar formulario al enviar
