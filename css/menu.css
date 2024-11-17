@@ -35,24 +35,32 @@ body {
 .navbar {
     background-color: var(--tertiary);
     font-weight: bold;
+    margin-right: 0 auto;
     font-size: 1.3rem;
     font-weight: 600;
 }
 
 /*------Navbar fondo textos menus---*/
 .nav-item {
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
     margin-left: 1rem;
     margin-right: 1rem;
-    border-radius: 7rem;
     text-align: center;                                                     
+}
+
+/*-----fondo color texto lista menu------- */
+a.nav-link.active.px-lg-4 {
+    color: var(--secondary); /* Cambia el color del texto a negro */
+    text-align: center;
 }
 /*------Navbar fondo icono RaicesMx---*/
 .navbar-brand {
     background-color: var(--secondary);
     margin-left: 1rem;
     padding: 1px;
-    border-radius: 8rem;
+    height: 75px;
+    width: 145px;
+    border-radius: 4rem;
     text-align: center;
 }
 
@@ -126,8 +134,6 @@ hr {
     border-radius: 7rem;
     font-weight: bold;
 }
-
-/*---COntendor del menu (container-menu)*/
 
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
