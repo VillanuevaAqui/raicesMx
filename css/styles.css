@@ -1,3 +1,4 @@
+/* *ESTILOS GENERALES*/
 /* VARIABLES DE COLOR PARA EL DISEÑO*/
 :root {
     --primary: #f6f4f1;
@@ -38,6 +39,79 @@ h2 {
 h3 {
     font-size: 5rem;
     color: var(--secondary);
+}
+
+
+/*ESTILOS DEL NAVBAR*/
+.navbar {
+    padding: 1.5rem 5%;
+}
+
+.logo-raices {
+    border-radius: 3rem;
+    background-color: var(--secondary);
+    padding: 0 1rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transition: ease 0.3s;
+}
+
+.logo-raices:hover {
+    transform: scale(1.1);
+}
+
+.raices-isotipo {
+    width: 35px;
+}
+
+.logo-raices-sm {
+    width: 100px;
+}
+
+.raices-letras {
+    width: 75px;
+}
+
+.navbar {
+    background-color: var(--tertiary);
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    font-weight: 700;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--secondary);
+    border-bottom: 3px solid var(--secondary);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+    border-bottom: 3px solid var(--secondary);
+    color: var(--fourth);
+    border-bottom: 3px solid var(--fourth);
+}
+
+.nav-link i {
+    font-size: 3rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(220, 214, 192, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    font-size: 2.5rem;
 }
 
 /*ESTILOS DEL CONTENEDOR PRINCIPAL*/
@@ -125,7 +199,7 @@ h3 {
     display: flex;
 }
 
-/*ESTILOS DEL CARRUSEL MENÚ 1*/
+/*ESTILOS DEL CARRUSEL*/
 #carouselExampleCaptions {
     /*CONTENEDOR GENERAL*/
     width: 70%;
@@ -138,7 +212,6 @@ h3 {
 }
 
 .d-block {
-    /*IMAGENES DEL CONTENDOR*/
     border-radius: 90px;
     /* Redondea las esquinas de la imagen en 90px*/
 }
@@ -168,7 +241,7 @@ h5 {
 .btnC3 {
     display: inline;
     background-color: var(--fourth);
-    padding: 70px 1500px 70px 1500px;
+    padding: 70px 900px 70px 900px;
     text-decoration: none;
     border-radius: 100px;
     align-items: center;
@@ -196,8 +269,12 @@ h5 {
 .benefits {
     display: flex;
     justify-content: center;
+    padding: 70px 200px 70px 200px;
+    margin-right: 1000px;
+    margin-left: 1000px;
+    border-radius: 100px;
     background-color: var(--secondary);
-    }
+}
 
 .card {
     width: 1100px;
@@ -220,12 +297,46 @@ h5 {
     border-color: var(--tertiary);
 }
 
-.btnC23 {
-    display: inline-block;
+.terciaryContainerBtn1 {
+    display: flex;
+    align-items: center;
+}
+
+.btn2C3 {
+    display: inline;
     background-color: var(--fourth);
-    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    font-size: 4rem;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 100px;
+    align-items: center;
+}
+
+
+/*ESTILO DE TESTIMONIO*/
+.testimonio {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+}
+
+.foto1 {
+    width: 700px;
+    height: 700px;
+    padding: 50px 50px;
+}
+
+.comentario {
+    max-width: 1000px;
+    height: 700px;
+    left: auto;
+    padding: 220px 50px 50px  50px;
+}
+
+.comentario1 {
+    font-size: 4rem;
+    left: auto;
 }
 
 /*ESTILLOSS DEL PIE DE PÁGINA*/
