@@ -152,38 +152,63 @@ body {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;  /* Centra los elementos verticalmente */
+    align-items: center;  /* Centra los elementos horizontalmente */
     width: auto;
     border-radius: 80px;
-    height: 100%; /* Asegura que el contenido ocupe todo el alto disponible */
-    min-height: 350px;
-    text-align: left; /*CAMBIO*/
+    min-height: 300px;
+    text-align: center;  /* Alinea todo el texto al centro */
+    padding: 20px;
 }
 
 .direct-contact h3 {
     margin-bottom: 1rem;
-    text-align: justify;
+    text-align: center;
 }
 
 .direct-text1 {
     padding: 1.5rem;
+    max-width: 700px;  /* Limita el ancho del párrafo para que no se estire demasiado */
+    margin: 0 auto;  /* Centra el párrafo */
+    
 }
 
 .direct-contact-details ul {
     justify-content: left;
     list-style: none;
     padding: 0;
+    margin: 0;
+    max-width: 700px;
     margin-left: 1.5rem;
 }
 
 .direct-contact-details li {
     margin-bottom: 0.5rem;
+    display: flex;
 }
+
+.direct-contact-details li img.icono {
+    
+    margin-right: 10px;  /* Espacio entre la imagen y el texto */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+.direct-contact-details li img.icono:hover {
+    transform: scale(1.2); /* Agranda la imagen un 20% */
+}
+
+
 
 .direct-contact-details li:last-child {
     margin-bottom: 0;
+    display: flex;
 }
+
+
 
 .footer {
     background-color: var(--tertiary);
