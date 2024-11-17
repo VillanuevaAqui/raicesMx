@@ -10,7 +10,7 @@ body {
 
 /* Contenedor de Imagen Responsiva */
 .responsive-image {
-    width: 100%;
+    width: 50%;
     overflow: hidden;
     max-height: 500px;
 }
