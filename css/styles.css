@@ -53,8 +53,10 @@ h3 {
     height: auto;
     opacity: 0.87;
     /*Ligera opacidad para la imagen de fondo*/
-    overflow: hidden;  /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-    max-height: 1300px;  /*Altura máxima que puede tener un elemento*/
+    overflow: hidden;
+    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    max-height: 1300px;
+    /*Altura máxima que puede tener un elemento*/
 }
 
 .contentPC {
@@ -118,17 +120,25 @@ h3 {
     color: var(--fifth);
 }
 
+/*ESTILOS DEL CONTENEDOR DE MENÚS*/
+.menusContainer {
+    display: flex;
+}
+
 /*ESTILOS DEL CARRUSEL MENÚ 1*/
-#carouselExampleCaptions {  /*CONTENEDOR GENERAL*/
-    width: 80%;
+#carouselExampleCaptions {
+    /*CONTENEDOR GENERAL*/
+    width: 70%;
     /* Ajusta el ancho*/
-    height: 50px;
+    height: 40px;
     /* Ajusta la altura*/
     margin: 0 auto;
     /* Centra el carrusel horizontalmente */
+    padding: 50px;
 }
 
-.d-block {  /*IMAGENES DEL CONTENDOR*/
+.d-block {
+    /*IMAGENES DEL CONTENDOR*/
     border-radius: 90px;
     /* Redondea las esquinas de la imagen en 90px*/
 }
@@ -141,24 +151,28 @@ h5 {
     font-size: 4rem;
 }
 
+/*ESTILOS DEL CARRUSEL MENÚ 2*/
+/*ESTILOS DEL CARRUSEL MENÚ 3*/
+
+
+
 /*ESTILOS DE CONTENEDOR 3*/
 .container3 {
-    display:flexbox;
+    display: flexbox;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  .btnC13 {
-    display: inline-block;
-    background-color: var(--fourth)
-    color: white;
-    padding 10px 20px;
+}
+
+.btnC13 {
+    display: inline;
+    background-color: var(--fourth);
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-  }
-  
-  .card {
+}
+
+.card {
     display: inline-block;
     width: 45%;
     margin: 20px;
@@ -166,22 +180,22 @@ h5 {
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left;
-  }
-  
-  .card img {
+}
+
+.card img {
     max-width: 100%;
-    border-radius: 50px;;
+    border-radius: 50px;
+    ;
     border-color: var(--tertiary);
-  }
-  
-  .btnC23 {
+}
+
+.btnC23 {
     display: inline-block;
-    background-color: var(--fourth)
-    color: white;
+    background-color: var(--fourth);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-  }
+}
 
 /*ESTILLOSS DEL PIE DE PÁGINA*/
 .footer {
