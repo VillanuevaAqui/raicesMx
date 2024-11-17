@@ -78,6 +78,7 @@ h3{
     display: flex;
     align-items: center;
     transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .logo-raices:hover {
@@ -138,3 +139,5 @@ h3{
         padding: 0.5rem 5%;
     }
 }
+
+/** Fin Navbar **/
