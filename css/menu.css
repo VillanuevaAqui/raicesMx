@@ -1,0 +1,191 @@
+
+/* *CSS base para todos los dispositivos */
+
+:root{
+    --primary: #f6f4f1;
+    --secondary: #dcd6c0;
+    --tertiary: #4c4c2c;
+    --fourth: #2c2e21;
+    --fifth: #000000;
+}
+
+body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(/src/fondo-pagina-raicesmx.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/**-------"Header" y "footer" -------*/
+#header, .footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    font-family: "Montserrat";
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+/** ---Navbar ------*/
+.navbar {
+    background-color: var(--tertiary);
+    font-weight: bold;
+    margin-right: 0 auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/*------Navbar fondo textos menus---*/
+.nav-item {
+    background-color: var(--tertiary);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;                                                     
+}
+
+/*-----fondo color texto lista menu------- */
+a.nav-link.active.px-lg-4 {
+    color: var(--secondary); /* Cambia el color del texto a negro */
+    text-align: center;
+}
+/*------Navbar fondo icono RaicesMx---*/
+.navbar-brand {
+    background-color: var(--secondary);
+    margin-left: 1rem;
+    padding: 1px;
+    height: 75px;
+    width: 145px;
+    border-radius: 4rem;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #444;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.content {
+    padding: 1em;
+}
+
+/*-----visualizacion de todo el html menu en tamaño especifico----------*/
+html{
+    font-size: 62.5%;
+}
+
+/*----Tamaños para los titulos h1 ,h2, h3----*/
+h1{
+    font-size: 7rem;  
+    font-weight: 700;
+    text-align: center;
+}
+h2{
+    font-weight: 200;
+    font-size: 6rem;
+}
+h3{
+    font-size: 5rem;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+/*--------ICONOS footer de redes sociales (facebook, instagram, X)------- */
+.icons{
+    padding: 2rem;
+}
+.icon{
+    margin: 2rem;
+    font-size: 4rem;
+}
+/*----Linea que division texto footer*/
+hr {
+    border-color:var(--secondary);
+    width: 30%;           /* Ajusta el ancho de la línea */
+    margin: 0 auto;       /* Centra horizontalmente */
+    border: 3px solid; /* Estilo de la línea */
+}
+/*----Boton aviso privacidad footer-----*/
+.btn-privacidad {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    background-color: var(--secondary);
+    color: var(--fifth);
+    border-radius: 7rem;
+    font-weight: bold;
+}
+
+/* *Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .nav ul {
+        display: block;
+    }
+
+    .nav li {
+        display: block;
+        text-align: left;
+    }
+
+    .nav a {
+        display: block;
+    }
+}
+
+/* *Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .content {
+        padding: 2em;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav li {
+        display: inline;
+    }
+
+    .nav a {
+        padding: 10px 15px;
+    }
+}
+
+/* *Estilos para pantallas grandes (escritorio) */
+@media (min-width: 769px) {
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3em;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        padding: 15px 30px;
+    }
+}
+    
