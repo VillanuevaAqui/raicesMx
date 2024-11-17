@@ -1,7 +1,7 @@
 const MAIN_CONTAINER = document.querySelector("main");
 
 const BENEFITS = [{
-    title: "Atención a nutricionistas",
+    title: "Atención de nutricionistas",
     description: "es un servicio exclusivo diseñado para ofrecer asesoramiento personalizado de nutricionistas profesionales a los clientes que buscan mejorar su alimentación y bienestar. Este beneficio está dirigido a aquellos que desean obtener una orientación más especializada sobre sus necesidades nutricionales, adaptadas a sus objetivos específicos (como pérdida de peso, ganancia muscular, mejora de la digestión, entre otros).",
     image: "src/Fotos RaícesMX.png" 
 },
