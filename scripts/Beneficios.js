@@ -3,12 +3,12 @@ const MAIN_CONTAINER = document.querySelector("main");
 const BENEFITS = [{
     title: "Atención de nutricionistas",
     description: "es un servicio exclusivo diseñado para ofrecer asesoramiento personalizado de nutricionistas profesionales a los clientes que buscan mejorar su alimentación y bienestar. Este beneficio está dirigido a aquellos que desean obtener una orientación más especializada sobre sus necesidades nutricionales, adaptadas a sus objetivos específicos (como pérdida de peso, ganancia muscular, mejora de la digestión, entre otros).",
-    image: "src/Fotos RaícesMX.png" 
+    image: "../src/Fotos RaícesMX.png" 
 },
 {
     title: "Personaliza tu menú",
     description: "tienen la posibilidad de elegir entre una amplia gama de alimentos saludables y nutritivos, los cuales se entregarán de manera regular y en porciones que se alinean con su dieta personalizada. Además, el servicio ofrece flexibilidad para modificar el menú a lo largo del tiempo, ya sea para incorporar nuevos productos o ajustar las cantidades según los cambios en las necesidades del cliente.",
-    image: "src/Fotos RaícesMX (1).png"
+    image: "../src/Fotos RaícesMX (1).png"
 }];
 
 

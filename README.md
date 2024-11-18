@@ -4,9 +4,28 @@
 
 ![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png)
 
+## Avances 
+
+- Puedes probar la estructura básica de la pagina web [Aquí](https://villanuevaaqui.github.io/raicesMx/) 
+
+- Incoming 
+
+## Tecnologías utilizadas
+
+- HTML
+
+- CSS
+
+- Javascript
+
+    - React
+    - Bootstrap
+
+- MySQL
+
+- Java
 
 ## Acerca del proyecto 
-
 
 RaícesMX, buscar ser la principal opción de comida saludable a domicilio en México, reconocida por
 su compromiso con el bienestar, la sostenibilidad y la satisfacción de nuestros clientes,
@@ -24,7 +43,7 @@ la selección de menús o alimentos y la gestión de suscripciones.
 - Aumentar la visibilidad de la marca y las suscripciones mediante estrategias
 de marketing digital.
 
-## Integrantes
+## Colaboradores 
 
 - Jesús Alberto Duerto Prado
 - Pedro Alberto Villanueva Aquino
