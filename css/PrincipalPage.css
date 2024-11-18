@@ -23,7 +23,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/*ESTILOS DE ENCABEZADOS*/
+/*ESTILOS GENERALES DE ENCABEZADOS*/
 h1 {
     font-size: 7rem;
     font-weight: 700;
@@ -43,12 +43,10 @@ h3 {
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 600px) {
-    /* ... */
   }
   
   /* Estilos para pantallas grandes */
   @media (min-width: 1024px) {
-    /* ... */
   }
 
 /*ESTILOS DEL NAVBAR*/
