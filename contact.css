@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary: #f6f4f1;
     --secondary: #dcd6c0;
     --tertiary: #4c4c2c;
@@ -13,7 +13,7 @@ body {
     background-image: url(/src/Fondo\ Grande.png);
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 
 .heading-container {
     display: flex;
@@ -237,13 +237,6 @@ body {
     font-size: 2.5rem;
 }
 
-/*----Linea que division texto footer*/
-hr {
-    border-color:var(--secondary);
-    width: 30%;           /* Ajusta el ancho de la línea */
-    margin: 0 auto;       /* Centra horizontalmente */
-    border: 3px solid; /* Estilo de la línea */
-}
 /*----Boton aviso privacidad footer-----*/
 .btn-privacidad {
     margin-top: 1.5rem;

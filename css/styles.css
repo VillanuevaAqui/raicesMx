@@ -29,6 +29,7 @@ h3{
     font-size: 5rem;
 }
 
+/** Footer **/
 .footer{
     margin-top: 5rem;
     background-color: var(--tertiary);
@@ -55,6 +56,8 @@ h3{
     font-size: 2rem;
     padding: 1.5rem;
     border-radius: 100px;
+    text-decoration: none;
+    color: #000000;
     background-color: var(--secondary);
     border: none;
     transition: background-color 0.3s ease
@@ -64,6 +67,18 @@ h3{
     background-color: var(--fourth);
     color: var(--primary);
 }
+
+.linktext{
+    margin: 1.5rem 0 2.5rem;
+}
+/*----Linea que division texto footer*/
+hr {
+    border-color:var(--secondary);
+    width: 30%;           /* Ajusta el ancho de la línea */
+    margin: 0 auto;       /* Centra horizontalmente */
+    border: 3px solid; /* Estilo de la línea */
+}
+/** Fin footer **/
 
 /** Navbar **/
 .navbar {
@@ -78,6 +93,7 @@ h3{
     display: flex;
     align-items: center;
     transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .logo-raices:hover {
@@ -138,3 +154,5 @@ h3{
         padding: 0.5rem 5%;
     }
 }
+
+/** Fin Navbar **/

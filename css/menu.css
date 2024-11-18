@@ -1,13 +1,13 @@
 
 /* *CSS base para todos los dispositivos */
 
-:root{
+/* :root{
     --primary: #f6f4f1;
     --secondary: #dcd6c0;
     --tertiary: #4c4c2c;
     --fourth: #2c2e21;
     --fifth: #000000;
-}
+} */
 
 body {
     font-family: "Montserrat";
@@ -19,7 +19,7 @@ body {
     background-repeat: no-repeat;
 }
 /**-------"Header" y "footer" -------*/
-#header, .footer {
+/* #header, .footer {
     background-color: #333;
     color: white;
     padding: 1em;
@@ -29,32 +29,32 @@ body {
     font-size: 1.6rem;
     font-weight: 200;
     text-align: center;
-}
+} */
 
 /** ---Navbar ------*/
-.navbar {
+/* .navbar {
     background-color: var(--tertiary);
     font-weight: bold;
     margin-right: 0 auto;
     font-size: 1.3rem;
     font-weight: 600;
-}
+} */
 
 /*------Navbar fondo textos menus---*/
-.nav-item {
+/* .nav-item {
     background-color: var(--tertiary);
     margin-left: 1rem;
     margin-right: 1rem;
     text-align: center;                                                     
-}
+} */
 
 /*-----fondo color texto lista menu------- */
-a.nav-link.active.px-lg-4 {
-    color: var(--secondary); /* Cambia el color del texto a negro */
+/* a.nav-link.active.px-lg-4 {
+    color: var(--secondary); /* Cambia el color del texto a negro* 
     text-align: center;
-}
+}*/
 /*------Navbar fondo icono RaicesMx---*/
-.navbar-brand {
+/* .navbar-brand {
     background-color: var(--secondary);
     margin-left: 1rem;
     padding: 1px;
@@ -62,8 +62,8 @@ a.nav-link.active.px-lg-4 {
     width: 145px;
     border-radius: 4rem;
     text-align: center;
-}
-
+} */
+/* 
 .nav ul {
     list-style: none;
     padding: 0;
@@ -81,16 +81,16 @@ a.nav-link.active.px-lg-4 {
     text-decoration: none;
     padding: 15px 20px;
     display: inline-block;
-}
+} */
 
 .content {
     padding: 1em;
 }
 
-/*-----visualizacion de todo el html menu en tamaño especifico----------*/
+/* -----visualizacion de todo el html menu en tamaño especifico----------
 html{
     font-size: 62.5%;
-}
+} */
 
 /*----Tamaños para los titulos h1 ,h2, h3----*/
 h1{
@@ -106,7 +106,7 @@ h3{
     font-size: 5rem;
 }
 
-p{
+.menu p{
     font-size: 1.6rem;
 }
 
@@ -137,7 +137,7 @@ hr {
 
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
-    .nav ul {
+    /* .nav ul {
         display: block;
     }
 
@@ -148,7 +148,7 @@ hr {
 
     .nav a {
         display: block;
-    }
+    } */
 }
 
 /* *Estilos para pantallas medianas (tabletas) */
@@ -157,7 +157,7 @@ hr {
         padding: 2em;
     }
 
-    .nav ul {
+    /* .nav ul {
         display: flex;
         justify-content: space-around;
     }
@@ -168,7 +168,7 @@ hr {
 
     .nav a {
         padding: 10px 15px;
-    }
+    } */
 }
 
 /* *Estilos para pantallas grandes (escritorio) */
@@ -179,13 +179,13 @@ hr {
         padding: 3em;
     }
 
-    .nav ul {
+    /* .nav ul {
         display: flex;
         justify-content: space-between;
     }
 
     .nav a {
         padding: 15px 30px;
-    }
+    } */
 }
     
