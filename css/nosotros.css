@@ -1,0 +1,202 @@
+/*!ESTILOS GENERALES=====================================================*/
+body {
+    background-image: url(./src/Fondo\ Grande.png);
+    background-color: #cccccc;
+}
+
+.linktext {
+    cursor: pointer;
+}
+
+.divide {
+    height: 5px;
+    width: 50%;
+    background-color: var(--tertiary);
+    border: none;
+    margin: 20px auto;
+    border-radius: 3rem;
+}
+
+/*!MAIN: TEXTO SUPERPUESTO SOBRE IMAGEN=====================================================*/
+.about-img-container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/*!MAIN: MENÚ DE OPCIONES=====================================================*/
+.menu {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.listmenu {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    color: var(--tertiary);
+    cursor: pointer;
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.listmenu:hover {
+    color: var(--primary);
+    background-color: var(--tertiary);
+}
+
+.listmenu.active {
+    background-color: var(--fourth);
+    color: var(--secondary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+
+/*!MAIN: SECCIÓN DE TEXTO Y LOGO=====================================================*/
+.about-section-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.about-textcontainer {
+    flex: 1;
+    max-width: 50%;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.about-backgroundtextcolor {
+    padding: 2rem;
+    background-color: var(--secondary);
+    border-radius: 30px;
+}
+
+.about-text-1 {
+    text-align: justify;
+}
+
+.about-logo {
+    flex: 0 1 auto;
+    max-width: 30%;
+    text-align: center;
+}
+
+.about-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/*!MEDIA QUERIES=====================================================*/
+
+/*!PANTALLAS GRANDES (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+    .cardone {
+        max-width: 70%;
+    }
+}
+
+/*!PANTALLAS MEDIANAS (768px a 1080px)*/
+@media (max-width: 1079px) {
+    .about-section-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about-text-1 {
+        padding: 30px;
+    }
+
+    .listmenu {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    .divide {
+        margin-top: 3rem;
+    }
+
+    .menu {
+        margin-top: 1rem;
+    }
+}
+
+/*!PANTALLAS PEQUEÑAS (576px a 768px)*/
+@media (max-width: 768px) {
+    .about-section-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .listmenu {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .about-text-1 {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .image-text {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+    }
+}
+
+/*!PANTALLAS MUY PEQUEÑAS (Máx-width: 576px)*/
+@media (max-width: 576px) {
+    .listmenu {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .about-text-1 {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .about-logo img {
+        max-width: 70%;
+    }
+
+    .image-text {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+}
