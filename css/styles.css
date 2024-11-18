@@ -41,6 +41,15 @@ h3 {
     color: var(--secondary);
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    /* ... */
+  }
+  
+  /* Estilos para pantallas grandes */
+  @media (min-width: 1024px) {
+    /* ... */
+  }
 
 /*ESTILOS DEL NAVBAR*/
 .navbar {
@@ -331,7 +340,7 @@ h5 {
     max-width: 1000px;
     height: 700px;
     left: auto;
-    padding: 220px 50px 50px  50px;
+    padding: 220px 50px 50px 50px;
 }
 
 .comentario1 {
@@ -341,8 +350,8 @@ h5 {
 
 /*ESTILOS DE CONTENDEOR 4*/
 .nuestroCompromiso1 {
-justify-content: center;
-text-align: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .btnNC {
@@ -352,10 +361,53 @@ text-align: center;
     text-decoration: none;
     border-radius: 100px;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.h1C4 {
+    font-weight: 700;
+    font-size: 9rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
 
+.h2C4 {
+    font-weight: 400;
+    font-size: 8rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nuestroCompromiso2 {
+    display: inline;
+    max-width: 80%;
+    align-items: center;
+}
+
+.nuestroCompromisSection {
+    display: flex;
+    justify-content: center;
+}
+
+.commitment-NC {
+    text-align: center;
+    margin: 30px;
+}
+
+.imageNC {
+    width: 700px;
+    height: 700px;
+    padding: 50px 50px;
+    border-radius: 500px;
+}
+
+.textNC {
+    font-size: 4rem;
+}
 
 /*ESTILLOSS DEL PIE DE PÁGINA*/
 .footer {
