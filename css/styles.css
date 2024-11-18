@@ -339,6 +339,24 @@ h5 {
     left: auto;
 }
 
+/*ESTILOS DE CONTENDEOR 4*/
+.nuestroCompromiso1 {
+justify-content: center;
+text-align: center;
+}
+
+.btnNC {
+    display: inline;
+    background-color: var(--fourth);
+    padding: 70px 900px 70px 900px;
+    text-decoration: none;
+    border-radius: 100px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   
+}
+
+
+
 /*ESTILLOSS DEL PIE DE PÁGINA*/
 .footer {
     background-color: var(--tertiary);
