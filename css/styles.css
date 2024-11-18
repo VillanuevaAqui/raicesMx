@@ -19,13 +19,6 @@ body {
     background-repeat: no-repeat;
     user-select: none;
 }
-<<<<<<< HEAD
-h1{
-    font-size: 7rem;
-    font-weight: 700;
-}
-h2{
-=======
 
 h1 {
     font-size: 7rem;
@@ -33,7 +26,6 @@ h1 {
 }
 
 h2 {
->>>>>>> JesusDuerto-Dev
     font-weight: 600;
     font-size: 6rem;
 }
@@ -42,12 +34,7 @@ h3 {
     font-size: 5rem;
 }
 
-<<<<<<< HEAD
-/** Footer **/
-.footer{
-=======
 .footer {
->>>>>>> JesusDuerto-Dev
     margin-top: 5rem;
     background-color: var(--tertiary);
     color: var(--secondary);
@@ -97,7 +84,6 @@ h3 {
     color: var(--primary);
 }
 
-<<<<<<< HEAD
 .linktext{
     margin: 1.5rem 0 2.5rem;
 }
@@ -110,8 +96,6 @@ hr {
 }
 /** Fin footer **/
 
-=======
->>>>>>> JesusDuerto-Dev
 /** Navbar **/
 .navbar {
     padding: 1.5rem 5%;
@@ -125,10 +109,7 @@ hr {
     display: flex;
     align-items: center;
     transition: ease 0.3s;
-<<<<<<< HEAD
     cursor: pointer;
-=======
->>>>>>> JesusDuerto-Dev
 }
 
 .logo-raices:hover {
@@ -165,19 +146,12 @@ hr {
     font-weight: 700;
     border-bottom: 3px solid transparent;
 }
-<<<<<<< HEAD
-.navbar-nav .nav-link.active{
-    color: var(--secondary);
-    border-bottom: 3px solid var(--secondary);
-}
-=======
 
 .navbar-nav .nav-link.active {
     color: var(--secondary);
     border-bottom: 3px solid var(--secondary);
 }
 
->>>>>>> JesusDuerto-Dev
 .nav-link:hover,
 .nav-link.active {
     color: var(--fourth);
@@ -197,10 +171,6 @@ hr {
     .navbar {
         padding: 0.5rem 5%;
     }
-<<<<<<< HEAD
 }
 
 /** Fin Navbar **/
-=======
-}
->>>>>>> JesusDuerto-Dev
