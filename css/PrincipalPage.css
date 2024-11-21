@@ -1,0 +1,337 @@
+/* *ESTILOS GENERALES*/
+/* VARIABLES DE COLOR PARA EL DISEÑO*/
+/* :root {
+    --primary: #f6f4f1;
+    --secondary: #dcd6c0;
+    --tertiary: #4c4c2c;
+    --fourth: #2c2e21;
+    --fifth: #000000;
+} */
+
+/*CONFIGURACIÓN DE TIPOGRAFÍA BASE*/
+/* html { */
+    /* font-size: 62.5%; */
+    /* DEFINE 1rem COMO 10px */
+/* }
+
+body {
+     font-size: 16px; */
+    /*TAMAÑO BASE DE LA FUENTE*/
+    /*font-family: "Montserrat", sans-serif;
+    background-image: url(/src/Fondo\ Grande.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+}*/
+
+/*ESTILOS GENERALES DE ENCABEZADOS*/
+h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    color: var(--tertiary);
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 6rem;
+    color: var(--fourth);
+}
+
+h3 {
+    font-size: 5rem;
+    color: var(--secondary);
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+  }
+  
+  /* Estilos para pantallas grandes */
+  @media (min-width: 1024px) {
+  }
+
+/*ESTILOS DEL CONTENEDOR PRINCIPAL*/
+.PrincipalConainer {
+    position: relative;
+    text-align: center;
+    color: var(--primary);
+    /*COLOR DE FONDO PRINCIPAL*/
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.87;
+    /*Ligera opacidad para la imagen de fondo*/
+    overflow: hidden;
+    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    max-height: 1300px;
+    /*Altura máxima que puede tener un elemento*/
+}
+
+.contentPC {
+    position: absolute;
+    top: 25%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*  position: absolute;   El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+/*  top: 50%;:   Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+/*  left: 50%;:   Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+/*  transform: translate(-50%, -50%);:   Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
+/*  text-align: center;:  Alinea el texto dentro del elemento hacia el centro*/
+/*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
+5px: Difumina la sombra en un radio de 4 píxeles.*/
+
+#h1ConPC {
+    font-size: 7rem;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
+
+#h2ConPC {
+    font-weight: 600;
+    font-size: 9rem;
+    font-style: italic;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
+
+/*BOTNONES PRINCIPALES*/
+.buttonsPC .button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 2rem 3rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary);
+    /* Texto claro */
+    background-color: var(--secondary);
+    /* Fondo secondary */
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: var(--fifth);
+}
+
+.buttonsPC .button:hover {
+    background-color: var(--tertiary);
+    /* Fondo oscuro en hover */
+}
+
+/*ESTILOS DEL SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
+.titleSC {
+    text-align: center;
+    font-style: italic;
+    color: var(--fifth);
+}
+
+/*ESTILOS DEL CONTENEDOR DE MENÚS*/
+.menusContainer {
+    display: flex;
+}
+
+/*ESTILOS DEL CARRUSEL*/
+#carouselExampleCaptions {
+    /*CONTENEDOR GENERAL*/
+    width: 70%;
+    /* Ajusta el ancho*/
+    height: 40px;
+    /* Ajusta la altura*/
+    margin: 0 auto;
+    /* Centra el carrusel horizontalmente */
+    padding: 50px;
+}
+
+.d-block {
+    border-radius: 90px;
+    /* Redondea las esquinas de la imagen en 90px*/
+}
+
+h5 {
+    font-size: 6rem;
+}
+
+.m1 {
+    font-size: 4rem;
+}
+
+/*ESTILOS DE CONTENEDOR 3*/
+.container3 {
+    display: flexbox;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.terciaryContainerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnC3 {
+    display: inline;
+    background-color: var(--fourth);
+    padding: 70px 900px 70px 900px;
+    text-decoration: none;
+    border-radius: 100px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.h1C3 {
+    font-weight: 700;
+    font-size: 10rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.h2C3 {
+    font-weight: 400;
+    font-size: 5rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    padding: 70px 200px 70px 200px;
+    margin-right: 1000px;
+    margin-left: 1000px;
+    border-radius: 100px;
+    background-color: var(--secondary);
+}
+
+.card {
+    width: 1100px;
+    padding: 50px 100px 50px 100px;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.cardText {
+    font-size: 4rem;
+}
+
+.cardImg {
+    max-width: 1100px;
+    height: 600px;
+    border: 3px solid;
+    border-radius: 70px;
+    border-color: var(--tertiary);
+}
+
+.terciaryContainerBtn1 {
+    display: flex;
+    align-items: center;
+}
+
+.btn2C3 {
+    display: inline;
+    background-color: var(--fourth);
+    text-decoration: none;
+    font-size: 4rem;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 100px;
+    align-items: center;
+}
+
+
+/*ESTILO DE TESTIMONIO*/
+.testimonio {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+}
+
+.foto1 {
+    width: 700px;
+    height: 700px;
+    padding: 50px 50px;
+}
+
+.comentario {
+    max-width: 1000px;
+    height: 700px;
+    left: auto;
+    padding: 220px 50px 50px 50px;
+}
+
+.comentario1 {
+    font-size: 4rem;
+    left: auto;
+}
+
+/*ESTILOS DE CONTENDEOR 4*/
+.nuestroCompromiso1 {
+    justify-content: center;
+    text-align: center;
+}
+
+.btnNC {
+    display: inline;
+    background-color: var(--fourth);
+    padding: 70px 900px 70px 900px;
+    text-decoration: none;
+    border-radius: 100px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.h1C4 {
+    font-weight: 700;
+    font-size: 9rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.h2C4 {
+    font-weight: 400;
+    font-size: 8rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nuestroCompromiso2 {
+    display: inline;
+    max-width: 80%;
+    align-items: center;
+}
+
+.nuestroCompromisSection {
+    display: flex;
+    justify-content: center;
+}
+
+.commitment-NC {
+    text-align: center;
+    margin: 30px;
+}
+
+.imageNC {
+    width: 700px;
+    height: 700px;
+    padding: 50px 50px;
+    border-radius: 500px;
+}
+
+.textNC {
+    font-size: 4rem;
+}
+
