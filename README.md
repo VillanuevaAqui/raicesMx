@@ -2,7 +2,7 @@
 
 ### Proyecto integrador
 
-![](https://github.com/VillanuevaAqui/raicesMx/blob/main/Raices.png)
+![](https://github.com/VillanuevaAqui/raicesMx/blob/David-Rojas/Raices.png)
 
 
 ## Acerca del proyecto 
