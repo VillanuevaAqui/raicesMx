@@ -87,6 +87,38 @@ body {
     padding: 1em;
 }
 
+/* Centrado de las cards en el contenedor */
+.container-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+/* Estilo general para las cards */
+.card {
+    width: 100%;
+    height: 400px; /* Ajusta este valor según lo que necesites */
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+    max-width: 650px; /* Puedes ajustar esto para controlar el tamaño máximo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto hover para las cards 
+.card:hover {
+    transform: translateY(-10px);
+}*/
+
+/* Asegurar que el contenido de la tarjeta ocupa el espacio de manera uniforme */
+.card-body {
+    flex-grow: 1; /* Asegura que el contenido ocupe el espacio restante */
+    display: block;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos dentro de la tarjeta */
+}
+
 /* -----visualizacion de todo el html menu en tamaño especifico----------
 html{
     font-size: 62.5%;
@@ -97,12 +129,14 @@ h1{
     font-size: 7rem;  
     font-weight: 700;
     text-align: center;
+    margin-bottom: 3rem; /* Añade espacio debajo del título */
 }
 h2{
     font-weight: 200;
     font-size: 6rem;
 }
 h3{
+    font-weight: 100;
     font-size: 5rem;
 }
 
@@ -137,6 +171,16 @@ hr {
 
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    h1 {
+        margin-bottom: 2rem; /* Reduce el espacio en pantallas más pequeñas */
+    }
+    h2 {
+        font-size: 3.5rem; /* Reduce aún más para móviles */
+        margin-bottom: 0.5rem; /* Ajusta el margen si es necesario */
+    }
     /* .nav ul {
         display: block;
     }
@@ -153,6 +197,12 @@ hr {
 
 /* *Estilos para pantallas medianas (tabletas) */
 @media (min-width: 601px) and (max-width: 768px) {
+    .card {
+        margin-bottom: 2rem;
+    }
+    h2 {
+        font-size: 3.5rem; /* Reduce el tamaño para tabletas */
+    }
     .content {
         padding: 2em;
     }
@@ -173,6 +223,16 @@ hr {
 
 /* *Estilos para pantallas grandes (escritorio) */
 @media (min-width: 769px) {
+    .card {
+        margin-bottom: 3rem;
+    }
+    h2 {
+        font-size: 5rem; /* Tamaño para pantallas grandes */
+        font-weight: 200;
+        text-align: center;
+        margin-bottom: 1rem;
+        
+    }
     .content {
         max-width: 1200px;
         margin: 0 auto;
