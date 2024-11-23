@@ -122,17 +122,21 @@ body {
 
 /*!PANTALLAS GRANDES (Min-width: 1080px)*/
 @media (min-width: 1080px) {
-    .cardone {
+    .about-text-1 {
         max-width: 70%;
     }
 }
 
-/*!PANTALLAS MEDIANAS (768px a 1080px)*/
+/*!PANTALLAS MEDIANAS (769px a 1080px)*/
 @media (max-width: 1079px) {
     .about-section-2 {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: nowrap;
+        text-align: center;
+
     }
 
     .about-text-1 {
@@ -161,15 +165,21 @@ body {
         text-align: center;
     }
 
+    .menu {
+        padding-top: 1rem;
+    }
+
     .listmenu {
         font-size: 1rem;
         padding: 1rem;
         margin-top: 1rem;
+        font-size: 1.5rem;
     }
 
     .about-text-1 {
         max-width: 90%;
         padding: 20px;
+        font-size: 1rem;
     }
 
     .image-text {
@@ -181,13 +191,14 @@ body {
 /*!PANTALLAS MUY PEQUEÑAS (Máx-width: 576px)*/
 @media (max-width: 576px) {
     .listmenu {
-        font-size: 0.9rem;
+        font-size: 1.5rem;
         margin-top: 0.5rem;
     }
 
     .about-text-1 {
         max-width: 95%;
-        padding: 15px;
+        padding: 5px;
+        font-size: 1rem;
     }
 
     .about-logo img {
@@ -195,7 +206,9 @@ body {
     }
 
     .image-text {
-        font-size: 1.2rem;
-        padding: 5px 10px;
+        font-size: 4rem;
+    }
+    .menu {
+        padding-top: 1.8rem;
     }
 }
