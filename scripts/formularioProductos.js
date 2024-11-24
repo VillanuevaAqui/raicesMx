@@ -39,12 +39,9 @@ function removeProduct() {
 
     const formRemoveProduct = ` <div class = "form-remove-product">
                                 <h2 class = "title-form">Seleciona un producto</h2>
-                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                               </select>
+                                <select class="form-select form-select-lg mb-3" id = "select-form" aria-label=".form-select-lg example">
+                               
+                                </select>
                                
                                <button type="submit" class="form-btn" id = "submit">Eliminar Producto</button>
                                </div>`;
@@ -57,17 +54,13 @@ function updateProduct () {
 
     const formUpdateProduct = `<div class = "form-update-product">
                                 <h2 class = "title-form">Seleciona un producto</h2>
-                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <select class="form-select form-select-lg mb-3" id = "select-form" aria-label=".form-select-lg example">
                                </select>
                                
                                <button class="form-btn">Modificar producto</button>
 
                                <div class = "form-add-product">
-                                <h2 class = "title-form">Añadir productos</h2>
+                                <h2 class = "title-form update-form">Modifica los campos necesarios</h2>
                                 <form class = "form-add" id = "newProductForm">
                                     <input type = "text" id = "name" class = "form-add-input" placeholder = "Nombre del producto"/>
                                     <textarea rows = "4" cols = "40" id = "desc" class = "form-add-input" placeholder = "Descripcion"></textarea>
@@ -87,7 +80,7 @@ function removeAllProducts() {
 
     const formRemoveAllProducts = `<div class = "form-remove-all">
                                    <h2 class = "title-form">Estas seguro de querer borrar todo?</h2>
-                                   <button class="form-btn">Dale mi loco</button>
+                                   <button class="form-btn" id = "delete-products" onclick="deleteAll()">Dale mi loco</button>
                                    </div>`;
     
     containerForm.innerHTML = formRemoveAllProducts;                              

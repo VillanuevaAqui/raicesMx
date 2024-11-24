@@ -46,5 +46,64 @@ newProductForm.addEventListener('submit', (event) => {
 
 });
 
+//Primer intento
+
+/*const buttonDeleteAll = document.querySelector("#delete-products");
+buttonDeleteAll.addEventListener("click", () => {
+
+    productsController.removeAllProducts();
+    console.log(productsController.products);
 
 
+});*/
+
+//2do intento
+
+/* function deleteAll () {
+
+    productsController.removeAllProducts();
+    console.log(productsController.products);
+
+}
+*/
+
+// 3er intento
+
+const formDeleteAll = document.querySelector("#remove-product-all");
+formDeleteAll.addEventListener("click", () => {
+
+    const buttonDeleteAll2 = document.querySelector("#delete-products");
+    buttonDeleteAll2.addEventListener("click", () => {
+
+    productsController.removeAllProducts();
+    console.log(productsController.products);
+
+
+});
+});
+
+const formDeleteProduct = document.querySelector("#remove-product");
+formDeleteProduct.addEventListener("click", () => generateList());
+
+const formUpdateProduct = document.querySelector("#update-product");
+formUpdateProduct.addEventListener("click", () => generateList());
+
+function getValue () {
+
+    const selectElemnt = document.querySelector("#select-form")
+    selectValue = selectElemnt.value;
+    
+
+}
+
+function generateList (){
+    
+    const containerSection = document.querySelector("#select-form");
+
+    for (let i = 0; i < productsController.products.length; i ++){
+
+        const htmlText = `<option value = "${i}">${productsController.products[i].name}</option>`;
+        console.log(htmlText)
+        containerSection.innerHTML += htmlText;
+    }
+}

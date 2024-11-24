@@ -3,6 +3,7 @@ export class ProductsController {
     constructor(currentId = 0) {
         this.products = [];
         this.currentId = currentId;
+        this.loadProductsFromLocalStorage();
     }
     /* ProductsController: Es el nombre de la clase.
     *  Constructor: Es un método que se ejecuta automáticamente cuando se crea una instancia de la clase.
@@ -40,6 +41,8 @@ export class ProductsController {
     //Elimina toda la lista de los productos.
     removeAllProducts() {
         this.products = [];
+        this.saveProductsToLocalStorage();
+        
     }
 
     //?Modifica un producto en específico.
@@ -64,7 +67,7 @@ export class ProductsController {
 
     loadProductsFromLocalStorage() {
         const storageProducts = localStorage.getItem("products");
-        if (storageProducts) {
+        if (storageProducts != undefined) {
             const products = JSON.parse(storageProducts)
             console.log(products)
             for (let i = 0, size = products.length; i < size; i++) {
@@ -74,6 +77,7 @@ export class ProductsController {
         }
     }
 }
+
 
 // let unaVariable = new ProductsController();
 // unaVariable.addProduct("Poizole", "rojo verde blanco", "Pozole :)", "Aquí va un pozole", 200);
