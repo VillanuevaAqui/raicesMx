@@ -13,14 +13,14 @@ function generateFormAdd (){
         
         const formAddProduct = `<div class = "form-add-product">
                                 <h2 class = "title-form">Añadir productos</h2>
-                                <form class = "form-add">
+                                <form class = "form-add" id = "newProductForm">
                                     <input type = "text" id = "name" class = "form-add-input" placeholder = "Nombre del producto"/>
                                     <textarea rows = "4" cols = "40" id = "desc" class = "form-add-input" placeholder = "Descripcion"></textarea>
                                     <textarea rows = "4" id = "ingredients" class = "form-add-input" placeholder = "Ingredientes"></textarea>
                                     <input type = "file" id = "image" class = "form-add-input"/>
                                     <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio"/>
-                                </form>
-                                <button class = "form-btn">Enviar</button>
+                                    <button class = "form-btn" id = "submit">Enviar</button>
+                                    </form>
                                 </div>`
                                 
         containerForm.innerHTML = formAddProduct;
@@ -46,7 +46,7 @@ function removeProduct() {
                                 <option value="3">Three</option>
                                </select>
                                
-                               <button class="form-btn">Eliminar Producto</button>
+                               <button type="submit" class="form-btn" id = "submit">Eliminar Producto</button>
                                </div>`;
 
     containerForm.innerHTML = formRemoveProduct;
@@ -65,6 +65,18 @@ function updateProduct () {
                                </select>
                                
                                <button class="form-btn">Modificar producto</button>
+
+                               <div class = "form-add-product">
+                                <h2 class = "title-form">Añadir productos</h2>
+                                <form class = "form-add" id = "newProductForm">
+                                    <input type = "text" id = "name" class = "form-add-input" placeholder = "Nombre del producto"/>
+                                    <textarea rows = "4" cols = "40" id = "desc" class = "form-add-input" placeholder = "Descripcion"></textarea>
+                                    <textarea rows = "4" id = "ingredients" class = "form-add-input" placeholder = "Ingredientes"></textarea>
+                                    <input type = "file" id = "image" class = "form-add-input"/>
+                                    <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio"/>
+                                </form>
+                                <button class = "form-btn">Enviar</button>
+                                </div>
                                </div>`;
 
     containerForm.innerHTML = formUpdateProduct;
@@ -84,3 +96,4 @@ function removeAllProducts() {
 
 const containerForm = createContainer();
 autoPressButtom();
+
