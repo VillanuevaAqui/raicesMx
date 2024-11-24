@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(../src/fondo-pagina-raicesmx.png);
+    background-image: url(../src/fondo-pagina-raicesmx-1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -104,6 +104,9 @@ body {
     max-width: 650px; /* Puedes ajustar esto para controlar el tamaño máximo */
     display: flex;
     flex-direction: column;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: none;
 }
 
 /* Efecto hover para las cards 
@@ -113,10 +116,33 @@ body {
 
 /* Asegurar que el contenido de la tarjeta ocupa el espacio de manera uniforme */
 .card-body {
-    flex-grow: 1; /* Asegura que el contenido ocupe el espacio restante */
-    display: block;
+    flex-grow: 2; /* Asegura que el contenido ocupe el espacio restante */
+    display: flex;
     flex-direction: column;
     justify-content: space-between; /* Alinea los elementos dentro de la tarjeta */
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    height: 100%; /* Asegura que ocupe toda la tarjeta */
+    padding: 1rem;
+}
+
+/*Asegurar el contenido cards con imagenes*/
+.card img {
+    object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
+    height: 20rem; /* Altura fija de las imágenes */
+    width: 100%; /* Asegura que las imágenes sean responsivas */
+}
+
+h5.card-title {
+    font-size: 2rem; /* Tamaño estándar del título */
+    font-weight: bold;
+    margin: 1rem 0;
+    
+}
+
+p.card-text {
+    font-size: 1.4rem; /* Texto descriptivo */
+    margin-bottom: 1.5rem;
 }
 
 /* -----visualizacion de todo el html menu en tamaño especifico----------
@@ -145,13 +171,14 @@ h3{
 }
 
 /*--------ICONOS footer de redes sociales (facebook, instagram, X)------- */
-.icons{
+/*.icons{
     padding: 2rem;
 }
 .icon{
     margin: 2rem;
     font-size: 4rem;
-}
+}*/
+
 /*----Linea que division texto footer*/
 hr {
     border-color:var(--secondary);
@@ -159,15 +186,29 @@ hr {
     margin: 0 auto;       /* Centra horizontalmente */
     border: 3px solid; /* Estilo de la línea */
 }
-/*----Boton aviso privacidad footer-----*/
-.btn-privacidad {
-    margin-top: 1.5rem;
-    padding: 0.7rem;
+/*----Boton agregar carrito-----*/
+.btn-menu {
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000000;
     background-color: var(--secondary);
-    color: var(--fifth);
-    border-radius: 7rem;
-    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+    width: 80%; /* Botón más ancho */
+    margin-top: auto; /* Empuja el botón hacia el fondo */
+    align-self: center; /* Centra horizontalmente el botón */
+    
 }
+/*---Efecto hover boton agregar carrito----*/
+.btn-menu:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
 
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
@@ -175,11 +216,24 @@ hr {
         margin-bottom: 1.5rem;
     }
     h1 {
-        margin-bottom: 2rem; /* Reduce el espacio en pantallas más pequeñas */
+        margin-bottom: 1.5rem; /* Reduce el espacio en pantallas más pequeñas */
+        font-size: 4.4rem;
     }
     h2 {
         font-size: 3.5rem; /* Reduce aún más para móviles */
         margin-bottom: 0.5rem; /* Ajusta el margen si es necesario */
+    }
+    h5.card-title {
+        font-size: 1.8rem; /* Reduce el título */
+    }
+
+    p.card-text {
+        font-size: 1.2rem; /* Reduce el texto descriptivo */
+    }
+    .btn-menu {
+        font-size: 1.6rem; /* Botón más pequeño */
+        padding: 0.8rem 1.5rem;
+        width: 70%; /* Botón más ancho */
     }
     /* .nav ul {
         display: block;
@@ -199,6 +253,11 @@ hr {
 @media (min-width: 601px) and (max-width: 768px) {
     .card {
         margin-bottom: 2rem;
+        max-width: 42rem; /* Ajusta el tamaño de las tarjetas */
+    }
+    h1 {
+        margin-bottom: 1.5rem;
+        font-size: 5.5rem;
     }
     h2 {
         font-size: 3.5rem; /* Reduce el tamaño para tabletas */
@@ -206,7 +265,17 @@ hr {
     .content {
         padding: 2em;
     }
+    h5.card-title {
+        font-size: 2rem; /* Título moderado */
+    }
 
+    p.card-text {
+        font-size: 1.4rem; /* Ajusta el texto */
+    }
+    .btn-menu {
+        font-size: 1.5rem;
+        width: 92%; /* Botón más ajustado */
+    }
     /* .nav ul {
         display: flex;
         justify-content: space-around;
@@ -225,6 +294,11 @@ hr {
 @media (min-width: 769px) {
     .card {
         margin-bottom: 3rem;
+        max-width: 45rem; /* Tamaño estándar de las tarjetas */
+    }
+    h1 {
+        margin-bottom: 1.7rem;
+        
     }
     h2 {
         font-size: 5rem; /* Tamaño para pantallas grandes */
@@ -232,6 +306,10 @@ hr {
         text-align: center;
         margin-bottom: 1rem;
         
+    }
+    .btn-menu {
+        font-size: 1.6rem;
+        width: 80%; /* Botón más pequeño */
     }
     .content {
         max-width: 1200px;
