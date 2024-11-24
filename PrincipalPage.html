@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--PRUEBA :) -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!--LINK A CSS-->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/PrincipalPage.css">
 
     <!--LINK A FUENTE DE GOOGLE-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,18 +65,20 @@
     <!--SECCIÓN DE BIENVENIDA-->
     <main class="main">
 
-        <!--IMAGEN GRANDE DE INICIO-->
-        <div class="PrincipalContainer">
-            <img class="background-image" src="./src/Pozole.png" alt="Pozole">
-            <div class="contentPC">
-                <h1 id="h1ConPC">Platillos exquisitos</h1>
-                <h2 id="h2ConPC"><strong>TODOS LOS DÍAS</strong></h2>
-                <!--BOTONES ENCIMA DE LA IMAGEN-->
-                <div class="buttonsPC">
-                    <a href="#" class="button"><strong>Suscríbete</strong></a>
-                    <a href="#" class="button"><strong>Menú a domicilio</strong></a>
-                </div>
+        <!--***IMAGEN GRANDE DEL INICIO***-->
+        <div class="MainContainer"> <!--antes: PrincipalContainer-->
+            <img class="background-image" src="./Imagenes/Pozole.png" alt="Olla de pozole rojo">
+           <!--BOTONES ENCIMA DE LA IMAGEN GRANDE DEL INICIO-->
+            <div class="MainContainerText"> <!--antes: contentPC-->
+                <h1 class="h1MCT">Platillos exquisitos</h1> <!--antes: h1ConPC-->
+                <h2 class="h2MCT">TODOS LOS DÍAS</h2> <!--antes: h2ConPC-->
             </div>
+            <!--BOTONES ENCIMA DE LA IMAGEN GRANDE DEL INICIO-->
+            <div class="MainContainerButtons">   <!--antes: buttonsPC-->
+                <a href="#" class="button"><strong>Suscríbete</strong></a>
+                <a href="#" class="button"><strong>Menú a domicilio</strong></a>
+            </div>
+        </div>
         </div>
     </main>
     <br>
@@ -320,11 +323,11 @@
                 </div>
             </section>
     </section>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!--SECCIÓN DE "NUESTRO COMPROMISO"-->
     <section class="nuestroCompromiso1">
         <!--BOTÓN DE NUESTRO COMPROMISO-->
@@ -335,29 +338,29 @@
                 </a></button>
         </div>
     </section>
-<!--pte2: NUESTRO COMPROMISO-->
+    <!--pte2: NUESTRO COMPROMISO-->
     <section class="nuestroCompromiso2">
         <div class="nuestroCompromisSection">
             <!--DONACIÓN DE COMIDA-->
             <div class="commitment-NC">
                 <img class="imageNC" src="./src/Nutricionista.jpg">
                 <p class="textNC"><strong>
-                    Donación de comida
-                </strong></p>
+                        Donación de comida
+                    </strong></p>
             </div>
             <!--TUPPERS-->
             <div class="commitment-NC">
                 <img class="imageNC" src="./src/Traste de comida.jpg">
                 <p class="textNC"><strong>
-                    Reutilizamos tus tuppers
-                </strong></p>
+                        Reutilizamos tus tuppers
+                    </strong></p>
             </div>
             <!--ACEITE-->
             <div class="commitment-NC">
                 <img class="imageNC" src="./src/Aceite de cocina.jpg">
                 <p class="textNC"><strong>
-                    Reutilización aceites
-                </strong></p>
+                        Reutilización aceites
+                    </strong></p>
             </div>
         </div>
     </section>

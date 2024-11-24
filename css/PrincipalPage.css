@@ -41,14 +41,6 @@ h3 {
     color: var(--secondary);
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 600px) {
-  }
-  
-  /* Estilos para pantallas grandes */
-  @media (min-width: 1024px) {
-  }
-
 /*ESTILOS DEL NAVBAR*/
 .navbar {
     padding: 1.5rem 5%;
@@ -121,8 +113,8 @@ h3 {
     font-size: 2.5rem;
 }
 
-/*ESTILOS DEL CONTENEDOR PRINCIPAL*/
-.PrincipalConainer {
+/*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
+.MainConainer {
     position: relative;
     text-align: center;
     color: var(--primary);
@@ -134,29 +126,28 @@ h3 {
     height: auto;
     opacity: 0.87;
     /*Ligera opacidad para la imagen de fondo*/
-    overflow: hidden;
-    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-    max-height: 1300px;
-    /*Altura máxima que puede tener un elemento*/
+overflow: hidden;
+/*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+max-height: 1300px;
+/*Altura máxima que puede tener un elemento*/
 }
 
-.contentPC {
+.MainContainerText {
     position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
     top: 25%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
     left: 32%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     transform: translate(-50%, -50%);
+    /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
     text-align: center;
+    /* linea el texto dentro del elemento hacia el centro*/
 }
-
-/*  position: absolute;   El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-/*  top: 50%;:   Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-/*  left: 50%;:   Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
-/*  transform: translate(-50%, -50%);:   Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
-/*  text-align: center;:  Alinea el texto dentro del elemento hacia el centro*/
 /*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
 5px: Difumina la sombra en un radio de 4 píxeles.*/
 
-#h1ConPC {
+.h1MCT {
     font-size: 7rem;
     font-weight: 700;
     color: white;
@@ -164,7 +155,7 @@ h3 {
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
-#h2ConPC {
+.h2MCT {
     font-weight: 600;
     font-size: 9rem;
     font-style: italic;
@@ -173,8 +164,9 @@ h3 {
 }
 
 /*BOTNONES PRINCIPALES*/
-.buttonsPC .button {
+.MainContainerButtons .button {
     display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
     margin: 1rem;
     padding: 2rem 3rem;
     font-size: 4rem;
@@ -189,7 +181,7 @@ h3 {
     color: var(--fifth);
 }
 
-.buttonsPC .button:hover {
+.MainContainerButtons .button:hover {
     background-color: var(--tertiary);
     /* Fondo oscuro en hover */
 }
@@ -423,3 +415,88 @@ h5 {
 .icon {
     margin: 1rem;
 }
+
+/* !Sección de media queries*/
+/*Estilos para pantallas muy pequeñas (Máx-width: 576px)*/
+@media (max-width: 576px) {}
+
+/*Estilos para pantallas pequeñas (576px a 768px)*/
+@media (max-width: 768px) {}
+
+/*Estilos para pantallas medianas (768px a 1080px)*/
+@media (max-width: 1079px) {}
+
+/* !Estilos para pantallas grandes (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+
+/* *MAIN CONTAINER*/
+    .background-image {
+        width: 100%;
+        height: auto;
+    max-height: 1300px;
+    /*Altura máxima que puede tener un elemento*/
+    min-width: 1080px;
+    opacity: 0.87;
+        /*Ligera opacidad para la imagen de fondo*/
+    overflow: hidden;
+    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 41.5%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        transform: translate(-50%, -50%);
+        /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
+        text-align: center;
+        /* linea el texto dentro del elemento hacia el centro*/
+        left: 35%;
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+    /*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
+    5px: Difumina la sombra en un radio de 4 píxeles.*/
+
+    .h1MCT {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+    }
+
+    .h2MCT {
+        font-size: 4rem;
+        font-weight: 900;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+        font-style: italic;
+    }
+
+    .MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 47%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        left: 18%;
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+
+    .MainContainerButtons .button {
+        display: inline-block;
+        /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+        margin: 1rem;
+        padding: 2rem 3rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--primary);
+        /* Texto claro */
+        background-color: var(--secondary);
+        /* Fondo secondary */
+        border-radius: 40px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        color: var(--fifth);
+    }
+}
+
+/* !TERMINAN MQ*/
