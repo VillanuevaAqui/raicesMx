@@ -249,7 +249,7 @@ hr {
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
     h1 {
         margin-bottom: 1.5rem; /* Reduce el espacio en pantallas más pequeñas */
