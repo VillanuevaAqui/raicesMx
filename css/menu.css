@@ -352,7 +352,7 @@ hr {
 @media (min-width: 769px) {
     .card {
         margin-bottom: 3rem;
-        max-width: 40rem; /* Tamaño estándar de las tarjetas */
+        max-width: 45rem; /* Tamaño estándar de las tarjetas */
     }
     h1 {
         margin-bottom: 1.7rem;
