@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(../src/fondo-pagina-raicesmx.png);
+    background-image: url(../src/fondo-pagina-raicesmx-1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -107,6 +107,7 @@ body {
     background-color: var(--tertiary);
     color: var(--secondary);
     border: none;
+    
 }
 
 /* Efecto hover para las cards 
@@ -271,15 +272,19 @@ hr {
         width: 70%; /* Botón más ancho */
     }
     .menu-options {
-        flex-direction: column;   /* Coloca los botones en una columna */
-        gap: 1rem;                /* Reduce el espacio entre los botones */
-        margin-bottom: 1.5rem;    /* Ajusta el margen inferior */
+        flex-direction: row;   /* Coloca los botones en una columna */
+        gap: 0.9rem;                /* Reduce el espacio entre los botones */
+        margin-bottom: 1rem;    /* Ajusta el margen inferior */
     }
     
     .btn-option {
-        width: 70%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
+        width: 30%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
         font-size: 1.4rem;        /* Reduce el tamaño del texto */
         padding: 0.7rem 1.5rem;   /* Ajusta el relleno */
+    }
+    .col-12 {
+        padding-left: 2rem; /* Espaciado izquierdo */
+        padding-right: 2rem; /* Espaciado derecho */
     }
     /* .nav ul {
         display: block;
