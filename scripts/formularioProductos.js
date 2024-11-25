@@ -14,11 +14,11 @@ function generateFormAdd (){
         const formAddProduct = `<div class = "form-add-product">
                                 <h2 class = "title-form">Añadir productos</h2>
                                 <form class = "form-add" id = "newProductForm">
-                                    <input type = "text" id = "name" class = "form-add-input" placeholder = "Nombre del producto"/>
-                                    <textarea rows = "4" cols = "40" id = "desc" class = "form-add-input" placeholder = "Descripcion"></textarea>
-                                    <textarea rows = "4" id = "ingredients" class = "form-add-input" placeholder = "Ingredientes"></textarea>
+                                    <input type = "text" id = "name" class = "form-add-input" placeholder = "Nombre del producto" required/>
+                                    <textarea rows = "4" cols = "40" id = "desc" class = "form-add-input" placeholder = "Descripcion" required></textarea>
+                                    <textarea rows = "4" id = "ingredients" class = "form-add-input" placeholder = "Ingredientes" required></textarea>
                                     <input type = "file" id = "image" class = "form-add-input"/>
-                                    <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio"/>
+                                    <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio" required/>
                                     <button class = "form-btn" type="submit" id = "submit">Enviar</button>
                                     </form>
                                 </div>`

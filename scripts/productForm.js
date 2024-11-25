@@ -44,9 +44,15 @@ addProductBtn.addEventListener('click', (e) => {
         // Add the item to the ItemsController
         productsController.addProduct(name, desc, ingredients, imageUrl, price);
 
+        const lastAddedProduct = productsController.products[productsController.products.length - 1];
+        addProductCard(lastAddedProduct);
+
         // Clear the form
         newProductName.value = '';
         newProductDesc.value = '';
+        newProductIngredients.value = '';
+        newProductImageUrl.value = '';
+        newProductPrice.value = '';
         console.log('Test después de añadir\n');
         console.log(productsController.products);
     });
@@ -85,9 +91,15 @@ newProductForm.addEventListener('submit', (event) => {
     // Add the item to the ItemsController
     productsController.addProduct(name, desc, ingredients, imageUrl, price);
 
+    // const lastAddedProduct = productsController.products[productsController.products.length - 1];
+    // addProductCard(lastAddedProduct);
+    renderAllProductCards(); 
     // Clear the form
     newProductName.value = '';
     newProductDesc.value = '';
+    newProductIngredients.value = '';
+    newProductImageUrl.value = '';
+    newProductPrice.value = '';
     console.log('Test después de añadir\n');
     console.log(productsController.products);
 });
@@ -169,7 +181,7 @@ formDeleteAll.addEventListener("click", () => {
 
         productsController.removeAllProducts();
         console.log(productsController.products);
-
+        renderAllProductCards(); 
 
     });
 });
@@ -184,7 +196,7 @@ formDeleteProduct.addEventListener("click", () => {
 
         const index = getValue();
         productsController.removeProduct(index);
-
+        renderAllProductCards(); 
     });
 
 
@@ -229,7 +241,7 @@ formUpdateProduct.addEventListener("click", () => {
         } else {
             console.log("No se actualizó porque todos los campos están vacíos");
         }
-
+        renderAllProductCards(); 
         // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageUrl: imageUrlGet, price: priceGet});
         console.log(productsController.products)
     });
@@ -255,3 +267,61 @@ function generateList() {
         containerSection.innerHTML += htmlText;
     }
 }
+
+
+
+
+
+
+// Function to add a product card
+function addProductCard(product) {
+    const productHTML = `
+        <div class="card">
+            <img src="${product.imageURL}" width="200" alt="product image">
+            <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.desc}</p>
+                <p class="card-text"><strong>Ingredients:</strong> ${product.ingredients}</p>
+                <p class="card-text"><strong>Price:</strong> $${product.price}</p>
+                <a href="#" class="btn-product">Add</a>
+            </div>
+        </div>`;
+    const productsContainer = document.getElementById("list-products");
+    productsContainer.innerHTML += productHTML;
+}
+
+function loadCardsListFromProductsController() {
+    for (let i = 0, size = productsController.products.length; i < size; i++) {
+        const product = productsController.products[i];
+        addProductCard(product);
+    }
+}
+
+function renderAllProductCards() {
+    const productsContainer = document.getElementById("list-products");
+    productsContainer.innerHTML = ''; // Limpiar las tarjetas existentes
+
+    // if (productsController.products.length > 0) {
+    //     const productsTitle = document.createElement('h2');
+    //     productsTitle.textContent = 'Productos';
+    //     productsTitle.classList.add('products-title');
+    //     productsTitle.style.marginBottom = '1rem'; // Añade margen para separación
+    //     productsContainer.appendChild(productsTitle);
+    // }
+    // Renderizar todas las tarjetas actuales
+    for (const example of productsController.examples) {
+        addProductCard(example);
+    }
+    for (const product of productsController.products) {
+        addProductCard(product);
+    }
+}
+
+// function renderExamples(){
+//     for (const example of productsController.examples) {
+//         addProductCard(example);
+//     }
+// }
+
+productsController.loadProductsFromLocalStorage();
+loadCardsListFromProductsController();

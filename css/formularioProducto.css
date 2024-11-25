@@ -132,3 +132,78 @@
     justify-content: center;
 
 }
+
+.products-title{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.card {
+    width: 100%;
+    max-height: 600px; /* Ajusta este valor según lo que necesites */
+    margin-bottom: 2rem;
+    max-width: 400px; /* Puedes ajustar esto para controlar el tamaño máximo */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: none;
+    justify-content: center;
+}
+
+.card-body {
+    flex-grow: 2; /* Asegura que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos dentro de la tarjeta */
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    height: 100%; /* Asegura que ocupe toda la tarjeta */
+    padding: 1rem;
+}
+.card img {
+    object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
+    height: 20rem; /* Altura fija de las imágenes */
+    width: 100%; /* Asegura que las imágenes sean responsivas */
+}
+
+/* Tamaños para titulo card */
+h5.card-title {
+    font-size: 2rem; /* Tamaño estándar del título */
+    font-weight: bold;
+    margin: 1rem 0;
+    
+}
+/* Tamaños para descripcion card */
+p.card-text {
+    font-size: 1.4rem; /* Texto descriptivo */
+    margin-bottom: 1.5rem;
+}
+
+.btn-product {
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000000;
+    background-color: var(--secondary);
+    border: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+    width: 80%; /* Botón más ancho */
+    margin-top: auto; /* Empuja el botón hacia el fondo */
+    align-self: center; /* Centra horizontalmente el botón */
+    
+}
+/*---Efecto hover boton agregar carrito----*/
+.btn-product:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+#list-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+}
