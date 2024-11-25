@@ -80,7 +80,7 @@ h3 {
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 100%;
+   width: 100%;
 }
 
 .nav-link {
@@ -114,22 +114,22 @@ h3 {
 }
 
 /*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
-.MainConainer {
+.MainCotnainer {
     position: relative;
     text-align: center;
     color: var(--primary);
     /*COLOR DE FONDO PRINCIPAL*/
 }
 
-.background-image {
-    width: 100%;
-    height: auto;
+/*.background-image {
     opacity: 0.87;
     /*Ligera opacidad para la imagen de fondo*/
-overflow: hidden;
-/*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-max-height: 1300px;
-/*Altura máxima que puede tener un elemento*/
+    overflow: hidden;
+    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    display: flex;
+    flex-wrap: wrap;
+   /*max-height: 1300px;
+    /*Altura máxima que puede tener un elemento*/
 }
 
 .MainContainerText {
@@ -144,6 +144,7 @@ max-height: 1300px;
     text-align: center;
     /* linea el texto dentro del elemento hacia el centro*/
 }
+
 /*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
 5px: Difumina la sombra en un radio de 4 píxeles.*/
 
@@ -417,55 +418,263 @@ h5 {
 }
 
 /* !Sección de media queries*/
-/*Estilos para pantallas muy pequeñas (Máx-width: 576px)*/
-@media (max-width: 576px) {}
+/**MQ para pantallas muy pequeñas (Máx-width: 576px)*/
+@media (max-width: 576px) {
+    
+     /* *MAIN CONTAINER*/
+.MainContainerText {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 90%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    transform: translate(23%);
+    /* Mueve el elemento un 23% hacia la izquierda y un 0% hacia arriba desde su posición actual*/
+    text-align: left
+        /* linea el texto dentro del elemento hacia el centro*/
+        /*left: 3%;*/
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
 
-/*Estilos para pantallas pequeñas (576px a 768px)*/
-@media (max-width: 768px) {}
+.h1MCT {
+    font-size: 3%;
+    font-weight: 700;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
 
-/*Estilos para pantallas medianas (768px a 1080px)*/
-@media (max-width: 1079px) {}
+.h2MCT {
+    font-size: 7rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+    font-style: italic;
+}
 
-/* !Estilos para pantallas grandes (Min-width: 1080px)*/
-@media (min-width: 1080px) {
+.MainContainerButtons {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 0%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    left: 45%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
 
-/* *MAIN CONTAINER*/
+.MainContainerButtons .button {
+    display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+    margin: 1rem;
+    padding: 2rem 3rem;
+    font-size: 2.59rem;
+    font-weight: 600;
+    color: var(--primary);
+    /* Texto claro */
+    background-color: var(--secondary);
+    /* Fondo secondary */
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: var(--fifth);
+}
+
+.background-image {
+        width: 10%;   /*Qué pasa?*/
+        height: auto;
+        opacity: 0.87;
+        /*Ligera opacidad para la imagen de fondo*/
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    /*}*/
+}
+
+/* ******Estilos para pantallas pequeñas (576px a 768px)*/
+@media (max-width: 768px) {
+    /* ******MAIN CONTAINER*/
+    .MainContainerText {
+        top: 50%; /* Ajustar para centrar */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.4rem; /* Ajustar tamaño */
+    }
+
+    .h1MCT {
+        font-size: 2.4rem; /* Reducir para pantallas pequeñas */
+    }
+
+    .h2MCT {
+        font-size: 2rem;
+    }
+
+    .MainContainerButtons .button {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 1rem; /* Reducir padding */
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
     .background-image {
         width: 100%;
+        height: auto; /* Asegurar que se ajuste bien */
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   /*.background-image {
+        width: 500%;
         height: auto;
-    max-height: 1300px;
-    /*Altura máxima que puede tener un elemento*/
-    min-width: 1080px;
-    opacity: 0.87;
+        /*max-height: 1200px;*/
+        /*Altura máxima que puede tener un elemento*/
+        min-width: 576px;
+        opacity: 0.87;
         /*Ligera opacidad para la imagen de fondo*/
-    overflow: hidden;
-    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+/*.MainContainerText {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 90%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    transform: translate(23%);
+    /* Mueve el elemento un 23% hacia la izquierda y un 0% hacia arriba desde su posición actual*/
+    text-align: left
+        /* linea el texto dentro del elemento hacia el centro*/
+        /*left: 3%;*/
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+/*.h1MCT {
+    font-size: 3%;
+    font-weight: 700;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
+
+.h2MCT {
+    font-size: 7rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+    font-style: italic;
+}
+
+.MainContainerButtons {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 0%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    left: 45%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+/*.MainContainerButtons .button {
+    display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+    margin: 1rem;
+    padding: 2rem 3rem;
+    font-size: 2.59rem;
+    font-weight: 600;
+    color: var(--primary);
+    /* Texto claro */
+    background-color: var(--secondary);
+    /* Fondo secondary */
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: var(--fifth);
+}
+}
+
+/*Estilos para pantallas medianas (768px a 1080px)*/
+@media (max-width: 1080px) {
+    /* *MAIN CONTAINER*/
+    .background-image {
+        width: 320%;
+        height: auto;
+        /*max-height: 1200px;*/
+        /*Altura máxima que puede tener un elemento*/
+        min-width: 768px;
+        opacity: 0.87;
+        /*Ligera opacidad para la imagen de fondo*/
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
     }
 
     .MainContainerText {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 41.5%;
+        top: 50%;
         /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-        transform: translate(-50%, -50%);
-        /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
-        text-align: center;
-        /* linea el texto dentro del elemento hacia el centro*/
-        left: 35%;
-        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+        transform: translate(23%);
+        /* Mueve el elemento un 23% hacia la izquierda y un 0% hacia arriba desde su posición actual*/
+        text-align: left
+            /* linea el texto dentro del elemento hacia el centro*/
+            /*left: 3%;*/
+            /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     }
-    /*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
-    5px: Difumina la sombra en un radio de 4 píxeles.*/
 
     .h1MCT {
-        font-size: 2.8rem;
+        font-size: 6.3rem;
         font-weight: 700;
         color: white;
         text-shadow: 3px 3px 5px #2c2e21;
     }
 
     .h2MCT {
-        font-size: 4rem;
+        font-size: 7rem;
         font-weight: 900;
         color: white;
         text-shadow: 3px 3px 5px #2c2e21;
@@ -475,9 +684,9 @@ h5 {
     .MainContainerButtons {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 47%;
+        top: 90%;
         /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-        left: 18%;
+        left: 45%;
         /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     }
 
@@ -486,7 +695,81 @@ h5 {
         /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
         margin: 1rem;
         padding: 2rem 3rem;
-        font-size: 1.75rem;
+        font-size: 2.7rem;
+        font-weight: 600;
+        color: var(--primary);
+        /* Texto claro */
+        background-color: var(--secondary);
+        /* Fondo secondary */
+        border-radius: 40px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        color: var(--fifth);
+    }
+}
+
+/* !Estilos para pantallas grandes (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+
+    /* *MAIN CONTAINER*/
+    .background-image {
+        width: 240%;
+        height: auto;
+        max-height: 1200px;
+        /*Altura máxima que puede tener un elemento*/
+        min-width: 1080px;
+        opacity: 0.87;
+        /*Ligera opacidad para la imagen de fondo*/
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 48%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        transform: translate(4%, -50%);
+        /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
+        text-align: left
+            /* linea el texto dentro del elemento hacia el centro*/
+            left: 3%;
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+
+    /*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
+    5px: Difumina la sombra en un radio de 4 píxeles.*/
+
+    .h1MCT {
+        font-size: 7.5rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+    }
+
+    .h2MCT {
+        font-size: 8rem;
+        font-weight: 900;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+        font-style: italic;
+    }
+
+    .MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 57%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        left: 33%;
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+
+    .MainContainerButtons .button {
+        display: inline-block;
+        /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+        margin: 1rem;
+        padding: 2rem 3rem;
+        font-size: 3.7rem;
         font-weight: 600;
         color: var(--primary);
         /* Texto claro */
