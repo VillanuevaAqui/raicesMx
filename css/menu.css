@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(../src/fondo-pagina-raicesmx-1.png);
+    background-image: url(../src/fondo-pagina-raicesmx.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -133,24 +133,35 @@ body {
     width: 100%; /* Asegura que las imágenes sean responsivas */
 }
 
+/* Tamaños para titulo card */
 h5.card-title {
     font-size: 2rem; /* Tamaño estándar del título */
     font-weight: bold;
     margin: 1rem 0;
     
 }
-
+/* Tamaños para descripcion card */
 p.card-text {
     font-size: 1.4rem; /* Texto descriptivo */
     margin-bottom: 1.5rem;
 }
+
+/*Contenido del menu boton opciones desayuno , comida y cena*/
+.menu-options {
+    display: flex;               /* Activa Flexbox */
+    justify-content: center;     /* Alinea los botones horizontalmente al centro */
+    gap: 2.5rem;                 /* Espaciado uniforme entre los botones */
+    flex-wrap: wrap;             /* Permite que los botones se ajusten en filas en pantallas pequeñas */
+    margin-bottom: 2rem;         /* Espacio entre los botones y el contenido siguiente */
+    }
+
 
 /* -----visualizacion de todo el html menu en tamaño especifico----------
 html{
     font-size: 62.5%;
 } */
 
-/*----Tamaños para los titulos h1 ,h2, h3----*/
+/*----Tamaños para los titulos h1 ,h2, h3, menu----*/
 h1{
     font-size: 7rem;  
     font-weight: 700;
@@ -209,7 +220,31 @@ hr {
     color: var(--primary);
 }
 
+/*---Botones del menu desayuno, comida y cena----*/
+.btn-option{
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--primary);
+    background-color: var(--tertiary);
+    border: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    width: 20%; /* Botón más ancho */
+    align-self: center; /* Centra horizontalmente el botón */
+    
+}
 
+/*---Efecto hover botones desayuno , comida , cena----*/
+.btn-option:hover {
+    background-color: var(--secondary);
+    color: var(--fourth);
+}
+
+                        
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .card {
@@ -234,6 +269,17 @@ hr {
         font-size: 1.6rem; /* Botón más pequeño */
         padding: 0.8rem 1.5rem;
         width: 70%; /* Botón más ancho */
+    }
+    .menu-options {
+        flex-direction: column;   /* Coloca los botones en una columna */
+        gap: 1rem;                /* Reduce el espacio entre los botones */
+        margin-bottom: 1.5rem;    /* Ajusta el margen inferior */
+    }
+    
+    .btn-option {
+        width: 70%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
+        font-size: 1.4rem;        /* Reduce el tamaño del texto */
+        padding: 0.7rem 1.5rem;   /* Ajusta el relleno */
     }
     /* .nav ul {
         display: block;
@@ -276,6 +322,13 @@ hr {
         font-size: 1.5rem;
         width: 92%; /* Botón más ajustado */
     }
+    .menu-options {
+        gap: 3rem;                /* Incrementa el espacio entre los botones */
+    }
+    .btn-option {
+        width: 20%;              /* Tamaño adaptable */
+        font-size: 1.7rem;        /* Ajusta el texto */
+    }
     /* .nav ul {
         display: flex;
         justify-content: space-around;
@@ -310,6 +363,13 @@ hr {
     .btn-menu {
         font-size: 1.6rem;
         width: 80%; /* Botón más pequeño */
+    }
+    .menu-options {
+        gap: 2.5rem;              /* Más espacio entre botones */
+    }
+    .btn-option {
+        padding: 1rem 3rem;       /* Botones más grandes */
+        font-size: 1.8rem;        /* Texto más grande */
     }
     .content {
         max-width: 1200px;
