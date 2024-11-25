@@ -11,6 +11,20 @@ const BENEFITS = [{
     image: "../src/Fotos RaícesMX (1).png"
 }];
 
+function createTitlePage() {
+
+    const cardTitle = document.createElement("div");
+    cardTitle.classList.add("card-title");
+
+    const title = document.createElement("h2"); 
+    title.classList.add("title", "title-card");
+    title.textContent = "Beneficios de la suscripción!!!";
+
+    cardTitle.appendChild(title);
+    MAIN_CONTAINER.appendChild(cardTitle);
+
+
+}
 
 function createElement(benefit) {
 
@@ -70,4 +84,5 @@ function call(benefits){
 
 }
 
+createTitlePage();
 call(BENEFITS)
