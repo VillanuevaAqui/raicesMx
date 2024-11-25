@@ -1,8 +1,9 @@
 //Creacion de la clase controlador.
-class ProductsController {
-    constructor(currentId = 0) {
+export class ProductsController {
+    constructor(currentId) {
         this.products = [];
         this.currentId = currentId;
+        this.loadProductsFromLocalStorage();
     }
     /* ProductsController: Es el nombre de la clase.
     *  Constructor: Es un método que se ejecuta automáticamente cuando se crea una instancia de la clase.
@@ -34,12 +35,15 @@ class ProductsController {
 
     //Guarda los productos en el localStorage con el estado actual del array
     saveProductsToLocalStorage() {
+        console.log("Guardando productos:", this.products);
         localStorage.setItem("products", JSON.stringify(this.products));
     }
 
     //Elimina toda la lista de los productos.
     removeAllProducts() {
         this.products = [];
+        this.saveProductsToLocalStorage();
+
     }
 
     //?Modifica un producto en específico.
@@ -58,21 +62,32 @@ class ProductsController {
                 ...this.products[productIndex],
                 // Sobrescribe solo los campos especificados:
                 ...updatedFields
+
+
             };
+
+            this.saveProductsToLocalStorage();
         }
+
+
     }
 
     loadProductsFromLocalStorage() {
         const storageProducts = localStorage.getItem("products");
         if (storageProducts) {
-            const products = JSON.parse(storageProducts)
-            for (let i = 0, size = products.length; i < size; i++) {
-                const product = products[i];
-                this.products.push(product);
-            }
+            const products = JSON.parse(storageProducts);
+            // for (let i = 0, size = products.length; i < size; i++) {
+            //     const product = products[i];
+            //     this.products.push(product);
+            // }
+            this.products = products;
+            this.currentId = products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
+        }else{
+            this.currentId = 0;
         }
     }
 }
+
 
 // let unaVariable = new ProductsController();
 // unaVariable.addProduct("Poizole", "rojo verde blanco", "Pozole :)", "Aquí va un pozole", 200);
@@ -82,4 +97,3 @@ class ProductsController {
 
 // unaVariable.removeProduct(1);
 // console.log('Después de eliminar: ',unaVariable.products);
-
