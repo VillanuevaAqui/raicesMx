@@ -1,6 +1,14 @@
 //Creacion de la clase controlador.
 export class ProductsController {
-    constructor(currentId = 0) {
+    constructor(currentId) {
+        // this.pillar = {
+        //     id: 0,
+        //     name: "sampleName",
+        //     desc: "sampleDesc",
+        //     ingredients: "pozole",
+        //     imageUrl: "img",
+        //     price: 0,
+        // }
         this.products = [];
         this.currentId = currentId;
         this.loadProductsFromLocalStorage();
@@ -35,6 +43,7 @@ export class ProductsController {
 
     //Guarda los productos en el localStorage con el estado actual del array
     saveProductsToLocalStorage() {
+        // console.log("Guardando productos:", this.products);
         localStorage.setItem("products", JSON.stringify(this.products));
     }
 
@@ -42,7 +51,6 @@ export class ProductsController {
     removeAllProducts() {
         this.products = [];
         this.saveProductsToLocalStorage();
-        
     }
 
     //?Modifica un producto en específico.
@@ -62,7 +70,7 @@ export class ProductsController {
                 // Sobrescribe solo los campos especificados:
                 ...updatedFields
 
-                
+
             };
 
             this.saveProductsToLocalStorage();
@@ -71,17 +79,18 @@ export class ProductsController {
 
     }
 
-        loadProductsFromLocalStorage() {
-            const storageProducts = localStorage.getItem("products");
-            if (storageProducts) {
-                const products = JSON.parse(storageProducts);
-                for (let i = 0, size = products.length; i < size; i++) {
-                    const product = products[i];
-                    this.products.push(product);
-                }
-                this.products = products;
-                this.currentId = products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
-    }}
+    loadProductsFromLocalStorage() {
+        const storageProducts = localStorage.getItem("products");
+        if (storageProducts) {
+            const products = JSON.parse(storageProducts);
+            // for (let i = 0, size = products.length; i < size; i++) {
+            //     const product = products[i];
+            //     this.products.push(product);
+            // }
+            this.products = products;
+            this.currentId = products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
+        }
+    }
 }
 
 
