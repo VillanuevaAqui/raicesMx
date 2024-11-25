@@ -80,7 +80,7 @@ function removeAllProducts() {
 
     const formRemoveAllProducts = `<div class = "form-remove-all">
                                    <h2 class = "title-form">Estas seguro de querer borrar todo?</h2>
-                                   <button class="form-btn" id = "delete-products" onclick="deleteAll()">Dale mi loco</button>
+                                   <button class="form-btn" id = "delete-products">Dale mi loco</button>
                                    </div>`;
     
     containerForm.innerHTML = formRemoveAllProducts;                              

@@ -1,6 +1,14 @@
 //Creacion de la clase controlador.
 export class ProductsController {
     constructor(currentId) {
+        // this.pillar = {
+        //     id: 0,
+        //     name: "sampleName",
+        //     desc: "sampleDesc",
+        //     ingredients: "pozole",
+        //     imageUrl: "img",
+        //     price: 0,
+        // }
         this.products = [];
         this.currentId = currentId;
         this.loadProductsFromLocalStorage();
@@ -35,7 +43,7 @@ export class ProductsController {
 
     //Guarda los productos en el localStorage con el estado actual del array
     saveProductsToLocalStorage() {
-        console.log("Guardando productos:", this.products);
+        // console.log("Guardando productos:", this.products);
         localStorage.setItem("products", JSON.stringify(this.products));
     }
 
@@ -43,7 +51,6 @@ export class ProductsController {
     removeAllProducts() {
         this.products = [];
         this.saveProductsToLocalStorage();
-
     }
 
     //?Modifica un producto en específico.
@@ -82,8 +89,6 @@ export class ProductsController {
             // }
             this.products = products;
             this.currentId = products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
-        }else{
-            this.currentId = 0;
         }
     }
 }
