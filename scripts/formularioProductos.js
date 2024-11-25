@@ -19,7 +19,7 @@ function generateFormAdd (){
                                     <textarea rows = "4" id = "ingredients" class = "form-add-input" placeholder = "Ingredientes"></textarea>
                                     <input type = "file" id = "image" class = "form-add-input"/>
                                     <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio"/>
-                                    <button class = "form-btn" id = "submit">Enviar</button>
+                                    <button class = "form-btn" type="submit" id = "submit">Enviar</button>
                                     </form>
                                 </div>`
                                 
@@ -43,7 +43,7 @@ function removeProduct() {
                                
                                 </select>
                                
-                               <button type="submit" class="form-btn" id = "submit">Eliminar Producto</button>
+                               <button class="form-btn" id = "delete-product" >Eliminar Producto</button>
                                </div>`;
 
     containerForm.innerHTML = formRemoveProduct;
@@ -68,7 +68,7 @@ function updateProduct () {
                                     <input type = "file" id = "image" class = "form-add-input"/>
                                     <input type = "number" id = "price" class = "form-add-input" placeholder = "Precio"/>
                                 </form>
-                                <button class = "form-btn">Enviar</button>
+                                <button class = "form-btn" id = "form-update-product">Enviar</button>
                                 </div>
                                </div>`;
 

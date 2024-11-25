@@ -83,17 +83,61 @@ formDeleteAll.addEventListener("click", () => {
 });
 
 const formDeleteProduct = document.querySelector("#remove-product");
-formDeleteProduct.addEventListener("click", () => generateList());
+formDeleteProduct.addEventListener("click", () => {
+
+    generateList();
+
+    const formDeleteBtn = document.querySelector("#delete-product");
+    formDeleteBtn.addEventListener("click", () => {
+
+        const index = getValue();
+        productsController.removeProduct(index);
+
+    });
+    
+
+});
 
 const formUpdateProduct = document.querySelector("#update-product");
-formUpdateProduct.addEventListener("click", () => generateList());
+formUpdateProduct.addEventListener("click", () => {
+
+    generateList();
+
+    const formUpdateBtn = document.querySelector("#form-update-product");
+    formUpdateBtn.addEventListener("click", () => {
+
+        const index = getValue();
+        
+            // Select the inputs
+        const newProductName = document.querySelector('#name');
+        const newProductDesc = document.querySelector('#desc');
+        const newProductIngredients = document.querySelector('#ingredients');    
+        const newProductImageUrl = document.querySelector('#image');
+        const newProductPrice = document.querySelector('#price');
+    
+
+        // Get the values of the inputs
+        const nameGet = newProductName.value;
+        const descGet = newProductDesc.value;
+        const ingredientsGet = newProductIngredients.value;
+        const imageUrlGet = newProductImageUrl.value;
+        const priceGet = newProductPrice.value
+
+        productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageUrl: imageUrlGet, price: priceGet});
+        console.log(productsController.products)
+    });
+
+
+});
+
 
 function getValue () {
 
-    const selectElemnt = document.querySelector("#select-form")
-    selectValue = selectElemnt.value;
-    
-
+    const selectElement = document.querySelector("#select-form")
+    const selectValue = parseInt(selectElement.value);
+    console.log(selectValue)
+    console.log(parseInt(selectValue));
+    return selectValue;
 }
 
 function generateList (){
@@ -102,8 +146,7 @@ function generateList (){
 
     for (let i = 0; i < productsController.products.length; i ++){
 
-        const htmlText = `<option value = "${i}">${productsController.products[i].name}</option>`;
-        console.log(htmlText)
+        const htmlText = `<option value = "${productsController.products[i].id}">${productsController.products[i].name}</option>`;
         containerSection.innerHTML += htmlText;
     }
 }

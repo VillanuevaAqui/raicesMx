@@ -61,21 +61,27 @@ export class ProductsController {
                 ...this.products[productIndex],
                 // Sobrescribe solo los campos especificados:
                 ...updatedFields
+
+                
             };
+
+            this.saveProductsToLocalStorage();
         }
+
+
     }
 
-    loadProductsFromLocalStorage() {
-        const storageProducts = localStorage.getItem("products");
-        if (storageProducts != undefined) {
-            const products = JSON.parse(storageProducts)
-            console.log(products)
-            for (let i = 0, size = products.length; i < size; i++) {
-                const product = products[i];
-                this.products.push(product);
-            }
-        }
-    }
+        loadProductsFromLocalStorage() {
+            const storageProducts = localStorage.getItem("products");
+            if (storageProducts) {
+                const products = JSON.parse(storageProducts);
+                for (let i = 0, size = products.length; i < size; i++) {
+                    const product = products[i];
+                    this.products.push(product);
+                }
+                this.products = products;
+                this.currentId = products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
+    }}
 }
 
 
