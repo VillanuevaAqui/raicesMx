@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -10rem auto 10rem;
+    margin: 2rem auto;
     width: 100%;
     text-align: center;
 }
@@ -27,10 +27,10 @@ body {
 .heading-container h2 {
     color: var(--primary);
     background-color: var(--fourth);
-    padding: 2rem 5rem;
+    padding: 1rem 2rem;
     width: fit-content;
     border-radius: 25px;
-    font-size: 6rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -39,7 +39,7 @@ body {
     justify-content: center;
     align-items: center;  /*CAMBIO*/
     flex-direction: column;
-    /* background-image: url(./src/Fondo\ Grande.png); */
+    background-image: url(./src/Fondo\ Grande.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ body {
 .contact-section {
     display: flex;
     justify-content:center; /*Cambio*/
-    gap: 10rem;
+    gap: 2rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -70,16 +70,16 @@ body {
 
 .form-heading {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2.5rem;
     width: 100%;
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--fifth);
 }
 
 .direct-heading {
     font-weight: bold;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
@@ -89,7 +89,7 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center; 
     align-items: center; 
 }
@@ -117,11 +117,11 @@ body {
 }
 
 .contact-form button {
-    padding: 1rem 3rem;
+    padding: 1rem;
     background-color: var(--tertiary);
     color: var(--primary);
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -162,7 +162,7 @@ body {
 .direct-contact {
     background-color: var(--secondary);
     color: var(--fourth);
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -278,9 +278,6 @@ body {
     .direct-contact-details ul {
         margin-left: 0;
         text-align: center; /* Centra los elementos de la lista */
-    }
-    .heading-container h2 {
-        font-size: 4rem;
     }
 }
 
