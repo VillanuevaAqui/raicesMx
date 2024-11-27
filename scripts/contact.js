@@ -1,5 +1,13 @@
+
+
+// Selecciona el formulario completo utilizando el ID formulario.
 const formulario = document.getElementById('formulario');
+
+//Selecciona todos los elementos input y textarea dentro del formulario.
 const inputs = document.querySelectorAll('#formulario input, #formulario textarea'); 
+
+
+
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     telefono:  /^\d{10}$/, // Solo números, exactamente 10 dígitos.
@@ -8,6 +16,7 @@ const expresiones = {
     mensaje: /^.{1,300}$/s // Máximo 300 caracteres, no vacío.
 };
 
+//objeto campo inicializado en false, se cambia a true 
 const campos = {
     nombre: false,
     telefono:false,
@@ -15,6 +24,8 @@ const campos = {
     asunto: false,
     mensaje: false
 };
+
+// Mensajes de ayuda se mostrarán cuando un usuario enfoque el campo correspondiente.
 
 const mensajeAyuda = {
 
@@ -26,8 +37,14 @@ const mensajeAyuda = {
 }
 
 // Validación de los campos
+
+//La función validarFormulario es llamada cada vez que el usuario interactúa con un campo de entrada, input o textarea, ya sea al escribir en el campo, keyup o cuando el campo pierde el enfoque (blur).
+
 const validarFormulario = (e) => {
 
+//Se usa un parametro e, es el evento que ocurre cuando el usuario interactura con los campos del formulario
+
+//e.target hace referencia al elemento que generó el evento (el campo en el que el usuario está escribiendo o ha hecho clic).
     if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea') {
 
         switch (e.target.name) {
@@ -51,6 +68,9 @@ const validarFormulario = (e) => {
 };
 
 // Validar cada campo
+
+//Esta función es la encargada de validar el valor ingresado en cada campo utilizando la expresión regular asociada.
+
 const validarCampo = (expresion, input, campo) => {
 
     if (expresion.test(input.value)) {
@@ -66,11 +86,7 @@ const validarCampo = (expresion, input, campo) => {
         campos[campo] = false; // Campo incorrecto
     }
 
-    // Validar el mensaje
-   // if (campo === "mensaje" && input.value.trim().length === 0) {
-      //  alert("El campo mensaje no puede estar vacío");
-      //  campos[campo] = false;
-   // }
+    //Si el valor del campo coincide con la expresión regular, agrega la clase input-correcto y marca el campo como validado (true).
 };
 
 // Asignar eventos a los inputs
@@ -83,6 +99,9 @@ inputs.forEach((input) => {
 
 
 // Mostrar mensaje de ayuda al enfocar el campo
+
+//Cuando el usuario hace foco (focus) en un campo de entrada, se muestra el mensaje de ayuda correspondiente, y cuando pierde el foco (blur), se oculta.
+
 inputs.forEach((input) => {
     const ayuda = document.getElementById(`ayuda-${input.name}`);
 
@@ -102,6 +121,11 @@ inputs.forEach((input) => {
 });
 
 // Validar formulario al enviar
+
+
+//Cuando el formulario se envía, se evita que la página se recargue con e.preventDefault(). Luego, se verifica si todos los campos están correctamente validados antes de permitir el envío del formulario:
+
+
 formulario.addEventListener('submit', (e) => {
     e.preventDefault(); // Evitar recarga de la página
 
@@ -119,3 +143,5 @@ formulario.addEventListener('submit', (e) => {
         alert("Por favor, rellena todos los campos correctamente");
     }
 });
+
+//Si todos los campos son válidos (es decir, todos los valores en campos son true), muestra una alerta de éxito y resetea el formulario.
