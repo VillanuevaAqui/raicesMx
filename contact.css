@@ -11,14 +11,18 @@ body {
     position: relative;
     font-family: "Montserrat", sans-serif;
     background-image: url(/src/Fondo\ Grande.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: cover; /* Hace que el fondo cubra toda la pantalla */
+    background-repeat: no-repeat; ; /* Impide que el fondo se repita */
+    margin: 0;  /* Elimina márgenes predeterminados del body */
+    padding: 0; /* Elimina el relleno predeterminado */
+    background-color: transparent; /* Asegúrate de que no haya un fondo en main que oculte el fondo de body */
 }
 
+
 .heading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;  /* Activar flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
     margin: 2rem auto;
     width: 100%;
     text-align: center;
@@ -27,10 +31,10 @@ body {
 .heading-container h2 {
     color: var(--primary);
     background-color: var(--fourth);
-    padding: 1rem 2rem;
+    padding: 2rem 3rem;
     width: fit-content;
     border-radius: 25px;
-    font-size: 2.5rem;
+    font-size: 6rem;
     font-weight: bold;
 }
 
@@ -45,16 +49,17 @@ body {
     background-repeat: no-repeat;
     padding: 2rem;
     min-height: calc(100vh - 2rem);
+    justify-content: space-between; /*cambio para el espacio blanco*/
 }
 
 .contact-section {
     display: flex;
     justify-content:center; /*Cambio*/
-    gap: 2rem;
+    gap: 10rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 3rem; 
     flex-wrap: wrap;
     align-items: stretch; /* Esto asegura que ambas columnas tengan la misma altura */
 }
@@ -117,11 +122,11 @@ body {
 }
 
 .contact-form button {
-    padding: 1rem;
+    padding: 1rem 2.5rem;
     background-color: var(--tertiary);
     color: var(--primary);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -162,7 +167,7 @@ body {
 .direct-contact {
     background-color: var(--secondary);
     color: var(--fourth);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -172,7 +177,7 @@ body {
     border-radius: 80px;
     min-height: 300px;
     text-align: center;  /* Alinea todo el texto al centro */
-    padding: 20px;
+    padding: 15px;
 }
 
 .direct-contact h3 {
@@ -181,7 +186,7 @@ body {
 }
 
 .direct-text1 {
-    padding: 1.5rem;
+    padding: 1rem;
     max-width: 700px;  /* Limita el ancho del párrafo para que no se estire demasiado */
     margin: 0 auto;  /* Centra el párrafo */
     
@@ -228,8 +233,12 @@ body {
     background-color: var(--tertiary);
     color: var(--secondary);
     text-align: center;
-    padding: 2rem;
+    padding: 0rem; /*otro cambio de 2rem a 0*/
+    min-height: 0; /* Elimina el min-height o ajusta según sea necesario */
+    margin-top: 0;  /* Asegura que no haya un espacio entre el main y el footer */
+
 }
+
 
 .icons .icon {
     margin: 1rem;
