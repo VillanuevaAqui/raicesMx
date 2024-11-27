@@ -9,6 +9,23 @@
     width: 100%;
 }
 
+.main {
+
+    text-align: center;
+
+}
+
+.card-title {
+
+    background-color: var(--secondary);
+    border-radius: 2rem;
+    min-width: 100rem;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+}
     
 .description-container {
 
@@ -57,6 +74,8 @@
 
 }
 
+
+
 .paragraph-card {
 
     margin: 2rem;
@@ -68,6 +87,13 @@
 
     font-size: 4rem;
     font-weight: 900;
+
+}
+
+.title {
+
+    width: 100%;
+    font-size: 5rem;
 
 }
 
@@ -105,6 +131,19 @@
 
     }
 
+    .card-title {
+
+        min-width: 73rem;
+        width: 73rem;
+
+    }
+
+
+}
+
+.title{
+
+    width: 90rem;
 
 }
 
@@ -173,6 +212,21 @@
 
 
     }
+
+    .card-title {
+
+        width: 50rem;
+        max-width: 50rem;
+        min-width: 50rem;
+
+
+    }
+
+    .title {
+
+        font-size: 4rem;
+
+    }
 }
 
 @media (max-width: 599px) {
@@ -212,6 +266,13 @@
         height: 20rem;
         display: inline-block;
         margin: 0rem;
+    }
+
+    .card-title {
+
+        min-width: 40rem;
+        width: 40rem;
+
     }
 
 }
@@ -262,5 +323,20 @@
 
     }
 
+    .card-title {
+
+        min-width: 35rem;
+        width: 35rem;
+    
+    }
+
+    .title {
+
+        font-size: 3rem;
+
+    }
+
 }
+
+
 
