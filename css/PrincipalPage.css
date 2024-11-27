@@ -395,27 +395,20 @@ h5 {
 }
 
 .nuestroCompromiso2 {
-    display: inline;
+    display: flex;
+    flex-direction:row;
     max-width: 50%;
     align-items: center;
 }
 
-.nuestroCompromisSection {
-    display: flex;
-    justify-content: center;
-    max-width: 30%;
-}
-
 .commitment-NC {
     text-align: center;
-    margin: 30px;
+    margin: 3rem;
 }
 
 .imageNC {
-    width: 700px;
-    height: 700px;
-    padding: 50px 50px;
-    border-radius: 500px;
+    max-width: 50%;
+    border-radius: 100%;
 }
 
 .textNC {
