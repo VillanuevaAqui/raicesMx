@@ -18,7 +18,7 @@ body {
     font-size: 16px;
     /*TAMAÑO BASE DE LA FUENTE*/
     font-family: "Montserrat", sans-serif;
-    background-image: url(/src/Fondo\ Grande.png);
+    background-image: url(/Imagenes/Fondo\ Grande.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
