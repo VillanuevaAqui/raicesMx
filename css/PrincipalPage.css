@@ -188,7 +188,8 @@ h3 {
 }
 
 /*ESTILOS DEL SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
-.titleSC {
+.SecundaryContainertitle {
+    font-size: 4rem;
     text-align: center;
     font-style: italic;
     color: var(--fifth);
@@ -220,8 +221,12 @@ h5 {
     font-size: 6rem;
 }
 
-.m1 {
-    font-size: 4rem;
+.menuTime {
+    font-size: 2rem;
+}
+
+.menuText {
+    font-size: 1.5rem;
 }
 
 /*ESTILOS DE CONTENEDOR 3*/
@@ -640,18 +645,19 @@ h5 {
 
 /*Estilos para pantallas medianas (768px a 1080px)*/
 @media (max-width: 1080px) {
-    /* *MAIN CONTAINER*/
-    .background-image {
-        width: 320%;
-        height: auto;
-        /*max-height: 1200px;*/
-        /*Altura máxima que puede tener un elemento*/
-        min-width: 768px;
-        opacity: 0.87;
-        /*Ligera opacidad para la imagen de fondo*/
-        overflow: hidden;
-        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-    }
+/* *MAIN CONTAINER*/
+.background-image {
+    width: 100%;
+    height: auto;
+    max-height: 1200px;
+    /*Altura máxima que puede tener un elemento*/
+    min-width: 768px;
+    max-width: 1080px;;
+    opacity: 0.87;
+    /*Ligera opacidad para la imagen de fondo*/
+    overflow: hidden;
+    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+}
 
     .MainContainerText {
         position: absolute;
@@ -713,7 +719,7 @@ h5 {
 
     /* *MAIN CONTAINER*/
     .background-image {
-        width: 240%;
+        width: 100%;
         height: auto;
         max-height: 1200px;
         /*Altura máxima que puede tener un elemento*/
@@ -727,13 +733,13 @@ h5 {
     .MainContainerText {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 48%;
+        top: 56%;
         /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-        transform: translate(4%, -50%);
+        transform: translate(44%, -50%);
         /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
         text-align: left
             /* linea el texto dentro del elemento hacia el centro*/
-            left: 3%;
+        left 3%;
         /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     }
 
@@ -741,14 +747,14 @@ h5 {
     5px: Difumina la sombra en un radio de 4 píxeles.*/
 
     .h1MCT {
-        font-size: 7.5rem;
+        font-size: 3.2rem;
         font-weight: 700;
         color: white;
         text-shadow: 3px 3px 5px #2c2e21;
     }
 
     .h2MCT {
-        font-size: 8rem;
+        font-size: 4rem;
         font-weight: 900;
         color: white;
         text-shadow: 3px 3px 5px #2c2e21;
@@ -758,9 +764,9 @@ h5 {
     .MainContainerButtons {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 57%;
+        top: 63%;
         /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-        left: 33%;
+        left: 14%;
         /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     }
 
@@ -769,7 +775,7 @@ h5 {
         /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
         margin: 1rem;
         padding: 2rem 3rem;
-        font-size: 3.7rem;
+        font-size: 1.78rem;
         font-weight: 600;
         color: var(--primary);
         /* Texto claro */
