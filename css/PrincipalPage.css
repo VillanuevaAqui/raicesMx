@@ -1,117 +1,19 @@
 /* *ESTILOS GENERALES*/
 /* VARIABLES DE COLOR PARA EL DISEÑO*/
-:root {
-    --primary: #f6f4f1;
-    --secondary: #dcd6c0;
-    --tertiary: #4c4c2c;
-    --fourth: #2c2e21;
-    --fifth: #000000;
+
+/* a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/*CONFIGURACIÓN DE TIPOGRAFÍA BASE*/
-html {
-    font-size: 62.5%;
-    /* DEFINE 1rem COMO 10px */
+a:visited {
+    color: inherit;
 }
 
-body {
-    font-size: 16px;
-    /*TAMAÑO BASE DE LA FUENTE*/
-    font-family: "Montserrat", sans-serif;
-    background-image: url(/Imagenes/Fondo\ Grande.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/*ESTILOS GENERALES DE ENCABEZADOS*/
-h1 {
-    font-size: 7rem;
-    font-weight: 700;
-    color: var(--tertiary);
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 6rem;
-    color: var(--fourth);
-}
-
-h3 {
-    font-size: 5rem;
-    color: var(--secondary);
-}
-
-/*ESTILOS DEL NAVBAR*/
-.navbar {
-    padding: 1.5rem 5%;
-}
-
-.logo-raices {
-    border-radius: 3rem;
-    background-color: var(--secondary);
-    padding: 0 1rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transition: ease 0.3s;
-}
-
-.logo-raices:hover {
-    transform: scale(1.1);
-}
-
-.raices-isotipo {
-    width: 35px;
-}
-
-.logo-raices-sm {
-    width: 100px;
-}
-
-.raices-letras {
-    width: 75px;
-}
-
-.navbar {
-    background-color: var(--tertiary);
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-   width: 100%;
-}
-
-.nav-link {
-    color: var(--secondary);
-    font-size: 1.8rem;
-    margin-left: 3rem;
-    font-weight: 700;
-    border-bottom: 3px solid transparent;
-}
-
-.navbar-nav .nav-link.active {
-    color: var(--secondary);
-    border-bottom: 3px solid var(--secondary);
-}
-
-.nav-link:hover,
-.nav-link.active {
+a:hover {
     color: var(--primary);
-    border-bottom: 3px solid var(--secondary);
-    color: var(--fourth);
-    border-bottom: 3px solid var(--fourth);
-}
-
-.nav-link i {
-    font-size: 3rem;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(220, 214, 192, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    font-size: 2.5rem;
-}
+    text-decoration: none;
+} */
 
 /*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
 .MainCotnainer {
@@ -244,9 +146,8 @@ h5 {
 }
 
 .btnC3 {
-    display: inline;
     background-color: var(--fourth);
-    padding: 70px 90px 70px 90px;
+    padding: 2rem 15rem 2rem 15rem;
     text-decoration: none;
     border-radius: 100px;
     align-items: center;
@@ -254,8 +155,7 @@ h5 {
 }
 
 .h1C3 {
-    font-weight: 700;
-    font-size: 10rem;
+    font-size: 5rem;
     font-style: italic;
     color: white;
     text-align: center;
@@ -263,8 +163,7 @@ h5 {
 }
 
 .h2C3 {
-    font-weight: 400;
-    font-size: 5rem;
+    font-size: 3rem;
     font-style: italic;
     color: white;
     text-align: center;
