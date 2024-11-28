@@ -9,12 +9,12 @@ const Navbar = () => {
                 <div className="logo-raices d-none d-lg-flex">
                     <a className="navbar-brand" href="./index.html">
                         <img
-                            src="src/Isotipo RaícesMX.svg"
+                            src="/assets/Isotipo-RaicesMX.svg"
                             alt="Isotipo RaícesMX"
                             className="raices-isotipo"
                         />
                         <img
-                            src="src/Letras RaícesMX.svg"
+                            src="/assets/Letras-RaicesMX.svg"
                             alt="RaícesMX"
                             className="raices-letras"
                         />
@@ -24,7 +24,7 @@ const Navbar = () => {
                 {/* Logo pequeño visible en pantallas pequeñas */}
                 <a className="navbar-brand d-lg-none" href="./index.html">
                     <img
-                        src="src/Logo crema.svg"
+                        src="/assets/Logo-crema.svg"
                         alt="Logo RaícesMX"
                         className="logo-raices-sm"
                     />
