@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,25 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+:root {
+  --primary: #f6f4f1;
+  --secondary: #dcd6c0;
+  --tertiary: #4c4c2c;
+  --fourth: #2c2e21;
+  --fifth: #000000;
+  --font: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  background-image: url(../src/Fondo\ Grande.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  user-select: none;
 }
