@@ -1,0 +1,78 @@
+/** Navbar **/
+.navbar {
+    padding: 1.5rem 5%;
+}
+
+.logo-raices {
+    border-radius: 3rem;
+    background-color: var(--secondary);
+    padding: 0 1rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.logo-raices:hover {
+    transform: scale(1.1);
+}
+
+.raices-isotipo {
+    width: 35px;
+}
+
+.logo-raices-sm {
+    width: 100px;
+}
+
+.raices-letras {
+    width: 75px;
+}
+
+.navbar {
+    background-color: var(--tertiary);
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    font-weight: 700;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--secondary);
+    border-bottom: 3px solid var(--secondary);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--fourth);
+    border-bottom: 3px solid var(--fourth);
+}
+
+.nav-link i {
+    font-size: 3rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(220, 214, 192, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 5%;
+    }
+}
+
+/** Fin Navbar **/

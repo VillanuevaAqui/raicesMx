@@ -4,19 +4,19 @@
     --tertiary: #4c4c2c;
     --fourth: #2c2e21;
     --fifth: #000000;
-}
+}*/
 
 
-body {
+/* body {
     position: relative;
     font-family: "Montserrat", sans-serif;
-    background-image: url(/src/Fondo\ Grande.png);
-    background-size: cover; /* Hace que el fondo cubra toda la pantalla */
-    background-repeat: no-repeat; ; /* Impide que el fondo se repita */
-    margin: 0;  /* Elimina márgenes predeterminados del body */
-    padding: 0; /* Elimina el relleno predeterminado */
-    background-color: transparent; /* Asegúrate de que no haya un fondo en main que oculte el fondo de body */
-}
+    background-image: url(/src/Fondo\ Grande.png); */
+    /* background-size: cover; Hace que el fondo cubra toda la pantalla */
+    /* background-repeat: no-repeat; ; Impide que el fondo se repita */
+    /* margin: 0;  /* Elimina márgenes predeterminados del body */
+    /* padding: 0; Elimina el relleno predeterminado */ 
+    /* background-color: transparent; Asegúrate de que no haya un fondo en main que oculte el fondo de body 
+}*/
 
 
 .heading-container {
