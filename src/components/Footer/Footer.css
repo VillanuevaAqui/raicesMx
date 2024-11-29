@@ -1,0 +1,60 @@
+.footer {
+    margin-top: 5rem;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    font-size: 3rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.divide2 {
+    height: 5px;
+    width: 50%;
+    background-color: var(--secondary);
+    border: none;
+    margin: 20px auto;
+    border-radius: 3rem;
+}
+
+.icons a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary);
+    margin: 1rem 1.2rem;
+    transition: 0.3s ease;
+}
+
+.icons a:hover {
+    transform: scale(1.3);
+}
+
+.footertext {
+    font-size: 2rem;
+}
+
+.contactbutton {
+    font-size: 2rem;
+    padding: 1.5rem;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #000000;
+    background-color: var(--secondary);
+    border: none;
+    transition: background-color 0.3s ease
+}
+
+.contactbutton:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+.linktext{
+    margin: 1.5rem 0 2.5rem;
+}
+/*----Linea que division texto footer*/
+hr {
+    border-color:var(--secondary);
+    width: 30%;           /* Ajusta el ancho de la línea */
+    margin: 0 auto;       /* Centra horizontalmente */
+    border: 3px solid; /* Estilo de la línea */
+}
