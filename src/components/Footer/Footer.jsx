@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,9 +22,9 @@ const Footer = () => {
           <p>Aviso de privacidad</p>
         </div>
         <div>
-          <a href="./pages/contact.html" className="contactbutton">
+          <Link to="/contacto" className="contactbutton">
             Contacto
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

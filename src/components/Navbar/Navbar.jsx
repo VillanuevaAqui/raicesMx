@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -6,7 +7,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 {/* Logo grande visible en pantallas grandes */}
                 <div className="logo-raices d-none d-lg-flex">
-                    <a className="navbar-brand" href="./index.html">
+                    <Link className="navbar-brand" to="/">
                         <img
                             src="/assets/Isotipo-RaicesMX.svg"
                             alt="Isotipo RaícesMX"
@@ -17,17 +18,17 @@ const Navbar = () => {
                             alt="RaícesMX"
                             className="raices-letras"
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Logo pequeño visible en pantallas pequeñas */}
-                <a className="navbar-brand d-lg-none" href="./index.html">
+                <Link className="navbar-brand d-lg-none" to="/">
                     <img
                         src="/assets/Logo-crema.svg"
                         alt="Logo RaícesMX"
                         className="logo-raices-sm"
                     />
-                </a>
+                </Link>
 
                 {/* Botón para el toggle del menú en pantallas pequeñas */}
                 <button
@@ -45,24 +46,24 @@ const Navbar = () => {
                 {/* Menú desplegable */}
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link" href="./pages/menu.html">
+                        <Link className="nav-link" to="/menu">
                             Menú a domicilio
-                        </a>
-                        <a className="nav-link" href="./pages/nosotros.html">
+                        </Link>
+                        <Link className="nav-link" to="/nosotros">
                             Nosotros
-                        </a>
-                        <a className="nav-link" href="./pages/Beneficios.html">
+                        </Link>
+                        <Link className="nav-link" to="/beneficios">
                             Beneficios
-                        </a>
-                        <a className="nav-link" href="./pages/formularioProducto.html">
+                        </Link>
+                        <Link className="nav-link" to="/formulario-producto">
                             Formulario Producto
-                        </a>
-                        <a className="nav-link" href="#">
+                        </Link>
+                        <Link className="nav-link" to="/">
                             Iniciar sesión / Registrarse
-                        </a>
-                        <a className="nav-link" href="./pages/shopping-cart.html">
+                        </Link>
+                        <Link className="nav-link" to="/cart">
                             <i className="bx bxs-cart"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
