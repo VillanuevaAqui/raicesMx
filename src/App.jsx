@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import Button from './components/Button/Button.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
