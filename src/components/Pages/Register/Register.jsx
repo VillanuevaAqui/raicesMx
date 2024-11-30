@@ -112,18 +112,38 @@ export default function Register() {
     };
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         if (nameError || emailError || passwordError || phoneError || confirmPasswordError) {
-            event.preventDefault();
             return;
         }
         const data = new FormData(event.currentTarget);
-        console.log({
+        const userData = {
             name: data.get('name'),
-            lastName: data.get('lastName'),
             email: data.get('email'),
             phone: data.get('phone'),
             password: data.get('password'),
-        });
+        }
+        console.log('Usuario registrado:', JSON.stringify(userData, null, 2));
+
+        // Convierte el objeto a JSON y lo almacena en localStorage.
+        // localStorage.setItem('userData', JSON.stringify(userData));
+        // console.log('Datos guardados en localStorage:', userData);
+
+        const storedUsers = localStorage.getItem('users');
+        const users = storedUsers ? JSON.parse(storedUsers) : []; // Si no hay usuarios, inicializar como arreglo vacío.
+        users.push(userData);
+    
+        // Guardar el arreglo actualizado en localStorage.
+        localStorage.setItem('users', JSON.stringify(users));
+        console.log('Usuarios almacenados:', users);
+        alert('Usuario agregado correctamente');
+
+        // Do u think about me?
+        // fetch('API_URL', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(userData),
+        // });
     };
 
     const CustomFormLabel = styled(FormLabel)({
@@ -290,7 +310,7 @@ export default function Register() {
                         <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.4rem' }}>
                             ¿Ya tienes cuenta?{' '}
                             <Link
-                                href="/material-ui/getting-started/templates/sign-in/"
+                                href="#"
                                 variant="body2"
                                 sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
                             >
