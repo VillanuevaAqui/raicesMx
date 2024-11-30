@@ -102,6 +102,7 @@ body {
     padding: 2rem;
     background-color: var(--secondary);
     border-radius: 30px;
+    transition: 200ms; /*!No borrar*/
 }
 
 .about-text-1 {
