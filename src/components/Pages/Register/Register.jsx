@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import Link from '@mui/material/Link';
+//import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
@@ -15,6 +15,7 @@ import { styled } from '@mui/material/styles';
 import { Container } from '@mui/material';
 import { GoogleIcon, FacebookIcon } from './CustomIcons';
 import './Register.css';
+import { Link } from 'react-router-dom';
 
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
@@ -290,7 +291,7 @@ export default function Register() {
                         <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.4rem' }}>
                             ¿Ya tienes cuenta?{' '}
                             <Link
-                                href="/material-ui/getting-started/templates/sign-in/"
+                                to="/SignIn"
                                 variant="body2"
                                 sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
                             >
