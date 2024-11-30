@@ -1,12 +1,14 @@
+import { useState } from "react";
 import "./Button.css";
-import { Link } from 'react-router-dom';
 
 const Button = () => {
+    const [value, setValue] = useState
+    
   return (
     <button class="GreenButton"><a href="#">
-                            <h1 class="h1Button"></h1>
-                            <h2 class="h2Button"></h2>
-                            <p class="pButton"></p>
+                            <h1 class="h1Button">{value}</h1>
+                            <h2 class="h2Button">{value}</h2>
+                            <p class="pButton">{value}</p>
                         </a>
                     </button>
   )  
