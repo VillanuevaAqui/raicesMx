@@ -8,6 +8,7 @@ import Register from './components/Pages/Register/Register.jsx';
 import TitleCard from './components/TitleCard/TitleCard.jsx';
 import Button from './components/Button/Button.jsx';
 import TitleBanner from './components/Title-banner/TitleBanner.jsx';
+import Menu from './components/Pages/Menu/Menu.jsx';
 import Nosotros from './components/Pages/Nosotros/Nosotros.jsx';
 
 
@@ -26,8 +27,8 @@ function App() {
           />
         </div>
         <Routes>
-        {/* <Route path="/" element={<Inicio />} />
-        <Route path="/menu" element={<Menu />} />*/}
+        {/* <Route path="/" element={<Inicio />} />*/}
+        <Route path="/menu" element={<Menu />} />
         <Route path="/nosotros" element={<Nosotros />} />
         {/*<Route path="/beneficios" element={<Beneficios />} /> */}
         <Route path="/registro" element={<Register />} />
