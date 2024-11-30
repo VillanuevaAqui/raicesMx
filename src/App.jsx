@@ -5,9 +5,7 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import SignIn from './components/Pages/SignIn/SignIn.jsx';
 import Register from './components/Pages/Register/Register.jsx';
-
 import TitleCard from './components/TitleCard/TitleCard.jsx';
-
 import Button from './components/Button/Button.jsx';
 import TitleBanner from './components/Title-banner/TitleBanner.jsx';
 import Nosotros from './components/Pages/Nosotros/Nosotros.jsx';
