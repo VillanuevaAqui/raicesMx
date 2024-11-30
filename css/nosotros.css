@@ -123,13 +123,12 @@ body {
 /*!PANTALLAS GRANDES (Min-width: 1080px)*/
 @media (min-width: 1080px) {
     .about-text-1 {
-        max-width: 70%;
+        max-width: 100%;
     .about-text-1 {
         max-width: 100%;
     }
 }
 
-/*!PANTALLAS MEDIANAS (769px a 1080px)*/
 /*!PANTALLAS MEDIANAS (769px a 1080px)*/
 @media (max-width: 1079px) {
     .about-section-2 {
