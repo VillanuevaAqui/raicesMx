@@ -51,12 +51,15 @@ export default function Register() {
     const [nameErrorMessage, setNameErrorMessage] = React.useState('');
     const [phoneError, setPhoneError] = React.useState(false);
     const [phoneErrorMessage, setPhoneErrorMessage] = React.useState('');
+    const [confirmPasswordError, setConfirmPasswordError] = React.useState(false);
+    const [confirmPasswordErrorMessage, setConfirmPasswordErrorMessage] = React.useState('');
 
     const validateInputs = () => {
         const email = document.getElementById('email');
         const password = document.getElementById('password');
         const name = document.getElementById('name');
         const phone = document.getElementById('phone');
+        const confirmPassword = document.getElementById('confirmPassword');
 
         let isValid = true;
 
@@ -87,6 +90,15 @@ export default function Register() {
             setPasswordErrorMessage('');
         }
 
+        if (confirmPassword.value !== password.value) {
+            setConfirmPasswordError(true);
+            setConfirmPasswordErrorMessage('Passwords do not match.');
+            isValid = false;
+        } else {
+            setConfirmPasswordError(false);
+            setConfirmPasswordErrorMessage('');
+        }
+
         if (!name.value || name.value.length < 1) {
             setNameError(true);
             setNameErrorMessage('Name is required.');
@@ -100,7 +112,7 @@ export default function Register() {
     };
 
     const handleSubmit = (event) => {
-        if (nameError || emailError || passwordError || phoneError) {
+        if (nameError || emailError || passwordError || phoneError || confirmPasswordError) {
             event.preventDefault();
             return;
         }
@@ -214,6 +226,27 @@ export default function Register() {
                                     "& .MuiFormHelperText-root": {
                                         fontSize: "1.3rem",
                                         fontFamily: "var(--font)"
+                                    },
+                                }}
+                            />
+                        </FormControl>
+                        <FormControl>
+                            <CustomFormLabel htmlFor="confirmPassword">Confirmar contraseña</CustomFormLabel>
+                            <TextField
+                                required
+                                fullWidth
+                                name="confirmPassword"
+                                placeholder="Repite tu contraseña"
+                                type="password"
+                                id="confirmPassword"
+                                autoComplete="new-password"
+                                variant="outlined"
+                                error={confirmPasswordError}
+                                helperText={confirmPasswordErrorMessage}
+                                sx={{
+                                    "& .MuiFormHelperText-root": {
+                                        fontSize: "1.3rem",
+                                        fontFamily: "var(--font)",
                                     },
                                 }}
                             />
