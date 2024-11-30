@@ -19,13 +19,15 @@ body {
 /*!MAIN: TEXTO SUPERPUESTO SOBRE IMAGEN=====================================================*/
 .about-img-container {
     position: relative;
-    overflow: hidden;
-    text-align: center;
+    width: 100%; /* Se adapta al ancho de la pantalla */
+    height: 300px; /* Altura deseada */
+    overflow: hidden; /* Oculta las partes de la imagen que excedan el contenedor */
 }
 
 .responsive-image {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    object-fit: cover; /* Recorta la imagen sin deformarla */
 }
 
 .image-text {
