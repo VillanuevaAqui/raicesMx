@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Link className="nav-link" to="/formulario-producto">
                             Formulario Producto
                         </Link>
-                        <Link className="nav-link" to="/">
+                        <Link className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
                         </Link>
                         <Link className="nav-link" to="/cart">

@@ -1,0 +1,19 @@
+#email, #password{
+    font-size: 1.6rem;
+}
+.title{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.label-form {
+
+    font-size: 1.6rem;
+
+}
+
+@media (max-width: 768px) {
+    .title{
+        font-size: 6rem;
+    }
+}
