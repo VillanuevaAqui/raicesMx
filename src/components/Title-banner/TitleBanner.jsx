@@ -1,15 +1,11 @@
-import { useState } from "react";
 import "./TitleBanner.css";
 
-const TitleBanner = () => {
-    const [value, setValue] = useState
+const TitleBanner = ({ title = "Título" }) => {
 
     return (
-<div class="nuestroCompromisoBtn">
-        <h1 class="h1TitleBanner">{value}</h1>
-        <h2 class="h2TitleBanner">{value}</h2>
-        <p class="pTitleBanner">{value}</p>
-</div>
+        <div className="title-banner">
+            <h2 className="h2TitleBanner">{title}</h2>
+        </div>
     )
 }
 

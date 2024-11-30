@@ -5,7 +5,13 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import SignIn from './components/Pages/SignIn/SignIn.jsx';
 import Register from './components/Pages/Register/Register.jsx';
+
 import TitleCard from './components/TitleCard/TitleCard.jsx';
+
+import Button from './components/Button/Button.jsx';
+import TitleBanner from './components/Title-banner/TitleBanner.jsx';
+import Nosotros from './components/Pages/Nosotros/Nosotros.jsx';
+
 
 function App() {
 
@@ -23,16 +29,17 @@ function App() {
         </div>
         <Routes>
         {/* <Route path="/" element={<Inicio />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<Menu />} />*/}
         <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/beneficios" element={<Beneficios />} /> */}
+        {/*<Route path="/beneficios" element={<Beneficios />} /> */}
         <Route path="/registro" element={<Register />} />
         <Route path="/SignIn" element={<SignIn />} />
         {/* <Route path="/cart" element={<Cart />} /> */}
       </Routes>
       
       </BrowserRouter>
-
+      <TitleBanner title="Test"/>
+      <Button text="Botón"/>
 
       <BrowserRouter>
       <Footer />

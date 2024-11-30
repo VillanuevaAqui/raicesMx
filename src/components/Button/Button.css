@@ -1,4 +1,4 @@
-.button {
+.GreenButton {
     font-size: 2rem;
     padding: 1.5rem;
     border-radius: 100px;
@@ -9,7 +9,7 @@
     transition: background-color 0.3s ease
 }
 
-.button:hover {
+.GreenButton:hover {
     background-color: var(--fourth);
     color: var(--primary);
 }
