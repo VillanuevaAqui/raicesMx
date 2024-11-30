@@ -5,6 +5,9 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import SignIn from './components/Pages/SignIn/SignIn.jsx';
 import Register from './components/Pages/Register/Register.jsx';
+import Button from './components/Button/Button.jsx';
+import TitleBanner from './components/Title-banner/TitleBanner.jsx';
+
 
 function App() {
 
@@ -22,7 +25,8 @@ function App() {
         {/* <Route path="/cart" element={<Cart />} /> */}
       </Routes>
       </BrowserRouter>
-
+      <TitleBanner title="Test"/>
+      <Button text="Botón"/>
 
       <BrowserRouter>
       <Footer />

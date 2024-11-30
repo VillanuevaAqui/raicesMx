@@ -7,3 +7,22 @@
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.title-banner {
+    background-color: var(--fourth);
+    border-radius: 2rem;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5rem;
+    min-width: 100rem;
+}
+
+.h2TitleBanner{
+        color: var(--primary);
+        padding: 2rem 8rem;
+        width: fit-content;
+        border-radius: 25px;
+        font-size: 6rem;
+        font-weight: bold;
+}
