@@ -1,0 +1,89 @@
+/* Contenedor principal de la tarjeta */
+.title-card {
+    background: #f0f4f8; /* Fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    display: flex; /* Flexbox para organizar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: auto; /* Ancho máximo */
+    margin: 0 auto; /* Centrar en la página */
+    overflow: hidden; /* Ocultar contenido desbordado */
+  }
+  
+  /* Contenedor de la imagen y texto */
+  .title-card-content {
+    display: flex; /* Flexbox para alinear imagen y texto horizontalmente */
+    align-items: center; /* Alinear verticalmente */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+  }
+  
+  /* Contenedor para la imagen */
+  .title-card-image img {
+    width: 150px; /* Ancho fijo de la imagen */
+    height: auto; /* Altura proporcional al ancho */
+    border-radius: 8px; /* Bordes redondeados */
+    object-fit: cover; /* Ajustar imagen al tamaño del contenedor sin deformarla */
+  }
+  
+  /* Contenedor para el texto */
+  .title-card-text {
+    flex: 1; /* El texto ocupa el espacio restante disponible */
+    text-align: left; /* Alinear texto a la izquierda */
+  }
+  
+  /* Estilo para el título */
+  .title {
+    font-size: 1.8rem; /* Tamaño grande para el título */
+    color: #333; /* Color oscuro para contraste */
+    margin-bottom: 10px; /* Espacio debajo del título */
+  }
+  
+  /* Estilo para el subtítulo */
+  .subtitle {
+    font-size: 1.2rem; /* Tamaño más pequeño para el subtítulo */
+    color: #666; /* Color gris claro */
+  }
+
+  /* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .title-card-content {
+      flex-direction: column; /* Cambiar a diseño vertical en pantallas pequeñas */
+      text-align: center; /* Centrar texto */
+    }
+  
+    .title-card-image img {
+      width: 100px; /* Reducir tamaño de la imagen */
+      margin-bottom: 15px; /* Espacio debajo de la imagen */
+    }
+  
+    .title {
+      font-size: 1.5rem; /* Reducir tamaño del título */
+    }
+  
+    .subtitle {
+      font-size: 1rem; /* Reducir tamaño del subtítulo */
+    }
+  }
+  
+  /* Media query para pantallas muy pequeñas (ej. móviles en vertical) */
+  @media (max-width: 480px) {
+    .title-card {
+      padding: 15px; /* Reducir padding */
+    }
+  
+    .title-card-image img {
+      width: 80px; /* Imagen más pequeña */
+    }
+  
+    .title {
+      font-size: 1.2rem; /* Ajustar tamaño del título */
+    }
+  
+    .subtitle {
+      font-size: 0.9rem; /* Ajustar tamaño del subtítulo */
+    }
+  }
+  
