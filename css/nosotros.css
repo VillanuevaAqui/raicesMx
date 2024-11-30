@@ -61,12 +61,13 @@ body {
     padding: 2rem;
     border-radius: 3rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
 }
 
 .listmenu:hover {
     color: var(--primary);
     background-color: var(--tertiary);
+    transform: scale(1.05);
 }
 
 .listmenu.active {
@@ -74,7 +75,7 @@ body {
     color: var(--secondary);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 
