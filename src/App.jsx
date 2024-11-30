@@ -3,8 +3,8 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import TitleBanner from './components/Title-banner/TitleBanner.jsx';
-import Button from './components/Button/Button.jsx'
+import SignIn from './components/Pages/SignIn/SignIn.jsx';
+import Register from './components/Pages/Register/Register.jsx';
 
 function App() {
 
