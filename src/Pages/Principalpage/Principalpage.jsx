@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Principalpage.css";
+//import "./Principalpage.css";
 
 const Principalpage = () => {
     return (

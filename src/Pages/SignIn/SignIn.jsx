@@ -19,7 +19,16 @@ import CssBaseline from '@mui/material/CssBaseline';
 import CryptoJS from 'crypto-js';
 import { Link } from 'react-router-dom';
 import "./SignIn.css";
+import UsersExample from './database';
 
+async function loadExampleUsers() {
+
+  const usersExample = new UsersExample
+  usersExample.dataUserToLocalStorage()
+
+}
+
+loadExampleUsers()
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -48,8 +57,6 @@ export default function SignIn(props) {
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
-  const [encryptedTextP, setEncryptedTextP] = React.useState ("");
-  const [encryptedTextE, setEncryptedTextE] = React.useState ("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -71,29 +78,23 @@ export default function SignIn(props) {
     });
   };
 
-  const encrypt = (inputText, secureKey) => {
+  const encrypt = (inputText) => {
 
-    const encrypted = CryptoJS.AES.encrypt(inputText, secureKey).toString();
+    const encrypted = CryptoJS.MD5(inputText).toString();
     return encrypted
   };
 
-  const encryptPassword = (inputText, securekey) => {
-    setEncryptedTextP(encrypt(inputText,securekey));
+  const encryptPassword = (inputText) => {
+    return encrypt(inputText);
   };
 
-  const encryptEmail = (inputText, securekey) => {
-    setEncryptedTextE(encrypt(inputText, securekey));
+  const encryptEmail = (inputText) => {
+    return encrypt(inputText);
   };
 
   const toCompare = (email, password) => {
-
+    
     let coincidences = 0;
-
-    if (encryptedTextE != undefined){
-
-      alert(encryptedTextE)
-    }
-
     const users = JSON.parse(localStorage.getItem("users"));
 
     for (let user of users){
@@ -109,7 +110,12 @@ export default function SignIn(props) {
 
     } else if (coincidences == 0){
 
-      alert("Usuario y contraseña no coinciden")
+      alert(`
+        Usuario y contraseña no coinciden 
+        Datos de ejemplo 
+        email: VillanuevaAqui2017@gmail.com 
+        password: 12345678`)
+
     } else {
 
       alert("Error, favor de comunicarse a soporte")
@@ -145,10 +151,7 @@ export default function SignIn(props) {
 
     if (isValid){
 
-      console.log(encryptedTextE)
-      encryptPassword(password.value, email.value);
-      encryptEmail(email.value, password.value);
-      toCompare()
+      toCompare(encryptEmail(email.value.toLowerCase()), encryptPassword(password.value));
 
     }
 
@@ -165,7 +168,7 @@ export default function SignIn(props) {
       <CssBaseline />
       <SignInContainer direction="column" justifyContent="space-between">
         <Container>
-          <h1 className='title'>
+          <h1 className='sign-in-title'>
                   Iniciar Sesión
           </h1>
         </Container>

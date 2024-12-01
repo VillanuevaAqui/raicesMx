@@ -1,7 +1,7 @@
 #name, #email, #phone, #password, #confirmPassword{
     font-size: 1.6rem;
 }
-.title{
+.register-title{
     text-align: center;
     margin-top: 3rem;
 }

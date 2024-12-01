@@ -161,7 +161,7 @@ export default function Register() {
             <CssBaseline />
             <SignUpContainer direction="column" justifyContent="space-between">
                 <Container>
-                    <h1 className='title'>
+                    <h1 className='register-title'>
                         Regístrate
                     </h1>
                 </Container>
