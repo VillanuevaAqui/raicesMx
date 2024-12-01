@@ -1,4 +1,4 @@
-#email, #password{
+#name, #email, #phone, #password, #confirmPassword{
     font-size: 1.6rem;
 }
 .title{

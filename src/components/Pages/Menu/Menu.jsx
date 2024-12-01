@@ -8,22 +8,22 @@ const Menu = () => {
     // Elementos del menú (puedes ampliarlos según sea necesario)
     const menuItems = {
         Desayuno: [
-            { title: "Huevos con tocino", imgSrc: "/public/assets/Huevos-tocino.webp", description: "Delicioso desayuno con huevos y tocino." },
-            { title: "Omelette con jamón", imgSrc: "/public/assets/Omelette con jamón.webp", description: "Un omelette clásico con jamón." },
-            { title: "Sandwich", imgSrc: "/public/assets/Sandwitch.webp", description: "Un delicioso sandwich para el almuerzo." },,
-            { title: "Enchiladas", imgSrc: "/public/assets/Enchiladas.webp", description: "Enchiladas tradicionales mexicanas." },
-            { title: "Avena con fruta", imgSrc: "/public/assets/Avena-fruta.webp", description: "Un rico plato de avena con frutas." },
-            { title: "Hot cakes de platano y avena", imgSrc: "/public/assets/Hot-cakes-avena-platano.webp", description: "Unos ricos hot cakes de platano y avena" },
+            { title: "Huevos con tocino", imgSrc: "/assets/Huevos-tocino.webp", description: "Delicioso desayuno con huevos y tocino." },
+            { title: "Omelette con jamón", imgSrc: "/assets/Omelette con jamón.webp", description: "Un omelette clásico con jamón." },
+            { title: "Sandwich", imgSrc: "/assets/Sandwitch.webp", description: "Un delicioso sandwich para el almuerzo." },,
+            { title: "Enchiladas", imgSrc: "/assets/Enchiladas.webp", description: "Enchiladas tradicionales mexicanas." },
+            { title: "Avena con fruta", imgSrc: "/assets/Avena-fruta.webp", description: "Un rico plato de avena con frutas." },
+            { title: "Hot cakes de platano y avena", imgSrc: "/assets/Hot-cakes-avena-platano.webp", description: "Unos ricos hot cakes de platano y avena" },
         ],
         Comida: [
-            { title: "Carne con ensalada", imgSrc: "/public/assets/Ensalada con carne.webp", description: "Un deliciosa carne con ensalada" },
-            { title: "Lasaña", imgSrc: "/public/assets/Lasagna.webp", description: "Una lasaña jugosa con capas de queso." },
-            { title: "Pozole", imgSrc: "/public/assets/Pozole.webp", description: "Un rico pozole mexicano." }
+            { title: "Carne con ensalada", imgSrc: "/assets/Ensalada con carne.webp", description: "Un deliciosa carne con ensalada" },
+            { title: "Lasaña", imgSrc: "/assets/Lasagna.webp", description: "Una lasaña jugosa con capas de queso." },
+            { title: "Pozole", imgSrc: "/assets/Pozole.webp", description: "Un rico pozole mexicano." }
         ],
         Cena: [
-            { title: "Molletes", imgSrc: "/public/assets/Molletes.webp", description: "Unos deliciosos molletes." },
-            { title: "Sincronizadas", imgSrc: "/public/assets/Sincronizadas.webp", description: "Unas ricas sincronizadas." },
-            { title: "Tostada de tinga de pollo", imgSrc: "/public/assets/Tinga-pollo.webp", description: "Unas ricas tostadas tinga de pollo."}
+            { title: "Molletes", imgSrc: "/assets/Molletes.webp", description: "Unos deliciosos molletes." },
+            { title: "Sincronizadas", imgSrc: "/assets/Sincronizadas.webp", description: "Unas ricas sincronizadas." },
+            { title: "Tostada de tinga de pollo", imgSrc: "/assets/Tinga-pollo.webp", description: "Unas ricas tostadas tinga de pollo."}
         ]
     };
 

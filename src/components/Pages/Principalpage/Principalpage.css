@@ -1,30 +1,7 @@
 /* *ESTILOS GENERALES*/
-/* VARIABLES DE COLOR PARA EL DISEÑO*/
-:root {
-    --primary: #f6f4f1;
-    --secondary: #dcd6c0;
-    --tertiary: #4c4c2c;
-    --fourth: #2c2e21;
-    --fifth: #000000;
-}
-
-/*CONFIGURACIÓN DE TIPOGRAFÍA BASE*/
-html {
-    font-size: 62.5%;
-    /* DEFINE 1rem COMO 10px */
-}
-
-body {
-    font-size: 16px;
-    /*TAMAÑO BASE DE LA FUENTE*/
-    font-family: "Montserrat", sans-serif;
-    background-image: url(/src/Fondo\ Grande.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 /*ESTILOS GENERALES DE ENCABEZADOS*/
-h1 {
+/* h1 {
     font-size: 7rem;
     font-weight: 700;
     color: var(--tertiary);
@@ -39,117 +16,44 @@ h2 {
 h3 {
     font-size: 5rem;
     color: var(--secondary);
-}
+} */
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 600px) {
-  }
-  
-  /* Estilos para pantallas grandes */
-  @media (min-width: 1024px) {
-  }
+@media (max-width: 600px) {}
 
-/*ESTILOS DEL NAVBAR*/
-.navbar {
-    padding: 1.5rem 5%;
-}
+/* Estilos para pantallas grandes */
+@media (min-width: 1024px) {}
 
-.logo-raices {
-    border-radius: 3rem;
-    background-color: var(--secondary);
-    padding: 0 1rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transition: ease 0.3s;
-}
-
-.logo-raices:hover {
-    transform: scale(1.1);
-}
-
-.raices-isotipo {
-    width: 35px;
-}
-
-.logo-raices-sm {
-    width: 100px;
-}
-
-.raices-letras {
-    width: 75px;
-}
-
-.navbar {
-    background-color: var(--tertiary);
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-}
-
-.nav-link {
-    color: var(--secondary);
-    font-size: 1.8rem;
-    margin-left: 3rem;
-    font-weight: 700;
-    border-bottom: 3px solid transparent;
-}
-
-.navbar-nav .nav-link.active {
-    color: var(--secondary);
-    border-bottom: 3px solid var(--secondary);
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary);
-    border-bottom: 3px solid var(--secondary);
-    color: var(--fourth);
-    border-bottom: 3px solid var(--fourth);
-}
-
-.nav-link i {
-    font-size: 3rem;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(220, 214, 192, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    font-size: 2.5rem;
-}
 
 /*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
-.MainCotnainer {
+.MainContainer {
     position: relative;
     text-align: center;
     color: var(--primary);
     /*COLOR DE FONDO PRINCIPAL*/
 }
 
-/*.background-image {
+.background-image {
     opacity: 0.87;
     /*Ligera opacidad para la imagen de fondo*/
-    /*overflow: hidden;
+    overflow: hidden;
     /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-    /*display: flex;
-    /*flex-wrap: wrap;
-   /*max-height: 1300px;
-    /*Altura máxima que puede tener un elemento*/
-/*}
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /*La imagen ocupa el ancho máximo de la ventana*/
+}
 
 /* .MainContainerText { */
-    /*position: absolute;
+/*position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-    /*top: 25%;
+/*top: 25%;
     /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-    /*left: 32%;
+/*left: 32%;
     /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
-    /*transform: translate(-50%, -50%);
+/*transform: translate(-50%, -50%);
     /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
-    /*text-align: center;
+/*text-align: center;
     /* linea el texto dentro del elemento hacia el centro*/
 /*}*/
 
@@ -285,7 +189,7 @@ h5 {
     background-color: none;
 }
 
-.card {
+.card-benefits {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -304,7 +208,7 @@ h5 {
 
 .cardImg1 {
     width: 30rem;
-    height: 30rem; 
+    height: 30rem;
     border: 3px solid;
     border-radius: 20%;
     border-color: var(--secondary);
@@ -312,7 +216,7 @@ h5 {
 
 .cardImg2 {
     width: 30rem;
-    height: 30rem; 
+    height: 30rem;
     border: 3px solid;
     border-radius: 20%;
     border-color: var(--secondary);
@@ -381,7 +285,8 @@ h5 {
     margin: 2rem 0 2rem 0;
 }
 
-.h1C4, .h2C4 {
+.h1C4,
+.h2C4 {
     font-size: 3rem;
     font-style: italic;
     color: white;
@@ -395,7 +300,8 @@ h5 {
     gap: 10px;
     padding: 10px;
     margin: 0 auto;
-    max-width: 1200px; /*!Limita el ancho del contenedor*/
+    max-width: 1200px;
+    /*!Limita el ancho del contenedor*/
 }
 
 .commitment-NC {
@@ -417,21 +323,4 @@ h5 {
 .textNC {
     font-size: 4rem;
     padding: 10px;
-}
-
-/*ESTILLOSS DEL PIE DE PÁGINA*/
-.footer {
-    background-color: var(--tertiary);
-    color: var(--secondary);
-    font-size: 3rem;
-    text-align: center;
-    /* padding: 2rem; */
-}
-
-.icons {
-    padding: 3rem;
-}
-
-.icon {
-    margin: 1rem;
 }
