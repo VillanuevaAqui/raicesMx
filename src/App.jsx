@@ -13,7 +13,6 @@ import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
 // import Contact from './components/Pages/Contact/Contact.jsx';
-import Principalpage from './components/Pages/Principalpage/Principalpage.jsx';
 
 
 function App() {
