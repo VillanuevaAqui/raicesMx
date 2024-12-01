@@ -14,7 +14,7 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import { Container } from '@mui/material';
 import { GoogleIcon, FacebookIcon } from './CustomIcons';
-import './Register.css';
+import styles from './Register.module.css';
 import { Link } from 'react-router-dom';
 
 // Estilo del contenedor principal del formulario
@@ -164,6 +164,7 @@ export default function Register() {
                     <h1 className='register-title'>
                         Regístrate
                     </h1>
+                    
                 </Container>
                 <Card variant="outlined">
                     <Box

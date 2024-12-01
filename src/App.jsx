@@ -12,6 +12,8 @@ import Menu from './Pages/Menu/Menu.jsx';
 import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
+// import Contact from './components/Pages/Contact/Contact.jsx';
+import Principalpage from './components/Pages/Principalpage/Principalpage.jsx';
 
 
 function App() {
@@ -29,13 +31,13 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         {/* <Route path="/cart" element={<Cart />} /> */}
       </Routes>
-      
       </BrowserRouter>
+
       <BrowserRouter>
       <Footer />
-      {/* <Routes>
-        <Route path="/contacto" element={<Contacto />} />
-      </Routes> */}
+      <Routes>
+        {/* <Route path="/contacto" element={<Contact />} /> */}
+      </Routes>
       </BrowserRouter>
     </>
   )
