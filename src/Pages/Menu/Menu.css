@@ -60,7 +60,7 @@
 
 /* Tamaños para titulo card */
 h5.card-title-menu {
-    font-size: 2.5rem; /* Tamaño estándar del título */
+    font-size: 2rem; /* Tamaño estándar del título */
     font-weight: bold;
     margin: 1rem 0;
     
@@ -163,7 +163,7 @@ hr {
                         
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
-    .card {
+    .card-menu {
         margin-bottom: 2.5rem;
     }
     .h1-menu {
@@ -206,7 +206,7 @@ hr {
 
 /* *Estilos para pantallas medianas (tabletas) */
 @media (min-width: 601px) and (max-width: 768px) {
-    .card {
+    .card-menu {
         margin-bottom: 2rem;
         max-width: 42rem; /* Ajusta el tamaño de las tarjetas */
     }
@@ -258,7 +258,7 @@ hr {
 
 /* *Estilos para pantallas grandes (escritorio) */
 @media (min-width: 769px) {
-    .card {
+    .card-menu {
         margin-bottom: 3rem;
         max-width: 45rem; /* Tamaño estándar de las tarjetas */
     }
