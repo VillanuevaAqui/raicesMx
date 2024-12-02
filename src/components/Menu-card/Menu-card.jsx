@@ -7,6 +7,7 @@ const MenuCard = () => {
   return (
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-indicators">
+       
         <button
           type="button"
           data-bs-target="#carouselExampleCaptions"
@@ -28,27 +29,29 @@ const MenuCard = () => {
           aria-label="Slide 3"
         ></button>
       </div>
-
+/*SLIDES INDIVIDUALES DEL CARRUSEL*/
       <div className="carousel-inner">
         <div className="carousel-item active">
+          <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
+          <div className="carousel-caption d-none d-md-block">
+            <h5>MENÚ 1 | Desayuno</h5>
+            <p>Chilaquiles verdes con huevo</p>
+          </div>
+        </div>
+  /*SLIDE 2 M1 */
+        <div className="carousel-item">
           <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>MENÚ 1 | Comida</h5>
+            <p>Ceviche.</p>
           </div>
         </div>
+  /*SLIDE 3 M1 */
         <div className="carousel-item">
-          <img src="assets/Chilaquiles-y-Huevos.webp" className="d-block w-100" alt="..." />
+          <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src="assets/Enchiladas.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5>MENÚ 1 | Cena</h5>
+            <p>Omelette con espinacas</p>
           </div>
         </div>
       </div>
