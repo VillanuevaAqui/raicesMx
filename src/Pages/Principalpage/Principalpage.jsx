@@ -8,7 +8,7 @@ const Principalpage = () => {
         
             {/*IMAGEN GRANDE DEL INICIO*/}
             <div className="MainContainer">
-                <img className="background-image" src="/assets/Pozole.webp" alt="Olla de pozole rojo" />
+                <img className="background-image" src="/assets/Pozole.webp" alt="Olla de pozole rojo" style={{ width: '100%' }}/>
                 {/*BOTONES ENCIMA DE LA IMAGEN GRANDE DEL INICIO*/}
                 <div className="MainContainerText">
                     <h1 className="h1MCT">Platillos exquisitos</h1>
