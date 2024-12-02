@@ -34,6 +34,20 @@ a:hover {
 Altura máxima que puede tener un elemento*/
 }
 
+.background-image {
+
+    width: 100%;
+
+}
+
+.imageNC {
+
+    width: 31.4rem;
+    height: 31.4rem;
+    border-radius: 100%;
+
+}
+
 .MainContainerText {
     position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
