@@ -148,10 +148,10 @@ const Menu = () => {
                                         className="card-img-top-menu" 
                                         alt={item.name} 
                                     />
-                                    <div className="card-body">
+                                    <div className="card-body-menu">
                                         <h5 className="card-title-menu">{item.name}</h5>
                                         <p className="card-text-menu">{item.desc}</p>
-                                        <p className="card-price">Precio: ${item.price.toFixed(2)}</p>
+                                        <p className="card-price-menu">Precio: ${item.price.toFixed(2)}</p>
                                         <button className="btn-menu" onClick={() => addToCart(item)}>Agregar al carrito</button>
                                     </div>
                                 </div>
