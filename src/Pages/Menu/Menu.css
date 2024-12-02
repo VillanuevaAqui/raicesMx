@@ -193,9 +193,8 @@ hr {
     }
     
     .btn-option-menu {
-        width: 30%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
+        width: 31%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
         font-size: 1.4rem;        /* Reduce el tamaño del texto */
-        padding: 0.7rem 1.5rem;   /* Ajusta el relleno */
     }
     .col-12 {
         padding-left: 1rem; /* Espaciado izquierdo */
