@@ -20,6 +20,7 @@ a:hover {
     position: relative;
     text-align: center;
     color: var(--primary);
+    overflow: hidden;
     /*COLOR DE FONDO PRINCIPAL*/
 }
 
@@ -313,6 +314,7 @@ h5 {
     padding: 10px;
 }
 
+<<<<<<< HEAD
 /*ESTILLOSS DEL PIE DE PÁGINA*/
 .footer {
     background-color: var(--tertiary);
@@ -697,3 +699,10 @@ h5 {
 }
 
 /* !TERMINAN MQ*/
+=======
+.MainContainer-content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+>>>>>>> fd76f73e137313a3dd16ac540fd5a5f63073ea89
