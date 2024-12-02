@@ -406,16 +406,6 @@ h5 {
         padding: 1rem 2rem;
     }
 
-    .navbar {
-        flex-direction: column;
-        padding: 1rem; /* Reducir padding */
-    }
-
-    .nav-link {
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
-    }
-
     .background-image {
         width: 100%;
         height: auto; /* Asegurar que se ajuste bien */
