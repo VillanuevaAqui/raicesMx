@@ -150,7 +150,7 @@ const Menu = () => {
                                     />
                                     <div className="card-body-menu">
                                         <h5 className="card-title-menu">{item.name}</h5>
-                                        <p className="card-text-emenu">{item.desc}</p>
+                                        <p className="card-text-menu">{item.desc}</p>
                                         <p className="card-price-menu">Precio: ${item.price.toFixed(2)}</p>
                                         <button className="btn-menu" onClick={() => addToCart(item)}>Agregar al carrito</button>
                                     </div>
