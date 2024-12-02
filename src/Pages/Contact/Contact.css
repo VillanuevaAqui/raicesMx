@@ -161,9 +161,6 @@ body {
     opacity: 1;
 }
 
-
-
-
 .direct-contact {
     background-color: var(--secondary);
     color: var(--fourth);
@@ -229,15 +226,6 @@ body {
 
 
 
-.footer {
-    background-color: var(--tertiary);
-    color: var(--secondary);
-    text-align: center;
-    padding: 0rem; /*otro cambio de 2rem a 0*/
-    min-height: 0; /* Elimina el min-height o ajusta según sea necesario */
-    margin-top: 0;  /* Asegura que no haya un espacio entre el main y el footer */
-
-}
 
 
 .icons .icon {

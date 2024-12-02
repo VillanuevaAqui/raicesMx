@@ -12,7 +12,7 @@ import Menu from './Pages/Menu/Menu.jsx';
 import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
-//import ContactPage from './components/Pages/Contact/Contact.jsx';
+import ContactPage from './Pages/Contact/Contact.jsx';
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
       <Footer />
       <Routes>
-        {/* <Route path="/contacto" element={<ContactPage />} /> */}
+         <Route path="/contacto" element={<ContactPage />} /> 
       </Routes>
       </BrowserRouter>
     </>
