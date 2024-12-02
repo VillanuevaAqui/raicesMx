@@ -1,0 +1,19 @@
+#name, #email, #phone, #password, #confirmPassword{
+    font-size: 1.6rem;
+}
+.sign-in-title{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.label-form {
+
+    font-size: 1.6rem;
+
+}
+
+@media (max-width: 768px) {
+    .title{
+        font-size: 6rem;
+    }
+}
