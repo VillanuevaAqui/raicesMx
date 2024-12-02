@@ -2,7 +2,7 @@
 
 ### Proyecto integrador
 
-![](https://github.com/VillanuevaAqui/raicesMx/blob/main/src/Raices.png)
+![](https://github.com/VillanuevaAqui/raicesMx/blob/migrated-project/public/assets/Raices.png)
 
 ## Avances 
 
