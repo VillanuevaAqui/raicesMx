@@ -1,0 +1,124 @@
+.cart-container {
+    padding: 20px;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-column {
+    flex: 1;
+    text-align: center;
+}
+
+.cart-header {
+    font-weight: bold;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.btn-remove {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background-color: #c0392b;
+}
+
+.btn-purchase {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-purchase:hover {
+    background-color: #2ecc71;
+}
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.btn-quantity {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn-quantity:hover {
+    background-color: #e2e2e2;
+}
+
+.btn-quantity:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+}
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid #f1c40f; /* Amarillo */
+    border-radius: 20px;
+    padding: 5px 15px;
+    background-color: #fff;
+}
+
+.quantity-btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    color: #f39c12; /* Amarillo más oscuro */
+}
+
+.quantity-btn:disabled {
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.quantity-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
