@@ -9,7 +9,8 @@ const Cart = () => {
 
     return (
         <section className="cart-container">
-            <h1>Carrito de compras</h1>
+            <div className="cart-content">
+            <h1 className="cart-title">Carrito de compras</h1>
             {cart.length === 0 ? (
                 <p>Tu carrito está vacío</p>
             ) : (
@@ -86,6 +87,7 @@ const Cart = () => {
                     </button>
                 </>
             )}
+            </div>
         </section>
     );
 };

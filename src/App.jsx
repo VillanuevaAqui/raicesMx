@@ -17,10 +17,11 @@ import Cart from './Pages/Cart/Cart.jsx';
 function App() {
 
   return (
-    <>
+    <div className='main-container'>
       <CartProvider>
         <BrowserRouter>
           <Navbar />
+          <div className='main-content'>
           <Routes>
             <Route path="/" element={<Principalpage />} />
             <Route path="/menu" element={<Menu />} />
@@ -31,10 +32,11 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>
+          </div>
           <Footer />
         </BrowserRouter>
       </CartProvider>
-    </>
+    </div>
   )
 }
 

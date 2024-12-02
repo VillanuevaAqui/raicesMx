@@ -38,6 +38,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
   padding: theme.spacing(4),
   gap: theme.spacing(2),
   margin: 'auto',
+  borderRadius: '20px',
   [theme.breakpoints.up('sm')]: {
     maxWidth: '450px',
   },
@@ -173,13 +174,13 @@ export default function SignIn(props) {
           </h1>
         </Container>
         <Card variant="outlined">
-          <Typography
+          {/* <Typography
             component="h1"
             variant="h4"
             sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontWeight: "700" }}
           >
             Sign in
-          </Typography>
+          </Typography> */}
           <Box
             component="form"
             onSubmit={handleSubmit}
