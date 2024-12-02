@@ -2,11 +2,11 @@
 
 ### Proyecto integrador
 
-![](https://github.com/VillanuevaAqui/raicesMx/blob/main/src/Raices.png)
+![](https://github.com/VillanuevaAqui/raicesMx/blob/migrated-project/public/assets/Raices.png)
 
 ## Avances 
 
-- Puedes probar la estructura básica de la pagina web [Aquí](https://villanuevaaqui.github.io/raicesMx/) 
+- Puedes probar la estructura básica de la pagina web [Aquí](https://raicesmx.netlify.app/) 
 
 - Incoming 
 
@@ -51,6 +51,3 @@ de marketing digital.
 - Félix Jhosel Peñaloza Ruiz
 - David Arturo Rojas López
 - Christian Josué Juan Rodríguez
-
-
-

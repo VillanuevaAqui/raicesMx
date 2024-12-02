@@ -1,0 +1,28 @@
+.btnNC {
+    display: inline;
+    background-color: var(--fourth);
+    padding: 70px 900px 70px 900px;
+    text-decoration: none;
+    border-radius: 100px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-banner {
+    background-color: var(--fourth);
+    border-radius: 2rem;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5rem;
+    min-width: 20rem;
+}
+
+.h2TitleBanner{
+        color: var(--primary);
+        padding: 2rem 8rem;
+        width: fit-content;
+        border-radius: 25px;
+        font-size: 6rem;
+        font-weight: bold;
+}
