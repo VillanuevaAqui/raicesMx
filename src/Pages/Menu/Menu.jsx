@@ -30,22 +30,22 @@ const Menu = () => {
     return (
         <main className="main">
             <section id="menu" className="menu">
-                <h1>Menú</h1>
+                <h1 className="h1-menu">Menú</h1>
                 <div className="menu-options">
                     <button 
-                        className={`btn-option ${activeMenu === "Desayuno" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Desayuno" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Desayuno")}
                     >
                         Desayuno
                     </button>
                     <button 
-                        className={`btn-option ${activeMenu === "Comida" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Comida" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Comida")}
                     >
                         Comida
                     </button>
                     <button 
-                        className={`btn-option ${activeMenu === "Cena" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Cena" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Cena")}
                     >
                         Cena
@@ -56,15 +56,15 @@ const Menu = () => {
                     <div className="row col-12 d-flex justify-content-center align-items-center">
                         {menuItems[activeMenu].map((item, index) => (
                             <div key={index} className="col-12 col-sm-6 col-md-4">
-                                <div className="card">
+                                <div className="card-menu">
                                     <img 
                                         src={item.imgSrc} 
-                                        className="card-img-top" 
+                                        className="card-img-top-menu" 
                                         alt={item.title} 
                                     />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{item.title}</h5>
-                                        <p className="card-text">{item.description}</p>
+                                    <div className="card-body-menu">
+                                        <h5 className="card-title-menu">{item.title}</h5>
+                                        <p className="card-text-menu">{item.description}</p>
                                         <button className="btn-menu">Agregar al carrito</button>
                                     </div>
                                 </div>
