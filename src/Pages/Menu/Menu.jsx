@@ -142,16 +142,16 @@ const Menu = () => {
                     <div className="row col-12 d-flex justify-content-center align-items-center">
                         {menuItems[activeMenu].map((item) => (
                             <div key={item.id} className="col-12 col-sm-6 col-md-4">
-                                <div className="card">
+                                <div className="card-menu">
                                     <img 
                                         src={item.imageURL} 
-                                        className="card-img-top" 
+                                        className="card-img-top-menu" 
                                         alt={item.name} 
                                     />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{item.name}</h5>
-                                        <p className="card-text">{item.desc}</p>
-                                        <p className="card-price">Precio: ${item.price.toFixed(2)}</p>
+                                    <div className="card-body-menu">
+                                        <h5 className="card-title-menu">{item.name}</h5>
+                                        <p className="card-text-emenu">{item.desc}</p>
+                                        <p className="card-price-menu">Precio: ${item.price.toFixed(2)}</p>
                                         <button className="btn-menu" onClick={() => addToCart(item)}>Agregar al carrito</button>
                                     </div>
                                 </div>
