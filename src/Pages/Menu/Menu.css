@@ -23,7 +23,7 @@
 }
 
 /* Estilo general para las cards */
-.card {
+.card-menu {
     width: 100%;
     height: 400px; /* Ajusta este valor según lo que necesites */
     margin-bottom: 2rem;
@@ -39,7 +39,7 @@
 
 
 /* Asegurar que el contenido de la tarjeta ocupa el espacio de manera uniforme */
-.card-body {
+.card-body-menu {
     flex-grow: 2; /* Asegura que el contenido ocupe el espacio restante */
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
 }
 
 /*Asegurar el contenido cards con imagenes*/
-.card img {
+.card-menu img {
     object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
     height: 20rem; /* Altura fija de las imágenes */
     width: 100%; /* Asegura que las imágenes sean responsivas */
@@ -59,14 +59,14 @@
 
 
 /* Tamaños para titulo card */
-h5.card-title {
+h5.card-title-menu {
     font-size: 2rem; /* Tamaño estándar del título */
     font-weight: bold;
     margin: 1rem 0;
     
 }
 /* Tamaños para descripcion card */
-p.card-text {
+p.card-text-menu {
     font-size: 1.4rem; /* Texto descriptivo */
     margin-bottom: 1.5rem;
 }
@@ -81,17 +81,17 @@ p.card-text {
     }
 
 /*----Tamaños para los titulos h1 ,h2, h3, menu----*/
-h1{
+.h1-menu{
     font-size: 7rem;  
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem; /* Añade espacio debajo del título */
 }
-h2{
+.h2-menu{
     font-weight: 200;
     font-size: 6rem;
 }
-h3{
+.h3-menu{
     font-weight: 100;
     font-size: 5rem;
 }
@@ -131,7 +131,7 @@ hr {
 }
 
 /*---Botones del menu desayuno, comida y cena----*/
-.btn-option{
+.btn-option-menu{
     font-size: 2rem;
     padding: 0.8rem;
     border-radius: 30px;
@@ -149,13 +149,13 @@ hr {
 }
 
 /*---Efecto hover botones desayuno , comida , cena----*/
-.btn-option:hover {
+.btn-option-menu:hover {
     background-color: var(--secondary);
     color: var(--fourth);
 }
 
 /*---Efecto active botones desayuno, comida y cena ---*/
-.btn-option.active {
+.btn-option-menu.active {
     background-color:var(--fourth); /* Color para resaltar el botón */
     color: white;
 }
@@ -166,11 +166,11 @@ hr {
     .card {
         margin-bottom: 2.5rem;
     }
-    h1 {
+    .h1-menu {
         margin-bottom: 1.5rem; /* Reduce el espacio en pantallas más pequeñas */
         font-size: 4.4rem;
     }
-    h2 {
+    .h2-menu {
         font-size: 3.5rem; /* Reduce aún más para móviles */
         margin-bottom: 0.5rem; /* Ajusta el margen si es necesario */
     }
@@ -192,14 +192,14 @@ hr {
         margin-bottom: 1rem;    /* Ajusta el margen inferior */
     }
     
-    .btn-option {
+    .btn-option-menu {
         width: 30%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
         font-size: 1.4rem;        /* Reduce el tamaño del texto */
         padding: 0.7rem 1.5rem;   /* Ajusta el relleno */
     }
     .col-12 {
-        padding-left: 2rem; /* Espaciado izquierdo */
-        padding-right: 2rem; /* Espaciado derecho */
+        padding-left: 1rem; /* Espaciado izquierdo */
+        padding-right: 1rem; /* Espaciado derecho */
     }
     
 }
@@ -210,11 +210,11 @@ hr {
         margin-bottom: 2rem;
         max-width: 42rem; /* Ajusta el tamaño de las tarjetas */
     }
-    h1 {
+    .h1-menu {
         margin-bottom: 1.5rem;
         font-size: 5.5rem;
     }
-    h2 {
+    .h2-menu {
         font-size: 3.5rem; /* Reduce el tamaño para tabletas */
     }
     .content {
@@ -234,13 +234,13 @@ hr {
     .menu-options {
         gap: 3rem;                /* Incrementa el espacio entre los botones */
     }
-    .btn-option {
+    .btn-option-menu {
         width: 20%;              /* Tamaño adaptable */
         font-size: 1.7rem;        /* Ajusta el texto */
     }
     .col-12 {
-        padding-left: 2rem; /* Espaciado izquierdo */
-        padding-right: 2rem; /* Espaciado derecho */
+        padding-left: 1rem; /* Espaciado izquierdo */
+        padding-right: 1rem; /* Espaciado derecho */
     }
     /* .nav ul {
         display: flex;
@@ -262,11 +262,11 @@ hr {
         margin-bottom: 3rem;
         max-width: 45rem; /* Tamaño estándar de las tarjetas */
     }
-    h1 {
+    .h1-menu {
         margin-bottom: 1.7rem;
         
     }
-    h2 {
+    .h2-menu {
         font-size: 5rem; /* Tamaño para pantallas grandes */
         font-weight: 200;
         text-align: center;
@@ -280,13 +280,13 @@ hr {
     .menu-options {
         gap: 2.5rem;              /* Más espacio entre botones */
     }
-    .btn-option {
+    .btn-option-menu {
         padding: 1rem 3rem;       /* Botones más grandes */
         font-size: 1.8rem;        /* Texto más grande */
     }
     .col-12 {
-        padding-left: 4rem; /* Espaciado izquierdo */
-        padding-right: 4rem; /* Espaciado derecho */
+        padding-left: 2rem; /* Espaciado izquierdo */
+        padding-right: 2rem; /* Espaciado derecho */
     }
 
     .content {

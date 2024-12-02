@@ -9,7 +9,7 @@ import Menu from './Pages/Menu/Menu.jsx';
 import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
-// import Contact from './components/Pages/Contact/Contact.jsx';
+import ContactPage from './Pages/Contact/Contact.jsx';
 import { CartProvider } from './Pages/Cart/CartContext.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <CartProvider> {/* Contexto global para el carrito */}
+      <CartProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -29,7 +29,7 @@ function App() {
             <Route path="/registro" element={<Register />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/cart" element={<Cart />} />
-            {/* <Route path="/contacto" element={<Contact />} /> */}
+            <Route path="/contacto" element={<ContactPage />} />
           </Routes>
           <Footer />
         </BrowserRouter>

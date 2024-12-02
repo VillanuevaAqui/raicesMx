@@ -116,22 +116,22 @@ const Menu = () => {
     return (
         <main className="main">
             <section id="menu" className="menu">
-                <h1>Menú</h1>
+                <h1 className="h1-menu">Menú</h1>
                 <div className="menu-options">
                     <button 
-                        className={`btn-option ${activeMenu === "Desayuno" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Desayuno" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Desayuno")}
                     >
                         Desayuno
                     </button>
                     <button 
-                        className={`btn-option ${activeMenu === "Comida" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Comida" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Comida")}
                     >
                         Comida
                     </button>
                     <button 
-                        className={`btn-option ${activeMenu === "Cena" ? "active" : ""}`} 
+                        className={`btn-option-menu ${activeMenu === "Cena" ? "active" : ""}`} 
                         onClick={() => setActiveMenu("Cena")}
                     >
                         Cena
