@@ -30,6 +30,7 @@ h3 {
     position: relative;
     text-align: center;
     color: var(--primary);
+    overflow: hidden;
     /*COLOR DE FONDO PRINCIPAL*/
 }
 
@@ -323,4 +324,10 @@ h5 {
 .textNC {
     font-size: 4rem;
     padding: 10px;
+}
+
+.MainContainer-content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
 }
