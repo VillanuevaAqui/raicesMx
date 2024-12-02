@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
+import CartBadge from "../CartBadge/CartBadge";
 
 const Navbar = () => {
     return (
@@ -62,7 +63,8 @@ const Navbar = () => {
                             Iniciar sesión / Registrarse
                         </Link>
                         <Link className="nav-link" to="/cart">
-                            <i className="bx bxs-cart"></i>
+                            {/* <i className="bx bxs-cart"></i> */}
+                            <CartBadge />
                         </Link>
                     </div>
                 </div>
