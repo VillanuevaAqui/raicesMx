@@ -23,16 +23,16 @@ a:hover {
     /*COLOR DE FONDO PRINCIPAL*/
 }
 
-/*.background-image {
+.background-image {
     opacity: 0.87;
     /*Ligera opacidad para la imagen de fondo*/
-    /*overflow: hidden;
+    overflow: hidden;
     /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-    /*display:flex;
+    display: flex;
     flex: wrap;
    /*max-height: 1300px;
-    /*Altura máxima que puede tener un elemento*/
-/*}*/
+Altura máxima que puede tener un elemento*/
+}
 
 .MainContainerText {
     position: absolute;
