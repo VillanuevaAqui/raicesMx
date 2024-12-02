@@ -314,24 +314,6 @@ h5 {
     padding: 10px;
 }
 
-<<<<<<< HEAD
-/*ESTILLOSS DEL PIE DE PÁGINA*/
-.footer {
-    background-color: var(--tertiary);
-    color: var(--secondary);
-    font-size: 3rem;
-    text-align: center;
-    /* padding: 2rem; */
-}
-
-.icons {
-    padding: 3rem;
-}
-
-.icon {
-    margin: 1rem;
-}
-
 /* !Sección de media queries*/
 /**MQ para pantallas muy pequeñas (Máx-width: 576px)*/
 @media (max-width: 576px) {
@@ -699,10 +681,3 @@ h5 {
 }
 
 /* !TERMINAN MQ*/
-=======
-.MainContainer-content {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-}
->>>>>>> fd76f73e137313a3dd16ac540fd5a5f63073ea89
