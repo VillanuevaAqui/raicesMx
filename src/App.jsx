@@ -12,7 +12,7 @@ import Menu from './Pages/Menu/Menu.jsx';
 import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
-// import Contact from './components/Pages/Contact/Contact.jsx';
+//import ContactPage from './components/Pages/Contact/Contact.jsx';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Principalpage />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/beneficios" element={<Beneficios />} /> 
+       { /* <Route path="/beneficios" element={<Beneficios />} /> */}
         <Route path="/registro" element={<Register />} />
         <Route path="/SignIn" element={<SignIn />} />
         {/* <Route path="/cart" element={<Cart />} /> */}
@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
       <Footer />
       <Routes>
-        {/* <Route path="/contacto" element={<Contact />} /> */}
+        {/* <Route path="/contacto" element={<ContactPage />} /> */}
       </Routes>
       </BrowserRouter>
     </>
