@@ -55,7 +55,7 @@ const Navbar = () => {
                         <Link className="nav-link" to="/beneficios">
                             Beneficios
                         </Link>
-                        <Link className="nav-link" to="/formulario-producto">
+                        <Link className="nav-link" to="/formularioProducto">
                             Formulario Producto
                         </Link>
                         <Link className="nav-link" to="/registro">
