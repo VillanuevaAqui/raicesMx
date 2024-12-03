@@ -37,6 +37,9 @@ function removeAllProductsBtn () {
 
   productsController.removeAllProducts();
   console.log(productsController.products);
+  
+  
+  alert("Se borro todo mi loco")
 
 }
 
@@ -44,6 +47,7 @@ function removeProductBtn () {
 
   const index = getValue();
   productsController.removeProduct(index);
+  FormularioProducto(1);
 
 }
 
@@ -118,8 +122,19 @@ const handleSubmit = (e) => {
 }
 
 
-const FormularioProducto = () => {
-  const [formContent, setFormContent] = useState(null);
+const FormularioProducto = (number) => {
+  
+  if (number === 1) {
+
+    removeProduct();
+
+  } else if (number == 2) {
+
+    updateProduct();
+
+  } else {
+
+    const [formContent, setFormContent] = useState(null);
 
   const generateFormAdd = () => {
     setFormContent(
@@ -189,7 +204,6 @@ const FormularioProducto = () => {
         >
           {generateList()}
         </select>
-        <button className="form-btn">Modificar producto</button>
 
         <div className="form-add-product">
           <h2 className="title-form update-form">Modifica los campos necesarios</h2>
@@ -287,5 +301,10 @@ const FormularioProducto = () => {
     </div>
   );
 };
+
+  }
+
+  
+  
 
 export default FormularioProducto;
