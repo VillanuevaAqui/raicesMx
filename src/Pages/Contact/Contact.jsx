@@ -135,8 +135,8 @@ const ContactPage = () => {
   
     return (
       <div>
-        <main className="main">
-          <div className="main-container">
+        <main className="main-contact">
+          <div className="main-container-contact">
             <div className="heading-container">
               <h2>¿Cómo podemos ayudarte?</h2>
             </div>

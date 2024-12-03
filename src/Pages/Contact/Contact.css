@@ -38,15 +38,11 @@ body {
     font-weight: bold;
 }
 
-.main {
+.main-contact {
     display: flex;
     justify-content: center;
     align-items: center;  /*CAMBIO*/
     flex-direction: column;
-    background-image: url(./src/Fondo\ Grande.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 2rem;
     min-height: calc(100vh - 2rem);
     justify-content: space-between; /*cambio para el espacio blanco*/
