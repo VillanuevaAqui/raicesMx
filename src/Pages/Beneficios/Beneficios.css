@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.main {
+.benefit-main {
 
     text-align: center;
 
@@ -155,7 +155,7 @@
 
 @media (max-width: 768px) {
 
-    .main {
+    .benefit-main {
 
         text-align: center;
 

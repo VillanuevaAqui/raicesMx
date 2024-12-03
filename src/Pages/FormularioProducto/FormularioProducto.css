@@ -56,6 +56,7 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
     grid-gap: 1rem;
 
 
@@ -64,6 +65,7 @@
 
 .form-add-input{
 
+    width: 100%;
     display: block;
     border-radius: 1rem;
     padding: 1rem;
