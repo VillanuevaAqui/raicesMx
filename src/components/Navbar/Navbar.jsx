@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
 
 const Navbar = () => {
@@ -47,25 +47,25 @@ const Navbar = () => {
                 {/* Menú desplegable */}
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-link" to="/menu">
+                        <NavLink className="nav-link" to="/menu">
                             Menú a domicilio
-                        </Link>
-                        <Link className="nav-link" to="/nosotros">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/nosotros">
                             Nosotros
-                        </Link>
-                        <Link className="nav-link" to="/beneficios">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/beneficios">
                             Beneficios
-                        </Link>
-                        <Link className="nav-link" to="/formularioProducto">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/formularioProducto">
                             Formulario Producto
-                        </Link>
-                        <Link className="nav-link" to="/registro">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
-                        </Link>
-                        <Link className="nav-link" to="/cart">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/cart">
                             {/* <i className="bx bxs-cart"></i> */}
                             <CartBadge />
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
             </div>
