@@ -10,7 +10,7 @@ import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
 import FormularioProducto from './Pages/FormularioProducto/FormularioProducto.jsx';
-
+import Checkout from './Pages/Checkout/Checkout.jsx';
 import ContactPage from './Pages/Contact/Contact.jsx';
 import { CartProvider } from './Pages/Cart/CartContext.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
@@ -34,6 +34,7 @@ function App() {
             <Route path='/FormularioProducto' element = {<FormularioProducto />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           </div>
           <Footer />

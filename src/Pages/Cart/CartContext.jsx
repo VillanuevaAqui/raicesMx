@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 
 // Contexto de carrito
 const CartContext = createContext();
@@ -11,6 +11,7 @@ export const useCart = () => {
 // Componente del proveedor del carrito
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [extraCosts, setExtraCosts] = useState(0);
 
     // Función para agregar al carrito
     const addToCart = (product) => {
@@ -49,8 +50,18 @@ export const CartProvider = ({ children }) => {
     // Función para limpiar el carrito
     const clearCart = () => setCart([]);
 
+    // Calcular el total del precio
+    const totalPrice = useMemo(() => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    }, [cart]);
+
+    // Calcular el precio final (total + costos adicionales)
+    const finalPrice = useMemo(() => {
+        return totalPrice + extraCosts;
+    }, [totalPrice, extraCosts]);
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCartItemQuantity, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCartItemQuantity, clearCart, totalPrice, extraCosts, setExtraCosts, finalPrice }}>
             {children}
         </CartContext.Provider>
     );

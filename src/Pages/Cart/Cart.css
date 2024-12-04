@@ -148,6 +148,9 @@
 .cart-img{
     max-width: 15%;
 }
+.cart-link{
+    text-decoration: none;
+}
 
 @media (max-width: 805px) {
     .cart-title{
