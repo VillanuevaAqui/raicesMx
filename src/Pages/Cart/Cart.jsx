@@ -16,21 +16,25 @@ const Cart = () => {
                 ) : (
                     <>
                         <div className="cart-row">
+                            <h3 className="cart-header cart-column cart-img"></h3>
                             <h3 className="cart-header cart-column cart-item">Pedido</h3>
                             <h3 className="cart-header cart-column cart-quantity">Cantidad</h3>
                             <h3 className="cart-header cart-column cart-price">Precio</h3>
+                            <h3 className="cart-header cart-column cart-remove"></h3>
                         </div>
 
                         <div className="cart-items">
                             {cart.map((item) => (
                                 <div key={item.id} className="cart-row">
-                                    {/* Imagen y nombre */}
-                                    <div className="cart-column cart-item">
+                                    <div className="cart-column cart-img">
                                         <img
                                             src={item.imageURL}
                                             alt={item.name}
                                             className="cart-item-image"
                                         />
+                                    </div>
+
+                                    <div className="cart-column cart-item">
                                         <span className="cart-text">{item.name}</span>
                                     </div>
 
@@ -64,12 +68,14 @@ const Cart = () => {
                                     </div>
 
                                     {/* Botón de eliminar */}
-                                    <button
-                                        className="btn btn-danger btn-remove"
-                                        onClick={() => removeFromCart(item.id)}
-                                    >
-                                        Eliminar
-                                    </button>
+                                    <div className="cart-column cart-remove">
+                                        <button
+                                            className="btn btn-danger btn-remove"
+                                            onClick={() => removeFromCart(item.id)}
+                                        >
+                                            Eliminar
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>
