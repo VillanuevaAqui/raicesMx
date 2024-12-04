@@ -1,11 +1,12 @@
 import React from "react";
 import "./Cart.css";
 import { useCart } from "./CartContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const { cart, removeFromCart, updateCartItemQuantity } = useCart();
+    const { cart, removeFromCart, updateCartItemQuantity, totalPrice } = useCart();
 
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    // const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
         <section className="cart-container">
@@ -82,15 +83,14 @@ const Cart = () => {
 
                         <div className="cart-total">
                             <strong className="cart-total-title">Total</strong>
-                            <span className="cart-total-price">${total.toFixed(2)}</span>
+                            <span className="cart-total-price">${totalPrice.toFixed(2)}</span>
                         </div>
 
-                        <button
-                            className="btn btn-success btn-purchase"
-                            onClick={() => alert("Compra realizada con éxito!")}
-                        >
-                            Comprar
-                        </button>
+                        <Link to="/checkout" className="cart-link">
+                            <button className="btn btn-success btn-purchase">
+                                Comprar
+                            </button>
+                        </Link>
                     </>
                 )}
             </div>

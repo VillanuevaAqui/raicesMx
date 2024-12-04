@@ -101,12 +101,12 @@ p.card-text-menu {
 }
 
 /*----Linea que division texto footer*/
-hr {
+/* hr {
     border-color:var(--secondary);
-    width: 30%;           /* Ajusta el ancho de la línea */
-    margin: 0 auto;       /* Centra horizontalmente */
-    border: 3px solid; /* Estilo de la línea */
-}
+    width: 30%;          
+    margin: 0 auto;       
+    border: 3px solid; 
+} */
 /*----Boton agregar carrito-----*/
 .btn-menu {
     font-size: 2rem;
