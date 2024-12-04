@@ -1,4 +1,4 @@
-//import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -18,24 +18,27 @@ import Cart from './Pages/Cart/Cart.jsx';
 
 function App() {
 
+  const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
   return (
     <div className='main-container'>
       <CartProvider>
         <BrowserRouter>
-          <Navbar />
+          {showRegister && <Register setShowRegister={setShowRegister} setShowLogin={setShowLogin}/>}
+          {showLogin && <SignIn setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>}
+          <Navbar setShowRegister={setShowRegister} setShowLogin={setShowLogin}/>
           <div className='main-content'>
-          <Routes>
-            <Route path="/" element={<Principalpage />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/beneficios" element={<Beneficios />} />
-            <Route path="/registro" element={<Register />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path='/FormularioProducto' element = {<FormularioProducto />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/contacto" element={<ContactPage />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Principalpage />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/beneficios" element={<Beneficios />} />
+              <Route path='/FormularioProducto' element={<FormularioProducto />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
           </div>
           <Footer />
         </BrowserRouter>

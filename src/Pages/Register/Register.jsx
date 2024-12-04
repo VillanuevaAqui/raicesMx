@@ -6,19 +6,19 @@ import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-//import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
-import { Container } from '@mui/material';
 import { GoogleIcon, FacebookIcon } from './CustomIcons';
-import styles from './Register.module.css';
+import './Register.css';
 import { Link } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
 
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
+    fontFamily: 'var(--font)',
     display: 'flex',
     flexDirection: 'column',
     alignSelf: 'center',
@@ -27,7 +27,7 @@ const Card = styled(MuiCard)({
     gap: '1.6rem',
     margin: 'auto',
     marginTop: '3rem',
-    borderRadius: '20px',
+    borderRadius: '10px',
     boxShadow:
         'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
     '@media (min-width: 600px)': {
@@ -36,15 +36,15 @@ const Card = styled(MuiCard)({
 });
 
 const SignUpContainer = styled(Stack)({
-    minHeight: '100%',
+    height: '100%',
     padding: '1.6rem',
-    position: 'relative',
+    position: 'fixed',
     '@media (min-width: 600px)': {
         padding: '2.4rem',
     },
 });
 
-export default function Register() {
+export default function Register({ setShowRegister, setShowLogin }) {
     const [emailError, setEmailError] = React.useState(false);
     const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
     const [passwordError, setPasswordError] = React.useState(false);
@@ -134,7 +134,7 @@ export default function Register() {
         const storedUsers = localStorage.getItem('users');
         const users = storedUsers ? JSON.parse(storedUsers) : []; // Si no hay usuarios, inicializar como arreglo vacío.
         users.push(userData);
-    
+
         // Guardar el arreglo actualizado en localStorage.
         localStorage.setItem('users', JSON.stringify(users));
         console.log('Usuarios almacenados:', users);
@@ -149,25 +149,30 @@ export default function Register() {
     };
 
     const CustomFormLabel = styled(FormLabel)({
-        fontSize: '2rem',
+        fontFamily: 'var(--font)',
+        fontSize: '1.6rem',
         fontWeight: 'bold',
     });
-    const CustomFormControlLabel = styled(FormControlLabel)({
-        fontSize: '2rem',
-        fontWeight: 'bold',
-    });
+
+    const handleLinkClick = () => {
+        setShowLogin(true);
+        setShowRegister(false);
+    };
 
     return (
         <>
             <CssBaseline />
-            <SignUpContainer direction="column" justifyContent="space-between">
-                <Container>
-                    <h1 className='register-title'>
-                        Regístrate
-                    </h1>
-                    
-                </Container>
-                <Card variant="outlined">
+            <SignUpContainer direction="column" justifyContent="space-between" className='register-popup'>
+                <Card variant="outlined" className='register-popup-container'>
+                    <div className="register-popup-title">
+                        <h2 className='register-title'>
+                            Regístrate
+                        </h2>
+                        <CloseIcon onClick={() => setShowRegister(false)} style={{
+                            fontSize: '30px',
+                            cursor: 'pointer',
+                        }} />
+                    </div>
                     <Box
                         component="form"
                         onSubmit={handleSubmit}
@@ -186,8 +191,7 @@ export default function Register() {
                                 helperText={nameErrorMessage}
                                 sx={{
                                     "& .MuiFormHelperText-root": {
-                                        fontSize: "1.3rem",
-                                        fontFamily: "var(--font)"
+                                        fontSize: "1.1rem",
                                     },
                                 }}
                             />
@@ -206,8 +210,7 @@ export default function Register() {
                                 helperText={emailErrorMessage}
                                 sx={{
                                     "& .MuiFormHelperText-root": {
-                                        fontSize: "1.3rem",
-                                        fontFamily: "var(--font)"
+                                        fontSize: "1.1rem",
                                     },
                                 }}
                             />
@@ -226,8 +229,7 @@ export default function Register() {
                                 helperText={phoneErrorMessage}
                                 sx={{
                                     "& .MuiFormHelperText-root": {
-                                        fontSize: "1.3rem",
-                                        fontFamily: "var(--font)"
+                                        fontSize: "1.1rem",
                                     },
                                 }}
                             />
@@ -247,8 +249,7 @@ export default function Register() {
                                 helperText={passwordErrorMessage}
                                 sx={{
                                     "& .MuiFormHelperText-root": {
-                                        fontSize: "1.3rem",
-                                        fontFamily: "var(--font)"
+                                        fontSize: "1.1rem",
                                     },
                                 }}
                             />
@@ -268,8 +269,7 @@ export default function Register() {
                                 helperText={confirmPasswordErrorMessage}
                                 sx={{
                                     "& .MuiFormHelperText-root": {
-                                        fontSize: "1.3rem",
-                                        fontFamily: "var(--font)",
+                                        fontSize: "1.1rem",
                                     },
                                 }}
                             />
@@ -280,7 +280,7 @@ export default function Register() {
                             variant="contained"
                             onClick={validateInputs}
                             sx={{
-                                fontSize: '1.6rem', fontFamily: 'var(--font)', backgroundColor: 'var(--tertiary)',
+                                fontSize: '1.3rem', fontFamily: 'var(--font)', backgroundColor: 'var(--tertiary)',
                                 color: 'var(--primary)',
                                 ':hover': {
                                     backgroundColor: 'var(--fourth)',
@@ -291,7 +291,7 @@ export default function Register() {
                         </Button>
                     </Box>
                     <Divider>
-                        <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
+                        <Typography sx={{ color: 'var(--fifth)', fontSize: '1.3rem', fontFamily: 'var(--font)' }}>o</Typography>
                     </Divider>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                         <Button
@@ -310,12 +310,12 @@ export default function Register() {
                         >
                             Regístrate con Facebook
                         </Button>
-                        <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.4rem' }}>
+                        <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
                             ¿Ya tienes cuenta?{' '}
                             <Link
-                                to="/SignIn"
+                                onClick={handleLinkClick}
                                 variant="body2"
-                                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
+                                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
                             >
                                 Iniciar sesión
                             </Link>

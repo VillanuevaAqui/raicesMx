@@ -2,7 +2,7 @@ import "./Navbar.css";
 import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
 
-const Navbar = () => {
+const Navbar = ({setShowRegister}) => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -59,9 +59,10 @@ const Navbar = () => {
                         <NavLink className="nav-link" to="/formularioProducto">
                             Formulario Producto
                         </NavLink>
-                        <NavLink className="nav-link" to="/registro">
+                        {/* <NavLink className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
-                        </NavLink>
+                        </NavLink> */}
+                        <button className="nav-link" onClick={()=>setShowRegister(true)}>Iniciar sesión / Registrarse</button>
                         <NavLink className="nav-link" to="/cart">
                             {/* <i className="bx bxs-cart"></i> */}
                             <CartBadge />
