@@ -15,6 +15,8 @@ import { GoogleIcon, FacebookIcon } from './CustomIcons';
 import './Register.css';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
+import CryptoJS, { MD5 } from 'crypto-js';
+import { Password } from '@mui/icons-material';
 
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
@@ -121,9 +123,9 @@ export default function Register({ setShowRegister, setShowLogin }) {
         const data = new FormData(event.currentTarget);
         const userData = {
             name: data.get('name'),
-            email: data.get('email'),
+            email: CryptoJS.MD5(data.get("email").toLowerCase()).toString(),
             phone: data.get('phone'),
-            password: data.get('password'),
+            password: CryptoJS.MD5(data.get("password")).toString(),
         }
         console.log('Usuario registrado:', JSON.stringify(userData, null, 2));
 
