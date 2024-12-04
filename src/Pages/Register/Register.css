@@ -1,12 +1,23 @@
 #name, #email, #phone, #password, #confirmPassword{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    font-family: var(--font);
 }
 .register-title{
     text-align: center;
-    margin-top: 3rem;
+    font-size: 2.5rem;
 }
-@media (max-width: 768px) {
-    .title{
-        font-size: 6rem;
-    }
+.register-popup{
+    z-index: 100;
+    width: 100%;
+    background-color: #00000090;
+}
+.register-popup-container{
+    place-self: center;
+    width: max(23vw, 330px);
+    animation: fadeIn 0.5s;
+}
+.register-popup-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -46,6 +46,8 @@
 }
 .checkout-total hr{
     margin: 10px 0px;
+    border: solid 1px var(--fourth);
+    opacity: 30%;
 }
 .checkout-total button{
     font-size: 2rem;
@@ -70,8 +72,13 @@
     }
 }
 @media (max-width: 500px) {
+    .place-order{
+        flex-direction: column;
+    }
     .place-order-left .checkout-title{
-        font-size: 2rem;
+        margin-top: -4rem;
+        font-size: 3rem;
+        text-align: center;
     }
     .checkout-title-total{
         font-size: 2.8rem;
