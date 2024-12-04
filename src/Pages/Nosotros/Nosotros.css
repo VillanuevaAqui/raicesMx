@@ -2,11 +2,11 @@ body {
     background-color: #cccccc;
 }
 
-.linktext {
+.nosotros-linktext {
     cursor: pointer;
 }
 
-.divide {
+.nosotros-divide {
     height: 5px;
     width: 50%;
     background-color: var(--tertiary);
@@ -15,20 +15,20 @@ body {
     border-radius: 3rem;
 }
 
-.about-img-container {
+.nosotros-about-img-container {
     position: relative;
     width: 100%;
     height: 300px;
     overflow: hidden;
 }
 
-.responsive-image {
+.nosotros-responsive-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.image-text {
+.nosotros-image-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,12 +41,12 @@ body {
     border-radius: 8px;
 }
 
-.menu {
+.nosotros-menu {
     text-align: center;
     margin-top: 1rem;
 }
 
-.listmenu {
+.nosotros-listmenu {
     display: inline-block;
     text-decoration: none;
     margin-top: 1rem;
@@ -59,23 +59,23 @@ body {
     border-radius: 3rem;
     font-weight: bold;
     transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
-    border: none; /* Elimina el borde */
-    box-shadow: none; /* Elimina la sombra que parece borde */
+    border: none;
+    box-shadow: none;
 }
 
-.listmenu:hover {
+.nosotros-listmenu:hover {
     color: var(--primary);
     background-color: var(--tertiary);
     transform: scale(1.05);
 }
 
-.listmenu.active {
+.nosotros-active {
     background-color: var(--fourth);
     color: var(--secondary);
     transform: scale(1.05);
 }
 
-.about-section-2 {
+.nosotros-about-section-2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,31 +85,31 @@ body {
     text-align: center;
 }
 
-.about-textcontainer {
+.nosotros-about-textcontainer {
     flex: 1;
     max-width: 50%;
     padding: 1.5rem;
     margin: 0;
 }
 
-.about-backgroundtextcolor {
+.nosotros-about-backgroundtextcolor {
     padding: 2rem;
     background-color: var(--secondary);
     border-radius: 30px;
     transition: 200ms;
 }
 
-.about-text-1 {
+.nosotros-about-text-1 {
     text-align: justify;
 }
 
-.about-logo {
+.nosotros-about-logo {
     flex: 0 1 auto;
     max-width: 30%;
     text-align: center;
 }
 
-.about-logo img {
+.nosotros-about-logo img {
     max-width: 100%;
     height: auto;
     display: block;

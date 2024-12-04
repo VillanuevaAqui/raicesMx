@@ -120,6 +120,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
         if (nameError || emailError || passwordError || phoneError || confirmPasswordError) {
             return;
         }
+
         const data = new FormData(event.currentTarget);
         const userData = {
             name: data.get('name'),

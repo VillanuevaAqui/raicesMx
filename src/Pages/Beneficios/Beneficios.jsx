@@ -17,7 +17,7 @@ const BENEFITS = [
   
   const Beneficios = () => {
     return (
-      <main className="main">
+      <main className="benefit-main">
         <TitlePage />
         {BENEFITS.map((benefit, index) => (
           <BenefitElement key={index} benefit={benefit} />
