@@ -160,7 +160,7 @@ const FoodAllergyForm = () => {
 
         {/* Botón enviar */}
         <Box display="flex" justifyContent="center" sx={{ marginTop: 4 }}>
-          <Button type="submit" variant="contained" color="primary">
+          <Button className= "food-allergy-form-button" type="submit" variant="contained" color="primary">
             Enviar
           </Button>
         </Box>
