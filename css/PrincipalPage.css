@@ -22,7 +22,7 @@ a:hover {
     color: var(--primary);
     display: flex;
     flex-direction: column;
-    justify-content: ;
+    justify-content: center;
     align-items: center;
 }
 
@@ -89,6 +89,7 @@ a:hover {
 
 
 /*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
+/*MENÚS DEL DÍA*/
 .pp-SecundaryContainerTitle {
     font-size: 6rem;
     text-align: center;
@@ -99,6 +100,12 @@ a:hover {
 /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
 .pp-menusContainer {
     display: flex;
+}
+
+/*MARGEN ENTRE CARRUSELES*/
+.pp-carousel-slide {
+    margin: 25px;
+    /* Margen inferior para mayor separación vertical */
 }
 
 /*ESTILOS DEL CARRUSEL*/
@@ -131,12 +138,13 @@ a:hover {
 }
 
 .pp-menuText {
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 1.9rem;
     text-align: left;
+    margin-left: 30px;
+    /* Sangría en la lista no ordenada */
 }
 
-/*ESTILOS DE CONTENEDOR 3*/
+/* !TERCER CONTENEDOR*/
 .container3 {
     display: flexbox;
     max-width: 800px;
@@ -255,8 +263,9 @@ a:hover {
 
 
 
-/* !Estilos para pantallas medianas (200px a 399px)*/
+/* !Estilos para pantallas muy muy pequeñas (200px a 399px)*/
 @media (min-width: 200px) {
+
     /* *MAIN CONTAINER*/
     .pp-MainContainerText {
         position: absolute;
@@ -281,19 +290,42 @@ a:hover {
     }
 
     .pp-MainContainerButtons .button {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         font-weight: 550;
         margin: 0.3rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
     }
 
+         /* *ESTILOS DEL TEXTO DEL CONTENEDOR*/
     .pp-SecundaryContainerTitle {
         font-size: 1.3rem;
     }
+
+     /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+    /*MARGEN ENTRE CARRUSELES*/
+    .pp-carousel-slide {
+        margin: 3px;
+        /* Margen inferior para mayor separación vertical */
+    }
+
+    /* ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 0.65rem;
+        text-align: left;
+        margin-left: 1px;
+        /* Sangría en la lista no ordenada */
+    }
 }
 
-/* !Estilos para pantallas medianas (400px a 650px)*/
+/* !Estilos para pantallas muy pequeñas (400px a 650px)*/
 @media (min-width: 400px) {
+
     /* *MAIN CONTAINER*/
     .pp-MainContainerText {
         position: absolute;
@@ -327,10 +359,32 @@ a:hover {
     .pp-SecundaryContainerTitle {
         font-size: 2.4rem;
     }
+
+    /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+    /*MARGEN ENTRE CARRUSELES*/
+    .pp-carousel-slide {
+        margin: 10px;
+        /* Margen inferior para mayor separación vertical */
+    }
+
+    /* ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 0.95rem;
+        text-align: left;
+        margin-left: 3px;
+        /* Sangría en la lista no ordenada */
+    }
 }
 
-/* !Estilos para pantallas medianas (650px a 839px)*/
+/* !Estilos para pantallas pequeñas (650px a 839px)*/
 @media (min-width: 650px) {
+
     /* *MAIN CONTAINER*/
     .h1MCT {
         font-size: 3.1rem;
@@ -357,82 +411,110 @@ a:hover {
     .pp-SecundaryContainerTitle {
         font-size: 3.1rem;
     }
-}
 
-    /* !Estilos para pantallas medianas (840px a 1079px)*/
-    @media (min-width: 840px) {
-
-        /* *MAIN CONTAINER*/
-        .pp-background-image {
-            width: 100%;
-            height: 80%;
-            overflow: hidden;
-            /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-        }
-
-        .pp-MainContainerText {
-            position: absolute;
-            /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-            top: 35%;
-        }
-
-        .h1MCT {
-            font-size: 3.1rem;
-        }
-
-        .h2MCT {
-            font-size: 4.4rem;
-        }
-
-        /*BOTNONES PRINCIPALES*/
-        .pp-MainContainerButtons .button {
-            font-size: 1.7rem;
-            font-weight: 550;
-        }
-
-        .pp-SecundaryContainerTitle {
-            font-size: 3.3rem;
-        }
+    /* *ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
     }
 
-        /* !Estilos para pantallas grandes (Min-width: 1080px)*/
-        @media (min-width: 1080px) {
+    .pp-menuText {
+        font-size: 1.1rem;
+        text-align: left;
+        margin-left: 10px;
+        /* Sangría en la lista no ordenada */
+    }
+}
 
-            /* *MAIN CONTAINER*/
-            .pp-background-image {
-                width: 100%;
-                height: 80%;
-                overflow: hidden;
-                /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
-            }
+/* !Estilos para pantallas medianas (840px a 1079px)*/
+@media (min-width: 840px) {
 
-            .pp-MainContainerText {
-                position: absolute;
-                /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-                top: 37%;
-            }
+    /* *MAIN CONTAINER*/
+    .pp-background-image {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
 
-            .h1MCT {
-                font-size: 4.2rem;
-            }
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 35%;
+    }
 
-            .h2MCT {
-                font-size: 6rem;
-            }
+    .h1MCT {
+        font-size: 3.1rem;
+    }
 
-            /*BOTNONES PRINCIPALES*/
-            .pp-MainContainerButtons {
-                position: absolute;
-                /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-                top: 59%;
-                /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-            }
+    .h2MCT {
+        font-size: 4.4rem;
+    }
 
-            .pp-MainContainerButtons .button {
-                font-size: 3.1rem;
-                font-weight: 550;
-            }
-        }
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons .button {
+        font-size: 1.7rem;
+        font-weight: 550;
+    }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 3.3rem;
+    }
+
+    /* *ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 10px;
+        /* Sangría en la lista no ordenada */
+    }
+}
+
+/* !Estilos para pantallas grandes (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-background-image {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 37%;
+    }
+
+    .h1MCT {
+        font-size: 4.2rem;
+    }
+
+    .h2MCT {
+        font-size: 6rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 59%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 3.1rem;
+        font-weight: 550;
+    }
+}
 
 
-        /* !TERMINAN MQ
+/* !TERMINAN MQ
