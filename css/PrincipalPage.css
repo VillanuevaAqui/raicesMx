@@ -40,6 +40,7 @@ a:hover {
     /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
 }
 
+/*PLATILLOS EXQUISITOS*/
 .h1MCT {
     font-size: 4.9rem;
     font-weight: 700;
@@ -48,6 +49,7 @@ a:hover {
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
+/*TODOS LOS DÍAS*/
 .h2MCT {
     font-weight: 850;
     font-size: 6.9rem;
@@ -120,11 +122,11 @@ a:hover {
     padding: 50px;
 }
 
-.imageNC {
+/*.imageNC {
     width: 31.4rem;
     height: 31.4rem;
     border-radius: 100%;
-}
+}*/
 
 .pp-d-block {
     border-radius: 60px;
@@ -138,43 +140,43 @@ a:hover {
 }
 
 .pp-menuText {
-    font-size: 1.9rem;
+    font-size: 2rem;
     text-align: left;
     margin-left: 30px;
     /* Sangría en la lista no ordenada */
 }
 
-/* !TERCER CONTENEDOR*/
-.container3 {
+/* !TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+.terciaryContainer {
     display: flexbox;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
-.terciaryContainerBtn {
+.terciaryContainerButton {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btnC3 {
+.terciaryContainerBtn {
     background-color: var(--fourth);
-    padding: 2rem 15rem 2rem 15rem;
+    padding: 3rem 65rem 3rem 65rem;
     text-decoration: none;
     border-radius: 100px;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/*SUSCRÍBETE*/
 .h1C3 {
-    font-size: 5rem;
-    font-style: italic;
     color: white;
+    font-size: 6.9rem;
+    font-style: italic;
+    font-weight: 850;
     text-align: center;
     text-decoration: none;
 }
 
+/*Y OBTÉN BENEFICIOS*/
 .h2C3 {
     font-size: 3rem;
     font-style: italic;
@@ -479,7 +481,6 @@ a:hover {
 
 /* !Estilos para pantallas grandes (Min-width: 1080px)*/
 @media (min-width: 1080px) {
-
     /* *MAIN CONTAINER*/
     .pp-background-image {
         width: 100%;
