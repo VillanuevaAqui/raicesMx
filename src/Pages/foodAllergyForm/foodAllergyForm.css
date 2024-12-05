@@ -1,35 +1,184 @@
+:root {
+  --primary: #f6f4f1;
+  --secondary: #dcd6c0;
+  --tertiary: #4c4c2c;
+  --fourth: #2c2e21;
+  --fifth: #000000;
+  --font: "Montserrat", sans-serif;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font);
+  background-image: url(/assets/Fondo-Grande.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  user-select: none;
+  margin: 0;
+}
 
 .food-allergy-form {
-    background-image: url("../../../public/assets/Fondo-Grande.png");
-    background-size: cover;
-    background-position: center;
-    padding: 40px;
-    min-height: calc(100vh - 160px); /* Ajuste basado en la altura del navbar y footer */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*color:;*/
+  /*background-color: var(--primary);*/
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  margin: 2rem auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-allergy-form h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.food-allergy-form h3.food-allergy-form__section-center {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--tertiary);
+  margin: 2rem 0 1rem;
+  font-family: var(--font);
+}
+
+.food-allergy-form h5 {
+  font-size: 2rem;
+  color: var(--tertiary);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.food-allergy-form__checkbox-group {
+  display: table;
+  width: 60%;
+  border-spacing: 0.5rem; /* Espaciado entre celdas */
+  margin:0 auto 2rem auto; /**centrar la tabla*/
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-allergy-form__checkbox-row {
+  display: table-row;
+}
+
+.food-allergy-form__checkbox-cell {
+  display: table-cell;
+  text-align: center; /* Centra el contenido horizontalmente */
+  vertical-align: middle; /* Centra el contenido verticalmente */
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--tertiary);
+}
+
+.food-allergy-form__checkbox-cell input {
+  transform: scale(1.2); /* Hace más grande el checkbox */
+  margin: 0 auto; /* Asegura el centrado */
+}
+
+.food-allergy-form__checkbox-group th {
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--secondary);
+  color: var(--fifth);
+}
+
+
+
+.food-allergy-form__textfield {
+  width: 60%;  /* Ancho del input igual al de la tabla */
+  margin: 0 auto 2rem auto; /* Centrar el campo de texto */
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: .5rem; /* Espaciado interno para el campo de texto */
+}
+
+
+
+
+.food-allergy-form button {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+  background-color: var(--fourth);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-allergy-form button:hover {
+  background-color: var(--tertiary);
+}
+
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .food-allergy-form {
+    max-width: 90%; /* Reducir el ancho del formulario */
+    padding: 1.5rem; /* Reducir padding */
   }
-  
-  h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
+
+  .food-allergy-form h1 {
+    font-size: 4rem; /* Disminuir el tamaño del título */
   }
-  
-  .food-allergy-form-container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
+
+  .food-allergy-form h3.food-allergy-form__section-center {
+    font-size: 1.8rem; /* Ajustar tamaño del subtítulo */
   }
-  
-  button {
-    margin-top: 20px;
-    width: 100%;
+
+  .food-allergy-form__checkbox-group {
+    width: 80%; /* Reducir el ancho de la tabla */
   }
-  
+
+  .food-allergy-form__checkbox-cell {
+    font-size: 1.4rem; /* Ajustar tamaño de texto en celdas */
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .food-allergy-form {
+    max-width: 95%; /* Aumentar margen para móviles */
+    padding: 1rem; /* Reducir más el padding */
+  }
+
+  .food-allergy-form h1 {
+    font-size: 3.2rem; /* Reducir tamaño del título */
+  }
+
+  .food-allergy-form h3.food-allergy-form__section-center {
+    font-size: 1.6rem; /* Subtítulo más pequeño */
+  }
+
+  .food-allergy-form__checkbox-group {
+    width: 100%; /* Tabla ocupa todo el ancho */
+    display: block; /* Cambiar la tabla a un diseño más flexible */
+  }
+
+  .food-allergy-form__checkbox-cell {
+    display: block; /* Cada celda ocupa su línea */
+    text-align: left; /* Alinear texto a la izquierda */
+    font-size: 1.2rem; /* Reducir el tamaño del texto */
+    padding: 0.5rem 0; /* Ajustar padding */
+  }
+
+  .food-allergy-form__textfield {
+    width: 100%; /* Input ocupa todo el ancho */
+    margin: 0; /* Eliminar márgenes */
+  }
+
+  .food-allergy-form button {
+    padding: 0.8rem 2rem; /* Botón más compacto */
+    font-size: 1.4rem; /* Ajustar tamaño del texto */
+  }
+}
