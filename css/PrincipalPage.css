@@ -86,16 +86,18 @@ a:hover {
     /* Fondo oscuro en hover */
 }
 
+
+
 /*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
-.PP-SecundaryContainertitle {
-    font-size: 4rem;
+.pp-SecundaryContainerTitle {
+    font-size: 6rem;
     text-align: center;
     font-style: italic;
     color: var(--fifth);
 }
 
-/*ESTILOS DEL CONTENEDOR DE MENÚS*/
-.menusContainer {
+/* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+.pp-menusContainer {
     display: flex;
 }
 
@@ -122,12 +124,9 @@ a:hover {
     /* Redondea las esquinas de la imagen en 90px*/
 }
 
-h5 {
-    font-size: 6rem;
-}
-
-.menuTime {
-    font-size: 2rem;
+.pp-menuTime {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .menuText {
@@ -253,43 +252,45 @@ h5 {
 
 
 
-/* !Estilos para pantallas medianas (màximo 399px)*/
-@media (max-width: 399px) {
-
+/* !Estilos para pantallas medianas (200px a 399px)*/
+@media (min-width: 200px) {
     /* *MAIN CONTAINER*/
     .pp-MainContainerText {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 20%;
+        top: 22%;
     }
 
     .h1MCT {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .h2MCT {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     /*BOTNONES PRINCIPALES*/
     .pp-MainContainerButtons {
         position: absolute;
         /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-        top: 58%;
+        top: 60%;
         /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
     }
 
     .pp-MainContainerButtons .button {
         font-size: 0.7rem;
         font-weight: 550;
-        margin: 0.1rem;
-        padding: 0.6rem 1.25rem;
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 1.3rem;
     }
 }
 
 /* !Estilos para pantallas medianas (400px a 650px)*/
 @media (min-width: 400px) {
-
     /* *MAIN CONTAINER*/
     .pp-MainContainerText {
         position: absolute;
@@ -319,11 +320,14 @@ h5 {
         margin: 0.3rem;
         padding: 0.8rem 1.8rem;
     }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 2.4rem;
+    }
 }
 
 /* !Estilos para pantallas medianas (650px a 839px)*/
 @media (min-width: 650px) {
-
     /* *MAIN CONTAINER*/
     .h1MCT {
         font-size: 3.1rem;
@@ -346,6 +350,11 @@ h5 {
         font-weight: 550;
         margin: 0.5rem;
     }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 3.1rem;
+    }
+}
 
     /* !Estilos para pantallas medianas (840px a 1079px)*/
     @media (min-width: 840px) {
@@ -377,6 +386,11 @@ h5 {
             font-size: 1.7rem;
             font-weight: 550;
         }
+
+        .pp-SecundaryContainerTitle {
+            font-size: 3.3rem;
+        }
+    }
 
         /* !Estilos para pantallas grandes (Min-width: 1080px)*/
         @media (min-width: 1080px) {
@@ -417,4 +431,5 @@ h5 {
             }
         }
 
-        /* *TERMINAN MQ
+
+        /* !TERMINAN MQ
