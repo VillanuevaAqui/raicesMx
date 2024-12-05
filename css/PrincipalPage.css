@@ -119,18 +119,21 @@ a:hover {
     border-radius: 100%;
 }
 
-.d-block {
-    border-radius: 90px;
+.pp-d-block {
+    border-radius: 60px;
     /* Redondea las esquinas de la imagen en 90px*/
 }
 
 .pp-menuTime {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
+    text-align: center;
 }
 
-.menuText {
+.pp-menuText {
     font-size: 1.5rem;
+    text-align: center;
+    text-align: left;
 }
 
 /*ESTILOS DE CONTENEDOR 3*/
