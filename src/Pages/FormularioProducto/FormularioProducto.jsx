@@ -3,6 +3,57 @@ import "./FormularioProducto.css"
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
 
+// Validaciones del formulario
+const validateForm = (name = "", desc = "", ingredients = "", imageUrl = "", price = "") => {
+  let isValid = true;
+
+  // Validar nombre del producto
+  if (!name.trim() || name.length < 3 || name.length > 50) {
+      alert("El nombre del producto debe tener entre 3 y 50 caracteres.");
+      isValid = false;
+  }
+
+  // Validar descripción
+  if (!desc.trim() || desc.length < 10 || desc.length > 300) {
+      alert("La descripción debe tener entre 10 y 300 caracteres.");
+      isValid = false;
+  }
+
+  // Validar ingredientes
+  if (!ingredients.trim() || ingredients.length < 5) {
+      alert("Los ingredientes deben tener al menos 5 caracteres.");
+      isValid = false;
+  }
+
+ // Validar URL de imagen
+ const fileInput = document.querySelector('#image');
+ const file = fileInput.files[0]; // Obtener el archivo seleccionado
+ if (!file || file.type !== "image/png") {
+     alert("Debe seleccionar una imagen en formato PNG.");
+     isValid = false;
+ }
+
+  // Validar precio
+  const priceValue = parseFloat(price);
+  if (isNaN(priceValue) || priceValue <= 0) {
+      alert("El precio debe ser un número mayor a 0.");
+      isValid = false;
+  }
+
+  return isValid;
+};
+
+
+const handleImageChange = (event) => {
+  const file = event.target.files[0]; // Obtener el archivo seleccionado
+  if (file && file.type !== "image/png") {
+    alert("Por favor, seleccione solo imágenes en formato PNG.");
+    event.target.value = ""; // Limpia el campo si el archivo no es válido
+  } else {
+    console.log("Archivo válido:", file);
+  }
+};
+
 
 const productsController = new ProductsController;
 
@@ -22,6 +73,16 @@ function addProductBtn (){
   const imageUrl = newProductImageUrl.value;
   const price = newProductPrice.value;
 
+
+
+    // llama validacion     
+    if (!validateForm(name, desc, ingredients, imageUrl, price)) {
+      console.log("Formulario inválido, no se enviaron los datos.");
+      return; // Detener si la validación falla
+  }      
+
+//Si pasa la validacion 
+
   // Add the item to the ItemsController
   productsController.addProduct(name, desc, ingredients, imageUrl, price);
 
@@ -37,6 +98,9 @@ function removeAllProductsBtn () {
 
   productsController.removeAllProducts();
   console.log(productsController.products);
+  
+  
+  alert("Se borro todo mi loco")
 
 }
 
@@ -44,6 +108,7 @@ function removeProductBtn () {
 
   const index = getValue();
   productsController.removeProduct(index);
+  FormularioProducto(1);
 
 }
 
@@ -65,6 +130,12 @@ function updateProductBtn (){
         const ingredientsGet = newProductIngredients.value.trim();
         const imageUrlGet = newProductImageUrl.value.trim();
         const priceGet = newProductPrice.value.trim();
+
+      // Validar los campos usando la función validateForm
+      if (!validateForm(nameGet, descGet, ingredientsGet, imageUrlGet, priceGet)) {
+        console.log("Formulario inválido, no se actualizó el producto.");
+        return; // Detener la ejecución si la validación falla
+    }
 
         const updatedProduct = {};
 
@@ -118,8 +189,19 @@ const handleSubmit = (e) => {
 }
 
 
-const FormularioProducto = () => {
-  const [formContent, setFormContent] = useState(null);
+const FormularioProducto = (number) => {
+  
+  if (number === 1) {
+
+    removeProduct();
+
+  } else if (number == 2) {
+
+    updateProduct();
+
+  } else {
+
+    const [formContent, setFormContent] = useState(null);
 
   const generateFormAdd = () => {
     setFormContent(
@@ -189,7 +271,6 @@ const FormularioProducto = () => {
         >
           {generateList()}
         </select>
-        <button className="form-btn">Modificar producto</button>
 
         <div className="form-add-product">
           <h2 className="title-form update-form">Modifica los campos necesarios</h2>
@@ -287,5 +368,10 @@ const FormularioProducto = () => {
     </div>
   );
 };
+
+  }
+
+  
+  
 
 export default FormularioProducto;

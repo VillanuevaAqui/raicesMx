@@ -1,11 +1,14 @@
 import React from "react";
 import "./Cart.css";
 import { useCart } from "./CartContext";
+import { Link } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
+import { useMediaQuery } from '@mui/material';
 
 const Cart = () => {
-    const { cart, removeFromCart, updateCartItemQuantity } = useCart();
+    const { cart, removeFromCart, updateCartItemQuantity, totalPrice } = useCart();
 
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const isMobile = useMediaQuery('(max-width:805px)');
 
     return (
         <section className="cart-container">
@@ -16,21 +19,25 @@ const Cart = () => {
                 ) : (
                     <>
                         <div className="cart-row">
+                            <h3 className="cart-header cart-column cart-img"></h3>
                             <h3 className="cart-header cart-column cart-item">Pedido</h3>
                             <h3 className="cart-header cart-column cart-quantity">Cantidad</h3>
                             <h3 className="cart-header cart-column cart-price">Precio</h3>
+                            <h3 className="cart-header cart-column cart-remove"></h3>
                         </div>
 
                         <div className="cart-items">
                             {cart.map((item) => (
                                 <div key={item.id} className="cart-row">
-                                    {/* Imagen y nombre */}
-                                    <div className="cart-column cart-item">
+                                    <div className="cart-column cart-img">
                                         <img
                                             src={item.imageURL}
                                             alt={item.name}
                                             className="cart-item-image"
                                         />
+                                    </div>
+
+                                    <div className="cart-column cart-item">
                                         <span className="cart-text">{item.name}</span>
                                     </div>
 
@@ -64,27 +71,34 @@ const Cart = () => {
                                     </div>
 
                                     {/* Botón de eliminar */}
-                                    <button
-                                        className="btn btn-danger btn-remove"
-                                        onClick={() => removeFromCart(item.id)}
-                                    >
-                                        Eliminar
-                                    </button>
+                                    <div className="cart-column cart-remove">
+                                        <button
+                                            className="btn btn-danger btn-remove"
+                                            onClick={() => removeFromCart(item.id)}
+                                        >
+                                            Eliminar
+                                        </button>
+                                        {isMobile && (
+                                            <CloseIcon onClick={() => removeFromCart(item.id)} className="cart-close-icon" style={{
+                                                fontSize: 30,
+                                                cursor: 'pointer'
+                                            }} />
+                                        )}
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
                         <div className="cart-total">
                             <strong className="cart-total-title">Total</strong>
-                            <span className="cart-total-price">${total.toFixed(2)}</span>
+                            <span className="cart-total-price">${totalPrice.toFixed(2)}</span>
                         </div>
 
-                        <button
-                            className="btn btn-success btn-purchase"
-                            onClick={() => alert("Compra realizada con éxito!")}
-                        >
-                            Comprar
-                        </button>
+                        <Link to="/checkout" className="cart-link">
+                            <button className="btn btn-success btn-purchase">
+                                Comprar
+                            </button>
+                        </Link>
                     </>
                 )}
             </div>
