@@ -53,17 +53,26 @@ const FoodAllergyForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-     // Validar que al menos una alergia esté seleccionada
-  if (alergias.length === 0) {
-    alert("Por favor, seleccione al menos una alergia.");
-    return;
-  }
-    // Si "Otro" está seleccionado y tiene un valor, lo agregamos al array de alergias
-    if (alergias.includes("Otro") && otherAllergy) {
-      setAlergias((prev) => [...prev, Otro: ${otherAllergy}]);
+    // Validar que al menos una alergia esté seleccionada
+    if (alergias.length === 0) {
+      alert("Por favor, seleccione al menos una alergia.");
+      return;
     }
-    console.log("Alergias seleccionadas:", alergias);
+
+    // Validar que si se selecciona "Otro", el campo no esté vacío
+    if (alergias.includes("Otro") && !otherAllergy.trim()) {
+      alert("Por favor, especifique su alergia en el campo 'Otro'.");
+      return;
+    }
+
+    // Concatenar la descripción de "Otro" si aplica
+    const finalAlergias = alergias.includes("Otro")
+      ? [...alergias.filter((a) => a !== "Otro"), `Otro: ${otherAllergy}`]
+      : alergias;
+
+    console.log("Alergias seleccionadas:", finalAlergias);
     alert("Formulario enviado con éxito.");
+  
   };
 
   return (
