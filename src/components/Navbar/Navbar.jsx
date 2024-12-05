@@ -59,6 +59,9 @@ const Navbar = ({setShowRegister}) => {
                         <NavLink className="nav-link" to="/formularioProducto">
                             Formulario Producto
                         </NavLink>
+                        <NavLink className="nav-link" to="/userpage"> {/*Página del usuario*/}
+                            USERPAGE {/*Página del usuario*/}
+                        </NavLink> {/*Página del usuario*/}
                         {/* <NavLink className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
                         </NavLink> */}
