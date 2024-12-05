@@ -1,133 +1,290 @@
-/* Colores base */
+/* === Contenedor principal === */
 .userpage-main {
-    --primary: #333333;
-    --secondary: #ffffff;
-    --tertiary: #007bff;
-    --quaternary: #f4f4f4;
     margin: 0;
-    padding: 15rem;
-  }
-  
-  .userpage-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+    padding: 2% 12% 2% 12%;
+}
 
-  /* Contenedor principal */
-  .userpage-main {
-    max-width: 900px;
-    margin: 10rem auto;
-    padding: 10rem;
-    background-color: var(--secondary);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .userpage-header {
+/* === Header === */
+.userpage-header {
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.userpage-header h1 {
+    font-size: 5rem;
+    color: var(--fourth);
+}
+
+.userpage-header p {
+    color: var(--fourth);
+    font-size: 2rem;
+}
+
+/* === Contenedor general === */
+.userpage-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* === Barra lateral === */
+.userpage-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+/* === Botones de la barra lateral === */
+.userpage-sidebar-btn {
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.userpage-sidebar-btn:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+.userpage-active-btn {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+/* === Área de contenido === */
+.userpage-content {
+    flex: 1;
+    background-color: var(--secondary);
+    padding: 6%;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+/* === Secciones dentro del contenido === */
+.userpage-section {
     margin-bottom: 30px;
-  }
-  
-  .userpage-header h1 {
-    font-size: 2.5rem;
-    color: var(--primary);
-  }
-  
-  .userpage-header p {
-    color: var(--tertiary);
-    font-size: 1.2rem;
-  }
-  
-  .userpage-section {
-    margin-bottom: 40px;
-  }
-  
-  .userpage-section h2 {
-    font-size: 1.8rem;
+}
+
+.userpage-section h2 {
+    font-size: 4rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    color: var(--primary);
-  }
-  
-  .userpage-input-container label {
+    color: var(--fourth);
+}
+
+/* === Contenedores de inputs dentro de las secciones === */
+.userpage-input-container label {
     display: block;
     margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: var(--primary);
-  }
-  
-  .userpage-input-container input {
+    font-size: 2.1rem;
+    color: var(--fourth);
+    font-weight: bold;
+}
+
+.userpage-input-container input {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin-top: 8px;
     font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: var(--quaternary);
+    border-radius: 3rem;
+    background-color: var(--primary);
     color: var(--primary);
     transition: border-color 0.3s ease;
-  }
-  
-  .userpage-input-container input:focus {
+}
+
+.userpage-input-container input:focus {
     border-color: var(--tertiary);
     outline: none;
-  }
-  
-  .userpage-orders-list {
+}
+
+/* === Lista de órdenes === */
+.userpage-orders-list {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .userpage-order-item {
-    background-color: var(--secondary);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 6px;
+}
+
+.userpage-orders-list:hover {
+    cursor: pointer;
+}
+
+.userpage-order-item {
+    background-color: var(--fourth);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .userpage-order-item .userpage-order-details {
+}
+
+.userpage-order-item:hover {
+    background-color: var(--primary);
+    transition: 0.3s ease;
+}
+
+.userpage-order-item .userpage-order-details {
     color: var(--primary);
-  }
-  
-  .userpage-update-btn {
+}
+
+.userpage-order-item .userpage-order-details:hover {
+    color: var(--fourth);
+}
+
+
+/* === Botón de actualización === */
+.userpage-update-btn {
     background-color: var(--tertiary);
-    color: var(--secondary);
+    color: var(--primary);
     padding: 15px 30px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     width: 100%;
     transition: background-color 0.3s ease;
-  }
-  
-  .userpage-update-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 768px) {
-    .userpage-main {
-      padding: 20px;
+}
+
+.userpage-update-btn:hover {
+    color: var(--primary);
+    background-color: var(--fourth);
+}
+
+.userpage-paymentCardInfo {
+    background: var(--primary);
+    border-radius: 3rem;
+}
+
+.userpage-paymentCardInfoh3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 4rem 1rem 7rem 1rem;
+    font-weight: bold;
+}
+
+.userpage-paymentCards {
+    background-color: var(--primary);
+}
+
+.userpage-cardInfoContainer {
+    background-color: var(--secondary);
+    list-style-type: none;
+}
+
+/*! ================================ Responsive === */
+@media (max-width: 1024px) {
+    .userpage-container {
+        flex-direction: column;
     }
-  
-    .userpage-header h1 {
-      font-size: 2rem;
+
+    .userpage-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        min-height: 50px;
     }
-  
-    .userpage-header p {
-      font-size: 1rem;
+
+    .userpage-sidebar-btn {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 0;
+        margin-right: 10px;
+        max-height: 50px;
     }
-  
-    .userpage-section h2 {
-      font-size: 1.5rem;
+
+    .userpage-active-btn {
+        transform: scale(1.05);
     }
-  
+
+    .userpage-input-container label {
+        text-align: center;
+        font-size: 2rem;
+    }
+
     .userpage-input-container input {
-      padding: 10px;
-      font-size: 1rem;
+        text-align: center;
+        font-size: 1.7rem;
     }
-  
+}
+
+@media (max-width: 768px) {
+    .userpage-main {
+        padding: 5%;
+    }
+
+    .userpage-header h1 {
+        font-size: 5rem;
+    }
+
+    .userpage-header p {
+        font-size: 1.5rem;
+    }
+
+    .userpage-sidebar {
+        padding: 3%;
+        min-height: 1px;
+    }
+
+    .userpage-sidebar-btn {
+        height: 6rem;
+        font-size: 1rem;
+    }
+
+    .userpage-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .userpage-input-container input {
+        padding: 12px;
+    }
+
+    .userpage-paymentCardInfo {
+        text-align: center;
+        font-size: 3rem;
+    }
+
     .userpage-update-btn {
-      font-size: 1.1rem;
+        font-size: 2rem;
+        padding: 12px 24px;
     }
-  }  
+}
+
+@media (max-width: 480px) {
+    .userpage-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .userpage-header p {
+        font-size: 0.9rem;
+    }
+
+    .userpage-sidebar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .userpage-sidebar-btn {
+        margin-right: 0;
+
+    }
+
+    .userpage-content {
+        padding: 20px;
+    }
+
+    .userpage-update-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
