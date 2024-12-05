@@ -2,11 +2,13 @@ import React from "react";
 import "./Cart.css";
 import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
+import { useMediaQuery } from '@mui/material';
 
 const Cart = () => {
     const { cart, removeFromCart, updateCartItemQuantity, totalPrice } = useCart();
 
-    // const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const isMobile = useMediaQuery('(max-width:805px)');
 
     return (
         <section className="cart-container">
@@ -76,6 +78,12 @@ const Cart = () => {
                                         >
                                             Eliminar
                                         </button>
+                                        {isMobile && (
+                                            <CloseIcon onClick={() => removeFromCart(item.id)} className="cart-close-icon" style={{
+                                                fontSize: 30,
+                                                cursor: 'pointer'
+                                            }} />
+                                        )}
                                     </div>
                                 </div>
                             ))}
