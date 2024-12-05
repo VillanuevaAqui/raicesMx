@@ -15,57 +15,33 @@ a:hover {
     text-decoration: none;
 } */
 
-/*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
-.MainCotnainer {
+/*!CONTENEDOR PRINCIPAL*/
+.pp-MainContainer {
     position: relative;
     text-align: center;
     color: var(--primary);
-    /*COLOR DE FONDO PRINCIPAL*/
-}
-
-.background-image {
-    opacity: 0.87;
-    /*Ligera opacidad para la imagen de fondo*/
-    overflow: hidden;
-    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
     display: flex;
-    flex: wrap;
-   /*max-height: 1300px;
-Altura máxima que puede tener un elemento*/
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
 }
 
-.background-image {
-
+.pp-background-image {
+    opacity: 0.87;
     width: 100%;
-
+    height: 80%;
 }
 
-.imageNC {
-
-    width: 31.4rem;
-    height: 31.4rem;
-    border-radius: 100%;
-
-}
-
-.MainContainerText {
+.pp-MainContainerText {
     position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-    top: 25%;
-    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-    left: 32%;
+    top: 35%;
+    left: 15%;
     /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
-    transform: translate(-50%, -50%);
-    /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
-    text-align: center;
-    /* linea el texto dentro del elemento hacia el centro*/
 }
 
-/*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
-5px: Difumina la sombra en un radio de 4 píxeles.*/
-
 .h1MCT {
-    font-size: 7rem;
+    font-size: 4.9rem;
     font-weight: 700;
     color: white;
     text-align: left;
@@ -73,38 +49,45 @@ Altura máxima que puede tener un elemento*/
 }
 
 .h2MCT {
-    font-weight: 600;
-    font-size: 9rem;
+    font-weight: 850;
+    font-size: 6.9rem;
     font-style: italic;
     color: white;
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
 /*BOTNONES PRINCIPALES*/
-.MainContainerButtons .button {
-    display: inline-block;
-    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
-    margin: 1rem;
-    padding: 2rem 3rem;
-    font-size: 4rem;
-    font-weight: 600;
-    color: var(--primary);
-    /* Texto claro */
+.pp-MainContainerButtons {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 53%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    left: 15%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+.pp-MainContainerButtons .button {
     background-color: var(--secondary);
     /* Fondo secondary */
     border-radius: 40px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
     color: var(--fifth);
+    display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+    font-size: 3.2rem;
+    font-weight: 550;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-.MainContainerButtons .button:hover {
+.pp-MainContainerButtons .button:hover {
     background-color: var(--tertiary);
     /* Fondo oscuro en hover */
 }
 
-/*ESTILOS DEL SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
-.SecundaryContainertitle {
+/*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
+.PP-SecundaryContainertitle {
     font-size: 4rem;
     text-align: center;
     font-style: italic;
@@ -126,6 +109,12 @@ Altura máxima que puede tener un elemento*/
     margin: 0 auto;
     /* Centra el carrusel horizontalmente */
     padding: 50px;
+}
+
+.imageNC {
+    width: 31.4rem;
+    height: 31.4rem;
+    border-radius: 100%;
 }
 
 .d-block {
@@ -212,7 +201,7 @@ h5 {
 
 .cardImg1 {
     width: 30rem;
-    height: 30rem; 
+    height: 30rem;
     border: 3px solid;
     border-radius: 20%;
     border-color: var(--secondary);
@@ -220,7 +209,7 @@ h5 {
 
 .cardImg2 {
     width: 30rem;
-    height: 30rem; 
+    height: 30rem;
     border: 3px solid;
     border-radius: 20%;
     border-color: var(--secondary);
@@ -258,3 +247,108 @@ h5 {
 .foto1 {
     width: 700px;
 }
+
+
+
+
+
+
+/*Estilos para pantallas medianas (768px a 1080px)*/
+@media (max-width: 1080px) {
+
+    /* *MAIN CONTAINER*/
+    .background-image {
+        width: 100%;
+        height: auto;
+        max-height: 1200px;
+        /*Altura máxima que puede tener un elemento*/
+        min-width: 768px;
+        max-width: 1080px;
+        ;
+        opacity: 0.87;
+        /*Ligera opacidad para la imagen de fondo*/
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 50%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        transform: translate(23%);
+        /* Mueve el elemento un 23% hacia la izquierda y un 0% hacia arriba desde su posición actual*/
+        text-align: left
+            /* linea el texto dentro del elemento hacia el centro*/
+            /*left: 3%;*/
+            /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+
+    .h1MCT {
+        font-size: 6.3rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+    }
+
+    .h2MCT {
+        font-size: 7rem;
+        font-weight: 900;
+        color: white;
+        text-shadow: 3px 3px 5px #2c2e21;
+        font-style: italic;
+    }
+
+    .MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 90%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+        left: 45%;
+        /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+    }
+
+    .MainContainerButtons .button {
+        display: inline-block;
+        /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+        margin: 1rem;
+        padding: 2rem 3rem;
+        font-size: 2.7rem;
+        font-weight: 600;
+        color: var(--primary);
+        /* Texto claro */
+        background-color: var(--secondary);
+        /* Fondo secondary */
+        border-radius: 40px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        color: var(--fifth);
+    }
+}
+
+/* !Estilos para pantallas grandes (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-background-image {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .h1MCT {
+        font-size: 3.2rem;
+    }
+
+    .h2MCT {
+        font-size: 4.4rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons .button {
+        font-size: 1.8rem;
+        font-weight: 550;
+    }
+
+    /* !TERMINAN MQ*/
