@@ -196,7 +196,6 @@ a:hover {
     justify-content: space-around;
     background-color: var(--secondary);
     border-radius: 50px;
-    margin: 0px 40px;
     padding: 50px 30px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     margin: 50px auto;
@@ -211,7 +210,7 @@ a:hover {
 }
 
 .pp-cardTitle {
-padding: 15px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
     font-size: 3rem;
     text-align: center;
 }
@@ -229,27 +228,23 @@ padding: 15px 0px 0px 0px;
     border-color: var(--tertiary);
 }
 
-
-
-
-
-
-
+/* *BOTÓN CONCOER MÁS*/
 .terciaryContainerBtn1 {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .btn2C3 {
-    display: inline;
     background-color: var(--fourth);
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 2rem;
     color: white;
-    padding: 10px 30px;
+    padding: 5px 30px 5px;
     border-radius: 100px;
     align-items: center;
 }
+
+
 
 
 /*ESTILO DE TESTIMONIO*/
@@ -385,6 +380,57 @@ padding: 15px 0px 0px 0px;
         margin-left: 3px;
         /* Sangría en la lista no ordenada */
     }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.3rem 5rem 1.3rem 5rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 3.1rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 1.5rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 30px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 8rem;
+        height: 8rem;
+        border: 2.2px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.3rem;
+        padding: 5px 12px 5px;
+    }
 }
 
 /* !Estilos para pantallas pequeñas (650px a 839px)*/
@@ -430,6 +476,57 @@ padding: 15px 0px 0px 0px;
         margin-left: 10px;
         /* Sangría en la lista no ordenada */
     }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.7rem 17rem 1.7rem 17rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 4rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 1.9rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 50px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 18rem;
+        height: 18rem;
+        border: 2.2px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.8rem;
+        padding: 5px 20px 5px;
+    }
 }
 
 /* !Estilos para pantallas medianas (840px a 1079px)*/
@@ -467,7 +564,8 @@ padding: 15px 0px 0px 0px;
         font-size: 3.3rem;
     }
 
-    /* *ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    /* *TEXTOS DEL CARRUSELES*/
+    /*Núm de menú*/
     .pp-menuTime {
         font-size: 1.9rem;
         font-weight: 700;
@@ -480,6 +578,58 @@ padding: 15px 0px 0px 0px;
         margin-left: 10px;
         /* Sangría en la lista no ordenada */
     }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.7rem 23rem 1.7rem 23rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 4.4rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 2rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 50px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 22rem;
+        height: 22rem;
+        border: 3px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.9rem;
+        padding: 5px 30px 5px;
+    }
+
 }
 
 /* !Estilos para pantallas grandes (Min-width: 1080px)*/
