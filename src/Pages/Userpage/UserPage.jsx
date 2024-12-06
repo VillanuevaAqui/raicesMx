@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
-import "./foodAllergyForm.css";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const UserPage = () => {
@@ -9,10 +8,15 @@ const UserPage = () => {
         name: "",
         address: "",
         phone: "",
+        postalCode: "", // Nuevo campo para código postal
     });
 
     const [paymentData, setPaymentData] = useState({
-        cardNumber: "",
+        cardName: "",
+        cardNumber1: "",
+        cardNumber2: "",
+        cardNumber3: "",
+        cardNumber4: "",
         expirationDate: "",
         cvv: "",
     });
@@ -24,12 +28,25 @@ const UserPage = () => {
     ]);
 
     const [visaMastercard, setCards] = useState([
-        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 1234", cvv: "11/30", nameCard: "Juanito Pérez" },
-        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 5678", cvv: "05/25", nameCard: "Teresa la mala" },
-        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 9012", cvv: "08/28", nameCard: "María la del barrio" }
+        {
+            img: "/assets/userpage-visa.webp",
+            tarjeta: "**** **** **** 1234",
+            expirationDate: "11/30",
+            nameCard: "Juanito Pérez"
+        },
+        {
+            img: "/assets/userpage-visa.webp",
+            tarjeta: "**** **** **** 5678",
+            expirationDate: "05/25",
+            nameCard: "Teresa la mala"
+        },
+        {
+            img: "/assets/userpage-visa.webp",
+            tarjeta: "**** **** **** 9012",
+            expirationDate: "08/28",
+            nameCard: "María la del barrio"
+        }
     ]);
-
-    
 
     /*=============================== FOOD ALLERGY FORM SECTION*/
 
@@ -102,7 +119,6 @@ const UserPage = () => {
 
         console.log("Alergias seleccionadas:", finalAlergias);
         alert("Formulario enviado con éxito.");
-
     };
 
     /*=============================== END FOOD ALLERGY FORM SECTION*/
@@ -131,6 +147,110 @@ const UserPage = () => {
         // Aquí puedes agregar la lógica para actualizar los datos en el backend
     };
 
+    // Función para eliminar una tarjeta
+    const handleDeleteCard = (index) => {
+        setCards((prevCards) => prevCards.filter((_, i) => i !== index));
+    };
+
+    // Referencias para los campos de número de tarjeta
+    const cardNumber2Ref = useRef(null);
+    const cardNumber3Ref = useRef(null);
+    const cardNumber4Ref = useRef(null);
+
+    // Función para manejar la adición de tarjetas
+    const handleAddCard = (e) => {
+        e.preventDefault();
+        const { cardName, cardNumber1, cardNumber2, cardNumber3, cardNumber4, expirationDate, cvv } = paymentData;
+
+        if (!cardName || !cardNumber1 || !cardNumber2 || !cardNumber3 || !cardNumber4 || !expirationDate || !cvv) {
+            alert("Por favor, completa todos los campos de la tarjeta.");
+            return;
+        }
+
+        // Validar que cada bloque de número de tarjeta tenga 4 dígitos
+        const cardNumbers = [cardNumber1, cardNumber2, cardNumber3, cardNumber4];
+        for (let num of cardNumbers) {
+            if (!/^\d{4}$/.test(num)) {
+                alert("Cada bloque del número de tarjeta debe tener exactamente 4 dígitos.");
+                return;
+            }
+        }
+
+        // Validar formato básico de la expiración
+        if (!/^\d{2}\/\d{2}$/.test(expirationDate)) {
+            alert("La fecha de expiración debe tener el formato MM/AA.");
+            return;
+        }
+
+        // Validar CVV
+        if (!/^\d{3,4}$/.test(cvv)) {
+            alert("El CVV debe tener entre 3 y 4 dígitos.");
+            return;
+        }
+
+        // Validar código postal (asumiendo 5 dígitos)
+        if (!/^\d{5}$/.test(userData.postalCode)) {
+            alert("El código postal debe tener 5 dígitos.");
+            return;
+        }
+
+        const fullCardNumber = `${cardNumber1} ${cardNumber2} ${cardNumber3} ${cardNumber4}`;
+
+        setCards((prevCards) => [
+            ...prevCards,
+            {
+                img: "/assets/userpage-visa.webp",
+                tarjeta: `**** **** **** ${cardNumber4}`,
+                expirationDate: expirationDate,
+                nameCard: userData.name || "Usuario",
+            },
+        ]);
+
+        // Resetear los campos de la tarjeta
+        setPaymentData({
+            cardName: "",
+            cardNumber1: "",
+            cardNumber2: "",
+            cardNumber3: "",
+            cardNumber4: "",
+            expirationDate: "",
+            cvv: "",
+        });
+    };
+
+    const handleCardNumberChange = (e, field, nextRef) => {
+        const { value } = e.target;
+        if (!/^\d{0,4}$/.test(value)) {
+            return;
+        }
+
+        setPaymentData((prevData) => ({
+            ...prevData,
+            [field]: value,
+        }));
+
+        if (value.length === 4 && nextRef) {
+            nextRef.current.focus();
+        }
+    };
+
+    const handleExpirationChange = (e) => {
+        let { value } = e.target;
+        if (!/^\d{0,5}$/.test(value)) {
+            return;
+        }
+
+        // Auto-insert '/' after entering two digits
+        if (value.length === 2 && !value.includes('/')) {
+            value = value + '/';
+        }
+
+        setPaymentData((prevData) => ({
+            ...prevData,
+            expirationDate: value,
+        }));
+    };
+
     const renderSection = () => {
         switch (currentSection) {
             case "personal":
@@ -142,34 +262,55 @@ const UserPage = () => {
                                 <label>
                                     Nombre:
                                     <input
+                                        placeholder="Tu nombre completo"
+                                        className="userpage-input"
                                         type="text"
                                         name="name"
                                         value={userData.name}
                                         onChange={handleUserChange}
-                                        placeholder="Tu nombre completo"
+                                        maxLength="50"
                                     />
                                 </label>
                                 <label>
                                     Dirección:
                                     <input
+                                        placeholder="Tu dirección"
+                                        className="userpage-input"
                                         type="text"
                                         name="address"
                                         value={userData.address}
                                         onChange={handleUserChange}
-                                        placeholder="Tu dirección"
+                                        maxLength="100"
                                     />
                                 </label>
                                 <label>
                                     Teléfono:
                                     <input
+                                        placeholder="Tu número de teléfono"
+                                        className="userpage-input"
                                         type="text"
                                         name="phone"
                                         value={userData.phone}
                                         onChange={handleUserChange}
-                                        placeholder="Tu número de teléfono"
+                                        maxLength="15"
+                                    />
+                                </label>
+                                <label>
+                                    Código Postal:
+                                    <input
+                                        placeholder="Tu código postal"
+                                        className="userpage-input"
+                                        type="text"
+                                        name="postalCode"
+                                        value={userData.postalCode}
+                                        onChange={handleUserChange}
+                                        maxLength="5"
                                     />
                                 </label>
                             </div>
+                            <Button type="submit" variant="contained" className="userpage-update-btn">
+                                Actualizar Datos
+                            </Button>
                         </form>
                     </section>
                 );
@@ -177,61 +318,128 @@ const UserPage = () => {
                 return (
                     <section className="userpage-section">
                         <h2>Datos de Pago</h2>
-                        <form onSubmit={handleUpdate}>
+                        <form onSubmit={handleAddCard}>
                             <div className="userpage-input-container">
                                 <label>
+                                    Nombre completo:
+                                    <input
+                                        placeholder="Ingresa tu nombre"
+                                        className="userpage-input"
+                                        type="text"
+                                        name="cardName"
+                                        value={paymentData.cardName}
+                                        onChange={handlePaymentChange}
+                                        maxLength="50"
+                                    />
+                                </label>
+                                <label>
                                     Número de tarjeta:
-                                    <input
-                                        type="text"
-                                        name="cardNumber"
-                                        value={paymentData.cardNumber}
-                                        onChange={handlePaymentChange}
-                                        placeholder="Número de tarjeta"
-                                    />
+                                    <div className="userpage-card-number-container">
+                                        <input
+                                            placeholder="1234"
+                                            className="userpage-input userpage-card-number-input"
+                                            type="text"
+                                            name="cardNumber1"
+                                            value={paymentData.cardNumber1}
+                                            onChange={(e) => handleCardNumberChange(e, 'cardNumber1', cardNumber2Ref)}
+                                            maxLength="4"
+                                        />
+                                        <input
+                                            placeholder="5678"
+                                            className="userpage-input userpage-card-number-input"
+                                            type="text"
+                                            name="cardNumber2"
+                                            value={paymentData.cardNumber2}
+                                            onChange={(e) => handleCardNumberChange(e, 'cardNumber2', cardNumber3Ref)}
+                                            maxLength="4"
+                                            ref={cardNumber2Ref}
+                                        />
+                                        <input
+                                            placeholder="9012"
+                                            className="userpage-input userpage-card-number-input"
+                                            type="text"
+                                            name="cardNumber3"
+                                            value={paymentData.cardNumber3}
+                                            onChange={(e) => handleCardNumberChange(e, 'cardNumber3', cardNumber4Ref)}
+                                            maxLength="4"
+                                            ref={cardNumber3Ref}
+                                        />
+                                        <input
+                                            placeholder="3456"
+                                            className="userpage-input userpage-card-number-input"
+                                            type="text"
+                                            name="cardNumber4"
+                                            value={paymentData.cardNumber4}
+                                            onChange={(e) => handleCardNumberChange(e, 'cardNumber4', null)}
+                                            maxLength="4"
+                                            ref={cardNumber4Ref}
+                                        />
+                                    </div>
                                 </label>
-                                <label>
-                                    Fecha de expiración:
-                                    <input
-                                        type="text"
-                                        name="expirationDate"
-                                        value={paymentData.expirationDate}
-                                        onChange={handlePaymentChange}
-                                        placeholder="MM/AA"
-                                    />
-                                </label>
-                                <label>
-                                    CVV:
-                                    <input
-                                        type="text"
-                                        name="cvv"
-                                        value={paymentData.cvv}
-                                        onChange={handlePaymentChange}
-                                        placeholder="Código CVV"
-                                    />
-                                </label>
+                                <div className="userpage-payment-row">
+                                    <label>
+                                        Fecha de expiración:
+                                        <input
+                                            placeholder="MM/AA"
+                                            className="userpage-input userpage-expiration-input"
+                                            type="text"
+                                            name="expirationDate"
+                                            value={paymentData.expirationDate}
+                                            onChange={handleExpirationChange}
+                                            maxLength="5"
+                                        />
+                                    </label>
+                                    <label>
+                                        CVV:
+                                        <input
+                                            placeholder="123"
+                                            className="userpage-input userpage-cvv-input"
+                                            type="text"
+                                            name="cvv"
+                                            value={paymentData.cvv}
+                                            onChange={handlePaymentChange}
+                                            maxLength="4"
+                                        />
+                                    </label>
+                                </div>
                             </div>
-                            <div className="userpage-paymentCardInfo">
-                                <h3 className="userpage-paymentCardInfoh3">Tarjetas agregadas</h3>
-                                <ul className="userpage-paymentCardInfoUl">
-                                    {visaMastercard.map((cardInfo, index) => (
-                                        <li className="userpage-visaMastercardContainer">
-                                            <img src={cardInfo.img} alt="Visa" className="userpage-cardInfoImg" />
-                                            <p>{cardInfo.tarjeta}</p>
-                                            <p>{cardInfo.cvv}</p>
-                                            <p>{cardInfo.nameCard}</p>
-                                            {/* Ícono para eliminar tarjeta */}
-                                            <button
-                                                onClick={() => handleDeleteCard(index)}
-                                                className="userpage-deleteCardBtn"
-                                                title="Eliminar tarjeta"
-                                            >
-                                                <DeleteIcon />
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <Button type="submit" variant="contained" className="userpage-update-btn">
+                                Agregar Tarjeta
+                            </Button>
                         </form>
+                        <div className="userpage-cards-container">
+                            {visaMastercard.map((cardInfo, index) => (
+                                <div key={index} className="userpage-card">
+                                    <span className="userpage-logo">
+                                        <svg viewBox="0 0 256 83" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient
+                                                    y2="100%"
+                                                    y1="-2.006%"
+                                                    x2="54.877%"
+                                                    x1="45.974%"
+                                                    id="logosVisa0"
+                                                >
+                                                    <stop stopColor="#222357" offset="0%" />
+                                                    <stop stopColor="#254AA5" offset="100%" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path
+                                                transform="matrix(1 0 0 -1 0 82.668)"
+                                                d="M132.397 56.24c-.146-11.516 10.263-17.942 18.104-21.763c8.056-3.92 10.762-6.434 10.73-9.94c-.06-5.365-6.426-7.733-12.383-7.825c-10.393-.161-16.436 2.806-21.24 5.05l-3.744-17.519c4.82-2.221 13.745-4.158 23-4.243c21.725 0 35.938 10.724 36.015 27.351c.085 21.102-29.188 22.27-28.988 31.702c.069 2.86 2.798 5.912 8.778 6.688c2.96.392 11.131.692 20.395-3.574l3.636 16.95c-4.982 1.814-11.385 3.551-19.357 3.551c-20.448 0-34.83-10.87-34.946-26.428m89.241 24.968c-3.967 0-7.31-2.314-8.802-5.865L181.803 1.245h21.709l4.32 11.939h26.528l2.506-11.939H256l-16.697 79.963h-17.665m3.037-21.601l6.265-30.027h-17.158l10.893 30.027m-118.599 21.6L88.964 1.246h20.687l17.104 79.963h-20.679m-30.603 0L53.941 26.782l-8.71 46.277c-1.022 5.166-5.058 8.149-9.54 8.149H.493L0 78.886c7.226-1.568 15.436-4.097 20.41-6.803c3.044-1.653 3.912-3.098 4.912-7.026L41.819 1.245H63.68l33.516 79.963H75.473"
+                                                fill="url(#logosVisa0)"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <span className="userpage-remove" onClick={() => handleDeleteCard(index)}>
+                                        <DeleteIcon />
+                                    </span>
+                                    <span className="userpage-number">{cardInfo.tarjeta}</span>
+                                    <span className="userpage-expirationDate">Exp: {cardInfo.expirationDate}</span>
+                                    <span className="userpage-owner">{cardInfo.nameCard}</span>
+                                </div>
+                            ))}
+                        </div>
                     </section>
                 );
             case "orders":
@@ -255,13 +463,13 @@ const UserPage = () => {
             case "foodAllergyForm":
                 return (
                     <section>
-                        <div className="food-allergy-form">
+                        <div className="userpage-food-allergy-form">
                             <Typography variant="h1" align="center" fontWeight="bold">
                                 Formulario de Alergias
                             </Typography>
                             <Box component="form" onSubmit={handleSubmit} sx={{ marginTop: 5 }}>
                                 <Typography
-                                    className="food-allergy-form__section-center"
+                                    className="userpage-food-allergy-form__section-center"
                                     variant="h3"
                                     fontWeight="bold"
                                 >
@@ -269,7 +477,7 @@ const UserPage = () => {
                                 </Typography>
                                 <br />
 
-                                <Box component="table" className="food-allergy-form__checkbox-group">
+                                <Box component="table" className="userpage-food-allergy-form__checkbox-group">
                                     <thead>
                                         <tr>
                                             <th>Alimento</th>
@@ -278,9 +486,9 @@ const UserPage = () => {
                                     </thead>
                                     <tbody>
                                         {allergiesList.map((allergy, index) => (
-                                            <tr className="food-allergy-form__checkbox-row" key={index}>
-                                                <td className="food-allergy-form__checkbox-cell">{allergy}</td>
-                                                <td className="food-allergy-form__checkbox-cell">
+                                            <tr className="userpage-food-allergy-form__checkbox-row" key={index}>
+                                                <td className="userpage-food-allergy-form__checkbox-cell">{allergy}</td>
+                                                <td className="userpage-food-allergy-form__checkbox-cell">
                                                     <Checkbox
                                                         size="large"
                                                         checked={alergias.includes(allergy)} // Verificar si la alergia está seleccionada
@@ -290,12 +498,11 @@ const UserPage = () => {
                                             </tr>
                                         ))}
 
-
                                         {alergias.includes("Otro") && (
-                                            <tr className="food-allergy-form__checkbox-row">
-                                                <td colSpan="2" style={{ textAlign: "center" }}>      {/* colSpan="2" para que ocupe ambas columnas */}
+                                            <tr className="userpage-food-allergy-form__checkbox-row">
+                                                <td colSpan="2" style={{ textAlign: "center" }}>
                                                     <TextField
-                                                        className="food-allergy-form__textfield"
+                                                        className="userpage-food-allergy-form__textfield"
                                                         label="Especifique su alergia"
                                                         variant="outlined"
                                                         fullWidth
@@ -304,20 +511,15 @@ const UserPage = () => {
                                                         placeholder="Escriba la alergia..."
                                                         margin="normal"
                                                         inputProps={{ maxLength: 300 }} // Limitar a 300 caracteres
-
                                                     />
                                                 </td>
                                             </tr>
                                         )}
                                     </tbody>
-
-
                                 </Box>
 
-
-
                                 <Button
-                                    className="food-allergy-form__button"
+                                    className="userpage-food-allergy-form__button"
                                     type="submit"
                                     variant="contained"
                                 >
@@ -343,29 +545,25 @@ const UserPage = () => {
                 {/* Barra lateral */}
                 <aside className="userpage-sidebar">
                     <button
-                        className={`userpage-sidebar-btn ${currentSection === "personal" ? "userpage-active-btn" : ""
-                            }`}
+                        className={`userpage-sidebar-btn ${currentSection === "personal" ? "userpage-active-btn" : ""}`}
                         onClick={() => setCurrentSection("personal")}
                     >
                         Información Personal
                     </button>
                     <button
-                        className={`userpage-sidebar-btn ${currentSection === "payment" ? "userpage-active-btn" : ""
-                            }`}
+                        className={`userpage-sidebar-btn ${currentSection === "payment" ? "userpage-active-btn" : ""}`}
                         onClick={() => setCurrentSection("payment")}
                     >
                         Método de Pago
                     </button>
                     <button
-                        className={`userpage-sidebar-btn ${currentSection === "orders" ? "userpage-active-btn" : ""
-                            }`}
+                        className={`userpage-sidebar-btn ${currentSection === "orders" ? "userpage-active-btn" : ""}`}
                         onClick={() => setCurrentSection("orders")}
                     >
                         Mis Órdenes
                     </button>
                     <button
-                        className={`userpage-sidebar-btn ${currentSection === "foodAllergyForm" ? "userpage-active-btn" : ""
-                            }`}
+                        className={`userpage-sidebar-btn ${currentSection === "foodAllergyForm" ? "userpage-active-btn" : ""}`}
                         onClick={() => setCurrentSection("foodAllergyForm")}
                     >
                         Alergias
@@ -375,11 +573,6 @@ const UserPage = () => {
                 {/* Área de contenido */}
                 <div className="userpage-content">
                     {renderSection()}
-                    {currentSection !== "orders" && (
-                        <button className="userpage-update-btn" onClick={handleUpdate}>
-                            Actualizar Datos
-                        </button>
-                    )}
                 </div>
             </div>
         </main>
