@@ -24,8 +24,8 @@ export default function CartBadge() {
     return (
         <IconButton aria-label="cart">
             <StyledBadge badgeContent={totalItems} color="secondary">
-                <ShoppingCartIcon fontSize="large"
-                    style={{ color: "var(--secondary)" }} />
+                <ShoppingCartIcon
+                    style={{ color: "var(--secondary)", fontSize: "28" }} />
             </StyledBadge>
         </IconButton>
     );
