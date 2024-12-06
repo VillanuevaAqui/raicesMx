@@ -1,0 +1,406 @@
+/* === Contenedor principal === */
+.userpage-main {
+    margin: 0;
+    padding: 2% 12% 2% 12%;
+}
+
+/* === Header === */
+.userpage-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.userpage-header h1 {
+    font-size: 5rem;
+    color: var(--fourth);
+}
+
+.userpage-header p {
+    color: var(--fourth);
+    font-size: 2rem;
+}
+
+/* === Contenedor general === */
+.userpage-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* === Barra lateral === */
+.userpage-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+/* === Botones de la barra lateral === */
+.userpage-sidebar-btn {
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.userpage-sidebar-btn:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+.userpage-active-btn {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+/* === Área de contenido === */
+.userpage-content {
+    flex: 1;
+    background-color: var(--secondary);
+    padding: 6%;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+/* === Secciones dentro del contenido === */
+.userpage-section {
+    margin-bottom: 30px;
+}
+
+.userpage-section h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--fourth);
+}
+
+/* === Contenedores de inputs dentro de las secciones === */
+.userpage-input-container label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 2.1rem;
+    color: var(--fourth);
+    font-weight: bold;
+}
+
+.userpage-input-container input {
+    /* Actualización del diseño de los inputs */
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 2px 2px 30px 2px lightgrey;
+    margin-top: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* === Contenedor de número de tarjeta === */
+.userpage-card-number-container {
+    display: flex;
+    gap: 10px;
+}
+
+.userpage-card-number-input {
+    width: 60px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* === Contenedor para fecha de expiración y CVV === */
+.userpage-payment-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* === Campos de expiración y CVV === */
+.userpage-expiration-input {
+    width: 100px;
+}
+
+.userpage-cvv-input {
+    width: 80px;
+}
+
+/* === Diseño de los botones === */
+.userpage-update-btn {
+    background-color: var(--tertiary);
+    color: var(--primary);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.userpage-update-btn:hover {
+    color: var(--primary);
+    background-color: var(--fourth);
+}
+
+/* === Lista de órdenes === */
+.userpage-orders-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.userpage-orders-list:hover {
+    cursor: pointer;
+}
+
+.userpage-order-item {
+    background-color: var(--fourth);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userpage-order-item:hover {
+    background-color: var(--primary);
+    transition: 0.3s ease;
+}
+
+.userpage-order-item .userpage-order-details {
+    color: var(--primary);
+}
+
+.userpage-order-item .userpage-order-details:hover {
+    color: var(--fourth);
+}
+
+/* === Contenedor de tarjetas === */
+.userpage-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+/* === Diseño de la tarjeta nueva === */
+.userpage-card {
+    background: radial-gradient(circle, white 0%, #d5d5d5 100%);
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 3px 3px 17px 0px rgba(0, 0, 0, 0.55);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.userpage-logo {
+    align-self: flex-start;
+}
+
+.userpage-logo svg {
+    height: 48px;
+    width: 54px;
+}
+
+.userpage-remove {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.9;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.userpage-remove:hover {
+    color: #f06b5d;
+}
+
+.userpage-number {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    color: black;
+    opacity: 0.9;
+}
+
+.userpage-expirationDate {
+    font-size: 1rem;
+    color: black;
+    opacity: 0.9;
+}
+
+.userpage-owner {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: black;
+    opacity: 0.9;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .userpage-container {
+        flex-direction: column;
+    }
+
+    .userpage-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        min-height: 50px;
+    }
+
+    .userpage-sidebar-btn {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 0;
+        margin-right: 10px;
+        max-height: 50px;
+    }
+
+    .userpage-active-btn {
+        transform: scale(1.05);
+    }
+
+    .userpage-input-container label {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .userpage-input-container input {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+
+    .userpage-card-number-input {
+        width: 50px;
+        font-size: 1rem;
+    }
+
+    .userpage-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .userpage-main {
+        padding: 5%;
+    }
+
+    .userpage-header h1 {
+        font-size: 5rem;
+    }
+
+    .userpage-header p {
+        font-size: 1.5rem;
+    }
+
+    .userpage-sidebar {
+        padding: 3%;
+        min-height: 1px;
+    }
+
+    .userpage-sidebar-btn {
+        height: 6rem;
+        font-size: 1rem;
+    }
+
+    .userpage-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .userpage-input-container input {
+        padding: 12px;
+    }
+
+    .userpage-payment-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .userpage-expiration-input {
+        width: 100%;
+    }
+
+    .userpage-cvv-input {
+        width: 100%;
+    }
+
+    .userpage-update-btn {
+        font-size: 2rem;
+        padding: 12px 24px;
+    }
+
+    /* Ajustes para la tarjeta */
+    .userpage-card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .userpage-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .userpage-header p {
+        font-size: 0.9rem;
+    }
+
+    .userpage-sidebar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .userpage-sidebar-btn {
+        margin-right: 0;
+    }
+
+    .userpage-content {
+        padding: 20px;
+    }
+
+    .userpage-update-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    /* Ajustes para la tarjeta */
+    .userpage-card {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* === Estilos para la sección de tarjetas (opcional) === */
+.userpage-card {
+    position: relative;
+}
+
+.userpage-card .userpage-logo {
+    margin-bottom: 10px;
+}
+
+.userpage-card .userpage-number,
+.userpage-card .userpage-expirationDate,
+.userpage-card .userpage-owner {
+    margin-top: 5px;
+}
