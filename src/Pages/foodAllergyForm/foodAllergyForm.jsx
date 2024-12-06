@@ -1,7 +1,3 @@
-import React, { useState } from "react";
-import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
-import "./foodAllergyForm.css";
-
 const FoodAllergyForm = () => {
   const [alergias, setAlergias] = useState([]); // Estado de las alergias seleccionadas
   const [otherAllergy, setOtherAllergy] = useState(""); // Estado para manejar el valor de "Otro"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
 import "./foodAllergyForm.css";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const UserPage = () => {
     const [userData, setUserData] = useState({
@@ -22,11 +23,13 @@ const UserPage = () => {
         { id: 3, date: "2024-11-15", total: 50 },
     ]);
 
-    const [visamastercard, setCards] = useState([
-        { imagen: 1, tarjeta: "**** **** **** 1234", cvv: "11/30", nameCard: "Juanito Pérez" },
-        { imagen: 2, tarjeta: "**** **** **** 5678", cvv: "05/25", nameCard: "Teresa la mala" },
-        { imagen: 1, tarjeta: "**** **** **** 9012", cvv: "08/28", nameCard: "María la del barrio" }
+    const [visaMastercard, setCards] = useState([
+        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 1234", cvv: "11/30", nameCard: "Juanito Pérez" },
+        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 5678", cvv: "05/25", nameCard: "Teresa la mala" },
+        { img: "/assets/userpage-visa.webp", tarjeta: "**** **** **** 9012", cvv: "08/28", nameCard: "María la del barrio" }
     ]);
+
+    
 
     /*=============================== FOOD ALLERGY FORM SECTION*/
 
@@ -209,19 +212,24 @@ const UserPage = () => {
                             </div>
                             <div className="userpage-paymentCardInfo">
                                 <h3 className="userpage-paymentCardInfoh3">Tarjetas agregadas</h3>
-                                <div className="userpage-paymentCards">
-                                    <ul>
-                                        {visamastercard.map((cardInfo) => (
-                                            <li key={visamastercard.imagen} className="userpage-cardInfoContainer">
-                                                <div className="userpage-cardInfoSaved">
-                                                    <p>{visamastercard.imagen}</p>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                </div>
-
+                                <ul className="userpage-paymentCardInfoUl">
+                                    {visaMastercard.map((cardInfo, index) => (
+                                        <li className="userpage-visaMastercardContainer">
+                                            <img src={cardInfo.img} alt="Visa" className="userpage-cardInfoImg" />
+                                            <p>{cardInfo.tarjeta}</p>
+                                            <p>{cardInfo.cvv}</p>
+                                            <p>{cardInfo.nameCard}</p>
+                                            {/* Ícono para eliminar tarjeta */}
+                                            <button
+                                                onClick={() => handleDeleteCard(index)}
+                                                className="userpage-deleteCardBtn"
+                                                title="Eliminar tarjeta"
+                                            >
+                                                <DeleteIcon />
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </form>
                     </section>
