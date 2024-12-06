@@ -1,8 +1,12 @@
 import "./Navbar.css";
 import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Person2Icon from '@mui/icons-material/Person2';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
-const Navbar = ({setShowRegister}) => {
+const Navbar = ({ setShowRegister }) => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -56,18 +60,28 @@ const Navbar = ({setShowRegister}) => {
                         <NavLink className="nav-link" to="/beneficios">
                             Beneficios
                         </NavLink>
-                        <NavLink className="nav-link" to="/formularioProducto">
+                        {/* <NavLink className="nav-link" to="/formularioProducto">
                             Formulario Producto
                         </NavLink>
-                        <NavLink className="nav-link" to="/userpage"> {/*Página del usuario*/}
-                            USERPAGE {/*Página del usuario*/}
-                        </NavLink> {/*Página del usuario*/}
+                        <NavLink className="nav-link" to="/userpage">
+                            USERPAGE
+                        </NavLink> */}
                         {/* <NavLink className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
                         </NavLink> */}
-                        <button className="nav-link" onClick={()=>setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        <div className="navbar-profile nav-link">
+                            <Person2Icon
+                                style={{ color: "var(--secondary)", fontSize: "30", cursor: "pointer" }} />
+                            <ul className="nav-profile-dropdown">
+                                <li><Link className="nav-profile-link" to="/userpage"><AccountBoxIcon fontSize="large"/><p>Mi cuenta</p></Link></li>
+                                <hr className="nav-profile-dropdown-divider"/>
+                                <li><Link className="nav-profile-link" to="/formularioProducto"><AdminPanelSettingsIcon fontSize="large" /><p>Administrador</p></Link></li>
+                                <hr className="nav-profile-dropdown-divider"/>
+                                <li><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
+                            </ul>
+                        </div>
                         <NavLink className="nav-link" to="/cart">
-                            {/* <i className="bx bxs-cart"></i> */}
                             <CartBadge />
                         </NavLink>
                     </div>
