@@ -7,6 +7,11 @@ import Person2Icon from '@mui/icons-material/Person2';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const Navbar = ({ setShowRegister }) => {
+
+    const logout = () => {
+
+    }
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -78,7 +83,7 @@ const Navbar = ({ setShowRegister }) => {
                                 <hr className="nav-profile-dropdown-divider"/>
                                 <li><Link className="nav-profile-link" to="/formularioProducto"><AdminPanelSettingsIcon fontSize="large" /><p>Administrador</p></Link></li>
                                 <hr className="nav-profile-dropdown-divider"/>
-                                <li><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
+                                <li onClick={logout}><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
                             </ul>
                         </div>
                         <NavLink className="nav-link" to="/cart">
