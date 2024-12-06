@@ -9,7 +9,7 @@ import Menu from './Pages/Menu/Menu.jsx';
 import Nosotros from './Pages/Nosotros/Nosotros.jsx';
 import Beneficios from './Pages/Beneficios/Beneficios.jsx';
 import Principalpage from "./Pages/Principalpage/Principalpage.jsx"
-import FormularioProducto from './Pages/FormularioProducto/FormularioProducto.jsx';
+import PanelAdministracion from './Pages/FormularioProducto/FormularioProducto.jsx';
 import Checkout from './Pages/Checkout/Checkout.jsx';
 import ContactPage from './Pages/Contact/Contact.jsx';
 import { CartProvider } from './Pages/Cart/CartContext.jsx';
@@ -34,7 +34,7 @@ function App() {
               <Route path="/menu" element={<Menu />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/beneficios" element={<Beneficios />} />
-              <Route path='/FormularioProducto' element={<FormularioProducto />} />
+              <Route path='/panelAdministracion' element={<PanelAdministracion />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/contacto" element={<ContactPage />} />
               <Route path="/checkout" element={<Checkout />} />

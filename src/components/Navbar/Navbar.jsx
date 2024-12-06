@@ -56,8 +56,8 @@ const Navbar = ({setShowRegister}) => {
                         <NavLink className="nav-link" to="/beneficios">
                             Beneficios
                         </NavLink>
-                        <NavLink className="nav-link" to="/formularioProducto">
-                            Formulario Producto
+                        <NavLink className="nav-link" to="/panelAdministracion">
+                            Panel de administracion
                         </NavLink>
                         {/* <NavLink className="nav-link" to="/registro">
                             Iniciar sesión / Registrarse
