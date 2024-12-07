@@ -78,7 +78,7 @@ export default function AccountMenu() {
                 <MenuItem onClick={handleClose}>
                     <Link className="nav-account-item" to="/userpage">
                         <ListItemIcon>
-                            <Person2Icon fontSize="large" style={{ color: "var(--secondary)", fontSize: "" }} />
+                            <Person2Icon fontSize="large" style={{ color: "var(--secondary)"}} />
                         </ListItemIcon>
                         Mi cuenta
                     </Link>
@@ -87,7 +87,7 @@ export default function AccountMenu() {
                 <MenuItem onClick={handleClose}>
                     <Link className="nav-account-item" to="/formularioProducto">
                         <ListItemIcon>
-                            <AdminPanelSettingsIcon fontSize="large" style={{ color: "var(--secondary)", fontSize: "" }} />
+                            <AdminPanelSettingsIcon fontSize="large" style={{ color: "var(--secondary)"}} />
                         </ListItemIcon>
                         Administrador
                     </Link>
@@ -96,7 +96,7 @@ export default function AccountMenu() {
                 <MenuItem onClick={handleClose}>
                     <div className='nav-account-item'>
                         <ListItemIcon>
-                            <Logout fontSize="large" style={{ color: "var(--secondary)", fontSize: "" }} />
+                            <Logout fontSize="large" style={{ color: "var(--secondary)"}} />
                         </ListItemIcon>
                         Logout
                     </div>

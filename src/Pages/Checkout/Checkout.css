@@ -55,6 +55,9 @@
     padding: 12px 0px;
     border-radius: 8px;
 }
+.checkout-content {
+    margin: 0 3%;
+}
 @media (max-width: 895px) {
     .place-order-left .checkout-title{
         font-size: 3rem;

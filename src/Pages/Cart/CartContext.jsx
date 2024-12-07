@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
                 );
             } else {
                 // Si no está, lo agregamos al carrito con cantidad 1
-                return [...prevCart, { ...product, quantity: 1 }];
+                return [...prevCart, { ...product, quantity: 1, selectedExtras: [] }];
             }
         });
     };
@@ -50,10 +50,33 @@ export const CartProvider = ({ children }) => {
     // Función para limpiar el carrito
     const clearCart = () => setCart([]);
 
+    const updateCartExtras = (id, extra, isChecked) => {
+        setCart((prevCart) =>
+          prevCart.map((item) => {
+            if (item.id === id) {
+              const updatedExtras = isChecked
+                ? [...item.selectedExtras, extra]
+                : item.selectedExtras.filter((e) => e.name !== extra.name);
+              return { ...item, selectedExtras: updatedExtras };
+            }
+            return item;
+          })
+        );
+      };      
+
     // Calcular el total del precio
+    // const totalPrice = useMemo(() => {
+    //     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    // }, [cart]);
     const totalPrice = useMemo(() => {
-        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-    }, [cart]);
+        return cart.reduce(
+          (total, item) =>
+            total +
+            item.price * item.quantity +
+            item.selectedExtras.reduce((extraTotal, extra) => extraTotal + extra.price, 0) * item.quantity,
+          0
+        );
+      }, [cart]);      
 
     // Calcular el precio final (total + costos adicionales)
     const finalPrice = useMemo(() => {
@@ -61,7 +84,7 @@ export const CartProvider = ({ children }) => {
     }, [totalPrice, extraCosts]);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCartItemQuantity, clearCart, totalPrice, extraCosts, setExtraCosts, finalPrice }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCartItemQuantity, clearCart, totalPrice, extraCosts, setExtraCosts, finalPrice, updateCartExtras }}>
             {children}
         </CartContext.Provider>
     );
