@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useMediaQuery } from '@mui/material';
 
 const Cart = () => {
-    const { cart, removeFromCart, updateCartItemQuantity, totalPrice } = useCart();
+    const { cart, removeFromCart, updateCartItemQuantity, totalPrice, updateCartExtras } = useCart();
 
     const isMobile = useMediaQuery('(max-width:805px)');
 
@@ -22,6 +22,7 @@ const Cart = () => {
                             <h3 className="cart-header cart-column cart-img"></h3>
                             <h3 className="cart-header cart-column cart-item">Pedido</h3>
                             <h3 className="cart-header cart-column cart-quantity">Cantidad</h3>
+                            <h3 className="cart-header cart-column">Extras</h3>
                             <h3 className="cart-header cart-column cart-price">Precio</h3>
                             <h3 className="cart-header cart-column cart-remove"></h3>
                         </div>
@@ -63,6 +64,23 @@ const Cart = () => {
                                                 +
                                             </button>
                                         </div>
+                                    </div>
+
+                                    <div className="cart-column cart-extras">
+                                        {item.extras.map((extra, index) => (
+                                            <label key={index} className="extra-item">
+                                                <input
+                                                    type="checkbox"
+                                                    className="cart-checkbox"
+                                                    checked={item.selectedExtras.some((e) => e.name === extra.name)}
+                                                    onChange={(e) => {
+                                                        const isChecked = e.target.checked;
+                                                        updateCartExtras(item.id, extra, isChecked);
+                                                    }}
+                                                />
+                                                {extra.name} (+${extra.price})
+                                            </label>
+                                        ))}
                                     </div>
 
                                     {/* Precio */}
