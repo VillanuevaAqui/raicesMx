@@ -101,6 +101,16 @@
     color: var(--secondary);
 }
 
+.nav-account-item{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: var(--font);
+    font-weight: 700;
+    color: var(--secondary);
+    text-decoration: none;
+}
+
 .nav-profile-dropdown li p{
     margin-top: 1rem;
 }
@@ -111,7 +121,7 @@
 }
 
 .nav-profile-dropdown-divider{
-    border: 2px solid var(--secondary);
+    border: 1px solid var(--secondary);
 }
 
 .nav-profile-link{
