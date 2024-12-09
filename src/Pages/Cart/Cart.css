@@ -1,0 +1,237 @@
+.cart-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.btn-remove {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.btn-remove:hover {
+    background-color: #c0392b;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid var(--tertiary);
+    border-radius: 20px;
+    padding: 5px 15px;
+    background-color: var(--secondary);
+}
+
+.quantity-btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-btn:disabled {
+    cursor: not-allowed;
+}
+
+.quantity-display {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.cart-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.cart-content {
+    margin: 0 3%;
+}
+.cart-header{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+.cart-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.cart-row{
+    display: flex;
+}
+.cart-item {
+    width: 45%;
+}
+.cart-price{
+    width: 20%;
+}
+.cart-quantity{
+    width: 35%;
+    /* margin-right: 3rem; */
+}
+
+.cart-item-image{
+    width: 14rem;
+    height: auto;
+    border-radius: 1.2rem;
+    margin-right: 1.5rem;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+.cart-row:last-child .cart-column {
+    border: none;
+}
+.cart-total {
+    text-align: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.cart-total-title {
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+.cart-total-price {
+    font-size: 2.5rem;
+}
+.btn-purchase {
+    display: block;
+    margin: 4rem auto 8rem auto;
+    font-size: 3rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 20px;
+}
+.btn-purchase:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+.cart-title{
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.empty-cart{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.cart-text{
+    font-size: 2rem;
+    margin-left: -2rem;
+}
+.cart-remove{
+    max-width: 5%;
+}
+.cart-img{
+    max-width: 15%;
+}
+.cart-link{
+    text-decoration: none;
+}
+
+@media (max-width: 805px) {
+    .cart-title{
+        font-size: 4.5rem;
+    }
+    .cart-row{
+        /* max-width: 600px; */
+        margin: 0 10%;
+    }
+    .cart-header{
+        font-size: 3rem;
+    }
+    .cart-total-title {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-right: 2rem;
+    }
+    .cart-total-price {
+        font-size: 2rem;
+    }
+    .btn-purchase {
+        font-size: 2rem;
+        padding: 1.2rem;
+    }
+    .cart-item-image{
+        display: none;
+    }
+    .quantity-control {
+        border: 1px solid var(--tertiary);
+        border-radius: 20px;
+        padding: 5px 5px;
+    }
+    .cart-img {
+        width: 0;
+    }
+    .cart-column.cart-img{
+        display: none;
+    }
+    .btn-remove {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .cart-title{
+        font-size: 3rem;
+    }
+    .cart-header{
+        font-size: 2.2rem;
+    }
+    .cart-total-title {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-right: 2rem;
+    }
+    .cart-total-price {
+        font-size: 1.5rem;
+    }
+    .btn-purchase {
+        font-size: 1.8rem;
+    }
+    .cart-text{
+        font-size: 1.6rem;
+    }
+    .quantity-control {
+        gap: 0px;
+        border: 1px solid var(--tertiary);
+        border-radius: 20px;
+        padding: 5px 5px;
+    }
+    
+    .quantity-btn {
+        font-size: 1.2rem;
+    }
+    
+    .quantity-display {
+        font-size: 1.2rem;
+    }
+    .btn-remove {
+        display: none;
+        padding: 5px 5px;
+        font-size: 0.8rem;
+    }
+}

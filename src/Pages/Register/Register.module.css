@@ -1,0 +1,12 @@
+#name, #email, #phone, #password, #confirmPassword{
+    font-size: 1.6rem;
+}
+.register-title{
+    text-align: center;
+    margin-top: 3rem;
+}
+@media (max-width: 768px) {
+    .register-title{
+        font-size: 6rem;
+    }
+}

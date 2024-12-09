@@ -1,0 +1,306 @@
+
+/* *CSS base para todos los dispositivos */
+/*body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../assets/fondo-pagina-raicesmx-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}*/
+
+.content {
+    padding: 1em;
+}
+
+/* Centrado de las cards en el contenedor */
+.container-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+/* Estilo general para las cards */
+.card-menu {
+    width: 100%;
+    height: 450px; /* Ajusta este valor según lo que necesites */
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+    max-width: 650px; /* Puedes ajustar esto para controlar el tamaño máximo */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: none;
+    
+}
+
+
+/* Asegurar que el contenido de la tarjeta ocupa el espacio de manera uniforme */
+.card-body-menu {
+    flex-grow: 2; /* Asegura que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos dentro de la tarjeta */
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    height: 100%; /* Asegura que ocupe toda la tarjeta */
+    padding: 1rem;
+}
+
+/*Asegurar el contenido cards con imagenes*/
+.card-menu img {
+    object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
+    height: 20rem; /* Altura fija de las imágenes */
+    width: 100%; /* Asegura que las imágenes sean responsivas */
+}
+
+
+/* Tamaños para titulo card */
+h5.card-title-menu {
+    font-size: 2rem; /* Tamaño estándar del título */
+    font-weight: bold;
+    margin: 1rem 0;
+    
+}
+/* Tamaños para descripcion card */
+p.card-text-menu {
+    font-size: 1.4rem; /* Texto descriptivo */
+    margin-bottom: 1.5rem;
+}
+
+/*Contenido del menu boton opciones desayuno , comida y cena*/
+.menu-options {
+    display: flex;               /* Activa Flexbox */
+    justify-content: center;     /* Alinea los botones horizontalmente al centro */
+    gap: 2.5rem;                 /* Espaciado uniforme entre los botones */
+    flex-wrap: wrap;             /* Permite que los botones se ajusten en filas en pantallas pequeñas */
+    margin-bottom: 2rem;         /* Espacio entre los botones y el contenido siguiente */
+    }
+
+/*----Tamaños para los titulos h1 ,h2, h3, menu----*/
+.h1-menu{
+    font-size: 7rem;  
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem; /* Añade espacio debajo del título */
+}
+.h2-menu{
+    font-weight: 200;
+    font-size: 6rem;
+}
+.h3-menu{
+    font-weight: 100;
+    font-size: 5rem;
+}
+
+.menu p{
+    font-size: 1.6rem;
+}
+
+/*----Linea que division texto footer*/
+/* hr {
+    border-color:var(--secondary);
+    width: 30%;          
+    margin: 0 auto;       
+    border: 3px solid; 
+} */
+/*----Boton agregar carrito-----*/
+.btn-menu {
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000000;
+    background-color: var(--secondary);
+    border: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+    width: 80%; /* Botón más ancho */
+    margin-top: auto; /* Empuja el botón hacia el fondo */
+    align-self: center; /* Centra horizontalmente el botón */
+    
+}
+/*---Efecto hover boton agregar carrito----*/
+.btn-menu:hover {
+    background-color: var(--fourth);
+    color: var(--primary);
+}
+
+/*---Botones del menu desayuno, comida y cena----*/
+.btn-option-menu{
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--primary);
+    background-color: var(--tertiary);
+    border: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    width: 20%; /* Botón más ancho */
+    align-self: center; /* Centra horizontalmente el botón */
+    
+}
+
+/*---Efecto hover botones desayuno , comida , cena----*/
+.btn-option-menu:hover {
+    background-color: var(--secondary);
+    color: var(--fourth);
+}
+
+/*---Efecto active botones desayuno, comida y cena ---*/
+.btn-option-menu.active {
+    background-color:var(--fourth); /* Color para resaltar el botón */
+    color: white;
+}
+
+                        
+/* *Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .card-menu {
+        margin-bottom: 2.5rem;
+    }
+    .h1-menu {
+        margin-bottom: 1.5rem; /* Reduce el espacio en pantallas más pequeñas */
+        font-size: 4.4rem;
+    }
+    .h2-menu {
+        font-size: 3.5rem; /* Reduce aún más para móviles */
+        margin-bottom: 0.5rem; /* Ajusta el margen si es necesario */
+    }
+    h5.card-title {
+        font-size: 1.8rem; /* Reduce el título */
+    }
+
+    p.card-text {
+        font-size: 1.2rem; /* Reduce el texto descriptivo */
+    }
+    .btn-menu {
+        font-size: 1.6rem; /* Botón más pequeño */
+        padding: 0.8rem 1.5rem;
+        width: 70%; /* Botón más ancho */
+    }
+    .menu-options {
+        flex-direction: row;   /* Coloca los botones en una columna */
+        gap: 0.9rem;                /* Reduce el espacio entre los botones */
+        margin-bottom: 1rem;    /* Ajusta el margen inferior */
+    }
+    
+    .btn-option-menu {
+        width: 31%;               /* Asegura que los botones sean más anchos en pantallas pequeñas */
+        font-size: 1.4rem;        /* Reduce el tamaño del texto */
+    }
+    .col-12 {
+        padding-left: 1rem; /* Espaciado izquierdo */
+        padding-right: 1rem; /* Espaciado derecho */
+    }
+    
+}
+
+/* *Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .card-menu {
+        margin-bottom: 2rem;
+        max-width: 42rem; /* Ajusta el tamaño de las tarjetas */
+    }
+    .h1-menu {
+        margin-bottom: 1.5rem;
+        font-size: 5.5rem;
+    }
+    .h2-menu {
+        font-size: 3.5rem; /* Reduce el tamaño para tabletas */
+    }
+    .content {
+        padding: 2em;
+    }
+    h5.card-title {
+        font-size: 2rem; /* Título moderado */
+    }
+
+    p.card-text {
+        font-size: 1.4rem; /* Ajusta el texto */
+    }
+    .btn-menu {
+        font-size: 1.5rem;
+        width: 92%; /* Botón más ajustado */
+    }
+    .menu-options {
+        gap: 3rem;                /* Incrementa el espacio entre los botones */
+    }
+    .btn-option-menu {
+        width: 20%;              /* Tamaño adaptable */
+        font-size: 1.7rem;        /* Ajusta el texto */
+    }
+    .col-12 {
+        padding-left: 1rem; /* Espaciado izquierdo */
+        padding-right: 1rem; /* Espaciado derecho */
+    }
+    /* .nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav li {
+        display: inline;
+    }
+
+    .nav a {
+        padding: 10px 15px;
+    } */
+}
+
+/* *Estilos para pantallas grandes (escritorio) */
+@media (min-width: 769px) {
+    .card-menu {
+        margin-bottom: 3rem;
+        max-width: 45rem; /* Tamaño estándar de las tarjetas */
+    }
+    .h1-menu {
+        margin-bottom: 1.7rem;
+        
+    }
+    .h2-menu {
+        font-size: 5rem; /* Tamaño para pantallas grandes */
+        font-weight: 200;
+        text-align: center;
+        margin-bottom: 1rem;
+        
+    }
+    .btn-menu {
+        font-size: 1.6rem;
+        width: 80%; /* Botón más pequeño */
+    }
+    .menu-options {
+        gap: 2.5rem;              /* Más espacio entre botones */
+    }
+    .btn-option-menu {
+        padding: 1rem 3rem;       /* Botones más grandes */
+        font-size: 1.8rem;        /* Texto más grande */
+    }
+    .col-12 {
+        padding-left: 2rem; /* Espaciado izquierdo */
+        padding-right: 2rem; /* Espaciado derecho */
+    }
+
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3em;
+    }
+
+    /* .nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        padding: 15px 30px;
+    } */
+}
+    
