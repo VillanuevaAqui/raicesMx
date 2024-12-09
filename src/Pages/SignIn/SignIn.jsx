@@ -19,7 +19,6 @@ import { Link } from 'react-router-dom';
 import "./SignIn.css";
 import UsersExample from './database';
 import CloseIcon from '@mui/icons-material/Close';
-import Register from '../Register/Register';
 
 async function loadExampleUsers() {
 

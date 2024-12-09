@@ -17,7 +17,7 @@ const BENEFITS = [
   
   const Beneficios = () => {
     return (
-      <main className="benefit-main">
+      <main className="benefits-main">
         <TitlePage />
         {BENEFITS.map((benefit, index) => (
           <BenefitElement key={index} benefit={benefit} />
@@ -28,22 +28,22 @@ const BENEFITS = [
   
   const TitlePage = () => {
     return (
-      <div className="benefit-card-title">
-        <h2 className="title title-card">Beneficios de la suscripción!!!</h2>
+      <div className="benefits-card-title">
+        <h2 className="benefits-title benefits-title-card">Beneficios de la suscripción!!!</h2>
       </div>
     );
   };
   
   const BenefitElement = ({ benefit }) => {
     return (
-      <div className="wall">
-        <div className="container-card">
-          <div className="img-container">
-            <img className="img-benefit" src={benefit.image} alt={benefit.title} />
+      <div className="benefits-wall">
+        <div className="benefits-container-card">
+          <div className="benefits-img-container">
+            <img className="benefits-img-benefit" src={benefit.image} alt={benefit.title} />
           </div>
-          <div className="description-container">
-            <h3 className="title-card">{benefit.title}</h3>
-            <p className="paragraph-card">{benefit.description}</p>
+          <div className="benefits-description-container">
+            <h3 className="benefits-title-card">{benefit.title}</h3>
+            <p className="benefits-paragraph-card">{benefit.description}</p>
           </div>
         </div>
       </div>
