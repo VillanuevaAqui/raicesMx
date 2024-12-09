@@ -85,7 +85,7 @@ export default function AccountMenu() {
                 </MenuItem>
                 <hr className="nav-profile-dropdown-divider"/>
                 <MenuItem onClick={handleClose}>
-                    <Link className="nav-account-item" to="/formularioProducto">
+                    <Link className="nav-account-item" to="/PanelAdministracion">
                         <ListItemIcon>
                             <AdminPanelSettingsIcon fontSize="large" style={{ color: "var(--secondary)"}} />
                         </ListItemIcon>

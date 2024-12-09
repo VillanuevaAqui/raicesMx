@@ -1,4 +1,4 @@
-.container {
+.panelAdmin-container {
 
     display: flex;
     align-items: center;
@@ -7,7 +7,7 @@
 
 }
 
-.container-form {
+.panelAdmin-container-form {
 
     display: flex;
     align-items: center;
@@ -17,13 +17,13 @@
     padding: 5rem;
 }
 
-#list-products {
+#panelAdmin-list-products {
 
     display: inline-block;
 
 }
 
-.form-btn {
+.panelAdmin-form-btn {
 
     width: 20rem;
     padding: 1rem;
@@ -31,10 +31,19 @@
     background-color: var(--tertiary);
     color: var(--primary);
     border: 0;
+    display: inline-block;  
 
 }
 
-#image {
+.panelAdmin-container-btns {
+
+    
+    display: flex;
+    gap: 2rem;
+
+}
+
+#panelAdmin-image {
 
     padding: 0  ;
     border-radius: 0;
@@ -42,14 +51,28 @@
 }
 
 
-.form-btn:hover{
+.panelAdmin-form-btn:hover{
 
     background-color: var(--primary);
     color: var(--tertiary);
+}
+
+.panelAdmin-form-select {
+
+    width: 20rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 2rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: 0;
+    display: inline-block;  
 
 }
 
-.form-add {
+
+.panelAdmin-form-add {
 
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +86,7 @@
 
 }
 
-.form-add-input{
+.panelAdmin-form-add-input{
 
     width: 100%;
     display: block;
@@ -73,19 +96,19 @@
 
 }
 
-.form-update-product, .form-remove-product, .form-remove-all{
+.panelAdmin-form-update-product, .panelAdmin-form-remove-product, .panelAdmin-form-remove-all{
 
     padding: 5rem;
     background-color: var(--secondary);
     border-radius: 2rem;
     display: grid;
-    gap: 1rem;
+    gap: 3rem;
     text-align: center;
     place-items: center;
 
 }
 
-.form-add-product{
+.panelAdmin-form-add-product{
 
     background-color: var(--secondary);
     border-radius: 1rem;
@@ -97,13 +120,13 @@
 
 }
 
-.title-form {
+.panelAdmin-title-form {
 
     text-align: center;
     font-weight: 700;
 }
 
-.nav-item-btn {
+.panelAdmin-nav-item-btn{
 
     background-color: var(--tertiary);
     border-radius: 2rem;
@@ -114,22 +137,25 @@
     font-weight: 700;
 }
 
-.nav-item-btn:hover {
+.panelAdmin-nav-item-btn:hover {
 
     background-color: var(--secondary);
     color: var(--tertiary);
+}
 
+#panelAdmin-menu-products{
 
+    text-align: center;
+    
+}
+
+.panelAdmin-form-nav-item {
+
+    display: inline-block;
 
 }
 
-.form-nav-item {
-
-    display: inline-block
-
-}
-
-.form-nav {
+.panelAdmin-form-nav {
 
     background-color:var(--tertiary);
     display: flex;
@@ -142,7 +168,7 @@
 
 }
 
-.container-form-nav{
+.panelAdmin-container-form-nav{
 
     padding: 2rem;
     display: flex;

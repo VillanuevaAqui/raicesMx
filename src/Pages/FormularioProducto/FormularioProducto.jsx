@@ -3,41 +3,42 @@ import "./FormularioProducto.css"
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Validaciones del formulario
 const validateForm = (name = "", desc = "", ingredients = "", imageUrl = "", price = "") => {
   let isValid = true;
 
   // Validar nombre del producto
   if (!name.trim() || name.length < 3 || name.length > 50) {
-      alert("El nombre del producto debe tener entre 3 y 50 caracteres.");
-      isValid = false;
+    alert("El nombre del producto debe tener entre 3 y 50 caracteres.");
+    isValid = false;
   }
 
   // Validar descripción
   if (!desc.trim() || desc.length < 10 || desc.length > 300) {
-      alert("La descripción debe tener entre 10 y 300 caracteres.");
-      isValid = false;
+    alert("La descripción debe tener entre 10 y 300 caracteres.");
+    isValid = false;
   }
 
   // Validar ingredientes
   if (!ingredients.trim() || ingredients.length < 5) {
-      alert("Los ingredientes deben tener al menos 5 caracteres.");
-      isValid = false;
+    alert("Los ingredientes deben tener al menos 5 caracteres.");
+    isValid = false;
   }
 
- // Validar URL de imagen
- const fileInput = document.querySelector('#image');
- const file = fileInput.files[0]; // Obtener el archivo seleccionado
- if (!file || file.type !== "image/png") {
-     alert("Debe seleccionar una imagen en formato PNG.");
-     isValid = false;
- }
+  // Validar URL de imagen
+  const fileInput = document.querySelector('#panelAdmin-image');
+  const file = fileInput.files[0]; // Obtener el archivo seleccionado
+  if (!file || file.type !== "image/png") {
+    alert("Debe seleccionar una imagen en formato PNG.");
+    isValid = false;
+  }
 
   // Validar precio
   const priceValue = parseFloat(price);
   if (isNaN(priceValue) || priceValue <= 0) {
-      alert("El precio debe ser un número mayor a 0.");
-      isValid = false;
+    alert("El precio debe ser un número mayor a 0.");
+    isValid = false;
   }
 
   return isValid;
@@ -54,17 +55,20 @@ const handleImageChange = (event) => {
   }
 };
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Logic implemented to manipulate the productsController class, with the key functions being addProductBtn, 
+ *removeProductBtn, removeAllProductsBtn, and updateProductBtn. */
 
 const productsController = new ProductsController;
 
-function addProductBtn (){
+function addProductBtn() {
 
   // Select the inputs
-  const newProductName = document.querySelector('#name');
-  const newProductDesc = document.querySelector('#desc');
-  const newProductIngredients = document.querySelector('#ingredients');
-  const newProductImageUrl = document.querySelector('#image');
-  const newProductPrice = document.querySelector('#price');
+  const newProductName = document.querySelector('#panelAdmin-name');
+  const newProductDesc = document.querySelector('#panelAdmin-desc');
+  const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
+  const newProductImageUrl = document.querySelector('#panelAdmin-image');
+  const newProductPrice = document.querySelector('#panelAdmin-price');
 
   // Get the values of the inputs
   const name = newProductName.value;
@@ -73,15 +77,13 @@ function addProductBtn (){
   const imageUrl = newProductImageUrl.value;
   const price = newProductPrice.value;
 
+  // llama validacion     
+  if (!validateForm(name, desc, ingredients, imageUrl, price)) {
+    console.log("Formulario inválido, no se enviaron los datos.");
+    return; // Detener si la validación falla
+  }
 
-
-    // llama validacion     
-    if (!validateForm(name, desc, ingredients, imageUrl, price)) {
-      console.log("Formulario inválido, no se enviaron los datos.");
-      return; // Detener si la validación falla
-  }      
-
-//Si pasa la validacion 
+  //Si pasa la validacion 
 
   // Add the item to the ItemsController
   productsController.addProduct(name, desc, ingredients, imageUrl, price);
@@ -94,93 +96,75 @@ function addProductBtn (){
 
 }
 
-function removeAllProductsBtn () {
+function removeAllProductsBtn() {
 
   productsController.removeAllProducts();
   console.log(productsController.products);
-  
-  
-  alert("Se borro todo mi loco")
+
+  console.log("Se borro todo mi loco")
 
 }
 
-function removeProductBtn () {
+function removeProductBtn() {
 
-  const index = getValue();
+  const id = "#panelAdmin-select-form"
+  const index = getValue(id);
   productsController.removeProduct(index);
-  FormularioProducto(1);
+  console.log(productsController.products)
 
 }
 
-function updateProductBtn (){
+function updateProductBtn() {
 
-  const index = getValue();
+  const id = "#panelAdmin-select-form"
+  const index = getValue(id);
 
-        // Select the inputs
-        const newProductName = document.querySelector('#name');
-        const newProductDesc = document.querySelector('#desc');
-        const newProductIngredients = document.querySelector('#ingredients');
-        const newProductImageUrl = document.querySelector('#image');
-        const newProductPrice = document.querySelector('#price');
+  // Select the inputs
+  const newProductName = document.querySelector('#panelAdmin-name');
+  const newProductDesc = document.querySelector('#panelAdmin-desc');
+  const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
+  const newProductImageUrl = document.querySelector('#panelAdmin-image');
+  const newProductPrice = document.querySelector('#panelAdmin-price');
 
 
-        // Get the values of the inputs
-        const nameGet = newProductName.value.trim();
-        const descGet = newProductDesc.value.trim();
-        const ingredientsGet = newProductIngredients.value.trim();
-        const imageUrlGet = newProductImageUrl.value.trim();
-        const priceGet = newProductPrice.value.trim();
+  // Get the values of the inputs
+  const nameGet = newProductName.value.trim();
+  const descGet = newProductDesc.value.trim();
+  const ingredientsGet = newProductIngredients.value.trim();
+  const imageUrlGet = newProductImageUrl.value.trim();
+  const priceGet = newProductPrice.value.trim();
 
-      // Validar los campos usando la función validateForm
-      if (!validateForm(nameGet, descGet, ingredientsGet, imageUrlGet, priceGet)) {
-        console.log("Formulario inválido, no se actualizó el producto.");
-        return; // Detener la ejecución si la validación falla
-    }
+  // Validar los campos usando la función validateForm
+  if (!validateForm(nameGet, descGet, ingredientsGet, imageUrlGet, priceGet)) {
+    console.log("Formulario inválido, no se actualizó el producto.");
+    return; // Detener la ejecución si la validación falla
+  }
 
-        const updatedProduct = {};
+  const updatedProduct = {};
 
-        if (nameGet) updatedProduct.name = nameGet;
-        if (descGet) updatedProduct.desc = descGet;
-        if (ingredientsGet) updatedProduct.ingredients = ingredientsGet;
-        if (imageUrlGet) updatedProduct.imageUrl = imageUrlGet;
-        if (priceGet) updatedProduct.price = priceGet;
+  if (nameGet) updatedProduct.name = nameGet;
+  if (descGet) updatedProduct.desc = descGet;
+  if (ingredientsGet) updatedProduct.ingredients = ingredientsGet;
+  if (imageUrlGet) updatedProduct.imageUrl = imageUrlGet;
+  if (priceGet) updatedProduct.price = priceGet;
 
-        // Actualiza el producto solo si hay campos válidos
-        if (Object.keys(updatedProduct).length > 0) {
-            productsController.updateProduct(index, updatedProduct);
-        } else {
-            console.log("No se actualizó porque todos los campos están vacíos");
-        }
+  // Actualiza el producto solo si hay campos válidos
+  if (Object.keys(updatedProduct).length > 0) {
+    productsController.updateProduct(index, updatedProduct);
+  } else {
+    console.log("No se actualizó porque todos los campos están vacíos");
+  }
 
-        // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageUrl: imageUrlGet, price: priceGet});
-        console.log(productsController.products)
+  // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageUrl: imageUrlGet, price: priceGet});
+  console.log(productsController.products)
 
 }
 
-function getValue() {
+function getValue(id) {
 
-  const selectElement = document.querySelector("#select-form")
+  const selectElement = document.querySelector(id)
   const selectValue = parseInt(selectElement.value);
-  console.log(selectValue)
-  console.log(parseInt(selectValue));
   return selectValue;
-}
-
-function generateList() {
-  
-  return (
-    <>
-    {
-      productsController.products.map((product) => (
-
-        <option value={product.id}>{product.name}</option>
-      ))
-    }
-    </>
-
-  );
-
-  
 }
 
 const handleSubmit = (e) => {
@@ -188,53 +172,90 @@ const handleSubmit = (e) => {
 
 }
 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const FormularioProducto = (number) => {
-  
-  if (number === 1) {
+const generateList = () => {
 
-    removeProduct();
+  return (
+    <>
+      {
+        productsController.products.map((product, index) => (
+          <option className="panelAdmin-select-option" key={index} value={product.id}>{product.name}</option>
+        ))
+      }
+    </>
+  );
 
-  } else if (number == 2) {
+}
 
-    updateProduct();
 
-  } else {
+function PanelAdministracion() {
 
-    const [formContent, setFormContent] = useState(null);
+  const [formContent, setFormContent] = useState(
+    <div className="panelAdmin-form-remove-product">
+      <h2 className="panelAdmin-title-form">Aqui se mostrarán las ordenes</h2>
+      <select
+        className="panelAdmin"
+        id="panelAdmin-select-form"
+      >
+        {generateList()}
+      </select>
+    </div>);
+
+  const orders = () => {
+    setFormContent(
+      <div className="panelAdmin-form-remove-product">
+        <h2 className="panelAdmin-title-form">Ordenes</h2>
+        <select
+          class="panelAdmin-form-select"
+          id="panelAdmin-select-form"
+        >
+          {generateList()}
+        </select>
+      </div>
+    );
+  };
 
   const generateFormAdd = () => {
     setFormContent(
-      <div className="form-add-product">
-        <h2 className="title-form">Añadir productos</h2>
-        <form className="form-add" id="newProductForm" onSubmit={handleSubmit}>
+      <div className="panelAdmin-form-add-product">
+        <h2 className="panelAdmin-title-form">Añadir productos</h2>
+        <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
           <input
             type="text"
-            id="name"
-            className="form-add-input"
+            id="panelAdmin-name"
+            className="panelAdmin-form-add-input"
             placeholder="Nombre del producto"
           />
           <textarea
             rows="4"
             cols="40"
-            id="desc"
-            className="form-add-input"
+            id="panelAdmin-desc"
+            className="panelAdmin-form-add-input"
             placeholder="Descripcion"
           ></textarea>
           <textarea
             rows="4"
-            id="ingredients"
-            className="form-add-input"
+            id="panelAdmin-ingredients"
+            className="panelAdmin-form-add-input"
             placeholder="Ingredientes"
           ></textarea>
-          <input type="file" id="image" className="form-add-input" />
+          <select className="panelAdmin-form-add-input panelAdmin-form-select"
+            name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+            <option value="0" key="0" disabled>Categoría</option>
+            <option value="1" key="1">desayuno</option>
+            <option value="2" key="2">comida</option>
+            <option value="3" key="3">cena</option>
+          </select>
+          <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
           <input
             type="number"
-            id="price"
-            className="form-add-input"
+            id="panelAdmin-price"
+            className="panelAdmin-form-add-input"
             placeholder="Precio"
           />
-          <button className="form-btn" type="submit" id="submit" onClick={addProductBtn}>
+          <input type="checkbox" name="" id="" />
+          <button className="panelAdmin-form-btn" type="submit" id="panelAdmin-submit" onClick={addProductBtn}>
             Enviar
           </button>
         </form>
@@ -243,66 +264,78 @@ const FormularioProducto = (number) => {
   };
 
   const removeProduct = () => {
+    generateList();
     setFormContent(
-      <div className="form-remove-product">
-        <h2 className="title-form">Selecciona un producto</h2>
+      <div className="panelAdmin-form-remove-product">
+        <h2 className="panelAdmin-title-form">Selecciona un producto</h2>
         <select
-          className="form-select form-select-lg mb-3"
-          id="select-form"
-          aria-label=".form-select-lg example"
+          className="panelAdmin-form-select"
+          id="panelAdmin-select-form"
         >
           {generateList()}
         </select>
-        <button className="form-btn" id="delete-product" onClick={removeProductBtn}>
-          Eliminar Producto
-        </button>
+        <div className="panelAdmin-container-btns">
+          <button className="panelAdmin-form-btn" id="panelAdmin-delete-product" onClick={removeProductBtn}>
+            Eliminar Producto
+          </button>
+          <button className="panelAdmin-form-btn" id="panelAdmin-delete-products" onClick={removeAllProductsBtn}>
+            Borrar todos los productos
+          </button>
+        </div>
       </div>
     );
   };
 
   const updateProduct = () => {
+    generateList();
     setFormContent(
-      <div className="form-update-product">
-        <h2 className="title-form">Selecciona un producto</h2>
+      <div className="panelAdmin-form-update-product">
+        <h2 className="panelAdmin-title-form">Selecciona un producto</h2>
         <select
-          className="form-select form-select-lg mb-3"
-          id="select-form"
-          aria-label=".form-select-lg example"
+          className="panelAdmin-form-select"
+          id="panelAdmin-select-form"
         >
           {generateList()}
         </select>
 
-        <div className="form-add-product">
-          <h2 className="title-form update-form">Modifica los campos necesarios</h2>
-          <form className="form-add" id="newProductForm">
+        <div className="panelAdmin-form-add-product">
+          <h2 className="panelAdmin-title-form panelAdmin-update-form">Modifica los campos necesarios</h2>
+          <form className="panelAdmin-form-add" id="panelAdmin-newProductForm">
             <input
               type="text"
-              id="name"
-              className="form-add-input"
+              id="panelAdmin-name"
+              className="panelAdmin-form-add-input"
               placeholder="Nombre del producto"
             />
             <textarea
               rows="4"
               cols="40"
-              id="desc"
-              className="form-add-input"
+              id="panelAdmin-desc"
+              className="panelAdmin-form-add-input"
               placeholder="Descripcion"
             ></textarea>
             <textarea
               rows="4"
-              id="ingredients"
-              className="form-add-input"
+              id="panelAdmin-ingredients"
+              className="panelAdmin-form-add-input"
               placeholder="Ingredientes"
             ></textarea>
-            <input type="file" id="image" className="form-add-input" />
+            <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
+            <select className="panelAdmin-form-add-input panelAdmin-form-select"
+            name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+            <option value="0" key="0" disabled>Categoría</option>
+            <option value="1" key="1">desayuno</option>
+            <option value="2" key="2">comida</option>
+            <option value="3" key="3">cena</option>
+          </select>
             <input
               type="number"
-              id="price"
-              className="form-add-input"
+              id="panelAdmin-price"
+              className="panelAdmin-form-add-input"
               placeholder="Precio"
             />
           </form>
-          <button className="form-btn" id="form-update-product" onClick={updateProductBtn}>
+          <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={updateProductBtn}>
             Enviar
           </button>
         </div>
@@ -310,68 +343,82 @@ const FormularioProducto = (number) => {
     );
   };
 
-  const removeAllProducts = () => {
+  const watchProduct = () => {
+
     setFormContent(
-      <div className="form-remove-all">
-        <h2 className="title-form">¿Estás seguro de querer borrar todo?</h2>
-        <button className="form-btn" id="delete-products" onClick={removeAllProductsBtn}>
-          Dale mi loco
-        </button>
+      <div className="panelAdmin-form-remove-product">
+        <h2 className="panelAdmin-title-form">Productos</h2>
+        <select
+          className="panelAdmin-form-select"
+          id="panelAdmin-select-form"
+        >
+          {generateList()}
+        </select>
       </div>
     );
-  };
+
+  }
+
+  const menuProducts = () => {
+
+    const id = "#panelAdmin-menu-products"
+    const index = getValue(id)
+
+    switch (index) {
+
+      case 1:
+        generateFormAdd();
+        break;
+      case 2:
+        removeProduct();
+        break;
+      case 3:
+        updateProduct();
+        break;
+      case 4:
+        watchProduct();
+        break;
+    }
+
+  }
 
   return (
     <div>
-      <div className="container-form-nav">
-        <ul className="form-nav">
-          <li className="form-nav-item">
+      <div className="panelAdmin-container-form-nav">
+        <ul className="panelAdmin-form-nav">
+          <li key="0" className="panelAdmin-form-nav-item">
             <button
-              className="nav-item-btn"
-              onClick={generateFormAdd}
+              className="panelAdmin-nav-item-btn"
+              onClick={orders}
             >
-              Agregar Producto
+              Ordenes
             </button>
           </li>
-          <li className="form-nav-item">
-            <button
-              className="nav-item-btn"
-              onClick={updateProduct}
-            >
-              Modificar Producto Existente
-            </button>
-          </li>
-          <li className="form-nav-item">
-            <button
-              className="nav-item-btn"
-              onClick={removeProduct}
-            >
-              Remover un Producto
-            </button>
-          </li>
-          <li className="form-nav-item">
-            <button
-              className="nav-item-btn"
-              onClick={removeAllProducts}
-            >
-              Eliminar todos los productos
-            </button>
+          <li key="1" className="panelAdmin-form-nav-item">
+            <select onClick={menuProducts} defaultValue="0" name="panelAdmin-menu-products" id="panelAdmin-menu-products" className="panelAdmin-nav-item-btn">
+              <option key="0" value="0" disabled>Productos</option>
+              <option key="1" value="1">Añadir productos</option>
+              <option key="2" value="2">Borrar productos</option>
+              <option key="3" value="3">Modificar Productos</option>
+              <option key="4" value="4">Ver Productos</option>
+            </select>
           </li>
         </ul>
       </div>
 
-      <section className="products-container">
-        <div className="container">
-          <div id="list-products">{formContent}</div>
+      <section className="panelAdmin-products-container">
+        <div className="panelAdmin-container">
+          <div id="panelAdmin-list-products">{formContent}</div>
         </div>
       </section>
     </div>
   );
-};
 
-  }
 
-  
-  
+}
 
-export default FormularioProducto;
+
+
+
+
+export default PanelAdministracion;
