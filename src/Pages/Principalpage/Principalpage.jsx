@@ -125,16 +125,14 @@ const Testimonials = () => (
 const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
-      <button className="terciaryContainerBtn">
         <a href="#">
-          <h1 className="h1C3">¡NUESTRO COMPROMISO</h1>
+          <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
           <h2 className="h2C3">es con México!</h2>
         </a>
-      </button>
     </div>
     <section className="nuestroCompromiso">
       <div className="nuestroCompromisSection">
-        {["Nutricionista.webp", "Traste de comida.webp", "Aceite de cocina.webp"].map((src, index) => (
+        {["Nutricionista.webp", "Traste-de-comida_1_.webp", "Aceite-de-cocina.webp"].map((src, index) => (
           <div className="commitment-NC" key={index}>
             <img className="imageNC" src={`/assets/${src}`} alt={src.replace(/\.webp/, '')} />
             <p className="textNC"><strong>{["Donación de comida", "Reutilizamos tus tuppers", "Reutilización aceites"][index]}</strong></p>
@@ -149,7 +147,7 @@ const Commitment = () => (
 const PrincipalPage = () => (
   <>
     <Main />
-    <MenuSection />
+    <MenuSection /> {/* */}
     <SubscribeSection />
     <Testimonials />
     <Commitment />
