@@ -1,0 +1,755 @@
+/* *ESTILOS GENERALES*/
+/* VARIABLES DE COLOR PARA EL DISEÑO*/
+
+/* a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: none;
+} */
+
+/*!CONTENEDOR PRINCIPAL*/
+.pp-MainContainer {
+    position: relative;
+    text-align: center;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp-background-image {
+    opacity: 0.87;
+    width: 100%;
+    height: 80%;
+}
+
+.pp-MainContainerText {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 35%;
+    left: 7%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+/*PLATILLOS EXQUISITOS*/
+.h1MCT {
+    font-size: 4.9rem;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
+
+/*TODOS LOS DÍAS*/
+.h2MCT {
+    font-weight: 850;
+    font-size: 6.9rem;
+    font-style: italic;
+    color: white;
+    text-shadow: 3px 3px 5px #2c2e21;
+}
+
+/*BOTNONES PRINCIPALES*/
+.pp-MainContainerButtons {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 53%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    left: 7%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+.pp-MainContainerButtons .button {
+    background-color: var(--secondary);
+    /* Fondo secondary */
+    border-radius: 40px;
+    color: var(--fifth);
+    display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+    font-size: 3.2rem;
+    font-weight: 550;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.pp-MainContainerButtons .button:hover {
+    background-color: var(--tertiary);
+    /* Fondo oscuro en hover */
+}
+
+
+
+/*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
+/*MENÚS DEL DÍA*/
+.pp-SecundaryContainerTitle {
+    font-size: 6rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--fifth);
+}
+
+/* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+.pp-menusContainer {
+    display: flex;
+}
+
+/*MARGEN ENTRE CARRUSELES*/
+.pp-carousel-slide {
+    margin: 25px;
+    /* Margen inferior para mayor separación vertical */
+}
+
+/*ESTILOS DEL CARRUSEL*/
+#carouselExampleCaptions {
+    /*CONTENEDOR GENERAL*/
+    width: 70%;
+    /* Ajusta el ancho*/
+    height: 40px;
+    /* Ajusta la altura*/
+    margin: 0 auto;
+    /* Centra el carrusel horizontalmente */
+    padding: 50px;
+}
+
+/*.imageNC {
+    width: 31.4rem;
+    height: 31.4rem;
+    border-radius: 100%;
+}*/
+
+.pp-d-block {
+    border-radius: 60px;
+    /* Redondea las esquinas de la imagen en 90px*/
+}
+
+.pp-menuTime {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.pp-menuText {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 30px;
+    /* Sangría en la lista no ordenada */
+}
+
+/* !TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+.terciaryContainer {
+    display: flexbox;
+}
+
+/*BOTÓN VERDE*/
+.terciaryContainerButton {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: -10px auto -75px;
+    /* Botón flotante sobre la sección */
+}
+
+.terciaryContainerBtn {
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--fourth);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
+    text-decoration: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/*SUSCRÍBETE*/
+.h1C3 {
+    color: white;
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 850;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*Y OBTÉN BENEFICIOS*/
+.h2C3 {
+    font-size: 3rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*CARTAS DE BENEFICIOS*/
+.benefits {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+    background-color: var(--secondary);
+    border-radius: 50px;
+    padding: 50px 30px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 77%;
+}
+
+.pp-cardC3 {
+    flex-direction: column;
+    justify-items: center;
+    border-color: var(--secondary);
+    margin: 25px;
+}
+
+.pp-cardTitle {
+    padding: 15px 0px 0px 0px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.pp-cardText {
+    font-size: 2rem;
+    text-align: justify;
+}
+
+.pp-cardImg {
+    width: 30rem;
+    height: 30rem;
+    border: 3px solid;
+    border-radius: 20%;
+    border-color: var(--tertiary);
+}
+
+/* *BOTÓN CONCOER MÁS*/
+.terciaryContainerBtn1 {
+    display: flex;
+    justify-content: center;
+}
+
+.btn2C3 {
+    background-color: var(--fourth);
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    padding: 5px 30px 5px;
+    border-radius: 100px;
+    align-items: center;
+}
+
+/* !CUARTO CONTENEDOR: TESTIMONIOS*/
+/* *CONTENEDOR*/
+.pp-testimonio {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+    padding: 30px 0px 0px 0px;
+}
+
+/* *IMAGEN DE USUSARIO*/
+.pp-user {
+    width: 25rem;
+    height: 25rem;
+    margin: 25px;;
+}
+
+/* *COMENTARIO DEL TESTIMONIO*/
+.pp-comentario {
+font-size: 2.5rem;
+}
+
+
+
+
+
+/* !Estilos para pantallas muy muy pequeñas (200px a 399px)*/
+@media (min-width: 200px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 22%;
+    }
+
+    .h1MCT {
+        font-size: 1.3rem;
+    }
+
+    .h2MCT {
+        font-size: 1.7rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 60%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 0.75rem;
+        font-weight: 550;
+        margin: 0.3rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* *ESTILOS DEL TEXTO DEL CONTENEDOR*/
+    .pp-SecundaryContainerTitle {
+        font-size: 1.3rem;
+    }
+
+    /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+    /*MARGEN ENTRE CARRUSELES*/
+    .pp-carousel-slide {
+        margin: 3px;
+        /* Margen inferior para mayor separación vertical */
+    }
+
+    /* ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 0.65rem;
+        text-align: left;
+        margin-left: 1px;
+        /* Sangría en la lista no ordenada */
+    }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1rem 3rem 1rem 3rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 1.7rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 0.8rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 20px 0.2px 10px 0.2px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 15px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 0.65rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 0.8rem;
+        padding: 3px 12px 3px;
+    }
+}
+
+/* !Estilos para pantallas muy pequeñas (400px a 650px)*/
+@media (min-width: 400px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 35%;
+    }
+
+    .h1MCT {
+        font-size: 2.4rem;
+    }
+
+    .h2MCT {
+        font-size: 3.1rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 65%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 1.3rem;
+        font-weight: 550;
+        margin: 0.3rem;
+        padding: 0.8rem 1.8rem;
+    }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 2.4rem;
+    }
+
+    /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+    /*MARGEN ENTRE CARRUSELES*/
+    .pp-carousel-slide {
+        margin: 10px;
+        /* Margen inferior para mayor separación vertical */
+    }
+
+    /* ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 0.95rem;
+        text-align: left;
+        margin-left: 3px;
+        /* Sangría en la lista no ordenada */
+    }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.3rem 5rem 1.3rem 5rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 3.1rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 1.5rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 30px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 8rem;
+        height: 8rem;
+        border: 2.2px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.3rem;
+        padding: 5px 12px 5px;
+    }
+}
+
+/* *QUINTO CONTENEDOR: "NUESTRO COMPROMISO1"*/
+    /*BOTÓN VERDE*/
+    .Container5Btn {
+        padding: 1.3rem 5rem 1.3rem 5rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 3.1rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 1.5rem;
+    }
+
+
+
+
+
+
+/* !Estilos para pantallas pequeñas (650px a 839px)*/
+@media (min-width: 650px) {
+
+    /* *MAIN CONTAINER*/
+    .h1MCT {
+        font-size: 3.1rem;
+    }
+
+    .h2MCT {
+        font-size: 4rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 59%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 1.85rem;
+        font-weight: 550;
+        margin: 0.5rem;
+    }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 3.1rem;
+    }
+
+    /* *ESTILOS DE LOS TEXTOS DEL CARRUSELES*/
+    .pp-menuTime {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 1.1rem;
+        text-align: left;
+        margin-left: 10px;
+        /* Sangría en la lista no ordenada */
+    }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.7rem 17rem 1.7rem 17rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 4rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 1.9rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 50px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 18rem;
+        height: 18rem;
+        border: 2.2px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.8rem;
+        padding: 5px 20px 5px;
+    }
+}
+
+/* !Estilos para pantallas medianas (840px a 1079px)*/
+@media (min-width: 840px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-background-image {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 35%;
+    }
+
+    .h1MCT {
+        font-size: 3.1rem;
+    }
+
+    .h2MCT {
+        font-size: 4.4rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons .button {
+        font-size: 1.7rem;
+        font-weight: 550;
+    }
+
+    .pp-SecundaryContainerTitle {
+        font-size: 3.3rem;
+    }
+
+    /* *TEXTOS DEL CARRUSELES*/
+    /*Núm de menú*/
+    .pp-menuTime {
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .pp-menuText {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 10px;
+        /* Sangría en la lista no ordenada */
+    }
+
+    /* *TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+    /*BOTÓN VERDE*/
+    .terciaryContainerBtn {
+        padding: 1.7rem 23rem 1.7rem 23rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 4.4rem;
+        font-weight: 850;
+    }
+
+    /*Y OBTÉN BENEFICIOS*/
+    .h2C3 {
+        font-size: 2rem;
+    }
+
+    /*CARTAS DE BENEFICIOS*/
+    .benefits {
+        padding: 50px 30px;
+        margin: 50px auto;
+        max-width: 86%;
+    }
+
+    .pp-cardC3 {
+        margin: 25px;
+    }
+
+    .pp-cardTitle {
+        padding: 15px 0px 0px 0px;
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .pp-cardText {
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+
+    .pp-cardImg {
+        width: 22rem;
+        height: 22rem;
+        border: 3px solid;
+    }
+
+    /* *BOTÓN CONCOER MÁS*/
+    .btn2C3 {
+        font-size: 1.9rem;
+        padding: 5px 30px 5px;
+    }
+
+}
+
+/* !Estilos para pantallas grandes (Min-width: 1080px)*/
+@media (min-width: 1080px) {
+
+    /* *MAIN CONTAINER*/
+    .pp-background-image {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
+    }
+
+    .pp-MainContainerText {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 37%;
+    }
+
+    .h1MCT {
+        font-size: 4.2rem;
+    }
+
+    .h2MCT {
+        font-size: 6rem;
+    }
+
+    /*BOTNONES PRINCIPALES*/
+    .pp-MainContainerButtons {
+        position: absolute;
+        /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+        top: 59%;
+        /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 3.1rem;
+        font-weight: 550;
+    }
+}
+
+
+/* !TERMINAN MQ */

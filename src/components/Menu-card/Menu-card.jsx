@@ -29,7 +29,6 @@ const MenuCard = () => {
           aria-label="Slide 3"
         ></button>
       </div>
-/*SLIDES INDIVIDUALES DEL CARRUSEL*/
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
@@ -38,7 +37,6 @@ const MenuCard = () => {
             <p>Chilaquiles verdes con huevo</p>
           </div>
         </div>
-  /*SLIDE 2 M1 */
         <div className="carousel-item">
           <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
@@ -46,7 +44,6 @@ const MenuCard = () => {
             <p>Ceviche.</p>
           </div>
         </div>
-  /*SLIDE 3 M1 */
         <div className="carousel-item">
           <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
