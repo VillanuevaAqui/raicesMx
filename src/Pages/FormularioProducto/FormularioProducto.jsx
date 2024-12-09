@@ -192,15 +192,15 @@ const generateList = () => {
 function PanelAdministracion() {
 
   const [formContent, setFormContent] = useState(
-    <div className="panelAdmin-form-remove-product">
-      <h2 className="panelAdmin-title-form">Aqui se mostrarán las ordenes</h2>
-      <select
-        className="panelAdmin"
-        id="panelAdmin-select-form"
-      >
-        {generateList()}
-      </select>
-    </div>);
+  <div className="panelAdmin-form-remove-product">
+    <h2 className="panelAdmin-title-form">Ordenes</h2>
+    <select
+      class="panelAdmin-form-select"
+      id="panelAdmin-select-form"
+    >
+      {generateList()}
+    </select>
+  </div>);
 
   const orders = () => {
     setFormContent(
@@ -322,12 +322,12 @@ function PanelAdministracion() {
             ></textarea>
             <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
             <select className="panelAdmin-form-add-input panelAdmin-form-select"
-            name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
-            <option value="0" key="0" disabled>Categoría</option>
-            <option value="1" key="1">desayuno</option>
-            <option value="2" key="2">comida</option>
-            <option value="3" key="3">cena</option>
-          </select>
+              name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+              <option value="0" key="0" disabled>Categoría</option>
+              <option value="1" key="1">desayuno</option>
+              <option value="2" key="2">comida</option>
+              <option value="3" key="3">cena</option>
+            </select>
             <input
               type="number"
               id="panelAdmin-price"
