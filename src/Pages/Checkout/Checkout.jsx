@@ -7,7 +7,7 @@ const Checkout = () => {
     setExtraCosts(50);
     return (
         <div className="cart-container">
-            <div className="cart-content">
+            <div className="checkout-content">
                 <form className="place-order">
                     <div className="place-order-left">
                         <p className="checkout-title">Detalles del pedido</p>

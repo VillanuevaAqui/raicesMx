@@ -14,6 +14,9 @@ import Checkout from './Pages/Checkout/Checkout.jsx';
 import ContactPage from './Pages/Contact/Contact.jsx';
 import { CartProvider } from './Pages/Cart/CartContext.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
+import FoodAllergyForm from './Pages/foodAllergyForm/foodAllergyForm.jsx';
+import UserPage from './Pages/Userpage/userpage.jsx'; {/*Página del usuario*/}
+
 
 
 function App() {
@@ -38,6 +41,8 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/contacto" element={<ContactPage />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/formulario-alergias" element={<FoodAllergyForm />} />
+              <Route path="/userpage" element={<UserPage />} /> {/*Página del usuario*/}
             </Routes>
           </div>
           <Footer />

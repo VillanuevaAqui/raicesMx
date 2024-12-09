@@ -1,8 +1,14 @@
 import "./Navbar.css";
 import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
+import AccountMenu from "../AccountMenu/AccountMenu";
 
-const Navbar = ({setShowRegister}) => {
+const Navbar = ({ setShowRegister }) => {
+
+    const logout = () => {
+
+    }
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -56,15 +62,9 @@ const Navbar = ({setShowRegister}) => {
                         <NavLink className="nav-link" to="/beneficios">
                             Beneficios
                         </NavLink>
-                        <NavLink className="nav-link" to="/panelAdministracion">
-                            Panel de administracion
-                        </NavLink>
-                        {/* <NavLink className="nav-link" to="/registro">
-                            Iniciar sesión / Registrarse
-                        </NavLink> */}
-                        <button className="nav-link" onClick={()=>setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        <AccountMenu />
                         <NavLink className="nav-link" to="/cart">
-                            {/* <i className="bx bxs-cart"></i> */}
                             <CartBadge />
                         </NavLink>
                     </div>
@@ -75,3 +75,16 @@ const Navbar = ({setShowRegister}) => {
 };
 
 export default Navbar;
+
+
+{/* <div className="navbar-profile nav-link">
+<Person2Icon
+    style={{ color: "var(--secondary)", fontSize: "30", cursor: "pointer" }} />
+<ul className="nav-profile-dropdown">
+    <li><Link className="nav-profile-link" to="/userpage"><AccountBoxIcon fontSize="large"/><p>Mi cuenta</p></Link></li>
+    <hr className="nav-profile-dropdown-divider"/>
+    <li><Link className="nav-profile-link" to="/formularioProducto"><AdminPanelSettingsIcon fontSize="large" /><p>Administrador</p></Link></li>
+    <hr className="nav-profile-dropdown-divider"/>
+    <li onClick={logout}><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
+</ul>
+</div> */}
