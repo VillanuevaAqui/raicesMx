@@ -31,7 +31,6 @@ const BENEFITS = [
     return (
       <div className="benefits-card-title">
         <h2 className="benefits-title benefits-title-card">Beneficios de la suscripción!!!</h2>
-        <MenuCard/>
       </div>
     );
   };

@@ -1,5 +1,6 @@
 import './PrincipalPage.css'
 import MenuCard from '../../components/Menu-card/Menu-card';
+import { Link } from 'react-router-dom';
 
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
@@ -21,10 +22,10 @@ const Main = () => (
 // SEGUNDO CONTENEDOR: MENÚS DEL DÍA
 const MenuSection = () => (
   <section className="pp-SecundaryContainer">
-    <h1 className="pp-SecundaryContainerTitle">Menús del día</h1>
+    <h2 className="pp-SecundaryContainerTitle">Menú del día</h2>
     {/* <section className="pp-menusContainer"> */}
-      <MenuCard/>
-      {/* {[1, 2].map((menuNumber) => (
+    <MenuCard />
+    {/* {[1, 2].map((menuNumber) => (
         <div id={`carouselMenu${menuNumber}`} className="pp-carousel-slide" key={menuNumber}>
           <div className="carousel-indicators">
             {[0, 1, 2].map((slide) => (
@@ -67,6 +68,23 @@ const MenuSection = () => (
   </section>
 );
 
+const arr = [
+  {
+    title: "Nutricionista",
+    img: "/assets/Fotos-RaícesMX.webp",
+    description: `RaícesMX somos tu aliado para una alimentación saludable y personalizada.
+                    Disfruta de planes nutricionales diseñados a tu medida, creados por nuestros expertos para
+                    ayudarte a alcanzar tus objetivos de bienestar.`
+  },
+  {
+    title: "Seleccionar alimentos",
+    img: "/assets/Fotos-RaícesMX-_1_.webp",
+    description: `Con nuestros menús, come delicioso y saludable con RaícesMX. ¡Tú eliges los
+                    ingredientes,
+                    las porciones y los menús! Nuestro equipo te asesorará para que tus comidas sean
+                    nutritivas y satisfactorias, adaptándose a tus gustos y necesidades alimentarias.`
+  }
+]
 // TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS
 const SubscribeSection = () => (
   <section className="terciaryContainer">
@@ -78,22 +96,27 @@ const SubscribeSection = () => (
         </a>
       </button>
     </div>
-    <section className="benefits">
-      {["Nutricionista", "Seleccionar alimentos"].map((benefit, index) => (
+    <section className="pp-benefits">
+      <div className='pp-benefits-container'>
+      {arr.map((benefit, index) => (
         <div className="pp-cardC3" key={index}>
-          <img className="pp-cardImg" src={`/assets/${benefit}.webp`} alt={benefit} />
-          <h2 className="pp-cardTitle">{benefit}</h2>
-          <p className="pp-cardText">Descripción del beneficio {index + 1}</p>
+          <img className="pp-cardImg" src={benefit.img} alt={benefit} />
+          <h2 className="pp-cardTitle">{benefit.title}</h2>
+          <p className="pp-cardText">{benefit.description}</p>
         </div>
       ))}
+      </div>
+
+      <div className="">
+        <button className="btn2C3">
+          <Link to="/beneficios">
+            <p>Conoce más</p>
+            </Link>
+        </button>
+      </div>
+
     </section>
-    <div className="terciaryContainerBtn1">
-      <button className="btn2C3">
-        <a href="#">
-          <p>Conoce más</p>
-        </a>
-      </button>
-    </div>
+
   </section>
 );
 
@@ -127,10 +150,10 @@ const Testimonials = () => (
 const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
-        <a href="#">
-          <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
-          <h2 className="h2C3">es con México!</h2>
-        </a>
+      <a href="#">
+        <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
+        <h2 className="h2C3">es con México!</h2>
+      </a>
     </div>
     <section className="nuestroCompromiso">
       <div className="nuestroCompromisSection">

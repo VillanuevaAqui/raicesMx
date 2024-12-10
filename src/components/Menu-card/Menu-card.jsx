@@ -31,28 +31,24 @@ const MenuCard = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
-          <div className=" carousel-caption d-none d-md-block">
-            <h5 className="h2MCT h2MCT-carrusel">MENÚ 1 | Desayuno</h5>
-            <ul>
-              <li className="h2MCT h2MCT-carrusel">Desayuno: Descripción </li>
-                <li className="h2MCT h2MCT-carrusel">Comida: Descripción </li>
-                <li className="h2MCT h2MCT-carrusel">Cena: Descripción </li>
-            </ul>
+          <img src="assets/Chilaquiles-y-Huevos.webp" className="d-block w-100" alt="..." />
+          <div className="carousel-caption d-none d-md-block pp-carrusel-card">
+            <h5 className="h2MCT h2MCT-carrusel pp-title-carrusel">Desayuno</h5>
+            <p className="h2MCT h2MCT-carrusel">Despierta a lo mexicano con chilaquiles llenos de sabor🌶️</p>
           </div>
         </div>
         <div className="carousel-item">
           <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>MENÚ | Comida</h5>
-            <p>Ceviche.</p>
+            <h5 className="h2MCT h2MCT-carrusel pp-title-carrusel">Comida</h5>
+            <p className="h2MCT h2MCT-carrusel">Ceviche fresco, limón vibrante, mariscos tiernos. ¡Explosión marina irresistible! 🌊</p>
           </div>
         </div>
         <div className="carousel-item">
           <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>MENÚ | Cena</h5>
-            <p>Omelette con espinacas</p>
+            <h5 className="h2MCT h2MCT-carrusel pp-title-carrusel">Cena</h5>
+            <p className="h2MCT h2MCT-carrusel">Omelette esponjoso, queso cremoso, espinacas frescas. ¡Explosión de sabor! 🔥</p>
           </div>
         </div>
       </div>
