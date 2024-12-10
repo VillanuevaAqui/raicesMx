@@ -27,6 +27,8 @@ a:hover {
     align-items: center;
 }
 
+
+
 .pp-background-image {
     opacity: 0.87;
     width: 100%;
@@ -89,20 +91,34 @@ a:hover {
     /* Fondo oscuro en hover */
 }
 
+.pp-menu-card {
+
+    height: 30rem;
+
+}
+
 
 
 /*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
 /*MENÚS DEL DÍA*/
 .pp-SecundaryContainerTitle {
+    
     font-size: 6rem;
     text-align: center;
     font-style: italic;
     color: var(--fifth);
 }
 
+.pp-SecundaryContainer {
+
+    padding: 5rem;
+
+}
+
 /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
 .pp-menusContainer {
-    display: flex;
+    display: block;
+
 }
 
 /*MARGEN ENTRE CARRUSELES*/
@@ -110,19 +126,6 @@ a:hover {
     margin: 25px;
     /* Margen inferior para mayor separación vertical */
 }
-
-/*ESTILOS DEL CARRUSEL*/
-#carouselExampleCaptions {
-    /*CONTENEDOR GENERAL*/
-    width: 70%;
-    /* Ajusta el ancho*/
-    height: 40px;
-    /* Ajusta la altura*/
-    margin: 0 auto;
-    /* Centra el carrusel horizontalmente */
-    padding: 50px;
-}
-
 
 
 .pp-d-block {
@@ -801,6 +804,13 @@ font-size: 2.5rem;
         font-weight: 550;
     }
 }
+
+.h2MCT-carrusel {
+
+    font-size: 3rem;
+
+}
+
 
 /* !TERMINAN MQ */
 

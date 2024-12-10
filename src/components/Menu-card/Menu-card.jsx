@@ -5,7 +5,7 @@ import React from 'react'
 
 const MenuCard = () => {
   return (
-    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" className="carousel slide " data-bs-ride="carousel">
       <div className="carousel-indicators">
        
         <button
@@ -32,22 +32,26 @@ const MenuCard = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>MENÚ 1 | Desayuno</h5>
-            <p>Chilaquiles verdes con huevo</p>
+          <div className=" carousel-caption d-none d-md-block">
+            <h5 className="h2MCT h2MCT-carrusel">MENÚ 1 | Desayuno</h5>
+            <ul>
+              <li className="h2MCT h2MCT-carrusel">Desayuno: Descripción </li>
+                <li className="h2MCT h2MCT-carrusel">Comida: Descripción </li>
+                <li className="h2MCT h2MCT-carrusel">Cena: Descripción </li>
+            </ul>
           </div>
         </div>
         <div className="carousel-item">
           <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>MENÚ 1 | Comida</h5>
+            <h5>MENÚ | Comida</h5>
             <p>Ceviche.</p>
           </div>
         </div>
         <div className="carousel-item">
           <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h5>MENÚ 1 | Cena</h5>
+            <h5>MENÚ | Cena</h5>
             <p>Omelette con espinacas</p>
           </div>
         </div>

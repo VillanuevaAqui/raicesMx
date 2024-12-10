@@ -1,8 +1,9 @@
 import './PrincipalPage.css'
+import MenuCard from '../../components/Menu-card/Menu-card';
 
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
-  <main className="main">
+  <main className="pp-main">
     <div className="pp-MainContainer">
       <img className="pp-background-image" src="/assets/Pozole.webp" alt="Olla de pozole rojo" />
       <div className="pp-MainContainerText">
@@ -21,8 +22,9 @@ const Main = () => (
 const MenuSection = () => (
   <section className="pp-SecundaryContainer">
     <h1 className="pp-SecundaryContainerTitle">Menús del día</h1>
-    <section className="pp-menusContainer">
-      {[1, 2, 3].map((menuNumber) => (
+    {/* <section className="pp-menusContainer"> */}
+      <MenuCard/>
+      {/* {[1, 2].map((menuNumber) => (
         <div id={`carouselMenu${menuNumber}`} className="pp-carousel-slide" key={menuNumber}>
           <div className="carousel-indicators">
             {[0, 1, 2].map((slide) => (
@@ -51,17 +53,17 @@ const MenuSection = () => (
               </div>
             </div>
           </div>
-          <button className="carousel-control-prev" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="prev">
+          {/* <button className="carousel-control-prev" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button className="carousel-control-next" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
-          </button>
+          </button> }
         </div>
-      ))}
-    </section>
+      ))} */}
+    {/* </section> */}
   </section>
 );
 
