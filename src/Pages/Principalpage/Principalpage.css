@@ -123,11 +123,7 @@ a:hover {
     padding: 50px;
 }
 
-/*.imageNC {
-    width: 31.4rem;
-    height: 31.4rem;
-    border-radius: 100%;
-}*/
+
 
 .pp-d-block {
     border-radius: 60px;
@@ -162,13 +158,22 @@ a:hover {
 }
 
 .terciaryContainerBtn {
+    
+    display: inline-block;
+    text-align: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--fourth);
     border-radius: 100px;
     padding: 2.7rem 50rem 2.7rem 50rem;
     text-decoration: none;
+
+
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
 }
 
 /*SUSCRÍBETE*/
@@ -494,7 +499,52 @@ font-size: 2.5rem;
 
 /* *QUINTO CONTENEDOR: "NUESTRO COMPROMISO1"*/
     /*BOTÓN VERDE*/
-    .Container5Btn {
+
+    .Container5 {
+
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5rem;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
+
+    }
+
+    .nuestroCompromisSection {
+
+        display: flex;
+        gap: 5rem;
+
+    }
+
+    .imageNC{
+
+        width: 31.4rem;
+        height: 31.4rem;
+        border-radius: 100%;
+    }
+
+    .commitment-NC {
+
+        display: inline-block;
+
+    }
+
+
+    .Container5Button {
+
+        background-color: var(--fourth);
+        color: white;
+        width: 80rem;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+        
         padding: 1.3rem 5rem 1.3rem 5rem;
     }
 
@@ -506,7 +556,7 @@ font-size: 2.5rem;
 
     /*Y OBTÉN BENEFICIOS*/
     .h2C3 {
-        font-size: 1.5rem;
+        font-size: 10rem;
     }
 
 
@@ -674,7 +724,7 @@ font-size: 2.5rem;
 
     /*Y OBTÉN BENEFICIOS*/
     .h2C3 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     /*CARTAS DE BENEFICIOS*/
