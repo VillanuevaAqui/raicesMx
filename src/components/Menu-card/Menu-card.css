@@ -57,8 +57,7 @@ h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0) 80%, rgba(0, 0, 0, 0.6) 100%); /* Aumento el tamaño del difuminado */
-
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.6) 100%); /* Cambio el color final a blanco */
     pointer-events: none; /* Permite que los clics pasen a la imagen */
     border-radius: 10px;  /* Asegura que el difuminado tenga los mismos bordes redondeados */
     z-index: 1; /* Asegura que el difuminado esté por encima de la imagen */
@@ -66,7 +65,7 @@ h5 {
 
 /* Efecto de zoom cuando la imagen está activa */
 .carousel-inner .carousel-item.active img {
-    transform: scale(0.9); /* Aplica el efecto de zoom en la imagen */
+    transform: scale(.85); /* Aplica el efecto de zoom en la imagen */
 }
 
 
