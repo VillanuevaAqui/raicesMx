@@ -1,0 +1,177 @@
+.panelAdmin-container {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.panelAdmin-container-form {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 5rem;
+}
+
+#panelAdmin-list-products {
+
+    display: inline-block;
+
+}
+
+.panelAdmin-form-btn {
+
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: 0;
+    display: inline-block;  
+
+}
+
+.panelAdmin-container-btns {
+
+    
+    display: flex;
+    gap: 2rem;
+
+}
+
+#panelAdmin-image {
+
+    padding: 0  ;
+    border-radius: 0;
+
+}
+
+
+.panelAdmin-form-btn:hover{
+
+    background-color: var(--primary);
+    color: var(--tertiary);
+}
+
+.panelAdmin-form-select {
+
+    width: 20rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 2rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: 0;
+    display: inline-block;  
+
+}
+
+
+.panelAdmin-form-add {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
+
+
+
+}
+
+.panelAdmin-form-add-input{
+
+    width: 100%;
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 0;
+
+}
+
+.panelAdmin-form-update-product, .panelAdmin-form-remove-product, .panelAdmin-form-remove-all{
+
+    padding: 5rem;
+    background-color: var(--secondary);
+    border-radius: 2rem;
+    display: grid;
+    gap: 3rem;
+    text-align: center;
+    place-items: center;
+
+}
+
+.panelAdmin-form-add-product{
+
+    background-color: var(--secondary);
+    border-radius: 1rem;
+    padding: 3rem;
+    display: grid;
+    grid-gap: 2rem;
+    width: 60rem;
+    place-items: center;
+
+}
+
+.panelAdmin-title-form {
+
+    text-align: center;
+    font-weight: 700;
+}
+
+.panelAdmin-nav-item-btn{
+
+    background-color: var(--tertiary);
+    border-radius: 2rem;
+    min-width: 280px;
+    padding: 1rem;
+    border: 0rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.panelAdmin-nav-item-btn:hover {
+
+    background-color: var(--secondary);
+    color: var(--tertiary);
+}
+
+#panelAdmin-menu-products{
+
+    text-align: center;
+    
+}
+
+.panelAdmin-form-nav-item {
+
+    display: inline-block;
+
+}
+
+.panelAdmin-form-nav {
+
+    background-color:var(--tertiary);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2rem;
+    max-width: 150rem;
+    padding: .5rem;
+    margin: 0rem;
+
+}
+
+.panelAdmin-container-form-nav{
+
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+
+}

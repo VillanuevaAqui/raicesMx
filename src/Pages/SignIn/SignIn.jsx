@@ -6,20 +6,19 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-//import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
-import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
-import { GoogleIcon, FacebookIcon} from './CustomIcons';
+import { GoogleIcon, FacebookIcon } from './CustomIcons';
 import CssBaseline from '@mui/material/CssBaseline';
 import CryptoJS from 'crypto-js';
 import { Link } from 'react-router-dom';
 import "./SignIn.css";
 import UsersExample from './database';
+import CloseIcon from '@mui/icons-material/Close';
 
 async function loadExampleUsers() {
 
@@ -28,30 +27,36 @@ async function loadExampleUsers() {
 
 }
 
-loadExampleUsers()
+loadExampleUsers();
 
-const Card = styled(MuiCard)(({ theme }) => ({
+const Card = styled(MuiCard)({
+  fontFamily: 'var(--font)',
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
   width: '100%',
-  padding: theme.spacing(4),
-  gap: theme.spacing(2),
+  padding: '32px',
+  gap: '16px',
   margin: 'auto',
-  [theme.breakpoints.up('sm')]: {
+  borderRadius: '20px',
+  '@media (min-width: 600px)': {
     maxWidth: '450px',
   },
   boxShadow:
     'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
-  ...theme.applyStyles('dark', {
-    boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
-  }),
-}));
+});
 
-const SignInContainer = Stack;
+// const SignInContainer = Stack;
+const SignInContainer = styled(Stack)({
+  height: '100%',
+  padding: '1.6rem',
+  position: 'fixed',
+  '@media (min-width: 600px)': {
+    padding: '2.4rem',
+  },
+});
 
-export default function SignIn(props) {
+export default function SignIn({setShowLogin, setShowRegister}) {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -93,11 +98,11 @@ export default function SignIn(props) {
   };
 
   const toCompare = (email, password) => {
-    
+
     let coincidences = 0;
     const users = JSON.parse(localStorage.getItem("users"));
 
-    for (let user of users){
+    for (let user of users) {
 
       if (user.password == password && user.email == email) {
 
@@ -108,7 +113,7 @@ export default function SignIn(props) {
 
       alert("Iniciaste sesion")
 
-    } else if (coincidences == 0){
+    } else if (coincidences == 0) {
 
       alert(`
         Usuario y contraseña no coinciden 
@@ -149,7 +154,7 @@ export default function SignIn(props) {
       setPasswordErrorMessage('');
     }
 
-    if (isValid){
+    if (isValid) {
 
       toCompare(encryptEmail(email.value.toLowerCase()), encryptPassword(password.value));
 
@@ -159,27 +164,30 @@ export default function SignIn(props) {
   };
 
   const CustomFormLabel = styled(FormLabel)({
-    fontSize: '2rem',
+    fontFamily: 'var(--font)',
+    fontSize: '1.6rem',
     fontWeight: 'bold',
   });
+
+  const handleLinkClick = () => {
+    setShowLogin(false);
+    setShowRegister(true);
+  };
 
   return (
     <>
       <CssBaseline />
-      <SignInContainer direction="column" justifyContent="space-between">
-        <Container>
-          <h1 className='sign-in-title'>
-                  Iniciar Sesión
-          </h1>
-        </Container>
-        <Card variant="outlined">
-          <Typography
-            component="h1"
-            variant="h4"
-            sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontWeight: "700" }}
-          >
-            Sign in
-          </Typography>
+      <SignInContainer direction="column" justifyContent="space-between" className='register-popup'>
+        <Card variant="outlined" className='register-popup-container'>
+          <div className="register-popup-title">
+            <h2 className='register-title'>
+              Iniciar sesión
+            </h2>
+            <CloseIcon onClick={() => setShowLogin(false)} style={{
+              fontSize: '30px',
+              cursor: 'pointer',
+            }} />
+          </div>
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -239,8 +247,8 @@ export default function SignIn(props) {
                 fontSize: '1.6rem', fontFamily: 'var(--font)', backgroundColor: 'var(--tertiary)',
                 color: 'var(--primary)',
                 ':hover': {
-                    backgroundColor: 'var(--fourth)',
-                }, 
+                  backgroundColor: 'var(--fourth)',
+                },
               }}
 
             >
@@ -257,7 +265,7 @@ export default function SignIn(props) {
             </Link>
           </Box>
           <Divider>
-          <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
+            <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
           </Divider>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Button
@@ -279,7 +287,7 @@ export default function SignIn(props) {
             <Typography sx={{ textAlign: 'center' }}>
               Don&apos;t have an account?{' '}
               <Link
-                to="/registro"
+                onClick={handleLinkClick}
                 variant="body2"
                 sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
               >

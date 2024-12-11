@@ -1,7 +1,14 @@
 import "./Navbar.css";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import CartBadge from "../CartBadge/CartBadge";
+import AccountMenu from "../AccountMenu/AccountMenu";
 
-const Navbar = () => {
+const Navbar = ({ setShowRegister }) => {
+
+    const logout = () => {
+
+    }
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -46,24 +53,20 @@ const Navbar = () => {
                 {/* Menú desplegable */}
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-link" to="/menu">
+                        <NavLink className="nav-link" to="/menu">
                             Menú a domicilio
-                        </Link>
-                        <Link className="nav-link" to="/nosotros">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/nosotros">
                             Nosotros
-                        </Link>
-                        <Link className="nav-link" to="/beneficios">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/beneficios">
                             Beneficios
-                        </Link>
-                        <Link className="nav-link" to="/formulario-producto">
-                            Formulario Producto
-                        </Link>
-                        <Link className="nav-link" to="/registro">
-                            Iniciar sesión / Registrarse
-                        </Link>
-                        <Link className="nav-link" to="/cart">
-                            <i className="bx bxs-cart"></i>
-                        </Link>
+                        </NavLink>
+                        <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        <AccountMenu />
+                        <NavLink className="nav-link" to="/cart">
+                            <CartBadge />
+                        </NavLink>
                     </div>
                 </div>
             </div>
@@ -72,3 +75,16 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+{/* <div className="navbar-profile nav-link">
+<Person2Icon
+    style={{ color: "var(--secondary)", fontSize: "30", cursor: "pointer" }} />
+<ul className="nav-profile-dropdown">
+    <li><Link className="nav-profile-link" to="/userpage"><AccountBoxIcon fontSize="large"/><p>Mi cuenta</p></Link></li>
+    <hr className="nav-profile-dropdown-divider"/>
+    <li><Link className="nav-profile-link" to="/formularioProducto"><AdminPanelSettingsIcon fontSize="large" /><p>Administrador</p></Link></li>
+    <hr className="nav-profile-dropdown-divider"/>
+    <li onClick={logout}><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
+</ul>
+</div> */}

@@ -1,53 +1,18 @@
 
-/* *ESTILOS GENERALES */
-/* VARIABLES DE COLOR PARA EL DISEÑO */
-:root {
-    --primary: #f6f4f1;
-    --secondary: #dcd6c0;
-    --tertiary: #4c4c2c;
-    --fourth: #2c2e21;
-    --fifth: #000000;
-}
-/* CONFIGURACIÓN DE TIPOGRAFÍA BASE */
-html {
-    font-size: 62.5%;  /* Define 1rem como 10px */
-}
-
-
-/* ESTILOS GENERALES DE ENCABEZADOS */
-h1 {
-    font-size: 7rem;
-    font-weight: 700;
-    color: var(--tertiary);
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 6rem;
-    color: var(--fourth);
-}
-
-h3 {
-    font-size: 5rem;
-    color: var(--secondary);
-}
-
-
 /* ESTILOS DEL CONTENEDOR DE MENÚS */
 
 .menusContainer {
     display: flex;
     justify-content: center;  /* Centra el contenido */
     align-items: center;  /* Centra verticalmente */
-    height: 100vh;  /* Ajusta la altura al 100% de la pantalla */
+    height: 50vh;  /* Ajusta la altura al 100% de la pantalla */
 }
+
 
 /* ESTILOS DEL CARRUSEL */
 #carouselExampleCaptions {
-    width: 70%;  /* Ajusta el ancho */
-    height: 50vh;  /* Ajusta la altura, 50% de la altura de la vista */
+    width: 100rem;  /* Ajusta el ancho */
     margin: 0 auto;  /* Centra el carrusel horizontalmente */
-    padding: 50px;
 }
 
 .d-block {

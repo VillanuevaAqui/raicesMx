@@ -1,177 +1,227 @@
+
 /* *ESTILOS GENERALES*/
+/* VARIABLES DE COLOR PARA EL DISEÑO*/
 
-/*ESTILOS GENERALES DE ENCABEZADOS*/
-/* h1 {
-    font-size: 7rem;
-    font-weight: 700;
-    color: var(--tertiary);
+/* a {
+    text-decoration: none;
+    color: inherit;
 }
 
-h2 {
-    font-weight: 600;
-    font-size: 6rem;
-    color: var(--fourth);
+a:visited {
+    color: inherit;
 }
 
-h3 {
-    font-size: 5rem;
-    color: var(--secondary);
+a:hover {
+    color: var(--primary);
+    text-decoration: none;
 } */
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 600px) {}
+/*!CONTENEDOR PRINCIPAL*/
 
-/* Estilos para pantallas grandes */
-@media (min-width: 1024px) {}
+.pp-benefits-container {
+
+    display: flex;
+    gap: 20rem;
+}
+
+.testimonio-name-user {
+
+    font-weight: 700;
+    font-size: 6rem;
+    font-style: italic;
+    color: var(--fifth);
+}
 
 
-/*!ESTILOS DEL CONTENEDOR PRINCIPAL*/
-.MainContainer {
+.pp-MainContainer {
     position: relative;
     text-align: center;
     color: var(--primary);
-    /*COLOR DE FONDO PRINCIPAL*/
-}
-
-.background-image {
-    opacity: 0.87;
-    /*Ligera opacidad para la imagen de fondo*/
-    overflow: hidden;
-    /*Cualquier contenido que sobrepase la altura o el ancho del elemento será cortado y no se mostrará*/
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    /*La imagen ocupa el ancho máximo de la ventana*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .MainContainerText { */
-/*position: absolute;
+
+
+.pp-background-image {
+    opacity: 0.87;
+    width: 100%;
+    height: 80%;
+}
+
+.pp-MainContainerText {
+    position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
-/*top: 25%;
-    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-/*left: 32%;
+    top: 35%;
+    left: 7%;
     /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
-/*transform: translate(-50%, -50%);
-    /* Mueve el elemento un 50% hacia la izquierda y un 50% hacia arriba desde su posición actual*/
-/*text-align: center;
-    /* linea el texto dentro del elemento hacia el centro*/
-/*}*/
+}
 
-/*  text-shadow: 2px 2px 4px      3px 3px: Desplaza la sombra 3 píxeles hacia la derecha y 3 píxeles hacia abajo.
-5px: Difumina la sombra en un radio de 4 píxeles.*/
-
+/*PLATILLOS EXQUISITOS*/
 .h1MCT {
-    font-size: 7rem;
+    font-size: 4.9rem;
     font-weight: 700;
     color: white;
     text-align: left;
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
+/*TODOS LOS DÍAS*/
 .h2MCT {
-    font-weight: 600;
-    font-size: 9rem;
+    font-weight: 850;
+    font-size: 6.9rem;
     font-style: italic;
     color: white;
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
 /*BOTNONES PRINCIPALES*/
-.MainContainerButtons .button {
-    display: inline-block;
-    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
-    margin: 1rem;
-    padding: 2rem 3rem;
-    font-size: 4rem;
-    font-weight: 600;
-    color: var(--primary);
-    /* Texto claro */
+.pp-MainContainerButtons {
+    position: absolute;
+    /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
+    top: 53%;
+    /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
+    left: 7%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
+}
+
+.pp-MainContainerButtons .button {
     background-color: var(--secondary);
     /* Fondo secondary */
     border-radius: 40px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
     color: var(--fifth);
+    display: inline-block;
+    /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
+    font-size: 1rem;
+    font-weight: 550;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-.MainContainerButtons .button:hover {
+.pp-MainContainerButtons {
+
+    width: 2rem;
+
+}
+
+.button {
+
+    widows: 1rem;
+
+}
+
+.pp-MainContainerButtons .button:hover {
     background-color: var(--tertiary);
     /* Fondo oscuro en hover */
 }
 
-/*ESTILOS DEL SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
-.SecundaryContainertitle {
-    font-size: 4rem;
+.pp-menu-card {
+
+    height: 30rem;
+
+}
+
+
+
+/*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
+/*MENÚS DEL DÍA*/
+.pp-SecundaryContainerTitle {
+    
+    font-weight: 700;
+    font-size: 6rem;
     text-align: center;
     font-style: italic;
     color: var(--fifth);
 }
 
-/*ESTILOS DEL CONTENEDOR DE MENÚS*/
-.menusContainer {
+.pp-SecundaryContainer {
+
     display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 5rem;
+
 }
 
-/*ESTILOS DEL CARRUSEL*/
-#carouselExampleCaptions {
-    /*CONTENEDOR GENERAL*/
-    width: 70%;
-    /* Ajusta el ancho*/
-    height: 40px;
-    /* Ajusta la altura*/
-    margin: 0 auto;
-    /* Centra el carrusel horizontalmente */
-    padding: 50px;
+/* *ESTILOS DEL CONTENEDOR DE MENÚS*/
+.pp-menusContainer {
+    display: block;
+
 }
 
-.d-block {
-    border-radius: 90px;
+/*MARGEN ENTRE CARRUSELES*/
+.pp-carousel-slide {
+    margin: 25px;
+    /* Margen inferior para mayor separación vertical */
+}
+
+
+.pp-d-block {
+    border-radius: 60px;
     /* Redondea las esquinas de la imagen en 90px*/
 }
 
-h5 {
-    font-size: 6rem;
-}
-
-.menuTime {
+.pp-menuTime {
     font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
 }
 
-.menuText {
-    font-size: 1.5rem;
+.pp-menuText {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 30px;
+    /* Sangría en la lista no ordenada */
 }
 
-/*ESTILOS DE CONTENEDOR 3*/
-.container3 {
+/* !TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
+.terciaryContainer {
     display: flexbox;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+}
+
+/*BOTÓN VERDE*/
+.terciaryContainerButton {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: -10px auto -75px;
+    /* Botón flotante sobre la sección */
 }
 
 .terciaryContainerBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btnC3 {
-    background-color: var(--fourth);
-    padding: 2rem 15rem 2rem 15rem;
-    text-decoration: none;
-    border-radius: 100px;
+    
+    display: inline-block;
+    text-align: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--fourth);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
+    text-decoration: none;
+
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
 }
 
+/*SUSCRÍBETE*/
 .h1C3 {
-    font-size: 5rem;
-    font-style: italic;
     color: white;
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 850;
     text-align: center;
     text-decoration: none;
 }
 
+/*Y OBTÉN BENEFICIOS*/
 .h2C3 {
     font-size: 3rem;
     font-style: italic;
@@ -180,147 +230,179 @@ h5 {
     text-decoration: none;
 }
 
-.benefits {
-    display: flex;
-    flex-direction: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    background-color: none;
-}
-
-.card-benefits {
+/*CARTAS DE BENEFICIOS*/
+.pp-benefits {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 50%;
     background-color: var(--secondary);
-    padding: 20px;
     border-radius: 50px;
+    padding: 50px 30px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 77%;
 }
 
-.cardText {
-    font-size: 1.5rem;
-    text-align: justify;
-    padding: 0rem 15rem 0rem 15rem;
+.pp-cardC3 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    max-width: 50rem;
+    border-color: var(--secondary);
+    gap: 2rem;
 }
 
-.cardImg1 {
+.pp-cardTitle {
+    padding: 15px 0px 0px 0px;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.pp-cardImg {
     width: 30rem;
     height: 30rem;
     border: 3px solid;
     border-radius: 20%;
-    border-color: var(--secondary);
+    border-color: var(--tertiary);
 }
 
-.cardImg2 {
-    width: 30rem;
-    height: 30rem;
-    border: 3px solid;
-    border-radius: 20%;
-    border-color: var(--secondary);
-}
-
-.card h2 {
-    font-size: 3.5rem;
-    margin: 10px 0;
-}
-
+/* *BOTÓN CONCOER MÁS*/
 .terciaryContainerBtn1 {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .btn2C3 {
-    display: inline;
     background-color: var(--fourth);
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 2rem;
     color: white;
-    padding: 10px 30px;
+    padding: 5px 30px 5px;
     border-radius: 100px;
     align-items: center;
 }
 
-
-/*ESTILO DE TESTIMONIO*/
-.testimonio {
+/* !CUARTO CONTENEDOR: TESTIMONIOS*/
+/* *CONTENEDOR*/
+.pp-testimonio {
     background-color: var(--secondary);
     display: flex;
-    justify-content: center;
-}
-
-.foto1 {
-    width: 700px;
-    height: 700px;
-    padding: 50px 50px;
-}
-
-.comentario {
-    max-width: 1000px;
-    height: 700px;
-    left: auto;
-    padding: 220px 50px 50px 50px;
-}
-
-.comentario1 {
-    font-size: 4rem;
-    left: auto;
-}
-
-/*ESTILOS DE CONTENDEOR 4*/
-.nuestroCompromiso1 {
-    justify-content: center;
-    text-align: center;
-}
-
-.btnNC {
-    display: inline;
-    background-color: var(--fourth);
-    padding: 3.5rem 45rem 3.5rem 45rem;
-    border-radius: 100px;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 2rem 0 2rem 0;
-}
-
-.h1C4,
-.h2C4 {
-    font-size: 3rem;
-    font-style: italic;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
-
-.nuestroCompromisSection {
-    display: flex;
+    flex-direction: wrap;
     justify-content: space-around;
-    gap: 10px;
-    padding: 10px;
-    margin: 0 auto;
-    max-width: 1200px;
-    /*!Limita el ancho del contenedor*/
+    padding: 30px 0px 30px 0px;
 }
 
-.commitment-NC {
+/* *IMAGEN DE USUSARIO*/
+.pp-user {
+    width: 25rem;
+    height: 25rem;
+}
+
+/* *COMENTARIO DEL TESTIMONIO*/
+.pp-comentario {
+font-size: 2.5rem;
+}
+
+.terciaryContainerBtn {
+    padding: 1.7rem 23rem 1.7rem 23rem;
+}
+
+/* *QUINTO CONTENEDOR: "NUESTRO COMPROMISO1"*/
+    /*BOTÓN VERDE*/
+
+    .Container5 {
+
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5rem;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 2.7rem 50rem 2.7rem 50rem;
+
+    }
+
+    .nuestroCompromisSection {
+
+        display: flex;
+        gap: 5rem;
+
+    }
+
+    .imageNC{
+
+        width: 31.4rem;
+        height: 31.4rem;
+        border-radius: 100%;
+    }
+
+    .commitment-NC {
+
+        display: inline-block;
+
+    }
+
+
+    .Container5Button {
+
+        background-color: var(--fourth);
+        color: white;
+        width: 80rem;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+        
+        padding: 1.3rem 5rem 1.3rem 5rem;
+    }
+
+    /*SUSCRÍBETE*/
+    .h1C3 {
+        font-size: 3.1rem;
+        font-weight: 850;
+    }
+
+
+
+
+/* !Estilos para pantallas muy muy pequeñas (200px a 399px)*/
+
+
+/* !Estilos para pantallas muy pequeñas (400px a 650px)*/
+
+
+
+/* !Estilos para pantallas pequeñas (650px a 839px)*/
+
+
+.h2MCT-carrusel {
+
+    font-size: 3rem;
+    font-style: normal;
+
+}
+
+.pp-title-carrusel {
+
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.pp-carrusel-card {
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 300px;
-    gap: 10px;
+    gap: 2rem;
+
 }
 
-.imageNC {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 
-.textNC {
-    font-size: 4rem;
-    padding: 10px;
-}
+/* !TERMINAN MQ */
+
