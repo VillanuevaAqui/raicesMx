@@ -346,13 +346,6 @@
     font-weight: 850;
 }
 
-/* !Estilos para pantallas muy muy pequeñas (200px a 399px)*/
-
-
-/* !Estilos para pantallas muy pequeñas (400px a 650px)*/
-
-/* !Estilos para pantallas pequeñas (650px a 839px)*/
-
 .h2MCT-carrusel {
 
     font-size: 3rem;
@@ -375,7 +368,7 @@
 
 .commitment-NC {
 
-        
+
     flex-wrap: wrap;
     justify-content: center;
     display: inline-flex;
@@ -383,8 +376,49 @@
 
 }
 
+/* !Estilos para pantallas muy pequeñas (769px a 1200px)*/
 
-/* !TERMINAN MQ */
+@media (max-width: 768px) {
+    .pp-background-image {
+        height: 200px;
+    }
+
+    .h1MCT,
+    .h2MCT {
+        font-size: 3rem;
+    }
+
+    .pp-MainContainerButtons .button {
+        font-size: 1.5rem;
+    }
+
+    .pp-SecundaryContainer {
+        padding: 3rem;
+    }
+
+    .terciaryContainerBtn {
+        padding: 1.2rem 15rem 1.2rem 15rem;
+    }
+
+    .pp-benefits-container {
+        gap: 5rem;
+        flex-direction: column;
+    }
+
+    .nuestroCompromisSection {
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    .Container5 {
+        background-color: var(--secondary);
+
+        flex-direction: column;
+        gap: 5rem;
+        border-radius: 10%;
+        padding: 2rem;
+    }
+}
 
 @media (max-width: 479px) {
 
@@ -410,7 +444,7 @@
         width: 95%;
 
     }
-    
+
     .h1C3 {
 
         font-size: 3.5rem;
@@ -422,6 +456,7 @@
         font-size: 2rem;
 
     }
+
     .pp-MainContainerButtons .button {
 
         font-size: 1.2rem;
@@ -434,7 +469,7 @@
     .pp-benefits {
 
         width: 90%;
-        
+
     }
 
     .pp-benefits-container {
@@ -472,7 +507,7 @@
         width: 90%;
     }
 
- 
+
 
     .nuestroCompromisSection {
 
@@ -481,10 +516,6 @@
         justify-content: center;
 
     }
-
-
-
-
-
-
 }
+
+/* !TERMINAN MQ */
