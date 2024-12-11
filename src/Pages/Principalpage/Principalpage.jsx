@@ -1,6 +1,7 @@
 import './PrincipalPage.css'
 import MenuCard from '../../components/Menu-card/Menu-card';
 import { Link } from 'react-router-dom';
+import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
 
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
@@ -89,12 +90,12 @@ const arr = [
 const SubscribeSection = () => (
   <section className="terciaryContainer">
     <div className="terciaryContainerButton">
-      <button className="terciaryContainerBtn">
+      <div className="terciaryContainerBtn">
         <a href="#">
           <h1 className="h1C3">¡Suscríbete</h1>
           <h2 className="h2C3">y obtén MÁS beneficios!</h2>
         </a>
-      </button>
+      </div>
     </div>
     <section className="pp-benefits">
       <div className='pp-benefits-container'>
@@ -124,15 +125,17 @@ const SubscribeSection = () => (
 const Testimonials = () => (
   <section className="pp-testimonio">
     <div className="foto">
-      <img className="pp-user" src="/assets/Usuario.webp" alt="Usuario" />
+      <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
     </div>
     <div className="pp-comentarioStarRating">
-      <h2>Alberto Villanueva</h2>
+      <h2 className='testimonio-name-user'>Alberto Villanueva</h2>
       <br />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+
+      <CustomizedRating/>
       <span className="fa fa-star checked"></span>
       <span className="fa fa-star checked"></span>
       <span className="fa fa-star checked"></span>
