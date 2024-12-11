@@ -16,7 +16,7 @@ import { CartProvider } from './Pages/Cart/CartContext.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 import FoodAllergyForm from './Pages/foodAllergyForm/foodAllergyForm.jsx';
 import UserPage from './Pages/Userpage/userpage.jsx'; {/*Página del usuario*/}
-
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
     <div className='main-container'>
       <CartProvider>
         <BrowserRouter>
+        <ScrollToTop />
           {showRegister && <Register setShowRegister={setShowRegister} setShowLogin={setShowLogin}/>}
           {showLogin && <SignIn setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>}
           <Navbar setShowRegister={setShowRegister} setShowLogin={setShowLogin}/>
