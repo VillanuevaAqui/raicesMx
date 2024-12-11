@@ -11,7 +11,7 @@
 
 /* ESTILOS DEL CARRUSEL */
 #carouselExampleCaptions {
-    width: 100rem;  /* Ajusta el ancho */
+    width: 100%;  /* Ajusta el ancho */
     margin: 0 auto;  /* Centra el carrusel horizontalmente */
 }
 
@@ -32,6 +32,63 @@ h5 {
     font-size: 1.5rem;  /* Tamaño de la fuente para los nombres de los platos */
 }
 
+/* Contenedor del carrusel y la imagen */
+.carousel-inner .carousel-item {
+    position: relative;
+    overflow: hidden; /* Oculta el contenido fuera del contenedor */
+}
+
+/* Estilo de la imagen */
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; /* Añade transición para el zoom */
+    object-fit: cover;  /* Hace que la imagen cubra el contenedor sin deformarse */
+    border-radius: 10px;  /* Redondea ligeramente los bordes de la imagen */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);  /* Sombra para resaltar los bordes de la imagen */
+
+}
+
+/* Pseudo-elemento para crear el borde difuso */
+.carousel-inner .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 80%, rgba(0, 0, 0, 0.6) 100%); /* Aumento el tamaño del difuminado */
+
+    pointer-events: none; /* Permite que los clics pasen a la imagen */
+    border-radius: 10px;  /* Asegura que el difuminado tenga los mismos bordes redondeados */
+    z-index: 1; /* Asegura que el difuminado esté por encima de la imagen */
+}
+
+/* Efecto de zoom cuando la imagen está activa */
+.carousel-inner .carousel-item.active img {
+    transform: scale(0.9); /* Aplica el efecto de zoom en la imagen */
+}
 
 
+
+
+/* Flechas de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary); /* Fondo oscuro y semitransparente */
+    width: 5%; /* Ajusta el tamaño del botón */
+    z-index: 10;
+    border: none;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
 
