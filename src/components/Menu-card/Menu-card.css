@@ -11,7 +11,7 @@
 
 /* ESTILOS DEL CARRUSEL */
 #carouselExampleCaptions {
-    width: 100rem;  /* Ajusta el ancho */
+    width: 100%;  /* Ajusta el ancho */
     margin: 0 auto;  /* Centra el carrusel horizontalmente */
 }
 
@@ -31,7 +31,5 @@ h5 {
 .menuText {
     font-size: 1.5rem;  /* Tamaño de la fuente para los nombres de los platos */
 }
-
-
 
 

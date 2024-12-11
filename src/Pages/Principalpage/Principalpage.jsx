@@ -124,6 +124,9 @@ const SubscribeSection = () => (
 // CUARTO CONTENEDOR: TESTIMONIOS
 const Testimonials = () => (
   <section className="pp-testimonio">
+
+    <div className='testimonials-container'>
+    
     <div className="foto">
       <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
     </div>
@@ -145,6 +148,7 @@ const Testimonials = () => (
         El servicio a domicilio de la página es increíble, me han ayudado a poder
         tener una alimentación más saludable.
       </p>
+    </div>
     </div>
   </section>
 );

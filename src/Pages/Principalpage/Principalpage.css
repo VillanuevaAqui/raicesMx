@@ -1,21 +1,3 @@
-
-/* *ESTILOS GENERALES*/
-/* VARIABLES DE COLOR PARA EL DISEÑO*/
-
-/* a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:visited {
-    color: inherit;
-}
-
-a:hover {
-    color: var(--primary);
-    text-decoration: none;
-} */
-
 /*!CONTENEDOR PRINCIPAL*/
 
 .pp-benefits-container {
@@ -32,7 +14,6 @@ a:hover {
     color: var(--fifth);
 }
 
-
 .pp-MainContainer {
     position: relative;
     text-align: center;
@@ -43,12 +24,10 @@ a:hover {
     align-items: center;
 }
 
-
-
 .pp-background-image {
     opacity: 0.87;
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 
 .pp-MainContainerText {
@@ -94,24 +73,12 @@ a:hover {
     color: var(--fifth);
     display: inline-block;
     /*Hace que los elementos trabajen en línea, es decir, se colocan uno al lado del otro en la misma línea, a menos que el espacio disponible se agote.*/
-    font-size: 1rem;
+    font-size: 3rem;
     font-weight: 550;
     margin: 1rem;
     padding: 1rem 3rem;
     text-decoration: none;
     transition: background-color 0.2s ease;
-}
-
-.pp-MainContainerButtons {
-
-    width: 2rem;
-
-}
-
-.button {
-
-    widows: 1rem;
-
 }
 
 .pp-MainContainerButtons .button:hover {
@@ -125,12 +92,10 @@ a:hover {
 
 }
 
-
-
 /*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
 /*MENÚS DEL DÍA*/
 .pp-SecundaryContainerTitle {
-    
+
     font-weight: 700;
     font-size: 6rem;
     text-align: center;
@@ -158,7 +123,6 @@ a:hover {
     margin: 25px;
     /* Margen inferior para mayor separación vertical */
 }
-
 
 .pp-d-block {
     border-radius: 60px;
@@ -193,7 +157,7 @@ a:hover {
 }
 
 .terciaryContainerBtn {
-    
+
     display: inline-block;
     text-align: center;
     align-items: center;
@@ -241,7 +205,8 @@ a:hover {
     padding: 50px 30px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     margin: 50px auto;
-    max-width: 77%;
+    width: 77%;
+    gap: 3rem;
 }
 
 .pp-cardC3 {
@@ -296,6 +261,17 @@ a:hover {
     flex-direction: wrap;
     justify-content: space-around;
     padding: 30px 0px 30px 0px;
+
+}
+
+.testimonials-container {
+
+    display: flex;
+    flex-direction: wrap;
+    gap: 8rem;
+    max-width: 120rem;
+
+
 }
 
 /* *IMAGEN DE USUSARIO*/
@@ -306,7 +282,7 @@ a:hover {
 
 /* *COMENTARIO DEL TESTIMONIO*/
 .pp-comentario {
-font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .terciaryContainerBtn {
@@ -314,74 +290,68 @@ font-size: 2.5rem;
 }
 
 /* *QUINTO CONTENEDOR: "NUESTRO COMPROMISO1"*/
-    /*BOTÓN VERDE*/
+/*BOTÓN VERDE*/
 
-    .Container5 {
+.Container5 {
 
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 5rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
     padding: 2.7rem 50rem 2.7rem 50rem;
 
-    }
+}
 
-    .nuestroCompromisSection {
+.nuestroCompromisSection {
 
-        display: flex;
-        gap: 5rem;
+    display: flex;
+    gap: 5rem;
 
-    }
+}
 
-    .imageNC{
+.imageNC {
 
-        width: 31.4rem;
-        height: 31.4rem;
-        border-radius: 100%;
-    }
+    width: 31.4rem;
+    height: 31.4rem;
+    border-radius: 100%;
+}
 
-    .commitment-NC {
+.commitment-NC {
 
-        display: inline-block;
+    display: inline-block;
 
-    }
+}
 
 
-    .Container5Button {
+.Container5Button {
 
-        background-color: var(--fourth);
-        color: white;
-        width: 80rem;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: var(--fourth);
+    color: white;
+    width: 80rem;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
-        
-        padding: 1.3rem 5rem 1.3rem 5rem;
-    }
 
-    /*SUSCRÍBETE*/
-    .h1C3 {
-        font-size: 3.1rem;
-        font-weight: 850;
-    }
+    padding: 1.3rem 5rem 1.3rem 5rem;
+}
 
-
-
+/*SUSCRÍBETE*/
+.h1C3 {
+    font-size: 3.1rem;
+    font-weight: 850;
+}
 
 /* !Estilos para pantallas muy muy pequeñas (200px a 399px)*/
 
 
 /* !Estilos para pantallas muy pequeñas (400px a 650px)*/
 
-
-
 /* !Estilos para pantallas pequeñas (650px a 839px)*/
-
 
 .h2MCT-carrusel {
 
@@ -403,6 +373,118 @@ font-size: 2.5rem;
 
 }
 
+.commitment-NC {
+
+        
+    flex-wrap: wrap;
+    justify-content: center;
+    display: inline-flex;
+    gap: 2rem;
+
+}
+
 
 /* !TERMINAN MQ */
 
+@media (max-width: 479px) {
+
+    .pp-background-image {
+
+        height: 300px;
+
+    }
+
+    .h2MCT {
+
+        font-size: 2.5rem;
+    }
+
+    .h1MCT {
+
+        font-size: 2rem;
+    }
+
+    .terciaryContainerBtn {
+
+        padding: 1.5rem;
+        width: 95%;
+
+    }
+    
+    .h1C3 {
+
+        font-size: 3.5rem;
+
+    }
+
+    .h2C3 {
+
+        font-size: 2rem;
+
+    }
+    .pp-MainContainerButtons .button {
+
+        font-size: 1.2rem;
+        top: 20%;
+        display: block;
+        padding: 1rem;
+
+    }
+
+    .pp-benefits {
+
+        width: 90%;
+        
+    }
+
+    .pp-benefits-container {
+
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    .pp-testimonio {
+
+        width: 100%;
+    }
+
+    .testimonials-container {
+
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+
+    }
+
+    .Container5 {
+
+        margin-top: 2rem;
+        width: 100%;
+        padding: 0%;
+
+    }
+
+    .Container5Button {
+
+        width: 90%;
+    }
+
+ 
+
+    .nuestroCompromisSection {
+
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+
+
+
+
+}
