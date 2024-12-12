@@ -69,6 +69,7 @@ function addProductBtn() {
   const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
   const newProductImageUrl = document.querySelector('#panelAdmin-image');
   const newProductPrice = document.querySelector('#panelAdmin-price');
+  const newProductCategory = document.querySelector('#panelAdmin-meal-time');
 
   // Get the values of the inputs
   const name = newProductName.value;
@@ -76,6 +77,7 @@ function addProductBtn() {
   const ingredients = newProductIngredients.value;
   const imageUrl = newProductImageUrl.value;
   const price = newProductPrice.value;
+  const category = newProductCategory.value;
 
   // llama validacion     
   if (!validateForm(name, desc, ingredients, imageUrl, price)) {
@@ -86,11 +88,16 @@ function addProductBtn() {
   //Si pasa la validacion 
 
   // Add the item to the ItemsController
-  productsController.addProduct(name, desc, ingredients, imageUrl, price);
+  productsController.addProduct(name, desc, ingredients, imageUrl, price, category);
 
   // Clear the form
   newProductName.value = '';
   newProductDesc.value = '';
+  newProductIngredients.value ='';
+  newProductImageUrl.value = '';
+  newProductPrice.value = '';
+  newProductCategory.value = '0';
+
   console.log('Test después de añadir\n');
   console.log(productsController.products);
 
@@ -125,6 +132,7 @@ function updateProductBtn() {
   const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
   const newProductImageUrl = document.querySelector('#panelAdmin-image');
   const newProductPrice = document.querySelector('#panelAdmin-price');
+  const newProductCategory = document.querySelector('#panelAdmin-meal-time');
 
 
   // Get the values of the inputs
@@ -133,6 +141,7 @@ function updateProductBtn() {
   const ingredientsGet = newProductIngredients.value.trim();
   const imageUrlGet = newProductImageUrl.value.trim();
   const priceGet = newProductPrice.value.trim();
+  const categoryGet = newProductCategory.value.trim();
 
   // Validar los campos usando la función validateForm
   if (!validateForm(nameGet, descGet, ingredientsGet, imageUrlGet, priceGet)) {
@@ -147,6 +156,7 @@ function updateProductBtn() {
   if (ingredientsGet) updatedProduct.ingredients = ingredientsGet;
   if (imageUrlGet) updatedProduct.imageUrl = imageUrlGet;
   if (priceGet) updatedProduct.price = priceGet;
+  if (categoryGet) updatedProduct.category = categoryGet;
 
   // Actualiza el producto solo si hay campos válidos
   if (Object.keys(updatedProduct).length > 0) {
@@ -242,10 +252,10 @@ function PanelAdministracion() {
           ></textarea>
           <select className="panelAdmin-form-add-input panelAdmin-form-select"
             name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
-            <option value="0" key="0" disabled>Categoría</option>
-            <option value="1" key="1">desayuno</option>
-            <option value="2" key="2">comida</option>
-            <option value="3" key="3">cena</option>
+            <option value="0" key="Categoria" disabled>Categoría</option>
+            <option value="desayuno" key="desayuno">Desayuno</option>
+            <option value="comida" key="comida">Comida</option>
+            <option value="cena" key="cena">Cena</option>
           </select>
           <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
           <input

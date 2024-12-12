@@ -21,7 +21,7 @@ export class ProductsController {
     */
     // Creación del método ADDITEM:
     //?Método para añadir un producto:
-    addProduct(name, desc, ingredients, imageUrl, price) {
+    addProduct(name, desc, ingredients, imageUrl, price, category) {
         const product = {
             id: this.currentId++,
             name: name,
@@ -29,6 +29,7 @@ export class ProductsController {
             ingredients: ingredients,
             imageUrl: imageUrl,
             price: price,
+            category: category,
         }
         this.products.push(product); //Selecciona "productos" y le añade las características de arriba - PUSH: Añade algo al final de la lista. Método de listas(arrays).
         this.saveProductsToLocalStorage();
