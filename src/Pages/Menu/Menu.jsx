@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import './Menu.css';
 import ProductsController from '../FormularioProducto/productsController'; // Asegúrate de importar tu clase ProductsController.
+import { useCart } from "../Cart/CartContext";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState({
@@ -9,7 +10,8 @@ const Menu = () => {
     cena: [],
   });
   const [activeCategory, setActiveCategory] = useState('desayuno'); // Estado para la categoría activa
-  const [products, setProducts] = useState([]); // Controlar los productos como estado
+
+  const { addToCart } = useCart(); // Acceder a la función para agregar al carrito
 
   // Crear instancia única de ProductsController
   const productsController = useMemo(() => new ProductsController(0), []);
@@ -27,7 +29,6 @@ const Menu = () => {
   useEffect(() => {
     const fetchProducts = () => {
       const allProducts = productsController.products;
-      setProducts(allProducts);
       filterProductsByCategory(allProducts); // Actualizar categorías
     };
 
@@ -45,10 +46,14 @@ const Menu = () => {
       <div key={product.id} className="card">
         <img src={product.imageUrl} alt={product.name} className="card-image" />
         <div className="card-content">
-          <h3 className="card-title">{product.name}</h3>
+          <h5 className="card-title">{product.name}</h5>
           <p>{product.desc}</p>
-          <p><strong>Precio:</strong> ${product.price}</p>
           <p><strong>Ingredientes:</strong> {product.ingredients}</p>
+          <p><strong>Precio:</strong> ${product.price}</p>
+          {/* Botón para agregar al carrito */}
+          <button className="btn-menu" onClick={() => addToCart(product)}>
+            Agregar al carrito
+          </button>
         </div>
       </div>
     ));
