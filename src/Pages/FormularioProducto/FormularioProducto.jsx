@@ -5,7 +5,7 @@ import ProductsController from "./productsController.js";
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Validaciones del formulario
-const validateForm = (name = "", desc = "", ingredients = "", imageUrl = "", price = "") => {
+const validateForm = (name = "", desc = "", ingredients = "", imageURL = "", price = "") => {
   let isValid = true;
 
   // Validar nombre del producto
@@ -55,32 +55,68 @@ const handleImageChange = (event) => {
   }
 };
 
+const validateExtras = (name = "", price = "") => {
+  let isValid = true;
+
+  // Validar nombre del producto
+  if (!name.trim() || name.length < 3 || name.length > 50) {
+    alert("El nombre debe tener entre 3 y 50 caracteres.");
+    isValid = false;
+  }
+
+  const priceValue = parseFloat(price);
+  if (isNaN(priceValue) || priceValue <= 0) {
+    alert("El precio debe ser un número mayor a 0.");
+    isValid = false;
+  }
+
+  return isValid;
+};
+
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Logic implemented to manipulate the productsController class, with the key functions being addProductBtn, 
  *removeProductBtn, removeAllProductsBtn, and updateProductBtn. */
 
 const productsController = new ProductsController;
 
-function addProductBtn() {
+const extras = [];
+function handleExtras() {
+  const newProductExtraName = document.querySelector('#panelAdmin-extra-name');
+  const newProductExtraPrice = document.querySelector('#panelAdmin-extra-price');
+  const extraName = newProductExtraName.value;
+  const extraPrice = newProductExtraPrice.value;
+  if (!validateExtras(extraName, extraPrice)) {
+    console.log("Formulario inválido, no se enviaron los datos.");
+    return; // Detener si la validación falla
+  }
+  const newExtra = { name: extraName, price: extraPrice };
+  extras.push(newExtra);
+  console.log(extras);
+  newProductExtraName.value = '';
+  newProductExtraPrice.value = '';
+}
 
+function addProductBtn() {
   // Select the inputs
   const newProductName = document.querySelector('#panelAdmin-name');
   const newProductDesc = document.querySelector('#panelAdmin-desc');
   const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
-  const newProductImageUrl = document.querySelector('#panelAdmin-image');
+  const newProductimageURL = document.querySelector('#panelAdmin-image');
   const newProductPrice = document.querySelector('#panelAdmin-price');
   const newProductCategory = document.querySelector('#panelAdmin-meal-time');
+  const newProductExtraName = document.querySelector('#panelAdmin-extra-name');
+  const newProductExtraPrice = document.querySelector('#panelAdmin-extra-price');
 
   // Get the values of the inputs
   const name = newProductName.value;
   const desc = newProductDesc.value;
   const ingredients = newProductIngredients.value;
-  const imageUrl = newProductImageUrl.value;
+  const imageURL = newProductimageURL.value;
   const price = newProductPrice.value;
   const category = newProductCategory.value;
-
+  const productExtras = [...extras];
   // llama validacion     
-  if (!validateForm(name, desc, ingredients, imageUrl, price)) {
+  if (!validateForm(name, desc, ingredients, imageURL, price)) {
     console.log("Formulario inválido, no se enviaron los datos.");
     return; // Detener si la validación falla
   }
@@ -88,19 +124,22 @@ function addProductBtn() {
   //Si pasa la validacion 
 
   // Add the item to the ItemsController
-  productsController.addProduct(name, desc, ingredients, imageUrl, price, category);
-
+  productsController.addProduct(name, desc, ingredients, imageURL, price, category, productExtras);
+  console.log(productExtras);
+  console.log(extras)
   // Clear the form
   newProductName.value = '';
   newProductDesc.value = '';
-  newProductIngredients.value ='';
-  newProductImageUrl.value = '';
+  newProductIngredients.value = '';
+  newProductimageURL.value = '';
   newProductPrice.value = '';
   newProductCategory.value = '0';
+  newProductExtraName.value = '';
+  newProductExtraPrice.value = '';
 
   console.log('Test después de añadir\n');
   console.log(productsController.products);
-
+  extras.splice(0, extras.length);
 }
 
 function removeAllProductsBtn() {
@@ -130,7 +169,7 @@ function updateProductBtn() {
   const newProductName = document.querySelector('#panelAdmin-name');
   const newProductDesc = document.querySelector('#panelAdmin-desc');
   const newProductIngredients = document.querySelector('#panelAdmin-ingredients');
-  const newProductImageUrl = document.querySelector('#panelAdmin-image');
+  const newProductimageURL = document.querySelector('#panelAdmin-image');
   const newProductPrice = document.querySelector('#panelAdmin-price');
   const newProductCategory = document.querySelector('#panelAdmin-meal-time');
 
@@ -139,12 +178,12 @@ function updateProductBtn() {
   const nameGet = newProductName.value.trim();
   const descGet = newProductDesc.value.trim();
   const ingredientsGet = newProductIngredients.value.trim();
-  const imageUrlGet = newProductImageUrl.value.trim();
+  const imageURLGet = newProductimageURL.value.trim();
   const priceGet = newProductPrice.value.trim();
   const categoryGet = newProductCategory.value.trim();
 
   // Validar los campos usando la función validateForm
-  if (!validateForm(nameGet, descGet, ingredientsGet, imageUrlGet, priceGet)) {
+  if (!validateForm(nameGet, descGet, ingredientsGet, imageURLGet, priceGet)) {
     console.log("Formulario inválido, no se actualizó el producto.");
     return; // Detener la ejecución si la validación falla
   }
@@ -154,7 +193,7 @@ function updateProductBtn() {
   if (nameGet) updatedProduct.name = nameGet;
   if (descGet) updatedProduct.desc = descGet;
   if (ingredientsGet) updatedProduct.ingredients = ingredientsGet;
-  if (imageUrlGet) updatedProduct.imageUrl = imageUrlGet;
+  if (imageURLGet) updatedProduct.imageURL = imageURLGet;
   if (priceGet) updatedProduct.price = priceGet;
   if (categoryGet) updatedProduct.category = categoryGet;
 
@@ -165,7 +204,7 @@ function updateProductBtn() {
     console.log("No se actualizó porque todos los campos están vacíos");
   }
 
-  // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageUrl: imageUrlGet, price: priceGet});
+  // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageURL: imageURLGet, price: priceGet});
   console.log(productsController.products)
 
 }
@@ -202,22 +241,22 @@ const generateList = () => {
 function PanelAdministracion() {
 
   const [formContent, setFormContent] = useState(
-  <div className="panelAdmin-form-remove-product">
-    <h2 className="panelAdmin-title-form">Ordenes</h2>
-    <select
-      class="panelAdmin-form-select"
-      id="panelAdmin-select-form"
-    >
-      {generateList()}
-    </select>
-  </div>);
+    <div className="panelAdmin-form-remove-product">
+      <h2 className="panelAdmin-title-form">Ordenes</h2>
+      <select
+        className="panelAdmin-form-select"
+        id="panelAdmin-select-form"
+      >
+        {generateList()}
+      </select>
+    </div>);
 
   const orders = () => {
     setFormContent(
       <div className="panelAdmin-form-remove-product">
         <h2 className="panelAdmin-title-form">Ordenes</h2>
         <select
-          class="panelAdmin-form-select"
+          className="panelAdmin-form-select"
           id="panelAdmin-select-form"
         >
           {generateList()}
@@ -264,7 +303,23 @@ function PanelAdministracion() {
             className="panelAdmin-form-add-input"
             placeholder="Precio"
           />
-          <input type="checkbox" name="" id="" />
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+            <input
+              type="text"
+              id="panelAdmin-extra-name"
+              className="panelAdmin-form-add-input"
+              placeholder="Extra"
+            />
+            <input
+              type="number"
+              id="panelAdmin-extra-price"
+              className="panelAdmin-form-add-input"
+              placeholder="Precio del extra"
+            />
+          </div>
+          <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
+            Añadir extra
+          </button>
           <button className="panelAdmin-form-btn" type="submit" id="panelAdmin-submit" onClick={addProductBtn}>
             Enviar
           </button>

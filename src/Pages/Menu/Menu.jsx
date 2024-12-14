@@ -47,7 +47,7 @@ const Menu = () => {
                 <div key={product.id} className="col-12 col-sm-6 col-md-4">
                     <div className="card-menu">
                         <img
-                            src={product.imageUrl}
+                            src={product.imageURL}
                             alt={product.name}
                             className="card-img-top-menu"
                         />

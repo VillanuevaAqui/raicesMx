@@ -13,8 +13,8 @@ const Main = () => (
         <h2 className="h2MCT">TODOS LOS DÍAS</h2>
       </div>
       <div className="pp-MainContainerButtons">
-        <a href="#" className="button"><strong>Suscríbete</strong></a>
-        <a href="#" className="button"><strong>Menú a domicilio</strong></a>
+        <Link to="/beneficios" className='button'><strong>Suscríbete</strong></Link>
+        <Link to="/menu" className='button'><strong>Menú a domicilio</strong></Link>
       </div>
     </div>
   </main>
