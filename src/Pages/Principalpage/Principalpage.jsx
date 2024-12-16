@@ -158,8 +158,11 @@ const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
       <div>
+
+      <Link to="/nosotros" className='button'>
         <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
         <h2 className="h2C3">es con México!</h2>
+        </Link>
       </div>
     </div>
     <section className="nuestroCompromiso">
