@@ -1,4 +1,5 @@
 import "./Beneficios.css"
+import MenuCard from "../../components/Menu-card/Menu-card";
 
 const BENEFITS = [
     {
@@ -49,5 +50,7 @@ const BENEFITS = [
       </div>
     );
   };
+
+
 
 export default Beneficios;

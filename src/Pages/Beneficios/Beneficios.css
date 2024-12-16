@@ -102,6 +102,13 @@
 
 }
 
+.benefits-title{
+
+    width: 90rem;
+
+}
+
+
 @media (max-width: 1200px) {
 
     .benefits-img-container {
@@ -145,13 +152,6 @@
 
 
 }
-
-.benefits-title{
-
-    width: 90rem;
-
-}
-
 
 @media (max-width: 768px) {
 

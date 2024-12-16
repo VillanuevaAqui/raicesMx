@@ -1,8 +1,11 @@
 import './PrincipalPage.css'
+import MenuCard from '../../components/Menu-card/Menu-card';
+import { Link } from 'react-router-dom';
+import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
 
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
-  <main className="main">
+  <main className="pp-main">
     <div className="pp-MainContainer">
       <img className="pp-background-image" src="/assets/Pozole.webp" alt="Olla de pozole rojo" />
       <div className="pp-MainContainerText">
@@ -10,8 +13,8 @@ const Main = () => (
         <h2 className="h2MCT">TODOS LOS DÍAS</h2>
       </div>
       <div className="pp-MainContainerButtons">
-        <a href="#" className="button"><strong>Suscríbete</strong></a>
-        <a href="#" className="button"><strong>Menú a domicilio</strong></a>
+        <Link to="/beneficios" className='button'><strong>Suscríbete</strong></Link>
+        <Link to="/menu" className='button'><strong>Menú a domicilio</strong></Link>
       </div>
     </div>
   </main>
@@ -20,9 +23,10 @@ const Main = () => (
 // SEGUNDO CONTENEDOR: MENÚS DEL DÍA
 const MenuSection = () => (
   <section className="pp-SecundaryContainer">
-    <h1 className="pp-SecundaryContainerTitle">Menús del día</h1>
-    <section className="pp-menusContainer">
-      {[1, 2, 3].map((menuNumber) => (
+    <h2 className="pp-SecundaryContainerTitle">Menú del día</h2>
+    {/* <section className="pp-menusContainer"> */}
+    <MenuCard />
+    {/* {[1, 2].map((menuNumber) => (
         <div id={`carouselMenu${menuNumber}`} className="pp-carousel-slide" key={menuNumber}>
           <div className="carousel-indicators">
             {[0, 1, 2].map((slide) => (
@@ -51,63 +55,90 @@ const MenuSection = () => (
               </div>
             </div>
           </div>
-          <button className="carousel-control-prev" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="prev">
+          {/* <button className="carousel-control-prev" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button className="carousel-control-next" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
-          </button>
+          </button> }
         </div>
-      ))}
-    </section>
+      ))} */}
+    {/* </section> */}
   </section>
 );
 
+const arr = [
+  {
+    title: "Nutricionista",
+    img: "/assets/Fotos-RaícesMX.webp",
+    description: `RaícesMX somos tu aliado para una alimentación saludable y personalizada.
+                    Disfruta de planes nutricionales diseñados a tu medida, creados por nuestros expertos para
+                    ayudarte a alcanzar tus objetivos de bienestar.`
+  },
+  {
+    title: "Seleccionar alimentos",
+    img: "/assets/Fotos-RaícesMX-_1_.webp",
+    description: `Con nuestros menús, come delicioso y saludable con RaícesMX. ¡Tú eliges los
+                    ingredientes,
+                    las porciones y los menús! Nuestro equipo te asesorará para que tus comidas sean
+                    nutritivas y satisfactorias, adaptándose a tus gustos y necesidades alimentarias.`
+  }
+]
 // TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS
 const SubscribeSection = () => (
   <section className="terciaryContainer">
     <div className="terciaryContainerButton">
-      <button className="terciaryContainerBtn">
+      <div className="terciaryContainerBtn">
         <a href="#">
           <h1 className="h1C3">¡Suscríbete</h1>
           <h2 className="h2C3">y obtén MÁS beneficios!</h2>
         </a>
-      </button>
+      </div>
     </div>
-    <section className="benefits">
-      {["Nutricionista", "Seleccionar alimentos"].map((benefit, index) => (
+    <section className="pp-benefits">
+      <div className='pp-benefits-container'>
+      {arr.map((benefit, index) => (
         <div className="pp-cardC3" key={index}>
-          <img className="pp-cardImg" src={`/assets/${benefit}.webp`} alt={benefit} />
-          <h2 className="pp-cardTitle">{benefit}</h2>
-          <p className="pp-cardText">Descripción del beneficio {index + 1}</p>
+          <img className="pp-cardImg" src={benefit.img} alt={benefit} />
+          <h2 className="pp-cardTitle">{benefit.title}</h2>
+          <p className="pp-cardText">{benefit.description}</p>
         </div>
       ))}
+      </div>
+
+      <div className="">
+        <button className="btn2C3">
+          <Link to="/beneficios">
+            <p>Conoce más</p>
+            </Link>
+        </button>
+      </div>
+
     </section>
-    <div className="terciaryContainerBtn1">
-      <button className="btn2C3">
-        <a href="#">
-          <p>Conoce más</p>
-        </a>
-      </button>
-    </div>
+
   </section>
 );
 
 // CUARTO CONTENEDOR: TESTIMONIOS
 const Testimonials = () => (
   <section className="pp-testimonio">
+
+    <div className='testimonials-container'>
+    
     <div className="foto">
-      <img className="pp-user" src="/assets/Usuario.webp" alt="Usuario" />
+      <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
     </div>
     <div className="pp-comentarioStarRating">
-      <h2>Alberto Villanueva</h2>
+      <h2 className='testimonio-name-user'>Alberto Villanueva</h2>
       <br />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+
+      <CustomizedRating/>
       <span className="fa fa-star checked"></span>
       <span className="fa fa-star checked"></span>
       <span className="fa fa-star checked"></span>
@@ -118,6 +149,7 @@ const Testimonials = () => (
         tener una alimentación más saludable.
       </p>
     </div>
+    </div>
   </section>
 );
 
@@ -125,10 +157,10 @@ const Testimonials = () => (
 const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
-        <a href="#">
-          <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
-          <h2 className="h2C3">es con México!</h2>
-        </a>
+      <a href="#">
+        <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
+        <h2 className="h2C3">es con México!</h2>
+      </a>
     </div>
     <section className="nuestroCompromiso">
       <div className="nuestroCompromisSection">

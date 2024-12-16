@@ -45,12 +45,11 @@ body {
     gap: 2rem;
     margin: 5rem;
     display: flex;
-    text-align: center;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .nosotros-listmenu {
-    display: inline-block;
     text-decoration: none;
     margin-top: 3rem;
     margin-right: 2rem;
@@ -61,7 +60,7 @@ body {
     padding: 2rem;
     border-radius: 3rem;
     font-weight: bold;
-    transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
+    transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
     border: none;
     box-shadow: none;
 }
@@ -69,8 +68,9 @@ body {
 .nosotros-listmenu:hover {
     color: var(--primary);
     background-color: var(--tertiary);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
+
 
 .nosotros-active {
     background-color: var(--fourth);
@@ -107,16 +107,13 @@ body {
 }
 
 .nosotros-about-logo {
+    max-width: 20%;
     flex: 0 1 auto;
-    max-width: 30%;
     text-align: center;
 }
 
 .nosotros-about-logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    max-width: 70%;
     border-radius: 50%;
 }
 
