@@ -380,9 +380,10 @@
         margin: 1rem;
         padding: 1rem 2rem;
     }
-    .pp-MainContainerText {
+   /* .pp-MainContainerText {
         /* top: 33%; */
-    }
+    /*}*/
+    
     .h1MCT {
         font-size: 3.5rem;
     }
