@@ -1,48 +1,46 @@
 /*!CONTENEDOR PRINCIPAL*/
 
 .pp-benefits-container {
-
     display: flex;
     gap: 20rem;
 }
 
 .testimonio-name-user {
-
+    color: var(--fifth);
     font-weight: 700;
     font-size: 6rem;
     font-style: italic;
-    color: var(--fifth);
 }
 
 .pp-MainContainer {
-    position: relative;
-    text-align: center;
+    align-items: center;
     color: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    position: relative;
+    text-align: center;
 }
 
 .pp-background-image {
+    height: 100%;
     opacity: 0.87;
     width: 100%;
-    height: 100%;
 }
 
 .pp-MainContainerText {
+    left: 7%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
     top: 35%;
-    left: 7%;
-    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
 }
 
 /*PLATILLOS EXQUISITOS*/
 .h1MCT {
+    color: white;
     font-size: 4.9rem;
     font-weight: 700;
-    color: white;
     text-align: left;
     text-shadow: 3px 3px 5px #2c2e21;
 }
@@ -50,21 +48,21 @@
 /*TODOS LOS DÍAS*/
 .h2MCT-carrusel,
 .h2MCT {
+    color: white;
     font-weight: 850;
     font-size: 6.9rem;
     font-style: italic;
-    color: white;
     text-shadow: 3px 3px 5px #2c2e21;
 }
 
 /*BOTNONES PRINCIPALES*/
 .pp-MainContainerButtons {
+    left: 7%;
+    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
     position: absolute;
     /*  El elemento ya no ocupará espacio en la página y no afectará el diseño de los demás elementos*/
     top: 53%;
     /* Posiciona la parte superior del elemento al 50% de la altura de su contenedor padre*/
-    left: 7%;
-    /* Posiciona la parte izquierda del elemento al 50% del ancho de su contenedor padre*/
 }
 
 .pp-MainContainerButtons .button {
@@ -88,7 +86,6 @@
 }
 
 .pp-menu-card {
-
     height: 30rem;
 
 }
@@ -96,27 +93,23 @@
 /*!SEGUNDO CONTENEDOR: MENÚ DEL DÍA*/
 /*MENÚS DEL DÍA*/
 .pp-SecundaryContainerTitle {
-
-    font-weight: 700;
-    font-size: 6rem;
-    text-align: center;
-    font-style: italic;
     color: var(--fifth);
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
 }
 
 .pp-SecundaryContainer {
-
     display: flex;
-    gap: 2rem;
     flex-direction: column;
+    gap: 2rem;
     padding: 5rem;
-
 }
 
 /* *ESTILOS DEL CONTENEDOR DE MENÚS*/
 .pp-menusContainer {
     display: block;
-
 }
 
 /*MARGEN ENTRE CARRUSELES*/
@@ -138,9 +131,9 @@
 
 .pp-menuText {
     font-size: 2rem;
-    text-align: left;
     margin-left: 30px;
     /* Sangría en la lista no ordenada */
+    text-align: left;
 }
 
 /* !TERCER CONTENEDOR: SUSCRÍBETE Y BENEFICIOS*/
@@ -152,28 +145,21 @@
 .terciaryContainerButton {
     display: flex;
     justify-content: center;
-    position: relative;
     margin: -10px auto -75px;
     /* Botón flotante sobre la sección */
+    position: relative;
 }
 
 .terciaryContainerBtn {
-
-    display: inline-block;
-    text-align: center;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--fourth);
     border-radius: 100px;
-    padding: 2.7rem 50rem 2.7rem 50rem;
-    text-decoration: none;
-
-
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    display: inline-block;
     padding: 2.7rem 50rem 2.7rem 50rem;
+    text-align: center;
+    text-decoration: none;
 }
 
 /*SUSCRÍBETE*/
@@ -183,75 +169,73 @@
     font-style: italic;
     font-weight: 850;
     text-align: center;
-    text-decoration: none;
 }
 
 /*Y OBTÉN BENEFICIOS*/
 .h2C3 {
+    color: white;
     font-size: 3rem;
     font-style: italic;
-    color: white;
     text-align: center;
-    text-decoration: none;
 }
 
 /*CARTAS DE BENEFICIOS*/
 .pp-benefits {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: var(--secondary);
     border-radius: 50px;
-    padding: 50px 30px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    margin: 50px auto;
-    width: 77%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
+    justify-content: center;
+    margin: 50px auto;
+    padding: 50px 30px;
+    width: 77%;
 }
 
 .pp-cardC3 {
+    align-items: center;
+    border-color: var(--secondary);
     display: inline-flex;
     flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
     flex-direction: column;
+    gap: 2rem;
     justify-items: center;
     max-width: 50rem;
-    border-color: var(--secondary);
-    gap: 2rem;
+    text-align: center;
 }
 
 .pp-cardTitle {
-    padding: 15px 0px 0px 0px;
     font-size: 4rem;
     font-weight: 700;
+    padding: 15px 0px 0px 0px;
     text-align: center;
 }
 
 
 .pp-cardImg {
-    width: 30rem;
-    height: 30rem;
     border: 3px solid;
-    border-radius: 20%;
     border-color: var(--tertiary);
+    border-radius: 20%;
+    height: 30rem;
+    width: 30rem;
 }
 
-/* *BOTÓN CONCOER MÁS*/
+/* *BOTÓN CONOCER MÁS*/
 .terciaryContainerBtn1 {
     display: flex;
     justify-content: center;
 }
 
 .btn2C3 {
-    background-color: var(--fourth);
-    text-decoration: none;
-    font-size: 2rem;
-    color: white;
-    padding: 5px 30px 5px;
-    border-radius: 100px;
     align-items: center;
+    background-color: var(--fourth);
+    border-radius: 100px;
+    color: white;
+    font-size: 2rem;
+    padding: 5px 30px 5px;
+    text-decoration: none;
 }
 
 /* !CUARTO CONTENEDOR: TESTIMONIOS*/
@@ -266,19 +250,16 @@
 }
 
 .testimonials-container {
-
     display: flex;
     flex-direction: wrap;
     gap: 8rem;
     max-width: 120rem;
-
-
 }
 
 /* *IMAGEN DE USUSARIO*/
 .pp-user {
-    width: 25rem;
     height: 25rem;
+    width: 25rem;
 }
 
 /* *COMENTARIO DEL TESTIMONIO*/
@@ -292,29 +273,26 @@
 
 /* *QUINTO CONTENEDOR: "NUESTRO COMPROMISO1"*/
 /*BOTÓN VERDE*/
-
 .Container5 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
     align-items: center;
+    border-radius: 100px;
+    display: flex;
     flex-direction: column;
     gap: 5rem;
-    border-radius: 100px;
+    justify-content: center;
     padding: 2.7rem 50rem 2.7rem 50rem;
-
+    text-align: center;
 }
 
 .nuestroCompromisSection {
     display: flex;
     gap: 5rem;
-
 }
 
 .imageNC {
-    width: 31.4rem;
-    height: 31.4rem;
     border-radius: 100%;
+    height: 31.4rem;
+    width: 31.4rem;
 }
 
 .commitment-NC {
@@ -322,14 +300,14 @@
 
 }
 
-
 .Container5Button {
     background-color: var(--fourth);
-    color: white;
-    width: 80rem;
     border-radius: 100px;
-
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    color: white;
     padding: 1.3rem 5rem 1.3rem 5rem;
+    text-decoration: none;
+    width: 80rem;
 }
 
 /*SUSCRÍBETE*/
@@ -339,33 +317,25 @@
 }
 
 .h2MCT-carrusel {
-
     font-size: 3rem;
     font-style: normal;
-
 }
 
 .pp-title-carrusel {
-
     font-size: 5rem;
     font-style: italic;
 }
 
 .pp-carrusel-card {
-
     display: flex;
     gap: 2rem;
-
 }
 
 .commitment-NC {
-
-
-    flex-wrap: wrap;
-    justify-content: center;
     display: inline-flex;
+    flex-wrap: wrap;
     gap: 2rem;
-
+    justify-content: center;
 }
 
 /* !Estilos para pantallas muy pequeñas (769px a 1200px)*/
@@ -379,6 +349,7 @@
         font-size: 2.2rem;
         margin: 1rem;
         padding: 1rem 2rem;
+        text-decoration: none;
     }
    /* .pp-MainContainerText {
         /* top: 33%; */
@@ -392,14 +363,17 @@
     }
 }
 
+/* !MQ MAX 900PX*/
 @media (max-width: 900px) {
     .pp-MainContainerButtons {
         position: absolute;
+        text-decoration: none;
         top: 55%;
     }
     
     .pp-MainContainerButtons .button {
         font-size: 2rem;
+        text-decoration: none;
     }
     .pp-MainContainerText {
         top: 30%;
@@ -412,6 +386,7 @@
     }
 }
 
+/* !MQ MAX 768PX*/
 @media (max-width: 768px) {
     .pp-background-image {
         height: 200px;
@@ -424,6 +399,7 @@
 
     .pp-MainContainerButtons .button {
         font-size: 1.5rem;
+        text-decoration: none;
     }
 
     .pp-SecundaryContainer {
@@ -435,120 +411,94 @@
     }
 
     .pp-benefits-container {
-        gap: 5rem;
         flex-direction: column;
+        gap: 5rem;
     }
 
     .nuestroCompromisSection {
-        gap: 2rem;
         flex-direction: column;
+        gap: 2rem;
     }
 
     .Container5 {
         background-color: var(--secondary);
-
+        border-radius: 10%;
         flex-direction: column;
         gap: 5rem;
-        border-radius: 10%;
         padding: 2rem;
     }
 }
 
+/* !MQ MAX 479PX*/
 @media (max-width: 479px) {
 
     .pp-background-image {
-
         height: 300px;
-
     }
 
     .h2MCT {
-
         font-size: 2.5rem;
     }
 
     .h1MCT {
-
         font-size: 2rem;
     }
 
     .terciaryContainerBtn {
-
         padding: 1.5rem;
         width: 95%;
-
     }
 
     .h1C3 {
-
         font-size: 3.5rem;
-
     }
 
     .h2C3 {
-
         font-size: 2rem;
-
     }
 
     .pp-MainContainerButtons .button {
-
-        font-size: 1.2rem;
-        top: 20%;
         display: block;
+        font-size: 1.2rem;
         padding: 1rem;
-
+        top: 20%;
     }
 
     .pp-benefits {
-
         width: 90%;
-
     }
 
     .pp-benefits-container {
-
         flex-direction: column;
         gap: 2rem;
-
     }
 
     .pp-testimonio {
-
         width: 100%;
     }
 
     .testimonials-container {
-
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
         align-items: center;
+        flex-direction: column;
         gap: 4rem;
-
+        justify-content: center;
+        text-align: center;
     }
 
     .Container5 {
-
         margin-top: 2rem;
-        width: 100%;
         padding: 0%;
-
+        width: 100%;
     }
 
     .Container5Button {
-
         width: 90%;
     }
 
-
-
     .nuestroCompromisSection {
-
-        flex-wrap: wrap;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
-
     }
 }
 
