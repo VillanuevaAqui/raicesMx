@@ -72,14 +72,14 @@ const MenuSection = () => (
 const arr = [
   {
     title: "Nutricionista",
-    img: "/assets/Fotos-RaícesMX.webp",
+    img: "/assets/Nutricionista.webp",
     description: `RaícesMX somos tu aliado para una alimentación saludable y personalizada.
                     Disfruta de planes nutricionales diseñados a tu medida, creados por nuestros expertos para
                     ayudarte a alcanzar tus objetivos de bienestar.`
   },
   {
     title: "Seleccionar alimentos",
-    img: "/assets/Fotos-RaícesMX-_1_.webp",
+    img: "/assets/Elegir alimentos.webp",
     description: `Con nuestros menús, come delicioso y saludable con RaícesMX. ¡Tú eliges los
                     ingredientes,
                     las porciones y los menús! Nuestro equipo te asesorará para que tus comidas sean
@@ -91,7 +91,7 @@ const SubscribeSection = () => (
   <section className="terciaryContainer">
     <div className="terciaryContainerButton">
       <div className="terciaryContainerBtn">
-        <a href="#">
+        <a href="/beneficios">
           <h1 className="h1C3">¡Suscríbete</h1>
           <h2 className="h2C3">y obtén MÁS beneficios!</h2>
         </a>
@@ -157,10 +157,10 @@ const Testimonials = () => (
 const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
-      <a href="#">
+      <div>
         <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
         <h2 className="h2C3">es con México!</h2>
-      </a>
+      </div>
     </div>
     <section className="nuestroCompromiso">
       <div className="nuestroCompromisSection">
