@@ -91,33 +91,34 @@ const SubscribeSection = () => (
   <section className="terciaryContainer">
     <div className="terciaryContainerButton">
       <div className="terciaryContainerBtn">
-        <a href="/beneficios">
+
+        <Link to="/beneficios" style={{ textDecoration: 'none' }}>
           <h1 className="h1C3">¡Suscríbete</h1>
           <h2 className="h2C3">y obtén MÁS beneficios!</h2>
-        </a>
+        </Link>
+
       </div>
     </div>
     <section className="pp-benefits">
       <div className='pp-benefits-container'>
-      {arr.map((benefit, index) => (
-        <div className="pp-cardC3" key={index}>
-          <img className="pp-cardImg" src={benefit.img} alt={benefit} />
-          <h2 className="pp-cardTitle">{benefit.title}</h2>
-          <p className="pp-cardText">{benefit.description}</p>
-        </div>
-      ))}
+        {arr.map((benefit, index) => (
+          <div className="pp-cardC3" key={index}>
+            <img className="pp-cardImg" src={benefit.img} alt={benefit} />
+            <h2 className="pp-cardTitle">{benefit.title}</h2>
+            <p className="pp-cardText">{benefit.description}</p>
+          </div>
+        ))}
       </div>
 
       <div className="">
         <button className="btn2C3">
-          <Link to="/beneficios">
+          <Link to="/beneficios" style={{ textDecoration: 'none' }}>
             <p>Conoce más</p>
-            </Link>
+          </Link>
         </button>
       </div>
-
+      
     </section>
-
   </section>
 );
 
@@ -126,29 +127,29 @@ const Testimonials = () => (
   <section className="pp-testimonio">
 
     <div className='testimonials-container'>
-    
-    <div className="foto">
-      <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
-    </div>
-    <div className="pp-comentarioStarRating">
-      <h2 className='testimonio-name-user'>Alberto Villanueva</h2>
-      <br />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
 
-      <CustomizedRating/>
-      <span className="fa fa-star checked"></span>
-      <span className="fa fa-star checked"></span>
-      <span className="fa fa-star checked"></span>
-      <span className="fa fa-star"></span>
-      <span className="fa fa-star"></span>
-      <p className="pp-comentario">
-        El servicio a domicilio de la página es increíble, me han ayudado a poder
-        tener una alimentación más saludable.
-      </p>
-    </div>
+      <div className="foto">
+        <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
+      </div>
+      <div className="pp-comentarioStarRating">
+        <h2 className='testimonio-name-user'>Alberto Villanueva</h2>
+        <br />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <CustomizedRating />
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star"></span>
+        <span className="fa fa-star"></span>
+        <p className="pp-comentario">
+          El servicio a domicilio de la página es increíble, me han ayudado a
+          tener una alimentación más saludable y con opciones deliciosas. Me gusta que hay variedad en los menús y no me aburro de las opciones que ofrecen. ¡100% recomendado!
+        </p>
+      </div>
     </div>
   </section>
 );
@@ -159,9 +160,9 @@ const Commitment = () => (
     <div className="Container5Button">
       <div>
 
-      <Link to="/nosotros" className='button'>
-        <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
-        <h2 className="h2C3">es con México!</h2>
+        <Link to="/nosotros" className='button' style={{ textDecoration: 'none' }}>
+          <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
+          <h2 className="h2C3">es con México!</h2>
         </Link>
       </div>
     </div>
