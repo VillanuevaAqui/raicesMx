@@ -1,6 +1,6 @@
 //Creacion de la clase controlador.
 export class ProductsController {
-    constructor(currentId) {
+    constructor(currentId = 0) {
         // this.pillar = {
         //     id: 0,
         //     name: "sampleName",
