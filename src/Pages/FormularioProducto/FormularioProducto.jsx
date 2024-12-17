@@ -273,7 +273,7 @@ function PanelAdministracion() {
         <h2>Mis Órdenes</h2>
         <ul className="userpage-orders-list">
           {orders.map((order) => (
-            <li key={order.id} className="userpage-order-item">
+            <li key={order.id} className="userpage-order-item panelAdmin-userpage-order-item">
               <div className="userpage-order-details">
                 <strong>Orden #{order.id}</strong>
                 <p>Fecha: {order.date}</p>
@@ -460,7 +460,7 @@ function PanelAdministracion() {
         </form>
         </div>
 
-        <div className="card-menu">
+        <div className="card-menu panelAdmin-card-menu">
         <img
           src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
           alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
@@ -505,7 +505,7 @@ function PanelAdministracion() {
     console.log(index)
 
     setFormContent(
-      <div className="card-menu">
+      <div className="card-menu panelAdmin-card-menu">
         <img
           src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
           alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
@@ -591,7 +591,7 @@ function PanelAdministracion() {
 
       <section className="panelAdmin-products-container">
         <div className="panelAdmin-container">
-          <div id="panelAdmin-list-products">{formContent}</div>
+          <div className="panelAdmin-list-products">{formContent}</div>
         </div>
       </section>
     </div>
