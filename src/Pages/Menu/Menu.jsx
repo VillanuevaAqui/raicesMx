@@ -42,31 +42,39 @@ const Menu = () => {
 
     // Renderizar tarjetas
     const renderProductCards = (category) => {
-        return menuItems[category].map((product) => (
-            <div className="row col-12 d-flex justify-content-center align-items-center">
-                <div key={product.id} className="col-12 col-sm-6 col-md-4">
-                    <div className="card-menu">
-                        <img
-                            src={product.imageURL}
-                            alt={product.name}
-                            className="card-img-top-menu"
-                        />
-                        <div className="card-body-menu">
-                            <h5 className="card-title-menu">{product.name}</h5>
-                            <p className="card-text-menu">{product.desc}</p>
-                            <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {product.ingredients}</p>
-                            <p className="card-price-menu"><strong>Precio:</strong> ${product.price}</p>
-                            {/* Botón para agregar al carrito */}
-                            <button className="btn-menu" onClick={() => addToCart(product)}>
-                                Agregar al carrito
-                            </button>
+        const products = menuItems[category];
+    
+        // Agrupar los productos en filas de 3
+        const rows = [];
+        for (let i = 0; i < products.length; i += 3) {
+            rows.push(products.slice(i, i + 3));
+        }
+    
+        return rows.map((row, rowIndex) => (
+            <div className="row col-12 d-flex justify-content-center" key={rowIndex}>
+                {row.map((product) => (
+                    <div className="col-12 col-sm-6 col-md-4" key={product.id}>
+                        <div className="card-menu">
+                            <img
+                                src={product.imageURL}
+                                alt={product.name}
+                                className="card-img-top-menu"
+                            />
+                            <div className="card-body-menu">
+                                <h5 className="card-title-menu">{product.name}</h5>
+                                <p className="card-text-menu">{product.desc}</p>
+                                <p className="card-text-menu"><strong>Ingredientes:</strong> {product.ingredients}</p>
+                                <p className="card-price-menu"><strong>Precio:</strong> ${product.price}</p>
+                                <button className="btn-menu" onClick={() => addToCart(product)}>
+                                    Agregar al carrito
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
         ));
     };
-
     return (
         <div className="menu">
             <h1 className="h1-menu">Menú</h1>
