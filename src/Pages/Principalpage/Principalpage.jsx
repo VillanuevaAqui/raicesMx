@@ -112,8 +112,7 @@ const SubscribeSection = () => (
 
       <div className="">
         <button className="btn2C3">
-          <Link to="/beneficios" style={{ textDecoration: 'none' }}>
-            <p>Conoce más</p>
+          <Link to="/beneficios" className="btn2C3text" style={{ textDecoration: 'none' }}>Conoce más
           </Link>
         </button>
       </div>
@@ -159,7 +158,6 @@ const Commitment = () => (
   <section className="Container5">
     <div className="Container5Button">
       <div>
-
         <Link to="/nosotros" className='button' style={{ textDecoration: 'none' }}>
           <h2 className="h1C3">¡NUESTRO COMPROMISO</h2>
           <h2 className="h2C3">es con México!</h2>

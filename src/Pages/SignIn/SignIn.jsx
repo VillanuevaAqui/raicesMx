@@ -39,6 +39,8 @@ const Card = styled(MuiCard)({
   gap: '16px',
   margin: 'auto',
   borderRadius: '20px',
+  overflowY: 'auto',
+  overflowX: 'hidden',
   '@media (min-width: 600px)': {
     maxWidth: '450px',
   },

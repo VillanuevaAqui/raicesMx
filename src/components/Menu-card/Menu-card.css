@@ -91,3 +91,22 @@ h5 {
     right: 0;
 }
 
+.h2MCT-carrusel-sub{
+    margin-bottom: 15rem;
+}
+@media (max-width: 1000px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 8rem;
+    }
+}
+@media (max-width: 768px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 5rem;
+    }
+}
+@media (max-width: 468px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 0rem;
+    }
+}
+
