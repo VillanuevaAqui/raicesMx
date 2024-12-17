@@ -3,6 +3,7 @@ import MenuCard from '../../components/Menu-card/Menu-card';
 import { Link } from 'react-router-dom';
 import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
 
+
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
   <main className="pp-main">
@@ -130,10 +131,11 @@ const Testimonials = () => (
       <div className="foto">
         <img className="pp-user" src="assets/Usuario.webp" alt="Usuario" />
       </div>
+
       <div className="pp-comentarioStarRating">
         <h2 className='testimonio-name-user'>Alberto Villanueva</h2>
         <br />
-        <link
+        <link 
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
@@ -144,6 +146,7 @@ const Testimonials = () => (
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star"></span>
         <span className="fa fa-star"></span>
+
         <p className="pp-comentario">
           El servicio a domicilio de la página es increíble, me han ayudado a
           tener una alimentación más saludable y con opciones deliciosas. Me gusta que hay variedad en los menús y no me aburro de las opciones que ofrecen. ¡100% recomendado!
