@@ -220,25 +220,7 @@ const UserPage = () => {
         });
     };
 
-    // Nueva función para formatear la fecha
-const handleExpirationDateChange = (e) => {
-    let value = e.target.value;
-    value = value.replace(/[^\d]/g, ""); // Eliminar caracteres no numéricos
-
-    if (value.length > 2) {
-        value = value.slice(0, 2) + "/" + value.slice(2, 4);
-    }
-
-    if (value.length > 5) {
-        value = value.slice(0, 5);
-    }
-
-    setPaymentData((prevState) => ({
-        ...prevState,
-        expirationDate: value,
-    }));
-};
-
+    
 
     const handleCardNumberChange = (e, field, nextRef) => {
         const { value } = e.target;
@@ -256,8 +238,35 @@ const handleExpirationDateChange = (e) => {
         }
     };
 
-    const handleExpirationChange = (e) => {
+
+    const handleExpirationDateChange = (e) => {
+        let value = e.target.value;
+        
+        // Eliminar caracteres no numéricos
+        value = value.replace(/[^\d]/g, "");
+    
+        // Añadir la barra '/' después de los dos primeros dígitos
+        if (value.length > 2) {
+            value = value.slice(0, 2) + "/" + value.slice(2, 4);
+        }
+    
+        // Limitar el tamaño a 5 caracteres (MM/AA)
+        if (value.length > 5) {
+            value = value.slice(0, 5);
+        }
+    
+        // Actualizar el estado con el valor formateado
+        setPaymentData((prevState) => ({
+            ...prevState,
+            expirationDate: value,
+        }));
+    };
+   
+/*Funcion que se usaba anteriormente */
+  /*  const handleExpirationChange = (e) => {
         let { value } = e.target;
+
+        
         if (!/^\d{0,5}$/.test(value)) {
             return;
         }
@@ -271,7 +280,7 @@ const handleExpirationDateChange = (e) => {
             ...prevData,
             expirationDate: value,
         }));
-    };
+    };  */
 
     const renderSection = () => {
         switch (currentSection) {
@@ -407,7 +416,7 @@ const handleExpirationDateChange = (e) => {
                                             type="text"
                                             name="expirationDate"
                                             value={paymentData.expirationDate}
-                                            onChange={handleExpirationChange}
+                                            onChange={handleExpirationDateChange}
                                             maxLength="5"
                                         />
                                     </label>
@@ -478,7 +487,7 @@ const handleExpirationDateChange = (e) => {
                                     </div>
                                 </li>
                             ))}
-                        </ul>
+                        </ul>handleExpirationDateChange   
                     </section>
                 );
 
