@@ -153,6 +153,7 @@ const UserPage = () => {
         setCards((prevCards) => prevCards.filter((_, i) => i !== index));
     };
 
+    
     // Referencias para los campos de número de tarjeta
     const cardNumber2Ref = useRef(null);
     const cardNumber3Ref = useRef(null);
@@ -218,6 +219,26 @@ const UserPage = () => {
             cvv: "",
         });
     };
+
+    // Nueva función para formatear la fecha
+const handleExpirationDateChange = (e) => {
+    let value = e.target.value;
+    value = value.replace(/[^\d]/g, ""); // Eliminar caracteres no numéricos
+
+    if (value.length > 2) {
+        value = value.slice(0, 2) + "/" + value.slice(2, 4);
+    }
+
+    if (value.length > 5) {
+        value = value.slice(0, 5);
+    }
+
+    setPaymentData((prevState) => ({
+        ...prevState,
+        expirationDate: value,
+    }));
+};
+
 
     const handleCardNumberChange = (e, field, nextRef) => {
         const { value } = e.target;
