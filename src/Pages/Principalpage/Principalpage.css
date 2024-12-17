@@ -255,13 +255,15 @@
 .testimonials-container {
     display: flex;
     flex-direction: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 8rem;
     max-width: 120rem;
+    margin: 0 5%;
 }
 
 /* *IMAGEN DE USUSARIO*/
 .pp-user {
-    height: 25rem;
     width: 25rem;
 }
 
@@ -283,7 +285,7 @@
     flex-direction: column;
     gap: 5rem;
     justify-content: center;
-    padding: 2.7rem 50rem 2.7rem 50rem;
+    padding: 2.7rem 40rem 2.7rem 40rem;
     text-align: center;
 }
 
@@ -364,21 +366,47 @@
     .h2MCT {
         font-size: 5.5rem;
     }
-
-    
+    .pp-comentario {
+        font-size: 1.8rem;
+    }
+    .pp-user {
+        width: 20rem;
+    }
+    .testimonio-name-user {
+        font-size: 5.3rem;
+    }
 }
 
+@media (max-width: 1060px) {
+    .pp-cardImg{
+        width: 22rem;
+        height: 22rem;
+    }
+    .imageNC {
+        height: 25rem;
+        width: 25rem;
+    }
+    .pp-cardTitle{
+        font-size: 3.6rem;
+    }
+    .Container5Button {
+        width: 70rem;
+    }
+    .terciaryContainerBtn {
+        padding: 1.7rem 15rem;
+    }
+    .testimonio-name-user {
+        font-size: 5rem;
+    }
+}
 /* !MQ MAX 900PX*/
-@media (max-width: 900px) {
+@media (max-width: 905px) {
     .pp-MainContainerButtons {
-        position: absolute;
-        text-decoration: none;
         top: 55%;
     }
     
     .pp-MainContainerButtons .button {
         font-size: 2rem;
-        text-decoration: none;
     }
     .pp-MainContainerText {
         top: 30%;
@@ -389,10 +417,35 @@
     .h2MCT {
         font-size: 5.3rem;
     }
-
    
     .h2MCT-carrusel {
         font-size: 2.5rem; /* Reducir tamaño del texto */
+    }
+    .pp-cardImg{
+        width: 19rem;
+        height: 19rem;
+    }
+    .pp-cardTitle{
+        font-size: 3rem;
+    }
+    .imageNC {
+        height: 21rem;
+        width: 21rem;
+    }
+    .Container5Button {
+        width: 60rem;
+    }
+    .testimonio-name-user {
+        font-size: 4.3rem;
+    }
+    .terciaryContainerBtn {
+        padding: 1.7rem 10rem;
+    }
+    .pp-user {
+        width: 17rem;
+    }
+    .testimonials-container {
+        gap: 5rem;
     }
 }
 
