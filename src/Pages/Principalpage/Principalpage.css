@@ -361,6 +361,8 @@
     .h2MCT {
         font-size: 5.5rem;
     }
+
+    
 }
 
 /* !MQ MAX 900PX*/
@@ -383,6 +385,11 @@
     }
     .h2MCT {
         font-size: 5.3rem;
+    }
+
+   
+    .h2MCT-carrusel {
+        font-size: 2.5rem; /* Reducir tamaño del texto */
     }
 }
 
@@ -426,6 +433,11 @@
         flex-direction: column;
         gap: 5rem;
         padding: 2rem;
+    }
+
+   
+    .h2MCT-carrusel {
+        font-size:  1.7rem !important; /* Reducir texto adicional */
     }
 }
 
@@ -500,6 +512,11 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+   
+    .h2MCT-carrusel important {
+        font-size: 1rem !important; /* Texto pequeño para móviles */
+    } 
 }
 
 /* !TERMINAN MQ */
