@@ -71,6 +71,19 @@ p.card-text-menu {
     margin-bottom: 1.5rem;
 }
 
+/*Contenido contenedor banner texto Menu */
+.menu-header {
+    background-image: url('/assets/banner-menu.webp'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: 40px 0; /* Espaciado interno */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    
+}
+
 /*Contenido del menu boton opciones desayuno , comida y cena*/
 .menu-options {
     display: flex;               /* Activa Flexbox */
@@ -82,10 +95,18 @@ p.card-text-menu {
 
 /*----Tamaños para los titulos h1 ,h2, h3, menu----*/
 .h1-menu{
-    font-size: 7rem;  
-    font-weight: 700;
+    font-size: 6.5rem;  
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 3rem; /* Añade espacio debajo del título */
+    color: var(--tertiary);
+    background: var(--secondary);
+    width: 240px; /* Ancho fijo */
+    margin: 0 auto 20px; /* Centrar horizontalmente */
+    padding: 1px; /* Espaciado interno */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 60px; /* Bordes redondeados (opcional) */
 }
 .h2-menu{
     font-weight: 200;
@@ -169,6 +190,7 @@ p.card-text-menu {
     .h1-menu {
         margin-bottom: 1.5rem; /* Reduce el espacio en pantallas más pequeñas */
         font-size: 4.4rem;
+        width: 165px;
     }
     .h2-menu {
         font-size: 3.5rem; /* Reduce aún más para móviles */
@@ -212,6 +234,7 @@ p.card-text-menu {
     .h1-menu {
         margin-bottom: 1.5rem;
         font-size: 5.5rem;
+        width: 200px;
     }
     .h2-menu {
         font-size: 3.5rem; /* Reduce el tamaño para tabletas */
