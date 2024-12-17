@@ -198,7 +198,7 @@ p.card-text-menu {
     }
     .col-12 {
         padding-left: 1rem; /* Espaciado izquierdo */
-        padding-right: 1rem; /* Espaciado derecho */
+        padding-right: 0.5rem; /* Espaciado derecho */
     }
     
 }
@@ -207,7 +207,7 @@ p.card-text-menu {
 @media (min-width: 601px) and (max-width: 768px) {
     .card-menu {
         margin-bottom: 2rem;
-        max-width: 42rem; /* Ajusta el tamaño de las tarjetas */
+        max-width: 45rem; /* Ajusta el tamaño de las tarjetas */
     }
     .h1-menu {
         margin-bottom: 1.5rem;
@@ -238,8 +238,8 @@ p.card-text-menu {
         font-size: 1.7rem;        /* Ajusta el texto */
     }
     .col-12 {
-        padding-left: 1rem; /* Espaciado izquierdo */
-        padding-right: 1rem; /* Espaciado derecho */
+        padding-left: 1.5rem; /* Espaciado izquierdo */
+        padding-right: 0.5rem; /* Espaciado derecho */
     }
     /* .nav ul {
         display: flex;
