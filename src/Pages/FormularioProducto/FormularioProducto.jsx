@@ -3,6 +3,8 @@ import "./FormularioProducto.css"
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
 
+
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Validaciones del formulario
 const validateForm = (name = "", desc = "", ingredients = "", imageURL = "", price = "") => {
@@ -160,10 +162,13 @@ function removeProductBtn() {
 
 }
 
+
+
 function updateProductBtn() {
 
-  const id = "#panelAdmin-select-form"
-  const index = getValue(id);
+  const id = document.getElementById("id-form-product")
+  const index = parseInt(id.innerHTML)
+  console.log(index)
 
   // Select the inputs
   const newProductName = document.querySelector('#panelAdmin-name');
@@ -227,6 +232,7 @@ const generateList = () => {
 
   return (
     <>
+      <option value="-1" key="-1" disabled>Seleccione un producto</option>
       {
         productsController.products.map((product, index) => (
           <option className="panelAdmin-select-option" key={index} value={product.id}>{product.name}</option>
@@ -240,30 +246,63 @@ const generateList = () => {
 
 function PanelAdministracion() {
 
+
+
   const [formContent, setFormContent] = useState(
     <div className="panelAdmin-form-remove-product">
       <h2 className="panelAdmin-title-form">Ordenes</h2>
-      <select
+      <select defaultValue="-1"
         className="panelAdmin-form-select"
         id="panelAdmin-select-form"
       >
         {generateList()}
       </select>
+      <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardOrder}>Ver</button>
     </div>);
 
-  const orders = () => {
+  const [orders, setOrders] = useState([
+    { id: 1, date: "2024-11-01", total: 100 },
+    { id: 2, date: "2024-11-15", total: 50 },
+    { id: 3, date: "2024-11-15", total: 50 },
+  ]);
+
+  function cardOrder() {
+
+    setFormContent(
+      <section className="userpage-section">
+        <h2>Mis Órdenes</h2>
+        <ul className="userpage-orders-list">
+          {orders.map((order) => (
+            <li key={order.id} className="userpage-order-item">
+              <div className="userpage-order-details">
+                <strong>Orden #{order.id}</strong>
+                <p>Fecha: {order.date}</p>
+                <p>Total: ${order.total}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  const ordersForm = () => {
     setFormContent(
       <div className="panelAdmin-form-remove-product">
         <h2 className="panelAdmin-title-form">Ordenes</h2>
         <select
           className="panelAdmin-form-select"
           id="panelAdmin-select-form"
+          defaultValue="-1"
         >
           {generateList()}
         </select>
+        <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardOrder}>Ver</button>
       </div>
     );
   };
+
+
 
   const generateFormAdd = () => {
     setFormContent(
@@ -336,6 +375,7 @@ function PanelAdministracion() {
         <select
           className="panelAdmin-form-select"
           id="panelAdmin-select-form"
+          defaultValue="-1"
         >
           {generateList()}
         </select>
@@ -351,74 +391,152 @@ function PanelAdministracion() {
     );
   };
 
+  const cardformUpdate = () => {
+
+    const id = "#panelAdmin-select-form"
+    const index = getValue(id);
+    console.log(index)
+
+    setFormContent(
+
+      <div className="panelAdmin-show-updateProduct">
+        <div className="panelAdmin-form-add-product">
+        <h2 className="panelAdmin-title-form">Modificar Producto</h2>
+        <p id="id-form-product">{index}</p>
+        <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            id="panelAdmin-name"
+            className="panelAdmin-form-add-input"
+            placeholder="Nombre del producto"
+          />
+          <textarea
+            rows="4"
+            cols="40"
+            id="panelAdmin-desc"
+            className="panelAdmin-form-add-input"
+            placeholder="Descripcion"
+          ></textarea>
+          <textarea
+            rows="4"
+            id="panelAdmin-ingredients"
+            className="panelAdmin-form-add-input"
+            placeholder="Ingredientes"
+          ></textarea>
+          <select className="panelAdmin-form-add-input panelAdmin-form-select"
+            name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+            <option value="0" key="Categoria" disabled>Categoría</option>
+            <option value="desayuno" key="desayuno">Desayuno</option>
+            <option value="comida" key="comida">Comida</option>
+            <option value="cena" key="cena">Cena</option>
+          </select>
+          <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
+          <input
+            type="number"
+            id="panelAdmin-price"
+            className="panelAdmin-form-add-input"
+            placeholder="Precio"
+          />
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+            <input
+              type="text"
+              id="panelAdmin-extra-name"
+              className="panelAdmin-form-add-input"
+              placeholder="Extra"
+            />
+            <input
+              type="number"
+              id="panelAdmin-extra-price"
+              className="panelAdmin-form-add-input"
+              placeholder="Precio del extra"
+            />
+          </div>
+          <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
+            Añadir extra
+          </button>
+          <button className="panelAdmin-form-btn"  id="panelAdmin-submit" onClick={updateProductBtn}>
+            Enviar
+          </button>
+        </form>
+        </div>
+
+        <div className="card-menu">
+        <img
+          src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
+          alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
+          className="card-img-top-menu"
+        />
+        <div className="card-body-menu">
+          <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
+          <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
+          <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
+          <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
+          <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+      </div>
+
+    )
+  }
+
   const updateProduct = () => {
-    generateList();
     setFormContent(
       <div className="panelAdmin-form-update-product">
         <h2 className="panelAdmin-title-form">Selecciona un producto</h2>
         <select
           className="panelAdmin-form-select"
           id="panelAdmin-select-form"
+          defaultValue="-1"
         >
           {generateList()}
         </select>
+        <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardformUpdate}>Modificar</button>
+      </div>  
+    );
+  };
 
-        <div className="panelAdmin-form-add-product">
-          <h2 className="panelAdmin-title-form panelAdmin-update-form">Modifica los campos necesarios</h2>
-          <form className="panelAdmin-form-add" id="panelAdmin-newProductForm">
-            <input
-              type="text"
-              id="panelAdmin-name"
-              className="panelAdmin-form-add-input"
-              placeholder="Nombre del producto"
-            />
-            <textarea
-              rows="4"
-              cols="40"
-              id="panelAdmin-desc"
-              className="panelAdmin-form-add-input"
-              placeholder="Descripcion"
-            ></textarea>
-            <textarea
-              rows="4"
-              id="panelAdmin-ingredients"
-              className="panelAdmin-form-add-input"
-              placeholder="Ingredientes"
-            ></textarea>
-            <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
-            <select className="panelAdmin-form-add-input panelAdmin-form-select"
-              name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
-              <option value="0" key="0" disabled>Categoría</option>
-              <option value="1" key="1">desayuno</option>
-              <option value="2" key="2">comida</option>
-              <option value="3" key="3">cena</option>
-            </select>
-            <input
-              type="number"
-              id="panelAdmin-price"
-              className="panelAdmin-form-add-input"
-              placeholder="Precio"
-            />
-          </form>
-          <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={updateProductBtn}>
-            Enviar
+  const cardProduct = () => {
+
+    const id = "#panelAdmin-select-form"
+    const index = getValue(id);
+
+    console.log(index)
+
+    setFormContent(
+      <div className="card-menu">
+        <img
+          src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
+          alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
+          className="card-img-top-menu"
+        />
+        <div className="card-body-menu">
+          <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
+          <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
+          <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
+          <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
+          <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
+            Agregar al carrito
           </button>
         </div>
       </div>
     );
-  };
+  }
 
   const watchProduct = () => {
 
     setFormContent(
       <div className="panelAdmin-form-remove-product">
-        <h2 className="panelAdmin-title-form">Productos</h2>
+        <h2 className="panelAdmin-title-form">Selecciona un producto</h2>
         <select
           className="panelAdmin-form-select"
           id="panelAdmin-select-form"
+          defaultValue="-1"
         >
           {generateList()}
         </select>
+        <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardProduct}>Ver</button>
       </div>
     );
 
@@ -454,7 +572,7 @@ function PanelAdministracion() {
           <li key="0" className="panelAdmin-form-nav-item">
             <button
               className="panelAdmin-nav-item-btn"
-              onClick={orders}
+              onClick={ordersForm}
             >
               Ordenes
             </button>
