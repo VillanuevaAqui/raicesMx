@@ -112,11 +112,11 @@ const Cart = () => {
                             <span className="cart-total-price">${totalPrice.toFixed(2)}</span>
                         </div>
 
-                        <Link to="/checkout" className="cart-link">
-                            <button className="btn btn-success btn-purchase">
+                        <div className="cart-link">
+                            <Link to="/checkout" className="btn btn-success btn-purchase">
                                 Comprar
-                            </button>
-                        </Link>
+                            </Link>
+                        </div>
                     </>
                 )}
             </div>

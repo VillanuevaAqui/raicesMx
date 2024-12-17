@@ -121,7 +121,7 @@
 }
 
 .btn-purchase {
-    display: block;
+    display: inline-block;
     margin: 4rem auto 8rem auto;
     font-size: 3rem;
     padding: 1.5rem 2rem;
@@ -162,6 +162,8 @@
 
 .cart-link {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 .cart-extras {
