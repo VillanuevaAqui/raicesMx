@@ -112,8 +112,7 @@ const SubscribeSection = () => (
 
       <div className="">
         <button className="btn2C3">
-          <Link to="/beneficios" style={{ textDecoration: 'none' }}>
-            <p>Conoce más</p>
+          <Link to="/beneficios" className="btn2C3text" style={{ textDecoration: 'none' }}>Conoce más
           </Link>
         </button>
       </div>

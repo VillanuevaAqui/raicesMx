@@ -232,9 +232,12 @@
     align-items: center;
     background-color: var(--fourth);
     border-radius: 100px;
-    color: white;
     font-size: 2rem;
     padding: 5px 30px 5px;
+}
+
+.btn2C3text {
+    color: white;   
     text-decoration: none;
 }
 
