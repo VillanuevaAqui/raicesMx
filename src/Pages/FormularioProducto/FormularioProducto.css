@@ -183,3 +183,90 @@
     justify-content: center;
 
 }
+
+.panelAdmin-userpage-order-item{
+
+    width: 40rem;
+
+} 
+
+@media (max-width: 600px) {
+
+    .panelAdmin-form-nav {
+
+        flex-direction: column;
+
+    }
+
+    .panelAdmin-form-remove-product {
+
+        width: 96%;
+        padding: 2rem;
+
+    }
+
+    .panelAdmin-list-products {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+    }
+    
+    .panelAdmin-form-add-product {
+
+        width: 96%;
+
+    }
+
+    .panelAdmin-form-update-product {
+
+        width: 96%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .panelAdmin-form-select {
+
+        width: 30rem;
+
+    }
+
+    .panelAdmin-form-btn {
+
+        width: 15rem;
+    }
+
+    .panelAdmin-title-form {
+
+        font-size: 4rem;
+
+    }
+
+    .panelAdmin-show-updateProduct {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .panelAdmin-card-menu {
+
+        width: 96%;
+        margin-bottom: 0%;
+
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .panelAdmin-show-updateProduct {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+}
