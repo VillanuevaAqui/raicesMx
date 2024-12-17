@@ -60,7 +60,7 @@
 
 /* Tamaños para titulo card */
 h5.card-title-menu {
-    font-size: 3rem; /* Tamaño estándar del título */
+    font-size: 3.5rem; /* Tamaño estándar del título */
     font-weight: bold;
     margin: 1rem 0;
     
@@ -174,12 +174,12 @@ p.card-text-menu {
         font-size: 3.5rem; /* Reduce aún más para móviles */
         margin-bottom: 0.5rem; /* Ajusta el margen si es necesario */
     }
-    h5.card-title {
-        font-size: 1.8rem; /* Reduce el título */
+    h5.card-title-menu {
+        font-size: 2.8rem; /* Reduce el título */
     }
 
-    p.card-text {
-        font-size: 1.2rem; /* Reduce el texto descriptivo */
+    p.card-text-menu {
+        font-size: 1.7rem; /* Reduce el texto descriptivo */
     }
     .btn-menu {
         font-size: 1.6rem; /* Botón más pequeño */
@@ -219,11 +219,11 @@ p.card-text-menu {
     .content {
         padding: 2em;
     }
-    h5.card-title {
-        font-size: 2rem; /* Título moderado */
+    h5.card-title-menu {
+        font-size: 2.5rem; /* Título moderado */
     }
 
-    p.card-text {
+    p.card-text-menu {
         font-size: 1.4rem; /* Ajusta el texto */
     }
     .btn-menu {
