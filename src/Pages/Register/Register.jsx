@@ -55,6 +55,8 @@ export default function Register({ setShowRegister, setShowLogin }) {
     const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
     const [nameError, setNameError] = React.useState(false);
     const [nameErrorMessage, setNameErrorMessage] = React.useState('');
+    const [lastNameError, setLastNameError] = React.useState(false);
+    const [lastNameErrorMessage, setLastNameErrorMessage] = React.useState('');
     const [phoneError, setPhoneError] = React.useState(false);
     const [phoneErrorMessage, setPhoneErrorMessage] = React.useState('');
     const [confirmPasswordError, setConfirmPasswordError] = React.useState(false);
@@ -64,6 +66,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
         const email = document.getElementById('email');
         const password = document.getElementById('password');
         const name = document.getElementById('name');
+        const lastName = document.getElementById('lastName');
         const phone = document.getElementById('phone');
         const confirmPassword = document.getElementById('confirmPassword');
 
@@ -71,7 +74,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         if (!phone.value || !/^\d{10}$/.test(phone.value)) {
             setPhoneError(true);
-            setPhoneErrorMessage('Please enter a valid 10-digit phone number.');
+            setPhoneErrorMessage('Ingresa un número de teléfono válido.');
             isValid = false;
         } else {
             setPhoneError(false);
@@ -80,7 +83,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
             setEmailError(true);
-            setEmailErrorMessage('Please enter a valid email address.');
+            setEmailErrorMessage('Ingresa un email válido.');
             isValid = false;
         } else {
             setEmailError(false);
@@ -89,7 +92,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         if (!password.value || password.value.length < 6) {
             setPasswordError(true);
-            setPasswordErrorMessage('Password must be at least 6 characters long.');
+            setPasswordErrorMessage('La contraseña debe tener al menos 6 caracteres.');
             isValid = false;
         } else {
             setPasswordError(false);
@@ -98,7 +101,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         if (confirmPassword.value !== password.value) {
             setConfirmPasswordError(true);
-            setConfirmPasswordErrorMessage('Passwords do not match.');
+            setConfirmPasswordErrorMessage('Las contraseñas no coinciden.');
             isValid = false;
         } else {
             setConfirmPasswordError(false);
@@ -107,11 +110,20 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         if (!name.value || name.value.length < 1) {
             setNameError(true);
-            setNameErrorMessage('Name is required.');
+            setNameErrorMessage('Nombre no válido.');
             isValid = false;
         } else {
             setNameError(false);
             setNameErrorMessage('');
+        }
+
+        if (!lastName.value || lastName.value.length < 1) {
+            setLastNameError(true);
+            setLastNameErrorMessage('Apellido no válido.');
+            isValid = false;
+        } else {
+            setLastNameError(false);
+            setLastNameErrorMessage('');
         }
 
         return isValid;
@@ -119,13 +131,14 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (nameError || emailError || passwordError || phoneError || confirmPasswordError) {
+        if (nameError || emailError || passwordError || phoneError || confirmPasswordError || lastNameError) {
             return;
         }
 
         const data = new FormData(event.currentTarget);
         const userData = {
             name: data.get('name'),
+            lastName: data.get('lastName'),
             email: CryptoJS.MD5(data.get("email").toLowerCase()).toString(),
             phone: data.get('phone'),
             password: CryptoJS.MD5(data.get("password")).toString(),
@@ -157,6 +170,7 @@ export default function Register({ setShowRegister, setShowLogin }) {
         fontFamily: 'var(--font)',
         fontSize: '1.6rem',
         fontWeight: 'bold',
+        minWidth: '100vh'
     });
 
     const handleLinkClick = () => {
@@ -183,8 +197,9 @@ export default function Register({ setShowRegister, setShowLogin }) {
                         onSubmit={handleSubmit}
                         sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
+                        <div style={{ display: 'flex', gap: '10px'}}>
                         <FormControl>
-                            <CustomFormLabel htmlFor="name">Nombre completo</CustomFormLabel>
+                            <CustomFormLabel htmlFor="name">Nombre</CustomFormLabel>
                             <TextField
                                 autoComplete="name"
                                 name="name"
@@ -202,12 +217,31 @@ export default function Register({ setShowRegister, setShowLogin }) {
                             />
                         </FormControl>
                         <FormControl>
+                            <CustomFormLabel htmlFor="lastName">Apellido</CustomFormLabel>
+                            <TextField
+                                autoComplete="lastName"
+                                name="lastName"
+                                required
+                                fullWidth
+                                id="lastName"
+                                placeholder="Ingresa tu apellido"
+                                error={lastNameError}
+                                helperText={lastNameErrorMessage}
+                                sx={{
+                                    "& .MuiFormHelperText-root": {
+                                        fontSize: "1.1rem",
+                                    },
+                                }}
+                            />
+                        </FormControl>
+                        </div>
+                        <FormControl>
                             <CustomFormLabel htmlFor="email">Email</CustomFormLabel>
                             <TextField
                                 required
                                 fullWidth
                                 id="email"
-                                placeholder="your@email.com"
+                                placeholder="ejemplo@email.com"
                                 name="email"
                                 autoComplete="email"
                                 variant="outlined"
