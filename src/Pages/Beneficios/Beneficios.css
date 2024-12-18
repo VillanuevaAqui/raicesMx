@@ -1,5 +1,4 @@
 .benefits-wall {
-
     background-color: var(--secondary);
     margin-top: 6rem;
     padding: 2rem;
@@ -16,8 +15,6 @@
 }
 
 .benefits-card-title {
-
-
     background-color: var(--secondary);
     border-radius: 2rem;
     min-width: 100rem;
@@ -30,8 +27,6 @@
 }
     
 .benefits-description-container {
-
-    
     display: inline-block;
     text-align: center;
     justify-content: center;
@@ -40,7 +35,6 @@
 }
 
 .benefits-container-card{
-
     width: 100%;
     display: flex;
     text-align: center;
@@ -62,27 +56,23 @@
 }
 
 .benefits-img-benefit {
-
     width: 31.4rem;
     height: 31.4rem;
 
 }
 
 .benefits-title-card {
-
     background-color: transparent;
     border: 0;
     box-shadow: 0 0 0 ;
     display: block;
     margin: 3rem;
     width: 60rem;
-
 }
 
 
 
 .benefits-paragraph-card {
-
     margin: 2rem;
     display: block;
     width: 60rem;

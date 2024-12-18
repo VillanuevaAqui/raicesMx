@@ -3,7 +3,6 @@ import MenuCard from '../../components/Menu-card/Menu-card';
 import { Link } from 'react-router-dom';
 import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
 
-
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
   <main className="pp-main">
@@ -145,7 +144,7 @@ const Testimonials = () => (
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star"></span>
-        <span className="fa fa-star"></span>
+        <span className="fa fa-star"></span>       
 
         <p className="pp-comentario">
           El servicio a domicilio de la página es increíble, me han ayudado a
