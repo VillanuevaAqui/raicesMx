@@ -181,6 +181,11 @@ p.card-text-menu {
     color: white;
 }
 
+.col-md-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
                         
 /* *Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
@@ -326,4 +331,3 @@ p.card-text-menu {
         padding: 15px 30px;
     } */
 }
-    
