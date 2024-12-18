@@ -95,12 +95,12 @@ p.card-text-menu {
 
 /*----Tamaños para los titulos h1 ,h2, h3, menu----*/
 .h1-menu{
-    font-size: 6.5rem;  
+    font-size: 8.5rem;  
     font-weight: bold;
     text-align: center;
     color: var(--tertiary);
     background: var(--secondary);
-    width: 240px; /* Ancho fijo */
+    width: 310px; /* Ancho fijo */
     margin: 0 auto 20px; /* Centrar horizontalmente */
     padding: 1px; /* Espaciado interno */
     text-transform: uppercase;
