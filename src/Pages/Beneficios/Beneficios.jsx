@@ -17,7 +17,7 @@ const BENEFITS_GOLD = [
     title: "Personaliza tu menú",
     description:
       "Tienen la posibilidad de elegir entre una amplia gama de alimentos saludables y nutritivos, los cuales se entregarán de manera regular y en porciones que se alinean con su dieta personalizada. Además, el servicio ofrece flexibilidad para modificar el menú a lo largo del tiempo, ya sea para incorporar nuevos productos o ajustar las cantidades según los cambios en las necesidades del cliente.",
-    image: "assets/Fotos-RaícesMX-_1_.webp",
+    image: "assets/Fotos-RaícesMX-1.webp",
   },
 ];
 
