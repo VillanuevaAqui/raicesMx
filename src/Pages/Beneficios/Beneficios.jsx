@@ -5,19 +5,19 @@ const BENEFITS_GOLD = [
     title: "Envíos Gratis",
     description:
       "Al suscribirte, todos tus envíos serán completamente gratis, sin importar el monto de tu compra o tu ubicación. ¡Así, puedes comprar lo que quieras sin preocuparte por los gastos adicionales! Además, disfrutarás de ofertas exclusivas, acceso anticipado a nuevos productos y una experiencia de compra más rápida y cómoda.",
-    image: "assets/Envios-gratis.webp",
+    image: "assets/FreeDelivery2.webp",
   },
   {
     title: "Descuentos exclusivos",
     description:
       "Disfrutarás de descuentos especiales en productos seleccionados, con precios exclusivos solo para suscriptores. Accede a ofertas especiales, promociones únicas y precios reducidos en una amplia variedad de artículos, que no están disponibles para el público general. Además, recibirás alertas sobre las mejores ofertas antes que nadie, para que siempre puedas aprovechar las mejores oportunidades.",
-    image: "assets/sello-circular-rojo-palabra-exclusivo.webp",
+    image: "assets/ClienteFeliz.png",
   },
   {
     title: "Personaliza tu menú",
     description:
       "Tienen la posibilidad de elegir entre una amplia gama de alimentos saludables y nutritivos, los cuales se entregarán de manera regular y en porciones que se alinean con su dieta personalizada. Además, el servicio ofrece flexibilidad para modificar el menú a lo largo del tiempo, ya sea para incorporar nuevos productos o ajustar las cantidades según los cambios en las necesidades del cliente.",
-    image: "assets/Fotos-RaícesMX-1.webp",
+    image: "assets/PersonalizarMenu.png",
   },
 ];
 
@@ -26,7 +26,7 @@ const BENEFITS_PREMIUM = [
     title: "Soporte y atención prioritaria",
     description:
       "Tendrás acceso inmediato a nuestro equipo de soporte, siempre disponible para ayudarte en lo que necesites. Como suscriptor, serás atendido con prioridad, lo que significa tiempos de respuesta más rápidos y una solución más eficiente a cualquier consulta o inconveniente que surja. Ya sea que necesites asistencia con un producto, seguimiento de tu pedido o cualquier otra consulta, nuestro equipo estará listo para brindarte una atención personalizada y ágil. ¡Queremos que tu experiencia de compra sea lo más fácil y satisfactoria posible!",
-    image: "assets/Atencion-prioritaria.webp",
+    image: "assets/Soporte.png",
   },
   {
     title: "Atención de nutricionistas",
