@@ -451,9 +451,6 @@
 
 /* !MQ MAX 768PX*/
 @media (max-width: 768px) {
-    .pp-background-image {
-        height: 200px;
-    }
 
     .h1MCT,
     .h2MCT {
@@ -484,7 +481,7 @@
     }
 
     .Container5 {
-        background-color: var(--secondary);
+        /* background-color: var(--secondary); */
         border-radius: 10%;
         flex-direction: column;
         gap: 5rem;
@@ -500,9 +497,9 @@
 /* !MQ MAX 479PX*/
 @media (max-width: 479px) {
 
-    .pp-background-image {
+    /* .pp-background-image {
         height: 300px;
-    }
+    } */
 
     .h2MCT {
         font-size: 2.5rem;
