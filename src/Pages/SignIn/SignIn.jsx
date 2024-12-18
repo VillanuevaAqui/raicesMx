@@ -58,7 +58,7 @@ const SignInContainer = styled(Stack)({
   },
 });
 
-export default function SignIn({setShowLogin, setShowRegister}) {
+export default function SignIn({ setShowLogin, setShowRegister }) {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -256,15 +256,17 @@ export default function SignIn({setShowLogin, setShowRegister}) {
             >
               Iniciar sesión
             </Button>
-            <Link
-              component="button"
-              type="button"
-              onClick={handleClickOpen}
-              variant="body2"
-              sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
-            >
-              ¿Olvidaste tu contraseña?
-            </Link>
+            <Typography sx={{ textAlign: 'left', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
+              <Link
+                component="button"
+                type="button"
+                onClick={handleClickOpen}
+                variant="body2"
+                sx={{ alignSelf: 'left', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
+              >
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </Typography>
           </Box>
           <Divider>
             <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
@@ -286,12 +288,12 @@ export default function SignIn({setShowLogin, setShowRegister}) {
             >
               Iniciar sesión con Facebook
             </Button>
-            <Typography sx={{ textAlign: 'center' }}>
+            <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
               ¿No tienes una cuenta?{' '}
               <Link
                 onClick={handleLinkClick}
                 variant="body2"
-                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
+                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
               >
                 Registrate
               </Link>
