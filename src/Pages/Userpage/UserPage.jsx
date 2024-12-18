@@ -263,6 +263,7 @@ const UserPage = () => {
     };
    
 /*Funcion que se usaba anteriormente */
+
   /*  const handleExpirationChange = (e) => {
         let { value } = e.target;
 

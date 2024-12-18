@@ -18,6 +18,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import CryptoJS, { MD5 } from 'crypto-js';
 import { Password } from '@mui/icons-material';
 
+const API_URL = 'localhost:8080/api/user';
+
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
     fontFamily: 'var(--font)',
@@ -137,11 +139,11 @@ export default function Register({ setShowRegister, setShowLogin }) {
 
         const data = new FormData(event.currentTarget);
         const userData = {
-            name: data.get('name'),
-            lastName: data.get('lastName'),
+            first_name: data.get('name'),
+            last_name: data.get('lastName'),
             email: CryptoJS.MD5(data.get("email").toLowerCase()).toString(),
-            phone: data.get('phone'),
             password: CryptoJS.MD5(data.get("password")).toString(),
+            phone: data.get('phone')
         }
         console.log('Usuario registrado:', JSON.stringify(userData, null, 2));
 
@@ -149,21 +151,22 @@ export default function Register({ setShowRegister, setShowLogin }) {
         // localStorage.setItem('userData', JSON.stringify(userData));
         // console.log('Datos guardados en localStorage:', userData);
 
-        const storedUsers = localStorage.getItem('users');
-        const users = storedUsers ? JSON.parse(storedUsers) : []; // Si no hay usuarios, inicializar como arreglo vacío.
-        users.push(userData);
+        // const storedUsers = localStorage.getItem('users');
+        // const users = storedUsers ? JSON.parse(storedUsers) : [];
+        // users.push(userData);
 
-        // Guardar el arreglo actualizado en localStorage.
-        localStorage.setItem('users', JSON.stringify(users));
-        console.log('Usuarios almacenados:', users);
-        alert('Usuario agregado correctamente');
+        // localStorage.setItem('users', JSON.stringify(users));
+        // console.log('Usuarios almacenados:', users);
+        // alert('Usuario agregado correctamente');
 
-        // Do u think about me?
-        // fetch('API_URL', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(userData),
-        // });
+        fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData),
+        })
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch(err => console.log(err));
     };
 
     const CustomFormLabel = styled(FormLabel)({
@@ -197,43 +200,43 @@ export default function Register({ setShowRegister, setShowLogin }) {
                         onSubmit={handleSubmit}
                         sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
-                        <div style={{ display: 'flex', gap: '10px'}}>
-                        <FormControl>
-                            <CustomFormLabel htmlFor="name">Nombre</CustomFormLabel>
-                            <TextField
-                                autoComplete="name"
-                                name="name"
-                                required
-                                fullWidth
-                                id="name"
-                                placeholder="Ingresa tu nombre"
-                                error={nameError}
-                                helperText={nameErrorMessage}
-                                sx={{
-                                    "& .MuiFormHelperText-root": {
-                                        fontSize: "1.1rem",
-                                    },
-                                }}
-                            />
-                        </FormControl>
-                        <FormControl>
-                            <CustomFormLabel htmlFor="lastName">Apellido</CustomFormLabel>
-                            <TextField
-                                autoComplete="lastName"
-                                name="lastName"
-                                required
-                                fullWidth
-                                id="lastName"
-                                placeholder="Ingresa tu apellido"
-                                error={lastNameError}
-                                helperText={lastNameErrorMessage}
-                                sx={{
-                                    "& .MuiFormHelperText-root": {
-                                        fontSize: "1.1rem",
-                                    },
-                                }}
-                            />
-                        </FormControl>
+                        <div style={{ display: 'flex', gap: '10px' }}>
+                            <FormControl>
+                                <CustomFormLabel htmlFor="name">Nombre</CustomFormLabel>
+                                <TextField
+                                    autoComplete="name"
+                                    name="name"
+                                    required
+                                    fullWidth
+                                    id="name"
+                                    placeholder="Ingresa tu nombre"
+                                    error={nameError}
+                                    helperText={nameErrorMessage}
+                                    sx={{
+                                        "& .MuiFormHelperText-root": {
+                                            fontSize: "1.1rem",
+                                        },
+                                    }}
+                                />
+                            </FormControl>
+                            <FormControl>
+                                <CustomFormLabel htmlFor="lastName">Apellido</CustomFormLabel>
+                                <TextField
+                                    autoComplete="lastName"
+                                    name="lastName"
+                                    required
+                                    fullWidth
+                                    id="lastName"
+                                    placeholder="Ingresa tu apellido"
+                                    error={lastNameError}
+                                    helperText={lastNameErrorMessage}
+                                    sx={{
+                                        "& .MuiFormHelperText-root": {
+                                            fontSize: "1.1rem",
+                                        },
+                                    }}
+                                />
+                            </FormControl>
                         </div>
                         <FormControl>
                             <CustomFormLabel htmlFor="email">Email</CustomFormLabel>

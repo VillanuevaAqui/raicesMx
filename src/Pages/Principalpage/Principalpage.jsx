@@ -3,7 +3,6 @@ import MenuCard from '../../components/Menu-card/Menu-card';
 import { Link } from 'react-router-dom';
 import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
 
-
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
   <main className="pp-main">
@@ -25,48 +24,7 @@ const Main = () => (
 const MenuSection = () => (
   <section className="pp-SecundaryContainer">
     <h2 className="pp-SecundaryContainerTitle">Menú del día</h2>
-    {/* <section className="pp-menusContainer"> */}
     <MenuCard />
-    {/* {[1, 2].map((menuNumber) => (
-        <div id={`carouselMenu${menuNumber}`} className="pp-carousel-slide" key={menuNumber}>
-          <div className="carousel-indicators">
-            {[0, 1, 2].map((slide) => (
-              <button
-                type="button"
-                data-bs-target={`#carouselMenu${menuNumber}`}
-                data-bs-slide-to={slide}
-                className={slide === 0 ? 'active' : ''}
-                aria-current={slide === 0 ? 'true' : undefined}
-                aria-label={`Slide ${slide + 1}`}
-                key={slide}
-              ></button>
-            ))}
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src={`/assets/Menu${menuNumber}.webp`} className="pp-d-block w-100" alt={`Menu ${menuNumber}`} />
-              <br /><br />
-              <div className="pp-carousel card-body">
-                <h5 className="pp-menuTime">MENÚ {menuNumber}</h5>
-                <ul className="pp-menuText">
-                  <li>Desayuno: Descripción {menuNumber}</li>
-                  <li>Comida: Descripción {menuNumber}</li>
-                  <li>Cena: Descripción {menuNumber}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/* <button className="carousel-control-prev" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target={`#carouselMenu${menuNumber}`} data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button> }
-        </div>
-      ))} */}
-    {/* </section> */}
   </section>
 );
 
@@ -145,7 +103,7 @@ const Testimonials = () => (
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star"></span>
-        <span className="fa fa-star"></span>
+        <span className="fa fa-star"></span>       
 
         <p className="pp-comentario">
           El servicio a domicilio de la página es increíble, me han ayudado a

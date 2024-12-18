@@ -19,6 +19,15 @@ const sections = {
 const Nosotros = () => {
   const [activeSection, setActiveSection] = useState("Nuestras Raíces");
 
+  const integrantes = [
+    { nombre: "Maria Fernanda Ballesteros", img: "/assets/mariafernanda.webp" },
+    { nombre: "Jesús Duerto", img: "/assets/jesusduerto.webp" },
+    { nombre: "Christian Rodríguez", img: "/assets/christianrodriguez.webp" },
+    { nombre: "David Rojas", img: "/assets/davidrojas.webp" },
+    { nombre: "Félix Peñaloza", img: "/assets/felixpenaloza.webp" },
+    { nombre: "Alberto Villanueva", img: "/assets/albertovillanueva.webp" },
+  ];
+
   return (
     <main className="nosotros-main">
       <div className="nosotros-text-image">
@@ -54,6 +63,22 @@ const Nosotros = () => {
         </div>
         <div className="nosotros-about-logo">
           <img src={sections[activeSection].logo} alt="Logo RaícesMX" loading="lazy" />
+        </div>
+      </div>
+      <div className="nosotros-integrantes">
+        <h2 className="nosotros-integrantes-title">Integrantes</h2>
+        <div className="nosotros-integrantes-list">
+          {integrantes.map((integrante, index) => (
+            <div key={index} className="nosotros-integrante">
+              <img
+                src={integrante.img}
+                alt={`Foto de ${integrante.nombre}`}
+                className="nosotros-integrante-img"
+                loading="lazy"
+              />
+              <p className="nosotros-integrante-nombre">{integrante.nombre}</p>
+            </div>
+          ))}
         </div>
       </div>
     </main>
