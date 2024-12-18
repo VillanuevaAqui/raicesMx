@@ -237,6 +237,9 @@
     .extra-item {
         font-size: 1.2rem;
     }
+    .cart-total{
+        text-align: center;
+    }
 
 }
 
@@ -301,4 +304,13 @@
     .btn-purchase {
         width: 80%;
     }
+    /* .cart-column.cart-img {
+        display: block;
+    }
+    .cart-item-image{
+        display: block;
+    }
+    .cart-img {
+        width: 100%;
+    } */
 }

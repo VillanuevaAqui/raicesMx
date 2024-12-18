@@ -1,10 +1,16 @@
 import "./Checkout.css";
-import { useCart } from "../Cart/CartContext";
+import { useCart} from "../Cart/CartContext";
 import { Container } from "@mui/material";
 
 const Checkout = () => {
-    const { totalPrice, extraCosts, setExtraCosts, finalPrice } = useCart();
+    const { totalPrice, extraCosts, setExtraCosts, finalPrice, clearCart } = useCart();
     setExtraCosts(50);
+
+    const handlePurchase = () => {
+        clearCart();
+        alert("Compra realizada con éxito!");
+    }
+
     return (
         <div className="cart-container">
             <div className="checkout-content">
@@ -46,7 +52,7 @@ const Checkout = () => {
                             </div>
                             <button
                                 className="btn btn-success btn-purchase"
-                                onClick={() => alert("Compra realizada con éxito!")}
+                                onClick={() => handlePurchase()}
                             >
                                 Método de pago
                             </button>

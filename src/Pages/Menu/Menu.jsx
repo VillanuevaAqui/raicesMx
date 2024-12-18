@@ -43,13 +43,13 @@ const Menu = () => {
     // Renderizar tarjetas
     const renderProductCards = (category) => {
         const products = menuItems[category];
-    
+
         // Agrupar los productos en filas de 3
         const rows = [];
         for (let i = 0; i < products.length; i += 3) {
             rows.push(products.slice(i, i + 3));
         }
-    
+
         return rows.map((row, rowIndex) => (
             <div className="row col-12 d-flex justify-content-center" key={rowIndex}>
                 {row.map((product) => (
@@ -77,8 +77,10 @@ const Menu = () => {
     };
     return (
         <div className="menu">
-            <h1 className="h1-menu">Menú</h1>
-
+            {/* Contenedor del encabezado */}
+            <div className="menu-header">
+                <h1 className="h1-menu">Menú</h1>
+            </div>
             {/* Botones de categorías */}
             <div className="menu-options">
                 <button

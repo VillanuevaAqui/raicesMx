@@ -58,7 +58,7 @@ const SignInContainer = styled(Stack)({
   },
 });
 
-export default function SignIn({setShowLogin, setShowRegister}) {
+export default function SignIn({ setShowLogin, setShowRegister }) {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -219,7 +219,7 @@ export default function SignIn({setShowLogin, setShowRegister}) {
               />
             </FormControl>
             <FormControl>
-              <CustomFormLabel htmlFor="password" >Password</CustomFormLabel>
+              <CustomFormLabel htmlFor="password" >Contraseña</CustomFormLabel>
               <TextField
                 error={passwordError}
                 helperText={passwordErrorMessage}
@@ -237,7 +237,7 @@ export default function SignIn({setShowLogin, setShowRegister}) {
             </FormControl>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Recuerdame"
             />
             <ForgotPassword open={open} handleClose={handleClose} />
             <Button className='sign-in'
@@ -254,17 +254,19 @@ export default function SignIn({setShowLogin, setShowRegister}) {
               }}
 
             >
-              Sign in
+              Iniciar sesión
             </Button>
-            <Link
-              component="button"
-              type="button"
-              onClick={handleClickOpen}
-              variant="body2"
-              sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
-            >
-              Forgot your password?
-            </Link>
+            <Typography sx={{ textAlign: 'left', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
+              <Link
+                component="button"
+                type="button"
+                onClick={handleClickOpen}
+                variant="body2"
+                sx={{ alignSelf: 'left', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
+              >
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </Typography>
           </Box>
           <Divider>
             <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
@@ -276,7 +278,7 @@ export default function SignIn({setShowLogin, setShowRegister}) {
               onClick={() => alert('Sign in with Google')}
               startIcon={<GoogleIcon />}
             >
-              Sign in with Google
+              Iniciar sesión con Google
             </Button>
             <Button
               fullWidth
@@ -284,16 +286,16 @@ export default function SignIn({setShowLogin, setShowRegister}) {
               onClick={() => alert('Sign in with Facebook')}
               startIcon={<FacebookIcon />}
             >
-              Sign in with Facebook
+              Iniciar sesión con Facebook
             </Button>
-            <Typography sx={{ textAlign: 'center' }}>
-              Don&apos;t have an account?{' '}
+            <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
+              ¿No tienes una cuenta?{' '}
               <Link
                 onClick={handleLinkClick}
                 variant="body2"
-                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
+                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
               >
-                Sign up
+                Registrate
               </Link>
             </Typography>
           </Box>
