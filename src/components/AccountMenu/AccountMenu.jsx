@@ -10,8 +10,10 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Person2Icon from '@mui/icons-material/Person2';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export default function AccountMenu({ setIsLoggedIn }) {
+    const [isAdmin, setIsAdmin] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -25,6 +27,12 @@ export default function AccountMenu({ setIsLoggedIn }) {
         sessionStorage.removeItem("loggedInUser");
         setIsLoggedIn(false);
     };
+
+    useEffect(() => {
+        const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+        const isUserAdmin = loggedInUser.role === 'admin';
+        setIsAdmin(isUserAdmin === true);
+    }, []);
 
     return (
         <React.Fragment>
@@ -84,27 +92,33 @@ export default function AccountMenu({ setIsLoggedIn }) {
                 <MenuItem onClick={handleClose}>
                     <Link className="nav-account-item" to="/userpage">
                         <ListItemIcon>
-                            <Person2Icon fontSize="large" style={{ color: "var(--secondary)"}} />
+                            <Person2Icon fontSize="large" style={{ color: "var(--secondary)" }} />
                         </ListItemIcon>
                         Mi cuenta
                     </Link>
                 </MenuItem>
-                <hr className="nav-profile-dropdown-divider"/>
-                <MenuItem onClick={handleClose}>
-                    <Link className="nav-account-item" to="/PanelAdministracion">
-                        <ListItemIcon>
-                            <AdminPanelSettingsIcon fontSize="large" style={{ color: "var(--secondary)"}} />
-                        </ListItemIcon>
-                        Administrador
-                    </Link>
-                </MenuItem>
-                <hr className="nav-profile-dropdown-divider"/>
+                {isAdmin ? (
+                    <div>
+                        <hr className="nav-profile-dropdown-divider" />
+                        <MenuItem onClick={handleClose}>
+                            <Link className="nav-account-item" to="/PanelAdministracion">
+                                <ListItemIcon>
+                                    <AdminPanelSettingsIcon fontSize="large" style={{ color: "var(--secondary)" }} />
+                                </ListItemIcon>
+                                Administrador
+                            </Link>
+                        </MenuItem>
+                        <hr className="nav-profile-dropdown-divider" />
+                    </div>
+                ) : (
+                    <hr className="nav-profile-dropdown-divider" />
+                )}
                 <MenuItem onClick={handleClose}>
                     <Link to="/" className='nav-account-item' onClick={() => logout()}>
                         <ListItemIcon>
-                            <Logout fontSize="large" style={{ color: "var(--secondary)"}} />
+                            <Logout fontSize="large" style={{ color: "var(--secondary)" }} />
                         </ListItemIcon>
-                        Logout
+                        Cerrar sesión
                     </Link>
                 </MenuItem>
             </Menu>

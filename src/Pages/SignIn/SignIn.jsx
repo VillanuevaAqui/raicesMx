@@ -126,7 +126,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
           title: "Usuario o contraseña incorrectas",
         });
       }
-    } catch{
+    } catch (error) {
       console.error(error);
       Swal.fire({
         icon: "error",

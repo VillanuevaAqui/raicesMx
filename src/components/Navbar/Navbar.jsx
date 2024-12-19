@@ -12,11 +12,6 @@ const Navbar = ({ setShowRegister }) => {
         setIsLoggedIn(isUserLoggedIn === true);
     }, []);
 
-    const logout = () => {
-        sessionStorage.removeItem("loggedInUser");
-        setIsLoggedIn(false);
-    };
-
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
