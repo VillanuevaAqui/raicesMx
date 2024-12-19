@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
@@ -16,9 +15,10 @@ import './Register.css';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import CryptoJS, { MD5 } from 'crypto-js';
-import { Password } from '@mui/icons-material';
+import Swal from 'sweetalert2';
 
-const API_URL = 'localhost:8080/api/user';
+
+const API_URL = 'http://3.135.216.95:8080/api/user';
 
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
@@ -143,30 +143,55 @@ export default function Register({ setShowRegister, setShowLogin }) {
             last_name: data.get('lastName'),
             email: CryptoJS.MD5(data.get("email").toLowerCase()).toString(),
             password: CryptoJS.MD5(data.get("password")).toString(),
-            phone: data.get('phone')
+            phone: data.get('phone'),
+            role: 'user'
         }
         console.log('Usuario registrado:', JSON.stringify(userData, null, 2));
 
-        // Convierte el objeto a JSON y lo almacena en localStorage.
-        // localStorage.setItem('userData', JSON.stringify(userData));
-        // console.log('Datos guardados en localStorage:', userData);
+        fetch(API_URL, { method: 'GET' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo obtener la lista de usuarios.");
+                }
+                return response.json();
+            })
+            .then(users => {
+                const emailExists = users.some(user => user.email === userData.email);
+                if (emailExists) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Este correo ya está registrado"
+                    });
+                    return;
+                }
 
-        // const storedUsers = localStorage.getItem('users');
-        // const users = storedUsers ? JSON.parse(storedUsers) : [];
-        // users.push(userData);
-
-        // localStorage.setItem('users', JSON.stringify(users));
-        // console.log('Usuarios almacenados:', users);
-        // alert('Usuario agregado correctamente');
-
-        fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(userData),
-        })
-            .then(response => response.json())
+                return fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(userData),
+                });
+            })
+            .then(response => {
+                if (response && response.ok) {
+                    Swal.fire({
+                        title: "¡Usuario registrado exitosamente!",
+                        icon: "success"
+                    });
+                    handleLinkClick();
+                    return response.json();
+                } else if (response) {
+                    throw new Error("Ocurrió un error al registrar el usuario.");
+                }
+            })
             .then(json => console.log(json))
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.error(err);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Algo salió mal!",
+                });
+            });
     };
 
     const CustomFormLabel = styled(FormLabel)({

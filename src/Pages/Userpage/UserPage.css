@@ -107,6 +107,45 @@
     box-sizing: border-box;
 }
 
+/* =Styles para los inputs de card "Mis Datos" = */
+
+.userpage-input-container-personal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Separación entre los campos */
+    width: 100%;
+    
+}
+
+/*Estilo para cada label e input */
+.userpage-personal-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px; /* Define un ancho fijo y consistente */
+    gap: 10px; /* Espaciado entre el label y el input */
+    font-size: 2.1rem;
+    color: var(--fourth);
+    font-weight: bold;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    margin-bottom: 15px;
+}
+/* Estilo para los inputs */
+.userpage-input-personal {
+    flex: 1; /* Hace que los inputs ocupen el espacio restante */
+    max-width: 400px; /* Ancho máximo de los inputs */
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 2px 2px 30px 2px lightgrey;
+    font-size: 1.5rem;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+}
+/* =Termina: Styles para los inputs de Mis Datos = */
+
+
 /* === Contenedor de número de tarjeta === */
 .userpage-card-number-container {
     display: flex;
@@ -116,7 +155,7 @@
 .userpage-card-number-input {
     width: 60px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* === Contenedor para fecha de expiración y CVV === */
@@ -138,7 +177,7 @@
 
 /* === Diseño de los botones === */
 .userpage-update-btn {
-    background-color: var(--tertiary);
+    background-color: var(--tertiary)  !important;
     color: var(--primary);
     padding: 15px 30px;
     border: none;
@@ -152,7 +191,7 @@
 
 .userpage-update-btn:hover {
     color: var(--primary);
-    background-color: var(--fourth);
+    background-color: var(--fourth)  !important;
 }
 
 /* === Lista de órdenes === */
@@ -350,7 +389,7 @@
     padding: 1rem 3rem;
     font-size: 1.6rem;
     color: var(--primary);
-    background-color: var(--fourth);
+    background-color: var(--tertiary);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -358,7 +397,7 @@
   }
   
   .userpage-food-allergy-form button:hover {
-    background-color: var(--tertiary);
+    background-color: var(--fourth);
   }
 /* === Termina foodAllergyForms  === */
 
@@ -398,7 +437,7 @@
 
     .userpage-card-number-input {
         width: 50px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .userpage-card {

@@ -1,7 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from "sweetalert2";
+
 
 
 const UserPage = () => {
@@ -11,6 +13,44 @@ const UserPage = () => {
         phone: "",
         postalCode: "", // Nuevo campo para código postal
     });
+
+     // Cargar datos desde sessionStorage al iniciar
+     useEffect(() => {
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        if (loggedInUser) {
+            setUserData((prevState) => ({
+                ...prevState,
+                name: `${loggedInUser.first_name} ${loggedInUser.last_name || ""}`,
+                phone: loggedInUser.phone || "",
+            }));
+
+            // Mostrar alerta de bienvenida
+            Swal.fire({
+                title: `¡Bienvenido, ${loggedInUser.first_name} ${loggedInUser.last_name || ""}!`,
+                text: "Estamos muy felices de tenerte con nosotros.",
+                icon: "success",
+                background:"#f6f4f1" ,
+                padding: "3em",
+                showClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                    `
+                },
+                hideClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                    `
+                },
+                confirmButtonText: "Gracias",
+                confirmButtonColor: "#3085d6",
+                allowOutsideClick: false
+            });
+        }
+    }, []);
 
     const [paymentData, setPaymentData] = useState({
         cardName: "",
@@ -283,6 +323,7 @@ const UserPage = () => {
         }));
     };  */
 
+
     const renderSection = () => {
         switch (currentSection) {
             case "personal":
@@ -290,12 +331,12 @@ const UserPage = () => {
                     <section className="userpage-section">
                         <h2>Mis datos</h2>
                         <form onSubmit={handleUpdate}>
-                            <div className="userpage-input-container">
-                                <label>
+                            <div className="userpage-input-container-personal">
+                                <label className="userpage-personal-label-container">
                                     Nombre:
                                     <input
                                         placeholder="Tu nombre completo"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="name"
                                         value={userData.name}
@@ -303,11 +344,11 @@ const UserPage = () => {
                                         maxLength="50"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Dirección:
                                     <input
                                         placeholder="Tu dirección"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="address"
                                         value={userData.address}
@@ -315,11 +356,11 @@ const UserPage = () => {
                                         maxLength="100"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Teléfono:
                                     <input
                                         placeholder="Tu número de teléfono"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="phone"
                                         value={userData.phone}
@@ -327,11 +368,11 @@ const UserPage = () => {
                                         maxLength="15"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Código Postal:
                                     <input
                                         placeholder="Tu código postal"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="postalCode"
                                         value={userData.postalCode}
@@ -488,7 +529,7 @@ const UserPage = () => {
                                     </div>
                                 </li>
                             ))}
-                        </ul>handleExpirationDateChange   
+                        </ul>
                     </section>
                 );
 

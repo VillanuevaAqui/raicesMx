@@ -2,12 +2,15 @@ import "./Navbar.css";
 import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
 import AccountMenu from "../AccountMenu/AccountMenu";
+import { useState, useEffect } from 'react';
 
 const Navbar = ({ setShowRegister }) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const logout = () => {
-
-    }
+    useEffect(() => {
+        const isUserLoggedIn = sessionStorage.getItem("loggedInUser") !== null;
+        setIsLoggedIn(isUserLoggedIn === true);
+    }, []);
 
     return (
         <nav className="navbar navbar-expand-lg">
@@ -62,8 +65,12 @@ const Navbar = ({ setShowRegister }) => {
                         <NavLink className="nav-link" to="/beneficios">
                             Beneficios
                         </NavLink>
-                        <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
-                        <AccountMenu />
+                        {/* Inicio de sesión */}
+                        {!isLoggedIn ? (
+                            <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        ) : (
+                            <AccountMenu setIsLoggedIn={setIsLoggedIn}/>
+                        )}
                         <NavLink className="nav-link" to="/cart">
                             <CartBadge />
                         </NavLink>
@@ -75,16 +82,3 @@ const Navbar = ({ setShowRegister }) => {
 };
 
 export default Navbar;
-
-
-{/* <div className="navbar-profile nav-link">
-<Person2Icon
-    style={{ color: "var(--secondary)", fontSize: "30", cursor: "pointer" }} />
-<ul className="nav-profile-dropdown">
-    <li><Link className="nav-profile-link" to="/userpage"><AccountBoxIcon fontSize="large"/><p>Mi cuenta</p></Link></li>
-    <hr className="nav-profile-dropdown-divider"/>
-    <li><Link className="nav-profile-link" to="/formularioProducto"><AdminPanelSettingsIcon fontSize="large" /><p>Administrador</p></Link></li>
-    <hr className="nav-profile-dropdown-divider"/>
-    <li onClick={logout}><LogoutIcon fontSize="large" /><p>Cerrar sesión</p></li>
-</ul>
-</div> */}
