@@ -19,6 +19,10 @@ import { Link } from 'react-router-dom';
 import "./SignIn.css";
 import UsersExample from './database';
 import CloseIcon from '@mui/icons-material/Close';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router'
+
+const API_URL = 'http://3.135.216.95:8080/api/user';
 
 async function loadExampleUsers() {
 
@@ -64,6 +68,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -99,9 +104,36 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
     return encrypt(inputText);
   };
 
-  const toCompare = (email, password) => {
+  const toCompare = async (email, password) => {
+    try {
+      const response = await fetch(API_URL, {method: 'GET'});
+      if (!response.ok) throw new Error('Error al obtener lo usuarios.');
+      const users = await response.json();
+      const foundUser = users.find(user => user.email === email && user.password === password);
+      if (foundUser){
+        Swal.fire({
+          title: "Inicio de sesión exitoso",
+          icon: "success"
+        });
+        sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+        setShowLogin(false);
+        navigate(0);
+      }else{
+        Swal.fire({
+          icon: "error",
+          title: "Usuario o contraseña incorrectas",
+        });
+      }
+    } catch{
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ocurrió un error, intente más tarde...",
+      });
+    }
 
-    let coincidences = 0;
+    /*let coincidences = 0;
     const users = JSON.parse(localStorage.getItem("users"));
 
     for (let user of users) {
@@ -126,7 +158,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
     } else {
 
       alert("Error, favor de comunicarse a soporte")
-    }
+    }*/
   }
 
   const validateInputs = (event) => {
@@ -140,7 +172,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
 
     if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
       setEmailError(true);
-      setEmailErrorMessage('Please enter a valid email address.');
+      setEmailErrorMessage('Ingresa un email válido.');
       isValid = false;
     } else {
       setEmailError(false);
@@ -149,7 +181,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
 
     if (!password.value || password.value.length < 6) {
       setPasswordError(true);
-      setPasswordErrorMessage('Password must be at least 6 characters long.');
+      setPasswordErrorMessage('La contraseña debe tener al menos 6 caracteres.');
       isValid = false;
     } else {
       setPasswordError(false);
@@ -209,7 +241,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="ejemplo@email.com"
                 autoComplete="email"
                 autoFocus
                 required
@@ -295,7 +327,7 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
                 variant="body2"
                 sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
               >
-                Registrate
+                Regístrate
               </Link>
             </Typography>
           </Box>

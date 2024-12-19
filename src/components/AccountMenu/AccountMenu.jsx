@@ -20,6 +20,12 @@ export default function AccountMenu() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const logout = () => {
+        sessionStorage.removeItem("loggedInUser");
+        setIsLoggedIn(false);
+    };
+
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -94,12 +100,12 @@ export default function AccountMenu() {
                 </MenuItem>
                 <hr className="nav-profile-dropdown-divider"/>
                 <MenuItem onClick={handleClose}>
-                    <div className='nav-account-item'>
+                    <Link to="/" className='nav-account-item' onClick={() => logout()}>
                         <ListItemIcon>
                             <Logout fontSize="large" style={{ color: "var(--secondary)"}} />
                         </ListItemIcon>
                         Logout
-                    </div>
+                    </Link>
                 </MenuItem>
             </Menu>
         </React.Fragment>
