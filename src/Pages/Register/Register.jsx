@@ -18,7 +18,7 @@ import CryptoJS, { MD5 } from 'crypto-js';
 import Swal from 'sweetalert2';
 
 
-const API_URL = 'http://3.135.216.95:8080/api';
+const API_URL = 'http://3.135.216.95:8080/api/user';
 
 // Estilo del contenedor principal del formulario
 const Card = styled(MuiCard)({
@@ -148,49 +148,50 @@ export default function Register({ setShowRegister, setShowLogin }) {
         }
         console.log('Usuario registrado:', JSON.stringify(userData, null, 2));
 
-        fetch(`${API_URL}/user`, { method: 'GET' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("No se pudo obtener la lista de usuarios.");
-            }
-            return response.json();
-        })
-        .then(users => {
-            const emailExists = users.some(user => user.email === userData.email);
-            if (emailExists) {
-                Swal.fire({
-                    icon: "warning",
-                    title: "Este correo ya está registrado"
-                  });
-                return;
-            }
-
-            return fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(userData),
-            });
-        })
-        .then(response => {
-            if (response && response.ok) {
-                Swal.fire({
-                    title: "¡Usuario registrado exitosamente!",
-                    icon: "success"
-                  });
+        fetch(API_URL, { method: 'GET' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo obtener la lista de usuarios.");
+                }
                 return response.json();
-            } else if (response) {
-                throw new Error("Ocurrió un error al registrar el usuario.");
-            }
-        })
-        .then(json => console.log(json))
-        .catch(err => {
-            console.error(err);
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Algo salió mal!",
-              });
-        });
+            })
+            .then(users => {
+                const emailExists = users.some(user => user.email === userData.email);
+                if (emailExists) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Este correo ya está registrado"
+                    });
+                    return;
+                }
+
+                return fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(userData),
+                });
+            })
+            .then(response => {
+                if (response && response.ok) {
+                    Swal.fire({
+                        title: "¡Usuario registrado exitosamente!",
+                        icon: "success"
+                    });
+                    handleLinkClick();
+                    return response.json();
+                } else if (response) {
+                    throw new Error("Ocurrió un error al registrar el usuario.");
+                }
+            })
+            .then(json => console.log(json))
+            .catch(err => {
+                console.error(err);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Algo salió mal!",
+                });
+            });
     };
 
     const CustomFormLabel = styled(FormLabel)({
