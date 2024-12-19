@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,6 +11,21 @@ const UserPage = () => {
         phone: "",
         postalCode: "", // Nuevo campo para código postal
     });
+
+     // Cargar datos desde sessionStorage al iniciar
+     useEffect(() => {
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        if (loggedInUser) {
+            setUserData((prevState) => ({
+                ...prevState,
+                name: `${loggedInUser.first_name} ${loggedInUser.last_name || ""}`,
+                phone: loggedInUser.phone || "",
+            }));
+
+            // Mostrar alerta de bienvenida
+            alert(`¡Bienvenido, ${loggedInUser.first_name} ${loggedInUser.last_name}!`);
+        }
+    }, []);
 
     const [paymentData, setPaymentData] = useState({
         cardName: "",
@@ -282,6 +297,7 @@ const UserPage = () => {
             expirationDate: value,
         }));
     };  */
+
 
     const renderSection = () => {
         switch (currentSection) {
