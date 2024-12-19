@@ -2,7 +2,7 @@ import "./Navbar.css";
 import { Link, NavLink } from 'react-router-dom';
 import CartBadge from "../CartBadge/CartBadge";
 import AccountMenu from "../AccountMenu/AccountMenu";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = ({ setShowRegister }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -74,7 +74,7 @@ const Navbar = ({ setShowRegister }) => {
                         {!isLoggedIn ? (
                             <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
                         ) : (
-                            <AccountMenu />
+                            <AccountMenu setIsLoggedIn={setIsLoggedIn}/>
                         )}
                         <NavLink className="nav-link" to="/cart">
                             <CartBadge />

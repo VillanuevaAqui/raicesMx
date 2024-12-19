@@ -116,8 +116,10 @@ export default function SignIn({ setShowLogin, setShowRegister }) {
           icon: "success"
         });
         sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
-        setShowLogin(false);
-        navigate(0);
+        setTimeout(() => {
+          setShowLogin(false);
+          navigate(0);
+        }, 1500);
       }else{
         Swal.fire({
           icon: "error",
