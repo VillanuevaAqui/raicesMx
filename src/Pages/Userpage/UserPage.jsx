@@ -290,12 +290,12 @@ const UserPage = () => {
                     <section className="userpage-section">
                         <h2>Mis datos</h2>
                         <form onSubmit={handleUpdate}>
-                            <div className="userpage-input-container">
-                                <label>
+                            <div className="userpage-input-container-personal">
+                                <label className="userpage-personal-label-container">
                                     Nombre:
                                     <input
                                         placeholder="Tu nombre completo"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="name"
                                         value={userData.name}
@@ -303,11 +303,11 @@ const UserPage = () => {
                                         maxLength="50"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Dirección:
                                     <input
                                         placeholder="Tu dirección"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="address"
                                         value={userData.address}
@@ -315,11 +315,11 @@ const UserPage = () => {
                                         maxLength="100"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Teléfono:
                                     <input
                                         placeholder="Tu número de teléfono"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="phone"
                                         value={userData.phone}
@@ -327,11 +327,11 @@ const UserPage = () => {
                                         maxLength="15"
                                     />
                                 </label>
-                                <label>
+                                <label className="userpage-personal-label-container">
                                     Código Postal:
                                     <input
                                         placeholder="Tu código postal"
-                                        className="userpage-input"
+                                        className="userpage-input-personal"
                                         type="text"
                                         name="postalCode"
                                         value={userData.postalCode}
@@ -488,7 +488,7 @@ const UserPage = () => {
                                     </div>
                                 </li>
                             ))}
-                        </ul>handleExpirationDateChange   
+                        </ul>
                     </section>
                 );
 
