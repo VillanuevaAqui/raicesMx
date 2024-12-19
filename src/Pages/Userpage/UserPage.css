@@ -140,7 +140,7 @@
     border-radius: 1rem;
     border: none;
     box-shadow: 2px 2px 30px 2px lightgrey;
-    font-size: 1rem;
+    font-size: 1.5rem;
     box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
 }
 /* =Termina: Styles para los inputs de Mis Datos = */
@@ -155,7 +155,7 @@
 .userpage-card-number-input {
     width: 60px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* === Contenedor para fecha de expiración y CVV === */
@@ -437,7 +437,7 @@
 
     .userpage-card-number-input {
         width: 50px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .userpage-card {

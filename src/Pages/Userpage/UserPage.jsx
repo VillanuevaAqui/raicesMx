@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from "sweetalert2";
+
 
 
 const UserPage = () => {
@@ -23,7 +25,30 @@ const UserPage = () => {
             }));
 
             // Mostrar alerta de bienvenida
-            alert(`¡Bienvenido, ${loggedInUser.first_name} ${loggedInUser.last_name}!`);
+            Swal.fire({
+                title: `¡Bienvenido, ${loggedInUser.first_name} ${loggedInUser.last_name || ""}!`,
+                text: "Estamos muy felices de tenerte con nosotros.",
+                icon: "success",
+                background:"#f6f4f1" ,
+                padding: "3em",
+                showClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                    `
+                },
+                hideClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                    `
+                },
+                confirmButtonText: "Gracias",
+                confirmButtonColor: "#3085d6",
+                allowOutsideClick: false
+            });
         }
     }, []);
 
