@@ -177,7 +177,7 @@
 
 /* === Diseño de los botones === */
 .userpage-update-btn {
-    background-color: var(--tertiary);
+    background-color: var(--tertiary)  !important;
     color: var(--primary);
     padding: 15px 30px;
     border: none;
@@ -191,7 +191,7 @@
 
 .userpage-update-btn:hover {
     color: var(--primary);
-    background-color: var(--fourth);
+    background-color: var(--fourth)  !important;
 }
 
 /* === Lista de órdenes === */
@@ -389,7 +389,7 @@
     padding: 1rem 3rem;
     font-size: 1.6rem;
     color: var(--primary);
-    background-color: var(--fourth);
+    background-color: var(--tertiary);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -397,7 +397,7 @@
   }
   
   .userpage-food-allergy-form button:hover {
-    background-color: var(--tertiary);
+    background-color: var(--fourth);
   }
 /* === Termina foodAllergyForms  === */
 
