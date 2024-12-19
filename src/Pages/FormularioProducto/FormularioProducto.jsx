@@ -2,8 +2,9 @@
 import "./FormularioProducto.css"
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
+import Swal from 'sweetalert2';
 
-
+const API_URL = 'http://3.135.216.95:8080/api/product';
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Validaciones del formulario
@@ -31,8 +32,9 @@ const validateForm = (name = "", desc = "", ingredients = "", imageURL = "", pri
   // Validar URL de imagen
   const fileInput = document.querySelector('#panelAdmin-image');
   const file = fileInput.files[0]; // Obtener el archivo seleccionado
-  if (!file || file.type !== "image/png") {
-    alert("Debe seleccionar una imagen en formato PNG.");
+  const validTypes = ["image/png", "image/jpeg", "image/webp"];
+  if (!file || !validTypes.includes(file.type)) {
+    alert("Debe seleccionar una imagen en formato PNG, JPG o WEBP.");
     isValid = false;
   }
 
@@ -49,8 +51,9 @@ const validateForm = (name = "", desc = "", ingredients = "", imageURL = "", pri
 
 const handleImageChange = (event) => {
   const file = event.target.files[0]; // Obtener el archivo seleccionado
-  if (file && file.type !== "image/png") {
-    alert("Por favor, seleccione solo imágenes en formato PNG.");
+  const validTypes = ["image/png", "image/jpeg", "image/webp"];
+  if (file && !validTypes.includes(file.type)) {
+    alert("Por favor, seleccione solo imágenes en formato PNG, JPG o WEBP.");
     event.target.value = ""; // Limpia el campo si el archivo no es válido
   } else {
     console.log("Archivo válido:", file);
@@ -93,12 +96,60 @@ function handleExtras() {
   }
   const newExtra = { name: extraName, price: extraPrice };
   extras.push(newExtra);
+  Swal.fire({
+    title: "Extra añadido",
+    icon: "success"
+  });
   console.log(extras);
   newProductExtraName.value = '';
   newProductExtraPrice.value = '';
 }
 
-function addProductBtn() {
+function extrasToString(extras) {
+  return extras.map(extra => `${extra.name}: ${extra.price}`).join(', ');
+}
+
+const uploadImage = async (image) => {
+  const file = image.files[0];
+  const formData = new FormData();
+  formData.append("file", file);
+  try {
+    // Realiza la petición POST
+    const response = await fetch(`${API_URL}/upload`, {
+      method: "POST",
+      body: formData
+    });
+    if (!response.ok) {
+      throw new Error(`Error en la carga: ${response.status}`);
+    }
+    const result = await response.text();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error("Hubo un problema con la solicitud:", error.message);
+  }
+}
+
+const postProduct = async (productData) => {
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(productData)
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    const result = await response.json();
+    console.log("Respuesta del servidor:", result);
+  } catch (error) {
+    console.error("Hubo un problema con la solicitud:", error.message);
+  }
+}
+
+async function addProductBtn() {
   // Select the inputs
   const newProductName = document.querySelector('#panelAdmin-name');
   const newProductDesc = document.querySelector('#panelAdmin-desc');
@@ -125,10 +176,26 @@ function addProductBtn() {
 
   //Si pasa la validacion 
 
-  // Add the item to the ItemsController
-  productsController.addProduct(name, desc, ingredients, imageURL, price, category, productExtras);
-  console.log(productExtras);
-  console.log(extras)
+  // Preparando producto para POST
+  const imageUrl = await uploadImage(newProductimageURL);
+  const extrasString = extrasToString(productExtras);
+  const numberPrice = parseInt(price);
+
+  const productData = {
+    name: name,
+    description: desc,
+    ingredients: ingredients,
+    meal_time: category,
+    image: imageUrl,
+    price: numberPrice,
+    extras: extrasString,
+    stock: 100
+  }
+  postProduct(productData);
+
+  // Agregando a ItemsController
+  productsController.addProduct(name, desc, ingredients, imageUrl, numberPrice, category, productExtras);
+
   // Clear the form
   newProductName.value = '';
   newProductDesc.value = '';
@@ -139,7 +206,10 @@ function addProductBtn() {
   newProductExtraName.value = '';
   newProductExtraPrice.value = '';
 
-  console.log('Test después de añadir\n');
+  Swal.fire({
+    title: "Producto añadido",
+    icon: "success"
+  });
   console.log(productsController.products);
   extras.splice(0, extras.length);
 }
@@ -335,7 +405,7 @@ function PanelAdministracion() {
             <option value="comida" key="comida">Comida</option>
             <option value="cena" key="cena">Cena</option>
           </select>
-          <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
+          <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" name="image" />
           <input
             type="number"
             id="panelAdmin-price"
@@ -401,81 +471,81 @@ function PanelAdministracion() {
 
       <div className="panelAdmin-show-updateProduct">
         <div className="panelAdmin-form-add-product">
-        <h2 className="panelAdmin-title-form">Modificar Producto</h2>
-        <p id="id-form-product">{index}</p>
-        <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            id="panelAdmin-name"
-            className="panelAdmin-form-add-input"
-            placeholder="Nombre del producto"
-          />
-          <textarea
-            rows="4"
-            cols="40"
-            id="panelAdmin-desc"
-            className="panelAdmin-form-add-input"
-            placeholder="Descripcion"
-          ></textarea>
-          <textarea
-            rows="4"
-            id="panelAdmin-ingredients"
-            className="panelAdmin-form-add-input"
-            placeholder="Ingredientes"
-          ></textarea>
-          <select className="panelAdmin-form-add-input panelAdmin-form-select"
-            name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
-            <option value="0" key="Categoria" disabled>Categoría</option>
-            <option value="desayuno" key="desayuno">Desayuno</option>
-            <option value="comida" key="comida">Comida</option>
-            <option value="cena" key="cena">Cena</option>
-          </select>
-          <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" />
-          <input
-            type="number"
-            id="panelAdmin-price"
-            className="panelAdmin-form-add-input"
-            placeholder="Precio"
-          />
-          <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+          <h2 className="panelAdmin-title-form">Modificar Producto</h2>
+          <p id="id-form-product">{index}</p>
+          <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
             <input
               type="text"
-              id="panelAdmin-extra-name"
+              id="panelAdmin-name"
               className="panelAdmin-form-add-input"
-              placeholder="Extra"
+              placeholder="Nombre del producto"
             />
+            <textarea
+              rows="4"
+              cols="40"
+              id="panelAdmin-desc"
+              className="panelAdmin-form-add-input"
+              placeholder="Descripcion"
+            ></textarea>
+            <textarea
+              rows="4"
+              id="panelAdmin-ingredients"
+              className="panelAdmin-form-add-input"
+              placeholder="Ingredientes"
+            ></textarea>
+            <select className="panelAdmin-form-add-input panelAdmin-form-select"
+              name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+              <option value="0" key="Categoria" disabled>Categoría</option>
+              <option value="desayuno" key="desayuno">Desayuno</option>
+              <option value="comida" key="comida">Comida</option>
+              <option value="cena" key="cena">Cena</option>
+            </select>
+            <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" name="image" />
             <input
               type="number"
-              id="panelAdmin-extra-price"
+              id="panelAdmin-price"
               className="panelAdmin-form-add-input"
-              placeholder="Precio del extra"
+              placeholder="Precio"
             />
-          </div>
-          <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
-            Añadir extra
-          </button>
-          <button className="panelAdmin-form-btn"  id="panelAdmin-submit" onClick={updateProductBtn}>
-            Enviar
-          </button>
-        </form>
+            <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+              <input
+                type="text"
+                id="panelAdmin-extra-name"
+                className="panelAdmin-form-add-input"
+                placeholder="Extra"
+              />
+              <input
+                type="number"
+                id="panelAdmin-extra-price"
+                className="panelAdmin-form-add-input"
+                placeholder="Precio del extra"
+              />
+            </div>
+            <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
+              Añadir extra
+            </button>
+            <button className="panelAdmin-form-btn" id="panelAdmin-submit" onClick={updateProductBtn}>
+              Enviar
+            </button>
+          </form>
         </div>
 
         <div className="card-menu panelAdmin-card-menu">
-        <img
-          src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
-          alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
-          className="card-img-top-menu"
-        />
-        <div className="card-body-menu">
-          <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
-          <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
-          <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
-          <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
-          <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
-            Agregar al carrito
-          </button>
+          <img
+            src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
+            alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
+            className="card-img-top-menu"
+          />
+          <div className="card-body-menu">
+            <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
+            <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
+            <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
+            <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
+            <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
+              Agregar al carrito
+            </button>
+          </div>
         </div>
-      </div>
       </div>
 
     )
@@ -493,7 +563,7 @@ function PanelAdministracion() {
           {generateList()}
         </select>
         <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardformUpdate}>Modificar</button>
-      </div>  
+      </div>
     );
   };
 
