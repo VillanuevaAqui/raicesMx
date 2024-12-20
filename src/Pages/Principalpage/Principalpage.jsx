@@ -1,7 +1,7 @@
-import './PrincipalPage.css'
+import './Principalpage.css'
 import MenuCard from '../../components/Menu-card/Menu-card';
 import { Link } from 'react-router-dom';
-import CustomizedRating from '../../components/Rating/CustomizedRating.jsx';
+
 
 // SECCIÓN DE BIENVENIDA/MAIN
 const Main = () => (
