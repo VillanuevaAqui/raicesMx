@@ -488,11 +488,46 @@
         padding: 2rem;
     }
 
+
    
     .h2MCT-carrusel {
-        font-size:  1.7rem !important; /* Reducir texto adicional */
-    }
+        font-size:  2rem !important; }
+
 }
+
+@media (max-width: 615px) and (min-width: 480px) {
+    .Container5 {
+        margin-top: 2rem;
+        padding: 1rem; /* Ajuste del padding */
+        width: 100%;
+        box-sizing: border-box; /* Asegura que padding no rompa el ancho */
+    }
+  
+    .Container5Button {
+        width: 100%; /* Asegura que no exceda el contenedor */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .button {
+        display: inline-block;
+        text-align: center;
+        padding: 0.5rem 1rem; /* Ajuste del tamaño del botón */
+        font-size: 1.5rem; /* Reduce tamaño de texto */
+        max-width: 100%; /* Impide que exceda el ancho */
+        overflow-wrap: break-word; /* Evita desbordamientos */
+    }
+  
+    .h1C3, .h2C3 {
+        font-size: 1.8rem; /* Ajuste del tamaño del texto */
+    }
+
+    .h2MCT-carrusel {
+        font-size:  1.9rem !important; }
+  }
+
+
 
 /* !MQ MAX 479PX*/
 @media (max-width: 479px) {
@@ -568,8 +603,48 @@
 
    
     .h2MCT-carrusel important {
-        font-size: 1rem !important; /* Texto pequeño para móviles */
+        font-size: 1.5rem !important; /* Texto pequeño para móviles */
     } 
 }
+
+@media (max-width: 442px) and (min-width: 400px) {
+    .nuestroCompromisSection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem; /* Espaciado entre elementos */
+    }
+  
+    .commitment-NC {
+        width: 90%; /* Reduce el tamaño del contenedor */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /*padding: 0.5rem; /* Espaciado interno */
+        /*box-sizing: border-box; /* Asegura que padding no afecte el tamaño */
+    }
+  
+    .imageNC {
+        width: 200px; /* Escala la imagen al 80% del ancho del contenedor */
+        height: 200px; /* Igual que el ancho */
+        border-radius: 50%; /* Esto hace que sea circular */
+        object-fit: cover; /* Ajusta el contenido de la imagen dentro del círculo */
+       /* border: 3px solid #ccc; /* Borde para resaltar la imagen */
+    }
+  
+    .textNC {
+        font-size: 1.5rem; /* Ajusta el tamaño del texto */
+        margin-top: 0.5rem; /* Añade separación respecto a la imagen */
+        word-wrap: break-word; /* Evita desbordamientos */
+    }
+
+    .h2MCT-carrusel important {
+        font-size: 1rem !important; /* Texto pequeño para móviles */
+    } 
+  }
+  
+
+
 
 /* !TERMINAN MQ */
