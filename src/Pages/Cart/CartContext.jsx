@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo, useEffect} from "react";
+import { createContext, useContext, useState, useMemo, useEffect } from "react";
 
 //Contexto
 const CartContext = createContext();
@@ -16,6 +16,17 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const parseExtras = (extrasString) => {
+    return extrasString.split(",").map((extra) => {
+
+      const [name, price] = extra.trim().split(":");
+      return {
+        name: name.trim(),
+        price: parseInt(price.trim()),
+      };
+    });
+  };
+
   const [extraCosts, setExtraCosts] = useState(0);
 
   //LocalStorage 
@@ -24,33 +35,56 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   //Agregar al carrito
+  // const addToCart = (product) => {
+  //   setCart((prevCart) => {
+  //     //Comprobación de existencia
+  //     const existingProduct = prevCart.find((item) => item.product_id === product.product_id);
+
+  //     if (existingProduct) {
+  //       return prevCart.map((item) =>
+  //         item.product_id === product.product_id
+  //           ? { ...item, quantity: item.quantity + 1 } // Aumenta la cantidad
+  //           : item
+  //       );
+  //     } else {
+  //       return [...prevCart, { ...product, quantity: 1, selectedExtras: [] }];
+  //     }
+  //   });
+  // };
+
+  // Agregar al carrito
   const addToCart = (product) => {
     setCart((prevCart) => {
-      //Comprobación de existencia
-      const existingProduct = prevCart.find((item) => item.id === product.id);
+      // Comprobación de existencia
+      const existingProduct = prevCart.find((item) => item.product_id === product.product_id);
 
       if (existingProduct) {
         return prevCart.map((item) =>
-          item.id === product.id
+          item.product_id === product.product_id
             ? { ...item, quantity: item.quantity + 1 } // Aumenta la cantidad
             : item
         );
       } else {
-        return [...prevCart, { ...product, quantity: 1, selectedExtras: [] }];
+        // Convertir los extras a array si existen
+        const parsedExtras = product.extras ? parseExtras(product.extras) : [];
+        return [
+          ...prevCart,
+          { ...product, quantity: 1, selectedExtras: [], extras: parsedExtras },
+        ];
       }
     });
   };
 
   //Eliminar del carrito
   const removeFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    setCart((prevCart) => prevCart.filter((item) => item.product_id !== id));
   };
 
   //Actualizar la cantidad de un producto
   const updateCartItemQuantity = (id, quantity) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
+        item.product_id === id ? { ...item, quantity: Math.max(1, quantity) } : item
       )
     );
   };
@@ -61,7 +95,7 @@ export const CartProvider = ({ children }) => {
   const updateCartExtras = (id, extra, isChecked) => {
     setCart((prevCart) =>
       prevCart.map((item) => {
-        if (item.id === id) {
+        if (item.product_id === id) {
           const updatedExtras = isChecked
             ? [...item.selectedExtras, extra]
             : item.selectedExtras.filter((e) => e.name !== extra.name);

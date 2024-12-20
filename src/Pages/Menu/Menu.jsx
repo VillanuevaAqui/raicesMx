@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Menu.css';
-import ProductsController from '../FormularioProducto/productsController'; // Asegúrate de importar tu clase ProductsController.
 import { useCart } from "../Cart/CartContext";
+
+const API_URL = 'http://3.135.216.95:8080/api/product';
 
 const Menu = () => {
     const [menuItems, setMenuItems] = useState({
@@ -10,30 +11,57 @@ const Menu = () => {
         cena: [],
     });
     const [activeCategory, setActiveCategory] = useState('desayuno'); // Estado para la categoría activa
+    const [loading, setLoading] = useState(true); // Estado para manejar la carga de datos
+    const [error, setError] = useState(null); // Estado para manejar errores
 
     const { addToCart } = useCart(); // Acceder a la función para agregar al carrito
 
-    // Crear instancia única de ProductsController
-    const productsController = useMemo(() => new ProductsController(0), []);
+    // Función para obtener productos desde la API
+    const getProducts = async () => {
+        try {
+            const response = await fetch(API_URL, {
+                method: "GET",
+                headers: {  
+                    "Content-Type": "application/json",
+                },
+            });
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            const products = await response.json();
+            console.log("Productos obtenidos:", products);
+            return products;
+        } catch (error) {
+            console.error("Hubo un problema con la solicitud:", error.message);
+        }
+    };
 
     // Filtrar productos por categoría
     const filterProductsByCategory = (products) => {
-        const desayuno = products.filter(product => product.category === 'desayuno');
-        const comida = products.filter(product => product.category === 'comida');
-        const cena = products.filter(product => product.category === 'cena');
+        const desayuno = products.filter(product => product.meal_time === 'desayuno');
+        const comida = products.filter(product => product.meal_time === 'comida');
+        const cena = products.filter(product => product.meal_time === 'cena');
 
         setMenuItems({ desayuno, comida, cena });
     };
 
-    // Cargar productos desde el controlador cuando se monta el componente
+    // Cargar productos desde la API cuando se monta el componente
     useEffect(() => {
-        const fetchProducts = () => {
-            const allProducts = productsController.products;
-            filterProductsByCategory(allProducts); // Actualizar categorías
+        const fetchProducts = async () => {
+            try {
+                const products = await getProducts();
+                if (products) {
+                    filterProductsByCategory(products); // Actualizar categorías
+                }
+                setLoading(false);
+            } catch (error) {
+                setError(error.message);
+                setLoading(false);
+            }
         };
 
         fetchProducts();
-    }, [productsController]);
+    }, []);
 
     // Función para manejar clic en los botones de categorías
     const handleCategoryChange = (category) => {
@@ -53,16 +81,16 @@ const Menu = () => {
         return rows.map((row, rowIndex) => (
             <div className="row col-12 d-flex justify-content-center" key={rowIndex}>
                 {row.map((product) => (
-                    <div className="col-12 col-sm-6 col-md-4" key={product.id}>
+                    <div className="col-12 col-sm-6 col-md-4" key={product.product_id}>
                         <div className="card-menu">
                             <img
-                                src={product.imageURL}
+                                src={product.image}
                                 alt={product.name}
                                 className="card-img-top-menu"
                             />
                             <div className="card-body-menu">
                                 <h5 className="card-title-menu">{product.name}</h5>
-                                <p className="card-text-menu">{product.desc}</p>
+                                <p className="card-text-menu">{product.description}</p>
                                 <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {product.ingredients}</p>
                                 <p className="card-price-menu"><strong>Precio:</strong> ${product.price}</p>
                                 <button className="btn-menu" onClick={() => addToCart(product)}>
@@ -75,6 +103,7 @@ const Menu = () => {
             </div>
         ));
     };
+    
     return (
         <div className="menu">
             {/* Contenedor del encabezado */}
