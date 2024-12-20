@@ -15,7 +15,7 @@ import ContactPage from './Pages/Contact/Contact.jsx';
 import { CartProvider } from './Pages/Cart/CartContext.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 import FoodAllergyForm from './Pages/foodAllergyForm/foodAllergyForm.jsx';
-import UserPage from './Pages/Userpage/userpage.jsx'; {/*Página del usuario*/}
+import UserPage from './Pages/Userpage/UserPage.jsx'; {/*Página del usuario*/}
 import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 
 
