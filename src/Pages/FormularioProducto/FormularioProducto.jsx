@@ -1,15 +1,9 @@
 
 import "./FormularioProducto.css"
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import ProductsController from "./productsController.js";
-import Swal from 'sweetalert2';
-=======
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import GenerateList from "../../components/generateList/GenerateList.jsx";
 import CardProduct from "../../components/CardProduct/CardProduct.jsx";
->>>>>>> 12f0104b1387a5765c36d17b7aed6f3a1165801d
 
 const API_URL = 'http://3.135.216.95:8080/api/product';
 
