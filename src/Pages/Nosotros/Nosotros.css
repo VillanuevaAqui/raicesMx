@@ -125,9 +125,9 @@ body {
 }
 
 .nosotros-integrantes-title {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    color: var(--tertiary);
+    margin-bottom: 3rem;
 }
 
 .nosotros-integrantes-list {
