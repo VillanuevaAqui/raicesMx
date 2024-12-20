@@ -231,10 +231,10 @@ const UserPage = () => {
         }
 
         // Validar código postal (asumiendo 5 dígitos)
-        if (!/^\d{5}$/.test(userData.postalCode)) {
-            alert("El código postal debe tener 5 dígitos.");
-            return;
-        }
+        // if (!/^\d{5}$/.test(userData.postalCode)) {
+        //     alert("El código postal debe tener 5 dígitos.");
+        //     return;
+        // }
 
         const fullCardNumber = `${cardNumber1} ${cardNumber2} ${cardNumber3} ${cardNumber4}`;
 
