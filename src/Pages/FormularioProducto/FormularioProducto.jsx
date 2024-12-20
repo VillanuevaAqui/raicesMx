@@ -2,7 +2,7 @@
 import "./FormularioProducto.css"
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const API_URL = 'http://3.135.216.95:8080/api/product';
 

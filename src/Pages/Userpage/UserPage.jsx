@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./UserPage.css";
 import { Checkbox, Button, Box, Typography, TextField } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 
 

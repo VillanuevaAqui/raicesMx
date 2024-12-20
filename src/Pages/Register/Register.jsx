@@ -15,7 +15,7 @@ import './Register.css';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import CryptoJS, { MD5 } from 'crypto-js';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 
 const API_URL = 'http://3.135.216.95:8080/api/user';

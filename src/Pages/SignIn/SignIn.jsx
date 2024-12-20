@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 import "./SignIn.css";
 import UsersExample from './database';
 import CloseIcon from '@mui/icons-material/Close';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router'
 
 const API_URL = 'http://3.135.216.95:8080/api/user';
