@@ -20,12 +20,12 @@ const Nosotros = () => {
   const [activeSection, setActiveSection] = useState("Nuestras Raíces");
 
   const integrantes = [
-    { nombre: "Maria Fernanda Ballesteros", img: "/assets/mariafernanda.webp" },
-    { nombre: "Jesús Duerto", img: "/assets/jesusduerto.webp" },
-    { nombre: "Christian Rodríguez", img: "/assets/christianrodriguez.webp" },
-    { nombre: "David Rojas", img: "/assets/davidrojas.webp" },
-    { nombre: "Félix Peñaloza", img: "/assets/felixpenaloza.webp" },
-    { nombre: "Alberto Villanueva", img: "/assets/albertovillanueva.webp" },
+    { nombre: "Maria Fernanda", img: "/assets/nosotros-maf.webp" },
+    { nombre: "Jesús Duerto", img: "/assets/nosotros-jesus.webp" },
+    { nombre: "Christian Rodríguez", img: "/assets/nosotros-chris.webp" },
+    { nombre: "David Rojas", img: "/assets/nosotros-david.webp" },
+    { nombre: "Félix Peñaloza", img: "/assets/nosotros-felix.webp" },
+    { nombre: "Alberto Villanueva", img: "/assets/nosotros-alberto.webp" },
   ];
 
   return (
