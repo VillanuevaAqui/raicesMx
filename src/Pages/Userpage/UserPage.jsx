@@ -14,8 +14,8 @@ const UserPage = () => {
         postalCode: "", // Nuevo campo para código postal
     });
 
-     // Cargar datos desde sessionStorage al iniciar
-     useEffect(() => {
+    // Cargar datos desde sessionStorage al iniciar
+    useEffect(() => {
         const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
         if (loggedInUser) {
             setUserData((prevState) => ({
@@ -29,7 +29,7 @@ const UserPage = () => {
                 title: `¡Bienvenido, ${loggedInUser.first_name} ${loggedInUser.last_name || ""}!`,
                 text: "Estamos muy felices de tenerte con nosotros.",
                 icon: "success",
-                background:"#f6f4f1" ,
+                background: "#f6f4f1",
                 padding: "3em",
                 showClass: {
                     popup: `
@@ -62,11 +62,26 @@ const UserPage = () => {
         cvv: "",
     });
 
-    const [orders, setOrders] = useState([
-        { id: 1, date: "2024-11-01", total: 100 },
-        { id: 2, date: "2024-11-15", total: 50 },
-        { id: 3, date: "2024-11-15", total: 50 },
-    ]);
+    const [orders, setOrders] = useState([]);
+    useEffect(() => {
+        const fetchOrders = async () => {
+            const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+            if (loggedInUser) {
+                try {
+                    const response = await fetch(`http://3.135.216.95:8080/api/user/${loggedInUser.user_id}`);
+                    if (!response.ok) {
+                        throw new Error("Error al obtener los datos del usuario");
+                    }
+                    const data = await response.json();
+                    setOrders(data.orders);
+                } catch (err) {
+                    console.error(err.message);
+                }
+            }
+        };
+
+        fetchOrders();
+    }, []);
 
     const [visaMastercard, setCards] = useState([
         {
@@ -193,7 +208,7 @@ const UserPage = () => {
         setCards((prevCards) => prevCards.filter((_, i) => i !== index));
     };
 
-    
+
     // Referencias para los campos de número de tarjeta
     const cardNumber2Ref = useRef(null);
     const cardNumber3Ref = useRef(null);
@@ -260,7 +275,7 @@ const UserPage = () => {
         });
     };
 
-    
+
 
     const handleCardNumberChange = (e, field, nextRef) => {
         const { value } = e.target;
@@ -281,47 +296,47 @@ const UserPage = () => {
 
     const handleExpirationDateChange = (e) => {
         let value = e.target.value;
-        
+
         // Eliminar caracteres no numéricos
         value = value.replace(/[^\d]/g, "");
-    
+
         // Añadir la barra '/' después de los dos primeros dígitos
         if (value.length > 2) {
             value = value.slice(0, 2) + "/" + value.slice(2, 4);
         }
-    
+
         // Limitar el tamaño a 5 caracteres (MM/AA)
         if (value.length > 5) {
             value = value.slice(0, 5);
         }
-    
+
         // Actualizar el estado con el valor formateado
         setPaymentData((prevState) => ({
             ...prevState,
             expirationDate: value,
         }));
     };
-   
-/*Funcion que se usaba anteriormente */
 
-  /*  const handleExpirationChange = (e) => {
-        let { value } = e.target;
+    /*Funcion que se usaba anteriormente */
 
-        
-        if (!/^\d{0,5}$/.test(value)) {
-            return;
-        }
-
-        // Auto-insert '/' after entering two digits
-        if (value.length === 2 && !value.includes('/')) {
-            value = value + '/';
-        }
-
-        setPaymentData((prevData) => ({
-            ...prevData,
-            expirationDate: value,
-        }));
-    };  */
+    /*  const handleExpirationChange = (e) => {
+          let { value } = e.target;
+  
+          
+          if (!/^\d{0,5}$/.test(value)) {
+              return;
+          }
+  
+          // Auto-insert '/' after entering two digits
+          if (value.length === 2 && !value.includes('/')) {
+              value = value + '/';
+          }
+  
+          setPaymentData((prevData) => ({
+              ...prevData,
+              expirationDate: value,
+          }));
+      };  */
 
 
     const renderSection = () => {
@@ -523,9 +538,10 @@ const UserPage = () => {
                             {orders.map((order) => (
                                 <li key={order.id} className="userpage-order-item">
                                     <div className="userpage-order-details">
-                                        <strong>Orden #{order.id}</strong>
-                                        <p>Fecha: {order.date}</p>
-                                        <p>Total: ${order.total}</p>
+                                        <strong>Orden #{order.order_id}</strong>
+                                        <p>Fecha: {order.date_time}</p>
+                                        <p>Estado: {order.status}</p>
+                                        <p>Total: ${order.notes}</p>
                                     </div>
                                 </li>
                             ))}
