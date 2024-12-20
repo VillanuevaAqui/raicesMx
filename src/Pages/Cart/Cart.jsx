@@ -29,10 +29,10 @@ const Cart = () => {
 
                         <div className="cart-items">
                             {cart.map((item) => (
-                                <div key={item.id} className="cart-row">
+                                <div key={item.product_id} className="cart-row">
                                     <div className="cart-column cart-img">
                                         <img
-                                            src={item.imageURL}
+                                            src={item.image}
                                             alt={item.name}
                                             className="cart-item-image"
                                         />
@@ -48,7 +48,7 @@ const Cart = () => {
                                             <button
                                                 className="quantity-btn"
                                                 onClick={() =>
-                                                    updateCartItemQuantity(item.id, item.quantity - 1)
+                                                    updateCartItemQuantity(item.product_id, item.quantity - 1)
                                                 }
                                                 disabled={item.quantity === 1}
                                             >
@@ -58,7 +58,7 @@ const Cart = () => {
                                             <button
                                                 className="quantity-btn"
                                                 onClick={() =>
-                                                    updateCartItemQuantity(item.id, item.quantity + 1)
+                                                    updateCartItemQuantity(item.product_id, item.quantity + 1)
                                                 }
                                             >
                                                 +
@@ -75,7 +75,7 @@ const Cart = () => {
                                                     checked={item.selectedExtras.some((e) => e.name === extra.name)}
                                                     onChange={(e) => {
                                                         const isChecked = e.target.checked;
-                                                        updateCartExtras(item.id, extra, isChecked);
+                                                        updateCartExtras(item.product_id, extra, isChecked);
                                                     }}
                                                 />
                                                 {extra.name} (+${extra.price})
@@ -92,12 +92,12 @@ const Cart = () => {
                                     <div className="cart-column cart-remove">
                                         <button
                                             className="btn btn-danger btn-remove"
-                                            onClick={() => removeFromCart(item.id)}
+                                            onClick={() => removeFromCart(item.product_id)}
                                         >
                                             Eliminar
                                         </button>
                                         {isMobile && (
-                                            <CloseIcon onClick={() => removeFromCart(item.id)} className="cart-close-icon" style={{
+                                            <CloseIcon onClick={() => removeFromCart(item.product_id)} className="cart-close-icon" style={{
                                                 fontSize: 30,
                                                 cursor: 'pointer'
                                             }} />
