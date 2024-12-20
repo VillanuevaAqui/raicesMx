@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Menu.css';
 import { useCart } from "../Cart/CartContext";
 
-const API_URL = 'API_URL/product';
+const API_URL = 'API_URLproduct';
 
 const Menu = () => {
     const [menuItems, setMenuItems] = useState({
