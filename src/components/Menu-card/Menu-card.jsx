@@ -32,7 +32,7 @@ const MenuCard = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src="assets/Chilaquiles-y-Huevos.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-sm-block d-md-block pp-carrusel-card">
+          <div className="carousel-caption d-sm-block d-md-block">
             <h5 className="h2MCT-carrusel pp-title-carrusel">Desayuno</h5>
             <p className="h2MCT-carrusel h2MCT-carrusel-sub">Despierta a lo mexicano con chilaquiles llenos de sabor🌶️</p>
           </div>

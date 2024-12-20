@@ -1,8 +1,15 @@
 
 import "./FormularioProducto.css"
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
 // import Swal from 'sweetalert2';
+=======
+import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+import GenerateList from "../../components/generateList/GenerateList.jsx";
+import CardProduct from "../../components/CardProduct/CardProduct.jsx";
+>>>>>>> 12f0104b1387a5765c36d17b7aed6f3a1165801d
 
 const API_URL = 'http://3.135.216.95:8080/api/product';
 
@@ -81,8 +88,6 @@ const validateExtras = (name = "", price = "") => {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Logic implemented to manipulate the productsController class, with the key functions being addProductBtn, 
  *removeProductBtn, removeAllProductsBtn, and updateProductBtn. */
-
-const productsController = new ProductsController;
 
 const extras = [];
 function handleExtras() {
@@ -174,9 +179,8 @@ async function addProductBtn() {
     return; // Detener si la validación falla
   }
 
-  //Si pasa la validacion 
+  //Si pasa la validacion se preparando producto para POST
 
-  // Preparando producto para POST
   const imageUrl = await uploadImage(newProductimageURL);
   const extrasString = extrasToString(productExtras);
   const numberPrice = parseInt(price);
@@ -193,9 +197,6 @@ async function addProductBtn() {
   }
   postProduct(productData);
 
-  // Agregando a ItemsController
-  productsController.addProduct(name, desc, ingredients, imageUrl, numberPrice, category, productExtras);
-
   // Clear the form
   newProductName.value = '';
   newProductDesc.value = '';
@@ -210,31 +211,72 @@ async function addProductBtn() {
     title: "Producto añadido",
     icon: "success"
   });
-  console.log(productsController.products);
   extras.splice(0, extras.length);
 }
 
-function removeAllProductsBtn() {
-
-  productsController.removeAllProducts();
-  console.log(productsController.products);
-
-  console.log("Se borro todo mi loco")
-
-}
-
-function removeProductBtn() {
+async function removeProductBtn() {
 
   const id = "#panelAdmin-select-form"
-  const index = getValue(id);
-  productsController.removeProduct(index);
-  console.log(productsController.products)
+  const index = parseInt(getValue(id));
+  console.log(index);
 
+  if (index == -1) {
+
+    Swal.fire({
+      title: "ERROR",
+      text: "Seleccione un producto valido",
+      icon: "error",
+    });
+
+  } else {
+
+    try {
+      const response = await fetch(`${API_URL}/${index}`, {
+        method: "DELETE",
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error al eliminar el producto: ${response.status}`);
+      }
+  
+      Swal.fire({
+        title: "Producto eliminado",
+        icon: "success",
+      });
+  
+      console.log(`Producto con ID ${index} eliminado con éxito.`);
+    } catch (error) {
+      console.error("Hubo un problema al intentar eliminar el producto:", error.message);
+      Swal.fire({
+        title: "Error",
+        text: "No se pudo eliminar el producto.",
+        icon: "error",
+      });
+    }
+  }
+}
+
+const putProduct = async (productData, index) => {
+  try {
+    const response = await fetch(`${API_URL}/${index}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(productData)
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    const result = await response.json();
+    console.log("200");
+  } catch (error) {
+    console.error("Hubo un problema con la solicitud:", error.message);
+  }
 }
 
 
-
-function updateProductBtn() {
+async function updateProductBtn() {
 
   const id = document.getElementById("id-form-product")
   const index = parseInt(id.innerHTML)
@@ -247,6 +289,8 @@ function updateProductBtn() {
   const newProductimageURL = document.querySelector('#panelAdmin-image');
   const newProductPrice = document.querySelector('#panelAdmin-price');
   const newProductCategory = document.querySelector('#panelAdmin-meal-time');
+  const newProductExtraName = document.querySelector('#panelAdmin-extra-name');
+  const newProductExtraPrice = document.querySelector('#panelAdmin-extra-price');
 
 
   // Get the values of the inputs
@@ -256,6 +300,7 @@ function updateProductBtn() {
   const imageURLGet = newProductimageURL.value.trim();
   const priceGet = newProductPrice.value.trim();
   const categoryGet = newProductCategory.value.trim();
+  const productExtras = [...extras];
 
   // Validar los campos usando la función validateForm
   if (!validateForm(nameGet, descGet, ingredientsGet, imageURLGet, priceGet)) {
@@ -263,25 +308,31 @@ function updateProductBtn() {
     return; // Detener la ejecución si la validación falla
   }
 
+  const imageUrl = await uploadImage(newProductimageURL);
+  const extrasString = extrasToString(productExtras);
+  const number = parseInt(priceGet);
+
   const updatedProduct = {};
 
   if (nameGet) updatedProduct.name = nameGet;
-  if (descGet) updatedProduct.desc = descGet;
+  if (descGet) updatedProduct.description = descGet;
   if (ingredientsGet) updatedProduct.ingredients = ingredientsGet;
-  if (imageURLGet) updatedProduct.imageURL = imageURLGet;
-  if (priceGet) updatedProduct.price = priceGet;
-  if (categoryGet) updatedProduct.category = categoryGet;
+  if (categoryGet) updatedProduct.meal_time = categoryGet;
+  if (imageURLGet) updatedProduct.image = imageUrl;
+  if (priceGet) updatedProduct.price = number;
+  if(extrasString) updatedProduct.extras = extrasString;
+  updatedProduct.stock = 100;
 
   // Actualiza el producto solo si hay campos válidos
   if (Object.keys(updatedProduct).length > 0) {
-    productsController.updateProduct(index, updatedProduct);
+    putProduct(updatedProduct, index);
+    Swal.fire({
+      title: "Producto actualizado",
+      icon: "success"
+    });
   } else {
     console.log("No se actualizó porque todos los campos están vacíos");
   }
-
-  // productsController.updateProduct(index, {name: nameGet, desc: descGet, ingredients: ingredientsGet, imageURL: imageURLGet, price: priceGet});
-  console.log(productsController.products)
-
 }
 
 function getValue(id) {
@@ -298,22 +349,6 @@ const handleSubmit = (e) => {
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const generateList = () => {
-
-  return (
-    <>
-      <option value="-1" key="-1" disabled>Seleccione un producto</option>
-      {
-        productsController.products.map((product, index) => (
-          <option className="panelAdmin-select-option" key={index} value={product.id}>{product.name}</option>
-        ))
-      }
-    </>
-  );
-
-}
-
-
 function PanelAdministracion() {
 
 
@@ -325,7 +360,7 @@ function PanelAdministracion() {
         className="panelAdmin-form-select"
         id="panelAdmin-select-form"
       >
-        {generateList()}
+        <GenerateList textDefault="Seleccione una orden" />
       </select>
       <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardOrder}>Ver</button>
     </div>);
@@ -365,7 +400,7 @@ function PanelAdministracion() {
           id="panelAdmin-select-form"
           defaultValue="-1"
         >
-          {generateList()}
+          <GenerateList textDefault="Seleccione una orden" />
         </select>
         <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardOrder}>Ver</button>
       </div>
@@ -438,7 +473,6 @@ function PanelAdministracion() {
   };
 
   const removeProduct = () => {
-    generateList();
     setFormContent(
       <div className="panelAdmin-form-remove-product">
         <h2 className="panelAdmin-title-form">Selecciona un producto</h2>
@@ -447,14 +481,11 @@ function PanelAdministracion() {
           id="panelAdmin-select-form"
           defaultValue="-1"
         >
-          {generateList()}
+          <GenerateList textDefault="Seleccione un producto"/>
         </select>
         <div className="panelAdmin-container-btns">
           <button className="panelAdmin-form-btn" id="panelAdmin-delete-product" onClick={removeProductBtn}>
             Eliminar Producto
-          </button>
-          <button className="panelAdmin-form-btn" id="panelAdmin-delete-products" onClick={removeAllProductsBtn}>
-            Borrar todos los productos
           </button>
         </div>
       </div>
@@ -467,88 +498,82 @@ function PanelAdministracion() {
     const index = getValue(id);
     console.log(index)
 
-    setFormContent(
+    if (index == -1) {
 
-      <div className="panelAdmin-show-updateProduct">
-        <div className="panelAdmin-form-add-product">
-          <h2 className="panelAdmin-title-form">Modificar Producto</h2>
-          <p id="id-form-product">{index}</p>
-          <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              id="panelAdmin-name"
-              className="panelAdmin-form-add-input"
-              placeholder="Nombre del producto"
-            />
-            <textarea
-              rows="4"
-              cols="40"
-              id="panelAdmin-desc"
-              className="panelAdmin-form-add-input"
-              placeholder="Descripcion"
-            ></textarea>
-            <textarea
-              rows="4"
-              id="panelAdmin-ingredients"
-              className="panelAdmin-form-add-input"
-              placeholder="Ingredientes"
-            ></textarea>
-            <select className="panelAdmin-form-add-input panelAdmin-form-select"
-              name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
-              <option value="0" key="Categoria" disabled>Categoría</option>
-              <option value="desayuno" key="desayuno">Desayuno</option>
-              <option value="comida" key="comida">Comida</option>
-              <option value="cena" key="cena">Cena</option>
-            </select>
-            <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" name="image" />
-            <input
-              type="number"
-              id="panelAdmin-price"
-              className="panelAdmin-form-add-input"
-              placeholder="Precio"
-            />
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+      Swal.fire({
+        title: "ERROR",
+        text: "Seleccione un producto valido",
+        icon: "error",
+      });
+
+    } else {
+
+      setFormContent(
+
+        <div className="panelAdmin-show-updateProduct">
+          <div className="panelAdmin-form-add-product">
+            <h2 className="panelAdmin-title-form">Modificar Producto</h2>
+            <p id="id-form-product">{index}</p>
+            <form className="panelAdmin-form-add" id="panelAdmin-newProductForm" onSubmit={handleSubmit}>
               <input
                 type="text"
-                id="panelAdmin-extra-name"
+                id="panelAdmin-name"
                 className="panelAdmin-form-add-input"
-                placeholder="Extra"
+                placeholder="Nombre del producto"
               />
+              <textarea
+                rows="4"
+                cols="40"
+                id="panelAdmin-desc"
+                className="panelAdmin-form-add-input"
+                placeholder="Descripcion"
+              ></textarea>
+              <textarea
+                rows="4"
+                id="panelAdmin-ingredients"
+                className="panelAdmin-form-add-input"
+                placeholder="Ingredientes"
+              ></textarea>
+              <select className="panelAdmin-form-add-input panelAdmin-form-select"
+                name="panelAdmin-meal-time" id="panelAdmin-meal-time" defaultValue="0">
+                <option value="0" key="Categoria" disabled>Categoría</option>
+                <option value="desayuno" key="desayuno">Desayuno</option>
+                <option value="comida" key="comida">Comida</option>
+                <option value="cena" key="cena">Cena</option>
+              </select>
+              <input type="file" id="panelAdmin-image" className="panelAdmin-form-add-input" name="image" />
               <input
                 type="number"
-                id="panelAdmin-extra-price"
+                id="panelAdmin-price"
                 className="panelAdmin-form-add-input"
-                placeholder="Precio del extra"
+                placeholder="Precio"
               />
-            </div>
-            <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
-              Añadir extra
-            </button>
-            <button className="panelAdmin-form-btn" id="panelAdmin-submit" onClick={updateProductBtn}>
-              Enviar
-            </button>
-          </form>
-        </div>
-
-        <div className="card-menu panelAdmin-card-menu">
-          <img
-            src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
-            alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
-            className="card-img-top-menu"
-          />
-          <div className="card-body-menu">
-            <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
-            <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
-            <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
-            <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
-            <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
-              Agregar al carrito
-            </button>
+              <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+                <input
+                  type="text"
+                  id="panelAdmin-extra-name"
+                  className="panelAdmin-form-add-input"
+                  placeholder="Extra"
+                />
+                <input
+                  type="number"
+                  id="panelAdmin-extra-price"
+                  className="panelAdmin-form-add-input"
+                  placeholder="Precio del extra"
+                />
+              </div>
+              <button type="button" className="panelAdmin-form-btn" onClick={handleExtras}>
+                Añadir extra
+              </button>
+              <button className="panelAdmin-form-btn" id="panelAdmin-submit" onClick={updateProductBtn}>
+                Enviar
+              </button>
+            </form>
           </div>
+          <CardProduct index={index} />
         </div>
-      </div>
-
-    )
+      )
+    }
   }
 
   const updateProduct = () => {
@@ -560,7 +585,7 @@ function PanelAdministracion() {
           id="panelAdmin-select-form"
           defaultValue="-1"
         >
-          {generateList()}
+          <GenerateList textDefault="Seleccione un producto" />
         </select>
         <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardformUpdate}>Modificar</button>
       </div>
@@ -570,28 +595,22 @@ function PanelAdministracion() {
   const cardProduct = () => {
 
     const id = "#panelAdmin-select-form"
-    const index = getValue(id);
-
+    const index = parseInt(getValue(id));
     console.log(index)
 
-    setFormContent(
-      <div className="card-menu panelAdmin-card-menu">
-        <img
-          src={productsController.products[productsController.products.findIndex(item => item.id === index)].imageURL}
-          alt={productsController.products[productsController.products.findIndex(item => item.id === index)].name}
-          className="card-img-top-menu"
-        />
-        <div className="card-body-menu">
-          <h5 className="card-title-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].name}</h5>
-          <p className="card-text-menu">{productsController.products[productsController.products.findIndex(item => item.id === index)].desc}</p>
-          <p className="card-text-menu"><strong>Ingredientes:<br></br></strong> {productsController.products[productsController.products.findIndex(item => item.id === index)].ingredients}</p>
-          <p className="card-price-menu"><strong>Precio:</strong> ${productsController.products[productsController.products.findIndex(item => item.id === index)].price}</p>
-          <button className="btn-menu" onClick={() => addToCart(productsController.products[productsController.products.findIndex(item => item.id === index)])}>
-            Agregar al carrito
-          </button>
-        </div>
-      </div>
-    );
+    if (index == -1) {
+
+      Swal.fire({
+        title: "ERROR",
+        text: "Seleccione un producto valido",
+        icon: "error",
+      });
+
+    } else {
+
+      setFormContent(<CardProduct index={index} />);
+
+    }  
   }
 
   const watchProduct = () => {
@@ -604,7 +623,7 @@ function PanelAdministracion() {
           id="panelAdmin-select-form"
           defaultValue="-1"
         >
-          {generateList()}
+          <GenerateList textDefault="Seleccione un producto"/>
         </select>
         <button className="panelAdmin-form-btn" id="panelAdmin-form-update-product" onClick={cardProduct}>Ver</button>
       </div>
@@ -666,12 +685,6 @@ function PanelAdministracion() {
       </section>
     </div>
   );
-
-
 }
-
-
-
-
 
 export default PanelAdministracion;
