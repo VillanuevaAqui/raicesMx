@@ -3,7 +3,7 @@ import "./FormularioProducto.css"
 <<<<<<< HEAD
 import React, { useState } from 'react';
 import ProductsController from "./productsController.js";
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 =======
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
