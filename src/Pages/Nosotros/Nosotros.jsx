@@ -19,23 +19,34 @@ const sections = {
 const Nosotros = () => {
   const [activeSection, setActiveSection] = useState("Nuestras Raíces");
 
+  const integrantes = [
+    { nombre: "Maria Fernanda", img: "/assets/nosotros-maf.webp" },
+    { nombre: "Jesús Duerto", img: "/assets/nosotros-jesus.webp" },
+    { nombre: "Christian Rodríguez", img: "/assets/nosotros-chris.webp" },
+    { nombre: "David Rojas", img: "/assets/nosotros-david.webp" },
+    { nombre: "Félix Peñaloza", img: "/assets/nosotros-felix.webp" },
+    { nombre: "Alberto Villanueva", img: "/assets/nosotros-alberto.webp" },
+  ];
+
   return (
-    <main className="main">
-      <div className="text-image">
-        <div className="about-img-container">
+    <main className="nosotros-main">
+      <div className="nosotros-text-image">
+        <div className="nosotros-about-img-container">
           <img
             src="/assets/sobrenosotrosimg.webp"
             alt="Imagen de comida"
-            className="responsive-image"
+            className="nosotros-responsive-image"
             loading="lazy"
           />
-          <div className="image-text">Sobre RaícesMX</div>
+          <div className="nosotros-image-text">Sobre RaícesMX</div>
         </div>
-        <div className="menu">
+        <div className="nosotros-menu">
           {Object.keys(sections).map((section) => (
             <button
               key={section}
-              className={`listmenu ${activeSection === section ? "active" : ""}`}
+              className={`nosotros-listmenu ${
+                activeSection === section ? "nosotros-active" : ""
+              }`}
               onClick={() => setActiveSection(section)}
             >
               {section}
@@ -43,15 +54,31 @@ const Nosotros = () => {
           ))}
         </div>
       </div>
-      <hr className="divide" />
-      <div className="about-section-2">
-        <div className="about-textcontainer">
-          <div className="about-backgroundtextcolor">
-            <p className="about-text-1">{sections[activeSection].text}</p>
+      <hr className="nosotros-divide" />
+      <div className="nosotros-about-section-2">
+        <div className="nosotros-about-textcontainer">
+          <div className="nosotros-about-backgroundtextcolor">
+            <p className="nosotros-about-text-1">{sections[activeSection].text}</p>
           </div>
         </div>
-        <div className="about-logo">
-          <img src={sections[activeSection].logo} alt="Logo RaícesMX" loading="lazy"/>
+        <div className="nosotros-about-logo">
+          <img src={sections[activeSection].logo} alt="Logo RaícesMX" loading="lazy" />
+        </div>
+      </div>
+      <div className="nosotros-integrantes">
+        <h2 className="nosotros-integrantes-title">Integrantes</h2>
+        <div className="nosotros-integrantes-list">
+          {integrantes.map((integrante, index) => (
+            <div key={index} className="nosotros-integrante">
+              <img
+                src={integrante.img}
+                alt={`Foto de ${integrante.nombre}`}
+                className="nosotros-integrante-img"
+                loading="lazy"
+              />
+              <p className="nosotros-integrante-nombre">{integrante.nombre}</p>
+            </div>
+          ))}
         </div>
       </div>
     </main>

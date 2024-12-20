@@ -1,37 +1,4 @@
 
-/* *ESTILOS GENERALES */
-/* VARIABLES DE COLOR PARA EL DISEÑO */
-:root {
-    --primary: #f6f4f1;
-    --secondary: #dcd6c0;
-    --tertiary: #4c4c2c;
-    --fourth: #2c2e21;
-    --fifth: #000000;
-}
-/* CONFIGURACIÓN DE TIPOGRAFÍA BASE */
-html {
-    font-size: 62.5%;  /* Define 1rem como 10px */
-}
-
-
-/* ESTILOS GENERALES DE ENCABEZADOS */
-h1 {
-    font-size: 7rem;
-    font-weight: 700;
-    color: var(--tertiary);
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 6rem;
-    color: var(--fourth);
-}
-
-h3 {
-    font-size: 5rem;
-    color: var(--secondary);
-}
-
 
 /* ESTILOS DEL CONTENEDOR DE MENÚS */
 
@@ -39,15 +6,14 @@ h3 {
     display: flex;
     justify-content: center;  /* Centra el contenido */
     align-items: center;  /* Centra verticalmente */
-    height: 100vh;  /* Ajusta la altura al 100% de la pantalla */
+    height: 50vh;  /* Ajusta la altura al 100% de la pantalla */
 }
+
 
 /* ESTILOS DEL CARRUSEL */
 #carouselExampleCaptions {
-    width: 70%;  /* Ajusta el ancho */
-    height: 50vh;  /* Ajusta la altura, 50% de la altura de la vista */
+    width: 100%;  /* Ajusta el ancho */
     margin: 0 auto;  /* Centra el carrusel horizontalmente */
-    padding: 50px;
 }
 
 .d-block {
@@ -67,6 +33,81 @@ h5 {
     font-size: 1.5rem;  /* Tamaño de la fuente para los nombres de los platos */
 }
 
+/* Contenedor del carrusel y la imagen */
+.carousel-inner .carousel-item {
+    position: relative;
+    overflow: hidden; /* Oculta el contenido fuera del contenedor */
+}
+
+/* Estilo de la imagen */
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; /* Añade transición para el zoom */
+    object-fit: cover;  /* Hace que la imagen cubra el contenedor sin deformarse */
+    border-radius: 10px;  /* Redondea ligeramente los bordes de la imagen */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);  /* Sombra para resaltar los bordes de la imagen */
+
+}
+
+/* Pseudo-elemento para crear el borde difuso */
+.carousel-inner .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.6) 100%); /* Cambio el color final a blanco */
+    pointer-events: none; /* Permite que los clics pasen a la imagen */
+    border-radius: 10px;  /* Asegura que el difuminado tenga los mismos bordes redondeados */
+    z-index: 1; /* Asegura que el difuminado esté por encima de la imagen */
+}
+
+/* Efecto de zoom cuando la imagen está activa */
+.carousel-inner .carousel-item.active img {
+    transform: scale(.85); /* Aplica el efecto de zoom en la imagen */
+}
 
 
 
+
+/* Flechas de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary); /* Fondo oscuro y semitransparente */
+    width: 5%; /* Ajusta el tamaño del botón */
+    z-index: 10;
+    border: none;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.h2MCT-carrusel-sub{
+    margin-bottom: 15rem;
+}
+@media (max-width: 1000px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 8rem;
+    }
+}
+@media (max-width: 768px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width: 468px) {
+    .h2MCT-carrusel-sub{
+        margin-bottom: 0rem;
+        font-size: 1.5rem !important
+    }
+}

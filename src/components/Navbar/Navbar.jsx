@@ -1,7 +1,17 @@
 import "./Navbar.css";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import CartBadge from "../CartBadge/CartBadge";
+import AccountMenu from "../AccountMenu/AccountMenu";
+import { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ setShowRegister }) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const isUserLoggedIn = sessionStorage.getItem("loggedInUser") !== null;
+        setIsLoggedIn(isUserLoggedIn === true);
+    }, []);
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -46,24 +56,24 @@ const Navbar = () => {
                 {/* Menú desplegable */}
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-link" to="/menu">
+                        <NavLink className="nav-link" to="/menu">
                             Menú a domicilio
-                        </Link>
-                        <Link className="nav-link" to="/nosotros">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/nosotros">
                             Nosotros
-                        </Link>
-                        <Link className="nav-link" to="/beneficios">
+                        </NavLink>
+                        <NavLink className="nav-link" to="/beneficios">
                             Beneficios
-                        </Link>
-                        <Link className="nav-link" to="/formulario-producto">
-                            Formulario Producto
-                        </Link>
-                        <Link className="nav-link" to="/registro">
-                            Iniciar sesión / Registrarse
-                        </Link>
-                        <Link className="nav-link" to="/cart">
-                            <i className="bx bxs-cart"></i>
-                        </Link>
+                        </NavLink>
+                        {/* Inicio de sesión */}
+                        {!isLoggedIn ? (
+                            <button className="nav-link" onClick={() => setShowRegister(true)}>Iniciar sesión / Registrarse</button>
+                        ) : (
+                            <AccountMenu setIsLoggedIn={setIsLoggedIn}/>
+                        )}
+                        <NavLink className="nav-link" to="/cart">
+                            <CartBadge />
+                        </NavLink>
                     </div>
                 </div>
             </div>

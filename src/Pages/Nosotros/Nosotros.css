@@ -2,11 +2,11 @@ body {
     background-color: #cccccc;
 }
 
-.linktext {
+.nosotros-linktext {
     cursor: pointer;
 }
 
-.divide {
+.nosotros-divide {
     height: 5px;
     width: 50%;
     background-color: var(--tertiary);
@@ -15,20 +15,20 @@ body {
     border-radius: 3rem;
 }
 
-.about-img-container {
+.nosotros-about-img-container {
     position: relative;
     width: 100%;
     height: 300px;
     overflow: hidden;
 }
 
-.responsive-image {
+.nosotros-responsive-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.image-text {
+.nosotros-image-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,15 +41,17 @@ body {
     border-radius: 8px;
 }
 
-.menu {
-    text-align: center;
+.nosotros-menu {
+    gap: 2rem;
+    margin: 5rem;
+    display: flex;
     margin-top: 1rem;
+    justify-content: center;
 }
 
-.listmenu {
-    display: inline-block;
+.nosotros-listmenu {
     text-decoration: none;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-right: 2rem;
     font-size: 1.4rem;
     color: var(--tertiary);
@@ -58,24 +60,25 @@ body {
     padding: 2rem;
     border-radius: 3rem;
     font-weight: bold;
-    transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
-    border: none; /* Elimina el borde */
-    box-shadow: none; /* Elimina la sombra que parece borde */
+    transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
+    border: none;
+    box-shadow: none;
 }
 
-.listmenu:hover {
+.nosotros-listmenu:hover {
     color: var(--primary);
     background-color: var(--tertiary);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-.listmenu.active {
+
+.nosotros-active {
     background-color: var(--fourth);
     color: var(--secondary);
     transform: scale(1.05);
 }
 
-.about-section-2 {
+.nosotros-about-section-2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,34 +88,169 @@ body {
     text-align: center;
 }
 
-.about-textcontainer {
+.nosotros-about-textcontainer {
     flex: 1;
     max-width: 50%;
     padding: 1.5rem;
     margin: 0;
 }
 
-.about-backgroundtextcolor {
+.nosotros-about-backgroundtextcolor {
     padding: 2rem;
     background-color: var(--secondary);
     border-radius: 30px;
     transition: 200ms;
 }
 
-.about-text-1 {
+.nosotros-about-text-1 {
     text-align: justify;
 }
 
-.about-logo {
+.nosotros-about-logo {
+    max-width: 20%;
     flex: 0 1 auto;
-    max-width: 30%;
     text-align: center;
 }
 
-.about-logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.nosotros-about-logo img {
+    max-width: 70%;
     border-radius: 50%;
+}
+
+/*SECCIÓN DE INTEGRANTES*/
+
+.nosotros-integrantes {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.nosotros-integrantes-title {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.nosotros-integrantes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nosotros-integrante {
+    width: 150px;
+    text-align: center;
+}
+
+.nosotros-integrante-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nosotros-integrante-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nosotros-integrante-nombre {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: var(--tertiary);
+    font-weight: bold;
+}
+
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .nosotros-about-section-2 {
+        flex-direction: column;
+    }
+
+    .nosotros-about-textcontainer {
+        max-width: 100%;
+    }
+
+    .nosotros-about-logo {
+        max-width: 40%;
+    }
+
+    .nosotros-listmenu {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: #f5f5f5;
+        /* Lighter background on mobile */
+    }
+
+    .nosotros-about-img-container {
+        height: 200px;
+    }
+
+    .nosotros-image-text {
+        font-size: 3rem;
+        padding: 5px 10px;
+    }
+
+    .nosotros-menu {
+        margin: 2rem;
+        gap: 1.5rem;
+    }
+
+    .nosotros-listmenu {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .nosotros-about-section-2 {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .nosotros-about-textcontainer {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .nosotros-about-logo {
+        max-width: 50%;
+    }
+
+    .nosotros-about-logo img {
+        border-radius: 50%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros-image-text {
+        font-size: 2.5rem;
+        padding: 3px 8px;
+    }
+
+    .nosotros-listmenu {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .nosotros-about-logo {
+        max-width: 60%;
+    }
+
+    .nosotros-about-logo img {
+        width: 70%;
+    }
+
+    .nosotros-about-textcontainer {
+        padding: 0.8rem;
+    }
 }

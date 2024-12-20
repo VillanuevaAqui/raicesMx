@@ -5,8 +5,9 @@ import React from 'react'
 
 const MenuCard = () => {
   return (
-    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" className="carousel slide " data-bs-ride="carousel">
       <div className="carousel-indicators">
+       
         <button
           type="button"
           data-bs-target="#carouselExampleCaptions"
@@ -28,27 +29,26 @@ const MenuCard = () => {
           aria-label="Slide 3"
         ></button>
       </div>
-
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div className="carousel-item">
           <img src="assets/Chilaquiles-y-Huevos.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div className="carousel-caption d-sm-block d-md-block">
+            <h5 className="h2MCT-carrusel pp-title-carrusel">Desayuno</h5>
+            <p className="h2MCT-carrusel h2MCT-carrusel-sub">Despierta a lo mexicano con chilaquiles llenos de sabor🌶️</p>
           </div>
         </div>
         <div className="carousel-item">
-          <img src="assets/Enchiladas.webp" className="d-block w-100" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <img src="assets/Ceviche.webp" className="d-block w-100" alt="..." />
+          <div className="carousel-caption d-sm-block d-md-block">
+            <h5 className="h2MCT-carrusel pp-title-carrusel">Comida</h5>
+            <p className="h2MCT-carrusel h2MCT-carrusel-sub">Ceviche fresco, limón vibrante, mariscos tiernos. ¡Explosión marina irresistible! 🌊</p>
+          </div>
+        </div>
+        <div className="carousel-item">
+          <img src="assets/Huevo.webp" className="d-block w-100" alt="..." />
+          <div className="carousel-caption d-sm-block d-md-block">
+            <h5 className="h2MCT-carrusel pp-title-carrusel">Cena</h5>
+            <p className="h2MCT-carrusel h2MCT-carrusel-sub">Omelette esponjoso, queso cremoso, espinacas frescas. ¡Explosión de sabor! 🔥</p>
           </div>
         </div>
       </div>

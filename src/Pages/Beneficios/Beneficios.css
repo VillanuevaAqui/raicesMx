@@ -1,5 +1,4 @@
-.wall {
-
+.benefits-wall {
     background-color: var(--secondary);
     margin-top: 6rem;
     padding: 2rem;
@@ -9,15 +8,13 @@
     width: 100%;
 }
 
-.main {
+.benefits-main {
 
     text-align: center;
 
 }
 
-.benefit-card-title {
-
-
+.benefits-card-title {
     background-color: var(--secondary);
     border-radius: 2rem;
     min-width: 100rem;
@@ -29,9 +26,7 @@
 
 }
     
-.description-container {
-
-    
+.benefits-description-container {
     display: inline-block;
     text-align: center;
     justify-content: center;
@@ -39,8 +34,7 @@
 
 }
 
-.container-card{
-
+.benefits-container-card{
     width: 100%;
     display: flex;
     text-align: center;
@@ -49,7 +43,7 @@
 
 }
 
-.img-container {
+.benefits-img-container {
 
     display: inline-block;
     margin-right: 9rem;
@@ -61,56 +55,59 @@
 
 }
 
-.img-benefit {
-
+.benefits-img-benefit {
     width: 31.4rem;
     height: 31.4rem;
 
 }
 
-.title-card {
-
+.benefits-title-card {
     background-color: transparent;
     border: 0;
     box-shadow: 0 0 0 ;
     display: block;
     margin: 3rem;
     width: 60rem;
-
 }
 
 
 
-.paragraph-card {
-
+.benefits-paragraph-card {
     margin: 2rem;
     display: block;
     width: 60rem;
 }
 
-.title-card {
+.benefits-title-card {
 
     font-size: 4rem;
     font-weight: 900;
 
 }
 
-.title {
+.benefits-title {
 
     width: 100%;
-    font-size: 5rem;
+    font-size: 4rem;
 
 }
 
+.benefits-title{
+
+    width: 90rem;
+
+}
+
+
 @media (max-width: 1200px) {
 
-    .img-container {
+    .benefits-img-container {
 
         margin-right: 3rem;
 
     }    
 
-    .paragraph-card {
+    .benefits-paragraph-card {
 
         width: 37rem;
         min-width: 37rem;
@@ -118,25 +115,25 @@
 
     }
 
-    .title-card{
+    .benefits-title-card{
 
         margin: 2rem 0;
         width: 37rem;
     }
 
-    .container-card {
+    .benefits-container-card {
 
         width: 73.1rem;
 
     }
 
-    .description-container {
+    .benefits-description-container {
 
         width: 39rem;
 
     }
 
-    .benefit-card-title {
+    .benefits-card-title {
 
         min-width: 73rem;
         width: 73rem;
@@ -146,22 +143,15 @@
 
 }
 
-.title{
-
-    width: 90rem;
-
-}
-
-
 @media (max-width: 768px) {
 
-    .main {
+    .benefits-main {
 
         text-align: center;
 
     }
 
-    .title-card{
+    .benefits-title-card{
 
         display: inline-block;
         margin: 2rem 0 2rem 0;
@@ -170,7 +160,7 @@
 
     }
 
-    .wall {
+    .benefits-wall {
 
         width: 50rem;
         display: inline-flex;
@@ -179,7 +169,7 @@
     }
 
     
-    .container-card {
+    .benefits-container-card {
 
         
         width: 46rem;
@@ -188,7 +178,7 @@
 
     }
     
-    .img-container {
+    .benefits-img-container {
         
         margin: 0rem;
         width: 25rem;
@@ -198,7 +188,7 @@
     }
 
 
-    .description-container {
+    .benefits-description-container {
 
         text-align: center;
         width: 44rem;
@@ -207,7 +197,7 @@
         
     }
 
-    .paragraph-card{
+    .benefits-paragraph-card{
 
         text-align: center;
         width: 44rem;
@@ -218,7 +208,7 @@
 
     }
 
-    .benefit-card-title {
+    .benefits-card-title {
 
         width: 50rem;
         max-width: 50rem;
@@ -227,7 +217,7 @@
 
     }
 
-    .title {
+    .benefits-title {
 
         font-size: 4rem;
 
@@ -236,13 +226,13 @@
 
 @media (max-width: 599px) {
 
-    .wall {
+    .benefits-wall {
 
         width: 40rem;
 
     }
 
-    .title-card {
+    .benefits-title-card {
 
         margin: 1rem 0;
         width: 35rem;
@@ -250,13 +240,13 @@
 
     }
     
-    .description-container{
+    .benefits-description-container{
 
         width: 35rem;
 
     }
 
-    .paragraph-card {
+    .benefits-paragraph-card {
 
         min-width: 25rem;
         width: 35rem;
@@ -265,7 +255,7 @@
 
     }
 
-    .img-container {
+    .benefits-img-container {
         
         width: 20rem;
         height: 20rem;
@@ -273,7 +263,7 @@
         margin: 0rem;
     }
 
-    .benefit-card-title {
+    .benefits-card-title {
 
         min-width: 40rem;
         width: 40rem;
@@ -284,20 +274,20 @@
 
 @media (max-width: 479px) {
 
-    .wall {
+    .benefits-wall {
 
         width: 35rem;
 
     }
 
-    .container-card {
+    .benefits-container-card {
 
         width: 34rem;
         min-width: 30rem;
 
     }
 
-    .title-card {
+    .benefits-title-card {
 
         margin: 1rem 0;
         width: 31rem;
@@ -305,7 +295,7 @@
 
     }
 
-    .paragraph-card {
+    .benefits-paragraph-card {
 
         min-width: 25rem;
         width: 31rem;
@@ -314,7 +304,7 @@
 
     }
 
-    .img-container {
+    .benefits-img-container {
         
         width: 20rem;
         height: 20rem;
@@ -322,20 +312,20 @@
         margin: 0rem;
     }
 
-    .description-container {
+    .benefits-description-container {
 
         width: 31rem;
 
     }
 
-    .benefit-card-title {
+    .benefits-card-title {
 
         min-width: 35rem;
         width: 35rem;
     
     }
 
-    .title {
+    .benefits-title {
 
         font-size: 3rem;
 

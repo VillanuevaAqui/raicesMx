@@ -6,20 +6,23 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-//import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
-import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
-import { GoogleIcon, FacebookIcon} from './CustomIcons';
+import { GoogleIcon, FacebookIcon } from './CustomIcons';
 import CssBaseline from '@mui/material/CssBaseline';
 import CryptoJS from 'crypto-js';
 import { Link } from 'react-router-dom';
 import "./SignIn.css";
 import UsersExample from './database';
+import CloseIcon from '@mui/icons-material/Close';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router'
+
+const API_URL = 'http://3.135.216.95:8080/api/user';
 
 async function loadExampleUsers() {
 
@@ -28,35 +31,44 @@ async function loadExampleUsers() {
 
 }
 
-loadExampleUsers()
+loadExampleUsers();
 
-const Card = styled(MuiCard)(({ theme }) => ({
+const Card = styled(MuiCard)({
+  fontFamily: 'var(--font)',
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
   width: '100%',
-  padding: theme.spacing(4),
-  gap: theme.spacing(2),
+  padding: '32px',
+  gap: '16px',
   margin: 'auto',
-  [theme.breakpoints.up('sm')]: {
+  borderRadius: '20px',
+  overflowY: 'auto',
+  overflowX: 'hidden',
+  '@media (min-width: 600px)': {
     maxWidth: '450px',
   },
   boxShadow:
     'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
-  ...theme.applyStyles('dark', {
-    boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
-  }),
-}));
+});
 
-const SignInContainer = Stack;
+// const SignInContainer = Stack;
+const SignInContainer = styled(Stack)({
+  height: '100%',
+  padding: '1.6rem',
+  position: 'fixed',
+  '@media (min-width: 600px)': {
+    padding: '2.4rem',
+  },
+});
 
-export default function SignIn(props) {
+export default function SignIn({ setShowLogin, setShowRegister }) {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -92,12 +104,41 @@ export default function SignIn(props) {
     return encrypt(inputText);
   };
 
-  const toCompare = (email, password) => {
-    
-    let coincidences = 0;
+  const toCompare = async (email, password) => {
+    try {
+      const response = await fetch(API_URL, {method: 'GET'});
+      if (!response.ok) throw new Error('Error al obtener lo usuarios.');
+      const users = await response.json();
+      const foundUser = users.find(user => user.email === email && user.password === password);
+      if (foundUser){
+        Swal.fire({
+          title: "Inicio de sesión exitoso",
+          icon: "success"
+        });
+        sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+        setTimeout(() => {
+          setShowLogin(false);
+          navigate(0);
+        }, 1500);
+      }else{
+        Swal.fire({
+          icon: "error",
+          title: "Usuario o contraseña incorrectas",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ocurrió un error, intente más tarde...",
+      });
+    }
+
+    /*let coincidences = 0;
     const users = JSON.parse(localStorage.getItem("users"));
 
-    for (let user of users){
+    for (let user of users) {
 
       if (user.password == password && user.email == email) {
 
@@ -108,7 +149,7 @@ export default function SignIn(props) {
 
       alert("Iniciaste sesion")
 
-    } else if (coincidences == 0){
+    } else if (coincidences == 0) {
 
       alert(`
         Usuario y contraseña no coinciden 
@@ -119,7 +160,7 @@ export default function SignIn(props) {
     } else {
 
       alert("Error, favor de comunicarse a soporte")
-    }
+    }*/
   }
 
   const validateInputs = (event) => {
@@ -133,7 +174,7 @@ export default function SignIn(props) {
 
     if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
       setEmailError(true);
-      setEmailErrorMessage('Please enter a valid email address.');
+      setEmailErrorMessage('Ingresa un email válido.');
       isValid = false;
     } else {
       setEmailError(false);
@@ -142,14 +183,14 @@ export default function SignIn(props) {
 
     if (!password.value || password.value.length < 6) {
       setPasswordError(true);
-      setPasswordErrorMessage('Password must be at least 6 characters long.');
+      setPasswordErrorMessage('La contraseña debe tener al menos 6 caracteres.');
       isValid = false;
     } else {
       setPasswordError(false);
       setPasswordErrorMessage('');
     }
 
-    if (isValid){
+    if (isValid) {
 
       toCompare(encryptEmail(email.value.toLowerCase()), encryptPassword(password.value));
 
@@ -159,27 +200,30 @@ export default function SignIn(props) {
   };
 
   const CustomFormLabel = styled(FormLabel)({
-    fontSize: '2rem',
+    fontFamily: 'var(--font)',
+    fontSize: '1.6rem',
     fontWeight: 'bold',
   });
+
+  const handleLinkClick = () => {
+    setShowLogin(false);
+    setShowRegister(true);
+  };
 
   return (
     <>
       <CssBaseline />
-      <SignInContainer direction="column" justifyContent="space-between">
-        <Container>
-          <h1 className='sign-in-title'>
-                  Iniciar Sesión
-          </h1>
-        </Container>
-        <Card variant="outlined">
-          <Typography
-            component="h1"
-            variant="h4"
-            sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontWeight: "700" }}
-          >
-            Sign in
-          </Typography>
+      <SignInContainer direction="column" justifyContent="space-between" className='register-popup'>
+        <Card variant="outlined" className='register-popup-container'>
+          <div className="register-popup-title">
+            <h2 className='register-title'>
+              Iniciar sesión
+            </h2>
+            <CloseIcon onClick={() => setShowLogin(false)} style={{
+              fontSize: '30px',
+              cursor: 'pointer',
+            }} />
+          </div>
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -199,7 +243,7 @@ export default function SignIn(props) {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="ejemplo@email.com"
                 autoComplete="email"
                 autoFocus
                 required
@@ -209,7 +253,7 @@ export default function SignIn(props) {
               />
             </FormControl>
             <FormControl>
-              <CustomFormLabel htmlFor="password" >Password</CustomFormLabel>
+              <CustomFormLabel htmlFor="password" >Contraseña</CustomFormLabel>
               <TextField
                 error={passwordError}
                 helperText={passwordErrorMessage}
@@ -227,7 +271,7 @@ export default function SignIn(props) {
             </FormControl>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Recuerdame"
             />
             <ForgotPassword open={open} handleClose={handleClose} />
             <Button className='sign-in'
@@ -239,25 +283,27 @@ export default function SignIn(props) {
                 fontSize: '1.6rem', fontFamily: 'var(--font)', backgroundColor: 'var(--tertiary)',
                 color: 'var(--primary)',
                 ':hover': {
-                    backgroundColor: 'var(--fourth)',
-                }, 
+                  backgroundColor: 'var(--fourth)',
+                },
               }}
 
             >
-              Sign in
+              Iniciar sesión
             </Button>
-            <Link
-              component="button"
-              type="button"
-              onClick={handleClickOpen}
-              variant="body2"
-              sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
-            >
-              Forgot your password?
-            </Link>
+            <Typography sx={{ textAlign: 'left', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
+              <Link
+                component="button"
+                type="button"
+                onClick={handleClickOpen}
+                variant="body2"
+                sx={{ alignSelf: 'left', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
+              >
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </Typography>
           </Box>
           <Divider>
-          <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
+            <Typography sx={{ color: 'var(--fifth)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}>o</Typography>
           </Divider>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Button
@@ -266,7 +312,7 @@ export default function SignIn(props) {
               onClick={() => alert('Sign in with Google')}
               startIcon={<GoogleIcon />}
             >
-              Sign in with Google
+              Iniciar sesión con Google
             </Button>
             <Button
               fullWidth
@@ -274,16 +320,16 @@ export default function SignIn(props) {
               onClick={() => alert('Sign in with Facebook')}
               startIcon={<FacebookIcon />}
             >
-              Sign in with Facebook
+              Iniciar sesión con Facebook
             </Button>
-            <Typography sx={{ textAlign: 'center' }}>
-              Don&apos;t have an account?{' '}
+            <Typography sx={{ textAlign: 'center', fontFamily: 'var(--font)', fontSize: '1.2rem' }}>
+              ¿No tienes una cuenta?{' '}
               <Link
-                to="/registro"
+                onClick={handleLinkClick}
                 variant="body2"
-                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.4rem', fontFamily: 'var(--font)' }}
+                sx={{ alignSelf: 'center', color: 'var(--secondary)', fontSize: '1.2rem', fontFamily: 'var(--font)' }}
               >
-                Sign up
+                Regístrate
               </Link>
             </Typography>
           </Box>
