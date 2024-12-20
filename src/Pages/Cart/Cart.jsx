@@ -114,7 +114,7 @@ const Cart = () => {
 
                         <div className="cart-link">
                             <Link to="/checkout" className="btn btn-success btn-purchase">
-                                Comprar
+                                Finalizar compra
                             </Link>
                         </div>
                     </>

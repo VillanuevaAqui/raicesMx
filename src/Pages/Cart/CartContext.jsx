@@ -34,24 +34,6 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
   }, [cart]);
 
-  //Agregar al carrito
-  // const addToCart = (product) => {
-  //   setCart((prevCart) => {
-  //     //Comprobación de existencia
-  //     const existingProduct = prevCart.find((item) => item.product_id === product.product_id);
-
-  //     if (existingProduct) {
-  //       return prevCart.map((item) =>
-  //         item.product_id === product.product_id
-  //           ? { ...item, quantity: item.quantity + 1 } // Aumenta la cantidad
-  //           : item
-  //       );
-  //     } else {
-  //       return [...prevCart, { ...product, quantity: 1, selectedExtras: [] }];
-  //     }
-  //   });
-  // };
-
   // Agregar al carrito
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -106,10 +88,6 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Calcular el total del precio
-  // const totalPrice = useMemo(() => {
-  //     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  // }, [cart]);
   const totalPrice = useMemo(() => {
     return cart.reduce(
       (total, item) =>

@@ -58,6 +58,10 @@
 .checkout-content {
     margin: 0 3%;
 }
+.checkout-error {
+    color: red;
+    font-size: 0.8rem;
+}
 @media (max-width: 895px) {
     .place-order-left .checkout-title{
         font-size: 3rem;
